@@ -63,7 +63,7 @@ nav a:hover, footer a:hover, .link:hover {
 .container1 {
   background-image: url(whowe.png);
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat ;
 margin: 30em 5em 30em 0;
     padding:15em 10em 30em 0em;
     width: 100%;
@@ -77,6 +77,7 @@ margin: 30em 5em 30em 0;
     font-weight: bold;
     color: #000000;
   position: absolute;
+  top: 11em ;
   left: 45%;
   transform: translate(-50%, -50%);
 }
@@ -86,7 +87,7 @@ margin: 30em 5em 30em 0;
     font-weight: bold;
     color: #B9B1B1;
   position: absolute;
-  margin-top: 3em;
+  margin-top: 6em;
   left: 45%;
   transform: translate(-50%, -50%);
 }
