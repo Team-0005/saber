@@ -537,6 +537,6 @@ p.mediumText {
   font-size: 1.5em;
   font-weight:bold;
   color: #2180A5;
-  position: absolute;
+ 
   display: flex;
 }
