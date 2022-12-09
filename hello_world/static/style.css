@@ -223,7 +223,7 @@ textarea {
 
 /*singin and login*/
 
-.sign-form {
+.sign-form{
     width: 100%;
     height: 30%;
 
@@ -248,7 +248,7 @@ text-align: center;
 height: 75%;
 
 }
-.sign-form{
+.sign-form {
     padding: 2em 3em 1em 0em;
   padding-right: 15em;
   line-height: 2;
