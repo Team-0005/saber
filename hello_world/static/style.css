@@ -223,7 +223,7 @@ textarea {
 
 /*singin and login*/
 
-.sign-form ,.forget-form{
+.sign-form {
     width: 100%;
     height: 30%;
 
@@ -231,8 +231,7 @@ textarea {
 
 
 
-.sign-form input[type=text], .sign-form input[type=password], .modal-content input[type=text], .modal-content input[type=password],
-.forget-form input[type=email], .forget-form input[type=password], .modal-content input[type=email]{
+.sign-form input[type=text], .sign-form input[type=password], .modal-content input[type=text], .modal-content input[type=password] {
   width: 110%;
 }
 
@@ -535,7 +534,7 @@ color: #0E0F1D;
 
 /* forget pass*/
 
-#p_forget{
+#login{
 
   padding-right:20em;
 
