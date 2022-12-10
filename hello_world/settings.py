@@ -84,9 +84,9 @@ WSGI_APPLICATION = "hello_world.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'saber', # Change example - blog_data
-        'USER': 'admin', # Change
-        'PASSWORD': 'Bestteam27', # Change
+        'NAME': 'saber', 
+        'USER': 'admin', 
+        'PASSWORD': 'Bestteam27',
         'HOST': 'saber-1.cmq947vs5sx3.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
