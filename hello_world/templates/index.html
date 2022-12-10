@@ -210,7 +210,6 @@
 </div>
 
 <!-- enter email for password reset -->
-<script src="https://cdn.userfront.com/core.js"></script>
 <div id="id03" class="modal">
   <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
 
@@ -224,45 +223,40 @@
       </div>
       <div class="col" >
 
-  <form id="password-reset-form" action="" method="post">
+  <form id="vir-password-reset-form" action="" method="post">
 
     <div class="row">
       <div class="col-1">
-        <span style="color: #2180A5; border-bottom:1px solid #2180A5;">  الرجاء ادخال رقم التأكيد الذي تم إرساله على البريد الالكتروني  </span>
-      </div>
-    </div>
 
-      <div class="row">
-        <div class="col-2">
-          <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="15" autofocus required>
-        </div>
-      </div>
+        <span style="color: #2180A5; border-bottom:1px solid #2180A5;">  الرجاء ادخال رقم التأكيد الذي تم إرساله على البريد الالكتروني
+        </span>
 
+      </div> </div>
       <div class="row">
       <div class="col-2">
-        <a href="#" onclick="document.getElementById('id02').style.display='block'">إعادة ارسال رمز التحقق</a>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="codePassword" name="codePassword" placeholder=" &#xf023; رمز التحقق  " min="8" required>
       </div>
     </div>
 
-    
+    <div class="row">
+      <div class="col-1">
 
+<a href="#" onclick="document.getElementById('id02').style.display='block'"> إعادة ارسال رمز التحقق </a>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-6">
-        <a href=""><button class="button" type="button" name="button"> تحقق </button></a>
+        <a href=""><button class="button" type="button" name="button">  تحقق</button></a>
       </div>
     </div>
-  
 
     </form>
-  </div>
       </div>
-      </div>
-        </div>
-      </div>
+    </div>
+ </div>
 
 
-  </div>
 </div>
 
 <!-- password reset -->
