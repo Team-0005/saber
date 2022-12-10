@@ -82,9 +82,13 @@ WSGI_APPLICATION = "hello_world.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'saber', 
+        'USER': 'admin', 
+        'PASSWORD': 'Bestteam27',
+        'HOST': 'saber-1.cmq947vs5sx3.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
