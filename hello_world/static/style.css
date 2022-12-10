@@ -110,26 +110,20 @@ input[type="text"]::placeholder {
   text-align: center;
 }
 
-fieldset {
-  border: 0;
-}
 
-textarea {
-  width: 60%;
-  height: 200px;
-  border: 0.063em solid #279F8A;
-  border-radius: 0.75em;
-  background-color: #fcfcfc;
-}
 
 /* row and col for all forms*/
 .forms-row {
   padding-right: 6em;
 }
-
+.col {
+  margin:7em 4em 5em 4em;
+  display: inline-table;
+}
 .col-1 {
   font-family: 'Tajawal', sans-serif;
   float: right;
+
   text-align: right;
   width: 100%;
   margin-top:0em;
@@ -139,22 +133,38 @@ textarea {
 .col-2 {
   float: right;
   text-align: right;
-  width: 75%;
+  width: 15em;
   margin-top: 2em;
 }
 
-.col-3 {
-  float: right;
-  margin-top: 2em;
-  width: 75%;
-}
+
 .col-6{
     margin-top: 2em;
 }
+/*row and col for orders and goals*/
+.row{
+  text-align: center;
+    padding-top: 0em;
+
+
+}
+
+.row-2 {
+  text-align: right;
+}
+
+.row:after,.row-2:after,.forms-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
 
 .modal-content{
   background-image: url(backlog.png);
   background-size: cover;
+
 }
 
 
@@ -180,12 +190,6 @@ textarea {
   background-color: #96c6bf;
 }
 
-
-/*for creatAcc page*/
-.card-heading {
-  padding-top: 0.75em;
-  font-size: 1em;
-}
 
 
 /*set style for paragraphs*/
@@ -223,12 +227,6 @@ textarea {
 
 /*singin and login*/
 
-.sign-form{
-    width: 100%;
-    height: 30%;
-
-}
-
 
 
  .modal-content input[type=email], .modal-content input[type=password] {
@@ -245,7 +243,7 @@ text-align: center;
   border-radius: 2em;
   padding: auto auto 1em auto;
   width: 45em !important;
-height: 75%;
+height: 38em;
 
 }
 .sign-form {
@@ -333,28 +331,6 @@ height: 75%;
   }
 }
 
-/*row and col for orders and goals*/
-.row{
-  text-align: center;
-    padding-top: 0em;
-
-
-}
-
-.row-2 {
-  text-align: right;
-}
-
-.row:after,.row-2:after,.forms-row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.col {
-  margin:5em 5em 5em 3em;
-  display: inline-table;
-}
 
 /*------------------------------*/
 
