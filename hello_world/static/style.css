@@ -148,13 +148,8 @@ input[type="text"]::placeholder {
   margin-top: 2em;
 }
 
-#signup.row{
-  float: left;
-  text-align: left;
-  width: 15em;
-  margin-top: 2em;
 
-}
+
 
 .col-6{
     margin-top: 2em;
