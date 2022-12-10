@@ -7,7 +7,7 @@
   <link rel="icon" href="static/logo.png">
   <link rel="stylesheet" href="static/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,10 +93,10 @@
 
     <div id="lo"class="container  ">
 
-      <div class="col8" >
+      <div class="col" >
         <img src="static/login2.png" width="200px" height="200px" style="position:sticky;">
       </div>
-      <div class="col9" >
+      <div class="col" >
 
   <form id="signup" action="" method="post">
 
@@ -109,14 +109,14 @@
       </div> </div>
       <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free';  "  type="text" id="userfname" name="userfname" placeholder=" &#xf007; الاسم الأول " min="3" size="10" autofocus required>
-        <input style="font-family: 'Font Awesome 5 Free';  "   type="text" id="userlname" name="userlname" placeholder=" &#xf007; الاسم الأخير " min="3" size="10" autofocus required>
+        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
+        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
       </div>
     </div>
 
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free';  " type="tel" id="tel" name="tel" placeholder=" &#xf095;  رقم الهاتف "  required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; رقم الهاتف " min="8" required>
       </div>
     </div>
     
@@ -135,15 +135,15 @@
     
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userfname" name="userfname" placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required>
-        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="userlname" placeholder="&#xf0b1; المسمى الوظيفي " min="3" size="10" autofocus required>
+        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
+        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
       </div>
     </div>
 
     <div class="row">
       <div class="col-1">
-        
-<a href="#" style="font-family: 'Font Awesome 5 Free';" > تحميل ملف SCFHS &#xf0b1;</a>
+
+<a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت كلمة المرور ؟</a>
       </div>
     </div>
 
@@ -182,7 +182,6 @@
 
     <div class="row">
       <div class="col-1">
-
         <span style="color: #2180A5; border-bottom:1px solid #2180A5;"> نسيت كلمة المرور</span>
       </div></div>
       <div class="row">
@@ -194,8 +193,7 @@
 
     <div class="row">
       <div class="col-6">
-       <a  href="#" onclick="document.getElementById('id03').style.display='block'"> <input class="button" type="submit" value="التالي"> </a>
-       
+       <a  href="#" onclick="document.getElementById('id03').style.display='block'"> <input class="button" type="submit" value="التالي"> </a> 
       </div>
     </div>
 
@@ -206,10 +204,11 @@
       </div>
 
 
-  </div>
-</div>
+ <!---->
+
 
 <!-- enter email for password reset -->
+<script src="https://cdn.userfront.com/core.js"></script>
 <div id="id03" class="modal">
   <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
 
@@ -221,9 +220,9 @@
       <div class="col" >
         <img src="static/login2.png" width="200px" height="200px" style="position:static;">
       </div>
-      <div class="col" >
+   <!--   <div class="col" >
 
-  <form id="vir-password-reset-form" action="" method="post">
+  <form id="password-reset-form" action="" method="post">
 
     <div class="row">
       <div class="col-1">
@@ -234,7 +233,7 @@
 
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="text-code" name="text-code" placeholder=" &#xf023; رمز التحقق  " min="8" required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="text-code" name="text-code" placeholder=" &#xf13e; رمز التحقق  " min="8" required>
       </div>
     </div>
 
@@ -256,7 +255,7 @@
  </div>
 
 
-</div>
+</div>-->
 
 
 
@@ -307,10 +306,9 @@
         </div>
       </div>
 
+      
 
-  </div>
-</div>
-
+ <!---->
 
 
   <div class="sign-form" >
