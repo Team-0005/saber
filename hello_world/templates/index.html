@@ -209,10 +209,61 @@
   </div>
 </div>
 
-<!-- password reset -->
-<script src="https://cdn.userfront.com/core.js"></script>
+<!-- enter email for password reset -->
 <div id="id03" class="modal">
   <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+  <div class="modal-content animate" >
+
+
+    <div id="lo"class="container  ">
+
+      <div class="col" >
+        <img src="static/login2.png" width="200px" height="200px" style="position:static;">
+      </div>
+      <div class="col" >
+
+  <form id="vir-password-reset-form" action="" method="post">
+
+    <div class="row">
+      <div class="col-1">
+        <span style="color: #2180A5; border-bottom:1px solid #2180A5;">  الرجاء ادخال رقم التأكيد الذي تم إرساله على البريد الالكتروني
+        </span>
+       </div> 
+     </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="text-code" name="text-code" placeholder=" &#xf023; رمز التحقق  " min="8" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+         <a href="#" onclick="document.getElementById('id02').style.display='block'"> إعادة ارسال رمز التحقق </a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <a href="#" onclick="document.getElementById('id04').style.display='block'"><button class="button" type="button" name="button">  تحقق</button></a>
+      </div>
+    </div>
+
+    </form>
+      </div>
+    </div>
+ </div>
+
+
+</div>
+
+
+
+<!-- password reset -->
+<script src="https://cdn.userfront.com/core.js"></script>
+<div id="id04" class="modal">
+  <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
 
   <div class="modal-content animate" >
 
