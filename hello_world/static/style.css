@@ -264,7 +264,7 @@ a.col-1 {
 .modal-content {
 
 background-color: #D3E6ED;
-text-align: center;
+/*text-align: center;*/
   border: 0.063em solid #5399B5;
   border-radius: 2em;
   width: 47em !important;
