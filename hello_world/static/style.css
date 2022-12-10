@@ -97,8 +97,8 @@ input[type=text], input[type=tel], input[type=email], input[type=password] {
   float: right;
   width: 40%;
   padding: 0.75em;
-  border: 0.063em solid #279F8A;
-  border-radius: 0.75em;
+  border: 0.063em solid #5399B5;
+  border-radius: 0.7em;
   direction: rtl;
 }
 
@@ -117,9 +117,10 @@ input[type="text"]::placeholder {
   padding-right: 6em;
 }
 .col {
-  margin:7em 4em 5em 4em;
+  margin:5em 4em 5em 4em;
   display: inline-table;
 }
+
 .col-1 {
   font-family: 'Tajawal', sans-serif;
   float: right;
@@ -137,11 +138,26 @@ input[type="text"]::placeholder {
   margin-top: 2em;
 }
 
+#signup.row{
+  float: left;
+  text-align: left;
+  width: 15em;
+  margin-top: 2em;
 
+}
+.container{
+
+  text-align:center;
+
+}
 .col-6{
     margin-top: 2em;
 }
-/*row and col for orders and goals*/
+a.col-1 {
+  text-decoration-line:none !important;
+
+}
+/*row */
 .row{
   text-align: center;
     padding-top: 0em;
@@ -201,7 +217,7 @@ input[type="text"]::placeholder {
   float: left;
   text-align: center;
   margin-left: 3em;
-  margin-top:  2em;
+  margin-top:  5em;
   font-size: 2.5em;
   color: #000000;
   max-width: 55ch;
@@ -240,7 +256,7 @@ input[type="text"]::placeholder {
 
 background-color: #D3E6ED;
 text-align: center;
-  border: 0.063em solid #279F8A;
+  border: 0.063em solid #5399B5;
   border-radius: 2em;
   padding: auto auto 1em auto;
   width: 45em !important;

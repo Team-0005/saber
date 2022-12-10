@@ -45,8 +45,7 @@
         <div class="col-1">
 
             <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
-
-             <a href="">انشاء حساب</a>
+            <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
         </div> </div>
         <div class="row">
         <div class="col-2">
@@ -55,7 +54,6 @@
       </div>
 
       <div class="row">
-
         <div class="col-2">
           <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; كلمة المرور " min="8" required>
         </div>
@@ -63,7 +61,7 @@
       <div class="row">
         <div class="col-1">
 
- <a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت الرقم السري ؟</a>
+ <a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت كلمة المرور ؟</a>
         </div>
       </div>
 
@@ -76,13 +74,94 @@
 
       </form>
         </div>
-        </div>
-          </div>
-        </div>
+      </div>
+   </div>
 
 
-    </div>
   </div>
+
+
+  
+<!-- انشاء حساب  -->
+
+
+ <div id="id00" class="modal">
+  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+  <div class="modal-content animate" >
+
+
+    <div id="lo"class="container  ">
+
+      <div class="col" >
+        <img src="static/login2.png" width="200px" height="200px" style="position:sticky;">
+      </div>
+      <div class="col" >
+
+  <form id="signup" action="" method="post">
+
+    <div class="row">
+      <div class="col-1">
+
+          <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
+           <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
+
+      </div> </div>
+      <div class="row">
+      <div class="col-2">
+        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
+        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; رقم الهاتف " min="8" required>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-2">
+        <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; كلمة المرور " min="8" required>
+      </div>
+    </div>
+
+    
+    <div class="row">
+      <div class="col-2">
+        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
+        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+
+<a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت كلمة المرور ؟</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <a href=""><button class="button" type="button" name="button"> إنشاء حساب</button></a>
+      </div>
+    </div>
+
+    </form>
+      </div>
+    </div>
+ </div>
+
+
+</div>
+
+
 
 <!-- forget pass -->
 
@@ -188,13 +267,13 @@
    <form id="signin" action="" method="post">
 
 
-     <div class="row col">
+     <div class="row col0">
          <p class="top-p">..نحن هنا لمســـــــــــــــــــاعدتك</p>
            <p class="top-2">لتَّشخيص بأسرع وقت وأكثر دِقة</p>
            <br>
      </div>
- <a id="buttonjoin"href=""><button class="button" type="button" name="button">إنشاء حساب</button></a>
-   </form>
+ <a id="buttonjoin"  href="#" onclick="document.getElementById('id00').style.display='block'"><button class="button" type="button" name="button">إنشاء حساب</button></a>
+</form>
  </div>
 
 
