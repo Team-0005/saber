@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <title>الصفحة الرئيسية</title>
-  <link rel="icon" href="static/logo.png">
-  <link rel="stylesheet" href="static/style.css">
+  <link rel="icon" href="\static\blog\logo1.png">
+  <link rel="stylesheet" href="\static\blog\style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,13 @@
 
 <body>
 
-  <a id="logo" href=""><img src="static/logo1.png" alt="logo" width="150" height="100"></a>
+  <a id="logo" href=""><img src="\static\blog\logo1.png" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="">الصفحة الرئيسية</a></div>
       <div class="col6"><a href="#whowe">من نحن؟</a></div>
         <div class="col6"><a href="#footer">تواصل معنا</a></div>
             <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i> تسجيل الدخول</a>
-              <img id="login-pho" src="static/login.png" width="50" height="50"></div>
+              <img id="login-pho" src="\static\blog\login.png" width="50" height="50"></div>
   </nav>
 
   <!-- log in -->
@@ -34,9 +34,7 @@
 
       <div id="lo"class="container  ">
 
-        <div class="col" >
-          <img src="static/login2.png" width="200px" height="200px" style="position:static;">
-        </div>
+
         <div class="col" >
 
     <form id="signin" action="" method="post">
@@ -46,7 +44,8 @@
 
             <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
             <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
-        </div> </div>
+        </div>
+      </div>
         <div class="row">
         <div class="col-2">
           <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
@@ -81,7 +80,7 @@
   </div>
 
 
-  
+
 <!-- انشاء حساب  -->
 
 
@@ -91,11 +90,9 @@
   <div class="modal-content animate" >
 
 
-    <div id="lo"class="container  ">
+    <div id="lo"class="container ">
 
-      <div class="col" >
-        <img src="static/login2.png" width="200px" height="200px" style="position:sticky;">
-      </div>
+
       <div class="col" >
 
   <form id="signup" action="" method="post">
@@ -104,22 +101,26 @@
       <div class="col-1">
 
           <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
+
            <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
 
-      </div> </div>
+      </div>
+    </div>
       <div class="row">
       <div class="col-2">
-        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
-        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
+        <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="userfname" placeholder="&#xf007; الاسم الأول " min="3" autofocus required>
       </div>
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="userlname" placeholder="&#xf007; الاسم الأخير " min="3"  autofocus required>
+</div>
     </div>
 
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; رقم الهاتف " min="8" required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="tel" placeholder=" &#xf095; رقم الهاتف " min="8" required>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-2">
         <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
@@ -132,18 +133,23 @@
       </div>
     </div>
 
-    
+
     <div class="row">
       <div class="col-2">
-        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
-        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userfname" name="userfname" placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="userlname" placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required>
       </div>
     </div>
 
     <div class="row">
       <div class="col-1">
 
-<a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت كلمة المرور ؟</a>
+        <p></i>تحميل ملف SCFHS <i class="fas fa-upload"></i></p>
+
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+        </form>
       </div>
     </div>
 
@@ -173,9 +179,7 @@
 
     <div id="lo"class="container  ">
 
-      <div class="col" >
-        <img src="static/login2.png" width="200px" height="200px" style="position:static;">
-      </div>
+
       <div class="col" >
 
   <form id="signin" action="" method="post">
@@ -193,7 +197,7 @@
 
     <div class="row">
       <div class="col-6">
-       <a  href="#" onclick="document.getElementById('id03').style.display='block'"> <input class="button" type="submit" value="التالي"> </a> 
+       <a  href="#" onclick="document.getElementById('id03').style.display='block'"> <input class="button" type="submit" value="التالي"> </a>
       </div>
     </div>
 
@@ -217,9 +221,7 @@
 
     <div id="lo"class="container  ">
 
-      <div class="col" >
-        <img src="static/login2.png" width="200px" height="200px" style="position:static; ">
-      </div>
+
     <div class="col" style="float: right;" >
 
   <form id="password-reset-form" action="" method="post">
@@ -228,7 +230,7 @@
       <div class="col-1">
         <span style="color: #2180A5; border-bottom:1px solid #2180A5;">  الرجاء ادخال رقم التأكيد الذي تم إرساله على البريد الالكتروني
         </span>
-       </div> 
+       </div>
      </div>
 
     <div class="row">
@@ -250,7 +252,7 @@
     </div>
 
     </form>
-      </div> 
+      </div>
     </div>
  </div>
 
@@ -269,9 +271,7 @@
 
     <div id="lo"class="container  ">
 
-      <div class="col" >
-        <img src="static/login2.png" width="200px" height="200px" style="position:static;">
-      </div>
+
       <div class="col" >
 
   <form id="password-reset-form" action="" method="post">
@@ -306,7 +306,7 @@
         </div>
       </div>
 
-      
+
 
  <!---->
 
@@ -341,13 +341,13 @@
 
 
 
- 
+
 
 
  <footer id="footer"class="footer-distributed">
 
    <div class="footer-right">
-<a id="logo" href=""><img src="static/logod.png" alt="logo" width="250" height="200"></a>
+<a id="logo" href=""><img src="\static\blog\logod.png" alt="logo" width="250" height="200"></a>
 
 <p class="footer-links">
   <a id="h" href="">الصفحات</a>
@@ -404,7 +404,8 @@
 </div>
 
  </footer>
-    <script type="text/javascript" src="static/index.js"></script>
+    <script type="text/javascript" src="\static\blog\index.js"></script>
 </body>
 
 </html>
+
