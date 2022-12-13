@@ -19,9 +19,11 @@ class Psychologist(models.Model):
     current_job_title = models.CharField(max_length=45)
     scfhs_no = models.CharField(db_column='SCFHS_No', max_length=10)  # Field name made lowercase.
     scfhs_file = models.TextField(db_column='SCFHS_file')  # Field name made lowercase.
-    req_status = models.IntegerField(verbose_name="رقم الطلب")
-    a_email = models.ForeignKey(Admin, models.DO_NOTHING, db_column='A_email', blank=True, null=True)  # Field name made lowercase.
+    req_status = models.IntegerField(verbose_name="حالة الطلب")
+    p_code = models.CharField(db_column='P_code', max_length=4, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'psychologist'        
+
+       
