@@ -23,7 +23,7 @@ class Psychologist(models.Model):
     p_code = models.CharField(db_column='P_code', max_length=4, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'psychologist'        
 
        
