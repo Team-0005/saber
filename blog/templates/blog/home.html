@@ -1,23 +1,6 @@
+{% extends "blog/base.html" %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>الصفحة الرئيسية</title>
-  <link rel="icon" href="{% static 'blog/logo.png' %}">
-  <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
+{% block content %}
   <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="{% url 'blog-home' %}">الصفحة الرئيسية</a></div>
@@ -26,123 +9,38 @@
             <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i> تسجيل الدخول</a>
               <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50"></div>
   </nav>
-
-  <!-- log in -->
-  <div id="id01" class="modal">
-    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-    <div class="modal-content animate" >
-
-
-      <div id="lo"class="container  ">
-
-        <div class="col" >
-          <img src= "{% static 'blog/login2.png' %}"  width="200px" height="200px" style="position:static;">
-        </div>
-        <div class="col" >
-
-    <form id="login" action="" method="post">
-
-      <div class="row">
-        <div class="col-1">
-
-            <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
-            <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
-        </div> </div>
-        <div class="row">
-        <div class="col-2">
-          <input type="email" id="P_email" name="P_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-2">
-          <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="P_password" name="P_password" placeholder=" &#xf023; كلمة المرور " min="8" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">
-
- <a href="#" onclick="document.getElementById('id02').style.display='block'">هل نسيت كلمة المرور ؟</a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6">
-          <input class="button" type="submit" value="دخول">
-          <a href="{% url 'blog-Spetestinfo' %}"><button class="button" type="button" name="button"> إنشاء حساب</button></a><!--ربط بيج -->
-        </div>
-      </div>
-
-      </form>
-        </div>
-      </div>
-   </div>
-
-
-  </div>
-
-
-  
-<!-- انشاء حساب  -->
-
-
- <div id="id00" class="modal">
-  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+ <!-- log in -->
+ <div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 
   <div class="modal-content animate" >
 
 
     <div id="lo"class="container  ">
 
-      <div class="col" >
-        <img src="{% static 'blog/login2.png' %}"  width="200px" height="200px" style="position:sticky;">
-      </div>
+
       <div class="col" >
 
-  <form id="signup" action="" method="post">
+  <form id="signin" action="" method="post">
 
     <div class="row">
       <div class="col-1">
 
           <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
-           <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
-
-      </div> </div>
+          <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
+      </div>
+    </div>
       <div class="row">
       <div class="col-2">
-        <input type="text" id="P_F_name" name="P_F_name" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
-        <input type="text" id="P_L_name" name="P_L_name" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
+        <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
       </div>
     </div>
 
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="P_phone_No" name="phone" placeholder=" &#xf023; رقم الهاتف " min="8" required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder=" &#xf023; كلمة المرور " min="8" required>
       </div>
     </div>
-    
-    <div class="row">
-      <div class="col-2">
-        <input type="email" id="P_email" name="P_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="P_password" name="P_password" placeholder=" &#xf023; كلمة المرور " min="8" required>
-      </div>
-    </div>
-
-    <!-- شيكو -->
-    
-    <div class="row">
-      <div class="col-2">
-        <input type="text" id="userfname" name="userfname" placeholder="&#x40; الاسم الأول " min="3" size="10" autofocus required>
-        <input type="text" id="userlname" name="userlname" placeholder="&#x40; الاسم الأخير " min="3" size="10" autofocus required>
-      </div>
-    </div>
-
     <div class="row">
       <div class="col-1">
 
@@ -152,6 +50,7 @@
 
     <div class="row">
       <div class="col-6">
+        <input class="button" type="submit" value="دخول">
         <a href=""><button class="button" type="button" name="button"> إنشاء حساب</button></a>
       </div>
     </div>
@@ -161,6 +60,98 @@
     </div>
  </div>
 
+
+</div>
+  
+  
+<!-- انشاء حساب  -->
+
+
+<div id="id00" class="modal">
+  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+  <div class="modal-content animate" >
+
+    <div id="lo"class="container ">
+
+      <div class="col" >
+
+  <form id="signup" action="" method="post">
+    <!-- for_security -->
+    {% csrf_token %}
+
+    <div class="row">
+      <div class="col-1">
+
+          <a href="# " onclick="document.getElementById('id01').style.display='block'">  تسجيل الدخول </a>
+
+           <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
+
+      </div>
+    </div>
+
+     
+     
+     
+     
+     
+     
+      <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="p_f_name" placeholder="&#xf007; الاسم الأول " min="3" autofocus required>
+      </div>
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name" placeholder="&#xf007; الاسم الأخير " min="3"  autofocus required>
+</div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no" placeholder=" &#xf095; رقم الهاتف " min="8" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input type="email" id="email" name="p_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="p_password" placeholder=" &#xf023; كلمة المرور " min="8" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userfname" name="scfhs_file " placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="current_job_title" placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1">
+
+        <p></i>تحميل ملف SCFHS <i class="fas fa-upload"></i></p>
+
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <a href=""><button class="button" type="button" name="btn_signup"> إنشاء حساب</button></a>
+      </div>
+    </div>
+
+    </form>
+      </div>
+    </div>
+ </div>
 
 </div>
 
@@ -344,72 +335,4 @@
 
 
 
-
-
- 
-
-
- <footer id="footer"class="footer-distributed">
-
-   <div class="footer-right">
-<a id="logo" href=""><img src="{% static 'blog/logod.png' %}"  alt="logo" width="250" height="200"></a>
-
-<p class="footer-links">
-  <a id="h" href="">الصفحات</a>
-
-  <a href="#">الصفحة الرئيسيه </a>
-
-  <a href="#">من نحــن؟</a>
-
-  <a href="#">تواصل معنا</a>
-</p>
-
-     </div>
-
-
-
-
-   <div class="footer-right">
-
-
-
-     <p class="footer-links2">
-       <a id="h" href="">الخدمات </a>
-
-       <a href="#">اضافة مريض </a>
-
-       <a href="#">المقاييــس النفسية</a>
-
-       <a href="#">سجل المرضـى </a>
-     </p>
-
-</div>
-<p class="footer-links3">
-  <a id="h" href=""> :التواصل </a>
-
-  <a href="#">+966 547876876 </a>
-
-</p>
- <div class="footer-left">
-     <div class="footer-icons">
-<br><br>
-
-
-        <h3>  مواقع التواصل  </h3>
-<br>
-       <a href="#"><i class="fa fa-facebook"></i></a>
-       <a href="#"><i class="fa fa-twitter"></i></a>
-       <a href="#"><i class="fa fa-linkedin"></i></a>
-       <a href="#"><i class="fa fa-github"></i></a>
-
-
-
-   </div>
-
-</div>
-
- </footer>
-    <script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
-</body>
-
-</html>
+ {% endblock %}
