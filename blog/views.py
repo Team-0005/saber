@@ -11,6 +11,9 @@ def test(request):
 
 def home(request):
     return render(request, 'blog/home.html')  
+    
+def listtest(request):
+    return render(request, 'blog/listtest.html') 
 
 # def signup(request):
 #     if request.method == "post":
