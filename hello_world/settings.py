@@ -36,6 +36,7 @@ if 'CODESPACE_NAME' in os.environ:
 
 INSTALLED_APPS = [
     "blog.apps.BlogConfig",
+    "tests.apps.TestsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
