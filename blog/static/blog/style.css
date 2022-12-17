@@ -533,4 +533,20 @@ color: #0E0F1D;
 /*login*/
 
 
-/*forget*/
+/*list of test*/
+#titl{
+  margin-left: 25em;
+  height: 6em;
+  width: 28em;
+  text-align: center;
+  background: rgba(219, 230, 240, 0.7);
+  border-radius: 2em;
+      
+  }
+  .tit{
+    text-align: center;
+    font-family: 'Tajawal';
+    font-weight: bold;
+    font-size: 2em;
+    color: #2180A5;
+  }

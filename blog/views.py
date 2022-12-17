@@ -7,10 +7,14 @@ from django.contrib import messages
 # Create your views here.
 
 
-
+def test(request):
+     return render(request, 'blog/Spetestinfo.html')
 
 def home(request):
     return render(request, 'blog/home.html')  
+    
+def listtest(request):
+    return render(request, 'blog/listtest.html') 
 
 
 
@@ -38,15 +42,7 @@ def signup(request):
             return render(request, 'blog/home.html') 
 
             
-     
-
-
-
-            
-
-        # psycho = Psychologist.objects.create_user(p_email,p_password,p_f_name ,p_l_name,p_phone_no, current_job_title,scfhs_no ,req_status)
-
-       
+    
 
         
     
@@ -55,8 +51,8 @@ def signup(request):
 def test(request):
      return render(request, 'blog/Spetestinfo.html') 
 
-def signin(request):
-    return render(request, 'blog/home.html')
+# def signin(request):
+#     return render(request, 'blog/home.html')
 
-def signout(request):
-    pass
+# def signout(request):
+#     pass
