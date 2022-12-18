@@ -81,10 +81,10 @@ nav a:hover, footer a:hover, .link:hover {
 .rowtest a{
 	background-color: #488FAA;
 	align-items: center;
-	margin: 2em;
-	margin-top: 3.5em;
-	height: 8em;
-	width: 8em;
+	margin: 3em;
+	margin-top: 3.7em;
+	height: 7.8em;
+	width: 7.8em;
 	border-radius: 2em;
 
   text-align: center;
@@ -94,9 +94,12 @@ nav a:hover, footer a:hover, .link:hover {
   color: #ffffff;
   /* margin-top: 2.5em; */
   text-decoration: none;
-  
-	
 }
+.tes{
+  margin-top: 2.4em;
+  font-family: 'Tajawal';
+}  
+	
 
 
 
