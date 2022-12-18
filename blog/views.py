@@ -9,14 +9,10 @@ from django.contrib import messages
 # Create your views here.
 
 
-def test(request):
-     return render(request, 'blog/Spetestinfo.html')
 
 def home(request):
     return render(request, 'blog/home.html')  
     
-def listtest(request):
-    return render(request, 'blog/listtest.html') 
 
 
 

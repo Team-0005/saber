@@ -1,3 +1,541 @@
-body{
-    background-color:rgb(127, 163, 255);
-}
+/*styling body*/
+body {
+    background-image: url(background.jpg);
+    background-attachment:scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+     background-color: #FFFFFF;
+   background-image:im();
+  
+    font-family: 'Tajawal', sans-serif;
+  }
+  
+  /*logo position*/
+  #logo {
+    float: right;
+  }
+  
+  /*styling navigation bar and footer*/
+  nav, footer {
+    color: #000000;
+    text-align: center;
+  }
+  
+  nav a, footer a {
+    font-size: 1.063em;
+    color: #000000;
+  
+  }
+  .col7{
+  float: left;
+  
+  }
+  
+  
+  nav {
+  
+    width: 80%;
+    float: right;
+    margin:1.5em 1em 2em 3em;
+  }
+  
+  footer {
+    padding-top: 5em;
+  }
+  
+  nav a {
+    text-decoration: none;
+    float: right;
+    padding:  1em 2.5em 3em;
+  }
+  
+  nav a:hover, footer a:hover, .link:hover {
+    color: #488FAA;
+    cursor: pointer;
+  }
+  
+  /*who we are*/
+  
+  
+  
+  .container1 {
+    background-image: url(whowe.png);
+      background-size: contain;
+      background-repeat: no-repeat ;
+  margin: 30em 5em 30em 0;
+      padding:15em 10em 30em 0em;
+      width: 100%;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .row-1 {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #000000;
+    position: absolute;
+    top: 11em ;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+  .row-2 {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #B9B1B1;
+    position: absolute;
+    margin-top: 6em;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /*set style for all input elements*/
+  input[type=text], input[type=tel], input[type=email], input[type=password] {
+    text-align: right;
+    float: right;
+    width: 40%;
+    padding: 0.85em;
+    border: 0.063em solid #5399B5;
+    border-radius: 0.7em;
+    direction: rtl;
+    margin-left: 0.7em;
+  }
+  
+  input[type="tel"]::placeholder {
+    text-align: left;
+  }
+  
+  input[type="text"]::placeholder {
+    text-align: center;
+  }
+  
+  
+  
+  /* row and col for all forms*/
+  .forms-row {
+    padding-right: 6em;
+  }
+  .col {
+    float: right;
+    margin:2em 4em 5em 0em;
+    display: inline-table;
+    padding: 2em 0em 0em 0em;
+  }
+  .col8 {
+    margin:0em 6em 0em 4em;
+    display: inline-table;
+  }
+  .col9 {
+    margin:4em 0em 0em 4em;
+    display: inline-table;
+    padding: 0em 3em 1em 2em;
+  }
+  
+  .col-1 {
+    font-family: 'Tajawal', sans-serif;
+  
+    text-align: right;
+    width: 100%;
+    margin-top:0em;
+    margin: 1em 0em 0em 0em;
+  }
+  
+  .col-2 {
+    text-align: right;
+    width: 100%;
+    margin-top: 2em;
+  
+  }
+  
+  .container p{
+    font-size: 0.8em;
+  
+  }
+  
+  .col-6{
+      margin-top: 2em;
+  }
+  .col-1 a:link{
+  text-decoration-line:none !important;
+  margin-left: 1em;
+  font-family: 'Cairo'!important;
+  color: #5399B5 !important;
+  
+  }
+  
+  /*row */
+  .row{
+    text-align: center;
+  
+  }
+  .container.row{
+  
+    width: 20em;
+    margin : 5em;
+  
+  }
+  .row-2 {
+    text-align: right;
+  }
+  
+  .row:after,.row-2:after,.forms-row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  
+  .modal-content{
+    background-image: url(backlog1.png);
+    background-size: cover;
+  
+  }
+  
+  
+  
+  /*set style for all buttons*/
+  .button {
+    font-size: 1em;
+    background-color: #5399B5;
+    border: none;
+    border-radius: 3em;
+    box-shadow: 0.06em 0.06em #D7D7D7;
+    padding: 0.625em 2em;
+    color: Black;
+  }
+  
+  .button:hover {
+    background-color: #D3E6ED;
+    cursor: pointer;
+    box-shadow:.1em .1em 0.1em #D7D7D7;
+  }
+  
+  .button:disabled {
+    background-color: #96c6bf;
+  }
+  
+  
+  
+  /*set style for paragraphs*/
+  @import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+  #buttonjoin{
+    margin-top:0em;
+  }
+  .top-p {
+    float: left;
+    text-align: center;
+    margin-left: 3em;
+    margin-top:  5em;
+    font-size: 2.5em;
+    color: #000000;
+    max-width: 55ch;
+    font-family:'Tajawal', serif;
+    font-weight: bolder;
+  }
+  
+  .top-2 {
+    float: left;
+    text-align: center;
+    margin-left: 5em;
+    margin-top:  0em;
+    font-size: 1.7em;
+    color: #000000;
+    max-width: 100ch;
+    font-family:'Tajawal', serif;
+    font-weight: bolder;
+  }
+  #buttonjoin{
+  
+    padding-left: 10em;
+    margin-right: 1em;
+  }
+  
+  /*singin and login*/
+  
+  #signup input[type=email],#signup input[type=password],#signup input[type=tel]{
+  
+    width: 25em;
+  }
+
+  .modal-content input[type=email], .modal-content input[type=password],.modal-content input[type=tel] {
+    width: 110% ;
+  }
+  ::placeholder {
+    font-size: 1em;
+    text-align:right !important;
+  }
+  /*singin and modal singin*/
+  
+  .modal-content {
+  
+  background-color: #D3E6ED;
+  /*text-align: center;*/
+    border: 0.063em solid #5399B5;
+    border-radius: 2em;
+    width: 47em !important;
+  height: 38em;
+  
+  }
+  .sign-form {
+      padding: 2em 3em 1em 0em;
+    padding-right: 15em;
+    line-height: 2;
+    width: 60%;
+  }
+  
+  
+  .sign-form .col-1 {
+    width: 100%;
+  }
+  
+  /* modal and its animate and close button*/
+  .modal {
+  
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /*modal content*/
+  .modal-content {
+    margin: 3% auto 15% auto;
+    width: 30%;
+    background-color: #ffffff;
+  }
+  
+  /* The Close Button for modal */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {
+      -webkit-transform: scale(0)
+    }
+  
+    to {
+      -webkit-transform: scale(1)
+    }
+  }
+  
+  @keyframes animatezoom {
+    from {
+      transform: scale(0)
+    }
+  
+    to {
+      transform: scale(1)
+    }
+  }
+  
+  
+  /*------------------------------*/
+  
+  /*
+  footer*
+  *
+  */
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  
+  * {
+  font-family: Roboto;
+  }
+  
+  .footer-distributed{
+  background: #E6E3E8;
+  box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+  }
+  
+  section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  text-align: justify;
+  font-size: 1em;
+  font-weight: 10em;
+  text-decoration: underline;
+  }
+  
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+  float: left;
+  display:inline-block;
+  }
+  
+  
+  
+  
+  /* Footer links */
+  
+  
+  .footer-distributed .footer-links a{
+  display:flow-root;
+  line-height:0.5em;
+  padding: 1em;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration:none;
+  color:  inherit;
+  }
+  
+  .footer-distributed .footer-links2 a{
+  display:flow-root;
+  line-height:0.5em;
+  padding: 1em;
+  
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration:none;
+  color:  inherit;
+  }
+  .footer-distributed .footer-links3 a{
+  display: flow-root;
+  line-height:0.5em;
+  padding: 1em;
+  float: right;
+  
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration:none;
+  color:  inherit;
+  }
+  
+  #h{
+    color:  #0E0F1D;
+  font-size: 1.2em;
+  
+  }
+  
+  
+  .footer-distributed .footer-company-name{
+  color:  #0E0F1D;
+  font-size: 1em;
+  font-weight: normal;
+  
+  }
+  
+  /* Footer social icons */
+  
+  
+  .footer-distributed h3{
+  color:  #0E0F1D;
+  font: bold 1em 'Tajawal', sans-serif;
+  
+  
+  }
+  
+  .footer-distributed .footer-icons a{
+  
+  display: contents;
+  width: auto;
+  height: 0em;
+  cursor: pointer;
+  font-size: 2em;
+  color: #0E0F1D;
+  line-height: 1em;
+  
+  }
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right  {
+  float: right;
+  
+  }
+  
+  .footer-distributed .footer-right p{
+  display: flow-root;
+  vertical-align: top;
+  margin-left: 8em;
+  color: #0E0F1D;
+  }
+  
+  
+  .footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
+    color: #488FAA;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 1000px) {
+  
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+  
+  .footer-distributed .footer-company-name{
+    font-size: 12px;
+  }
+  
+  
+  
+  }
+  
+  @media (max-width: 800px) {
+  
+  .footer-distributed{
+    padding: 30px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right{
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .footer-distributed .footer-left{
+    margin-bottom: 40px;
+  }
+  }
+  
+  /*login*/
+  
