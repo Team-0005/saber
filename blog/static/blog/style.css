@@ -156,9 +156,11 @@ input[type="text"]::placeholder {
 .col-6{
     margin-top: 2em;
 }
-a.col-1 {
+a.col-1 a:link{
   text-decoration-line:none !important;
-
+  margin-left: 1em;
+  font-family: 'Cairo'!important;
+  color: #5399B5 !important;
 }
 /*row */
 .row{
