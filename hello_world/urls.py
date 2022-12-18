@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings
+from django.conf.urls.static import static
 from hello_world.core import views as core_views
 
 urlpatterns = [
@@ -24,4 +25,4 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("blog/",include('blog.urls')),
     path("tests/",include('tests.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

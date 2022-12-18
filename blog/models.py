@@ -18,7 +18,7 @@ class Psychologist(models.Model):
     p_phone_no = models.CharField(db_column='P_phone_No', max_length=13)  # Field name made lowercase.
     current_job_title = models.CharField(max_length=45)
     scfhs_no = models.CharField(db_column='SCFHS_No', max_length=10)  # Field name made lowercase.
-    scfhs_file = models.TextField (db_column='SCFHS_file')  # Field name made lowercase.
+    scfhs_file = models.FileField (db_column='SCFHS_file',upload_to="blog/static/blog/files/")  # Field name made lowercase.
     req_status = models.IntegerField(verbose_name="حالة الطلب")
     p_code = models.CharField(db_column='P_code', max_length=4, blank=True, null=True)  # Field name made lowercase.
 
