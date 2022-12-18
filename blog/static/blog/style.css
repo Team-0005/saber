@@ -95,7 +95,7 @@ margin: 30em 5em 30em 0;
 input[type=text], input[type=tel], input[type=email], input[type=password] {
   text-align: right;
   float: right;
-  margin: 0em 0.1em;
+  margin-left: 0.15em;
   width: 40%;
   padding: 0.85em;
   border: 0.063em solid #5399B5;
