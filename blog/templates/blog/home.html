@@ -63,7 +63,7 @@
 <div id="id00" class="modal">
   <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
 
-  <div class="modal-content animate" >
+  <div id="id001"class="modal-content animate" >
 
     <div id="lo"class="container ">
 
@@ -132,17 +132,21 @@
     </div>
 
     {% for message in messages %}
-    
+    <script>
+    document.getElementById('id001').classList.remove("animate");
+    document.getElementById('id00').style.display='block';
+    </script>
     <div class="alert alert-success">
         <a class="close" href="#" data-dismiss="alert">×</a>
-           {{ message }}
+        {{ message }}
+           
     </div>
 
 {% endfor %}
 
     <div class="row">
       <div class="col-6">
-        <a href=""><button class="button" type="button" name="btn_signup"> إنشاء حساب</button></a>
+        <a href="#signup"><button class="button" type="button" name="btn_signup"> إنشاء حساب</button></a>
       </div>
     </div>
 
@@ -305,7 +309,7 @@
           <p class="top-2">لتَّشخيص بأسرع وقت وأكثر دِقة</p>
           <br>
     </div>
-<a id="buttonjoin"  href="#" onclick="document.getElementById('id00').style.display='block'"><button class="button" type="button" name="button">إنشاء حساب</button></a>
+<a id="buttonjoin"  href="#signup" onclick="document.getElementById('id00').style.display='block'"><button class="button" type="button" name="button">إنشاء حساب</button></a>
 </form>
 </div>
 
