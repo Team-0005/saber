@@ -1,0 +1,10 @@
+body {
+    background-image: url(background-testinfo.jpg);
+    background-attachment:scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+     background-color: #FFFFFF;
+   background-image:im();
+  
+    font-family: 'Tajawal', sans-serif;
+  }
