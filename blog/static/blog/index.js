@@ -3,12 +3,14 @@ function checksingin() {
 }
 
 // Get the modal
-var modal = document.getElementById('id01');
+var modal = [document.getElementById('id00'),document.getElementById('id01'),document.getElementById('id02'),document.getElementById('id03'),document.getElementById('id04')];
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  for (let index = 0; index < modal.length; index++) {
+    if (event.target == index) {
+      modal.style.display = "none";
+    }
   }
 }
 
