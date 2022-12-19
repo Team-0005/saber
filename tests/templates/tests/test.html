@@ -27,9 +27,10 @@
  <div id ="titl"> <p class="tit"> قائمة المقاييس النفسية </p> </div>
  <section id="tab">
   <div class="rowtest"> 
-    <a href="https://www.youtube.com"> <p class="tes">مقياس تايلور للقلق </p> </a> 
-    <a href="https://translate.google.com/"> <p class="tes">مقياس ييل براون للوسواس القهري </p> </a>
-    <a href="https://mail.google.com/mail/u/0/#inbox"> <p class="tes"> مقياس بيك للاكتئاب </p> </a>
+     {% for test in listtests %}
+    <a href="https://www.youtube.com"> <p class="tes"> {{test}}</p> </a> 
+       {% endfor %}
+    
   </div>
  </section>
 

@@ -16,6 +16,10 @@ class PsychoTest(models.Model):
     description = models.CharField(db_column='Description', max_length=400)  # Field name made lowercase.
     diagnosis_fk = models.ForeignKey(Diagnosis, models.DO_NOTHING, db_column='diagnosis_ID')  # Field name made lowercase.
 
+    def __str__(self):
+        return self.test_name
+
+        
     class Meta:
         managed = False
         db_table = 'psycho_test'
