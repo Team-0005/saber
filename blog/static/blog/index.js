@@ -3,27 +3,26 @@ function checksingin() {
 }
 
 // Get the modal
-var modal = [document.getElementById('id00'),document.getElementById('id01'),document.getElementById('id02'),document.getElementById('id03'),document.getElementById('id04')];
+var modal = [document.getElementById('id00'),document.getElementById('id01'),document.getElementById('id02'),document.getElementById('id03'),document.getElementById('id04')];;
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  for (let index = 0; index < modal.length; index++) {
-    if (event.target == index) {
-      modal.style.display = "none";
-    }
+  if (modal.find(event.target)) {
+    modal.style.display = "none";
   }
 }
 
+
 // Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
+// var btnContainer = document.getElementById("myBtnContainer");
+// var btns = btnContainer.getElementsByClassName("btn");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
 
 //function for edit button in cpp/dpp page
 function edit_func() {
