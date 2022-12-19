@@ -88,32 +88,14 @@ body {
         height: 25em;
         margin-left: 10em;
         margin-top: 2em;
-        border-radius: 4em;
-        text-decoration: none;
   }
   .rowtest {
     display: flex;
     align-content: center;
     justify-content: center;
   }
-  .rowtest a{
-    background-color: #488FAA;
-    align-items: center;
-    margin: 2em;
-    margin-top: 3.5em;
-    height: 8em;
-    width: 8em;
-    border-radius: 2em;
-  
-    text-align: center;
-    font-family: 'Tajawal';
-    font-weight: bold;
-    font-size: 1.6em;
-    /* margin-top: 2.5em; */
-    text-decoration: none;
+
     
-    
-  }
   
   
   
