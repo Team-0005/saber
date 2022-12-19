@@ -95,15 +95,20 @@ margin: 30em 5em 30em 0;
 input[type=text], input[type=tel], input[type=email], input[type=password] {
   text-align: right;
   float: right;
+  margin-left: 0.085em;
   width: 40%;
-  padding: 0.85em;
+  padding: 0.85em 0.75em;
   border: 0.063em solid #5399B5;
   border-radius: 0.7em;
   direction: rtl;
 }
 
 input[type="tel"]::placeholder {
-  text-align: left;
+  text-align: right;
+  
+}
+input[value="********05"] {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 input[type="text"]::placeholder {

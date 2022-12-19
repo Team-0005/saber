@@ -64,7 +64,7 @@
 <div id="id00" class="modal">
   <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
 
-  <div class="modal-content animate" >
+  <div id="id001"class="modal-content animate" >
 
     <div id="lo"class="container ">
 
@@ -97,7 +97,7 @@
 
     <div class="row">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no" placeholder=" &#xf095; رقم الهاتف " min="8" required>
+        <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no" placeholder=" &#xf095; " value="********05" min="8" pattern="[0]{1}[5]{1}[0-9]{8}" title="تأكد من صحة الرقم المدخل">
       </div>
     </div>
 
@@ -122,28 +122,27 @@
 
     <div class="row">
       <div class="col-1">
-
         <p></i>تحميل ملف SCFHS <i class="fas fa-upload"></i></p>
-
-        <form action="/action_page.php">
           <input type="file" id="myFile" name="scfhs_file">
-          <input type="submit">
-        </form>
       </div>
     </div>
 
     {% for message in messages %}
-    
+    <script>
+    document.getElementById('id001').classList.remove("animate");
+    document.getElementById('id00').style.display='block';
+    </script>
     <div class="alert alert-success">
         <a class="close" href="#" data-dismiss="alert">×</a>
-           {{ message }}
+        {{ message }}
+           
     </div>
 
 {% endfor %}
 
     <div class="row">
       <div class="col-6">
-        <a href=""><button class="button" type="button" name="btn_signup"> إنشاء حساب</button></a>
+        <input class="button" type="submit" name="btn_signup" value="إنشاء حساب">
       </div>
     </div>
 
@@ -305,7 +304,7 @@
           <p class="top-2">لتَّشخيص بأسرع وقت وأكثر دِقة</p>
           <br>
     </div>
-<a id="buttonjoin"  href="#" onclick="document.getElementById('id00').style.display='block'"><button class="button" type="button" name="button">إنشاء حساب</button></a>
+<a id="buttonjoin"  href="#signup" onclick="document.getElementById('id00').style.display='block'"><button class="button" type="button" name="button">إنشاء حساب</button></a>
 </form>
 </div>
 
