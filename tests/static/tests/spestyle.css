@@ -51,26 +51,43 @@ body {
   
   #titl{
     margin-left: 29em;
-    height: 6em;
-    width: 28em;
+    height: 5em;
+    width: 20em;
     text-align: center;
-    background: rgba(219, 230, 240, 0.7);
+    background: rgba(18, 122, 163, 0.08);
     border-radius: 2em;
-      
+    position: absolute;
+    left: 27em;
+    top: 18em;
+    text-align: center;
     }
+
+    #uses{
+      margin-left: 29em;
+      height: 6em;
+      width: 20em;
+      text-align: center;
+      background: rgba(197, 207, 214, 0.54);
+      border-radius: 2em;
+      position: absolute;
+      left: 27em;
+      top: 24em;
+      text-align: center;
+      }
+
     .tit{
       text-align: center;
       font-family: 'Tajawal';
       font-weight: bold;
-      font-size: 2em;
+      font-size: 1em;
       color: #2180A5;
+      margin-top: 1.5em;
       }
       #tab {
         width: 67em;
         height: 25em;
         margin-left: 10em;
         margin-top: 2em;
-        background: rgba(255, 255, 255, 0.60);
         border-radius: 4em;
         text-decoration: none;
   }
@@ -92,7 +109,6 @@ body {
     font-family: 'Tajawal';
     font-weight: bold;
     font-size: 1.6em;
-    color: #ffffff;
     /* margin-top: 2.5em; */
     text-decoration: none;
     
