@@ -7,6 +7,7 @@ from .models import Admin
 from .models import Psychologist
 from django.contrib import messages
 from passlib.hash import pbkdf2_sha256
+from django.contrib.auth import authenticate
 # Create your views here.
 
 
@@ -18,6 +19,7 @@ def home(request):
 
 
 def signup(request):
+    print("you are in signup")
     if request.method == "POST":
         p_email = request.POST['p_email']
         p_password = request.POST['p_password']
@@ -45,18 +47,56 @@ def signup(request):
             psycho.save()
             return render(request, 'blog/home.html') 
 
-            
-    
 
-        
-    
-  
 
-def test(request):
-     return render(request, 'blog/Spetestinfo.html') 
+def signin(request):
+     print("you are in signin")
+     if request.method == "POST":
+        p_email = request.POST['email']
+        p_password = request.POST['password']
 
-# def signin(request):
-#     return render(request, 'blog/home.html')
+        if Psychologist.objects.filter(p_email=p_email):
+            psych = Psychologist.objects.get(p_email=p_email)
+            if pbkdf2_sha256.verify(p_password,psych.p_password):
+                if psych.req_status== 1:
+                    print("signin sucess")
+                    return render(request, 'blog/home.html')
+                else:
+                    print("not replaying yet")
+                    return render(request, 'blog/home.html')
+            else:
+                print("wrongpassword")
+                return render(request, 'blog/home.html')
+        else:
+            print("the email is not register")
+            return render(request, 'blog/home.html')
+
+
+
+        # Psychologist = authenticate(p_email=p_email,p_password= enc_pass)
+        # if Psychologist is None:
+        #     messages.error(request,"الإيميل أو كلمة المرور خاطئة")
+        #     return render(request, 'blog/home.html')  
+        # else:
+        #     if Psychologist.reqstatus==0:
+        #         messages.error(request,"لم يتم التحقق من طلبك بعد")
+        #         return render(request, 'blog/home.html') 
+
+# def forget(request):
+#     print("you are in signin")
+#     if request.method == "POST":
+#         p_email = request.POST['p_email']
+#         if Psychologist.objects.filter(p_email=p_email):
+#             psych = Psychologist.objects.get(p_email=p_email)
+#         else:
+#             print("the email is not register")
+#             return render(request, 'blog/home.html')
+#     else:
+#             print("the email is not register")
+#             return render(request, 'blog/home.html')
+
+#     return render(request, 'blog/home.html') 
+
 
 # def signout(request):
 #     pass

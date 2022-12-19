@@ -14,8 +14,9 @@
 
       <div class="col" >
 
-  <form id="signin" action="" method="post">
-
+  <form id="signin" action="{% url 'signin' %}"method="post">
+    <!-- for_security -->
+  {% csrf_token %}
     <div class="row">
       <div class="col-1">
 
@@ -153,8 +154,6 @@
 
 </div>
 
-
-
 <!-- forget pass -->
 
 <div id="id02" class="modal">
@@ -167,8 +166,9 @@
 
       <div class="col"  >
 
-  <form id="FG_pass" action="" method="post">
-
+  <form id="FG_pass" action=""  method="post">
+   <!-- for_security -->
+   {% csrf_token %}
     <div class="row">
       <div class="col-1">
         <span style="color: #2180A5; border-bottom:1px solid #2180A5; "> نسيت كلمة المرور</span>
