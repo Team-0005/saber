@@ -28,7 +28,7 @@
  <section id="tab">
   <div class="rowtest"> 
      {% for test in listtests %}
-    <a href="https://www.youtube.com"> <p class="tes"> {{test}}</p> </a> 
+    <a href="{% url 'tests:spectest' test.test_id %}"> <p class="tes"> {{test}}</p> </a> 
        {% endfor %}
     
   </div>

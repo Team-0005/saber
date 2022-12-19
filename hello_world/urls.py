@@ -24,5 +24,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
     path("blog/",include('blog.urls')),
-    path("tests/",include('tests.urls')),
+    path("tests/",include('tests.urls',namespace='tests')),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

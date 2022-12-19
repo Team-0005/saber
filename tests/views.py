@@ -7,5 +7,7 @@ def test(request):
     context = {'listtests' : test }
     return render(request,'tests/test.html',context)  
    
-def spec(request):
-    return render(request,'tests/sptest.html') 
+def spec(request , id):
+    spec = PsychoTest.objects.get(test_id=id)
+    context = {'detail' : spec }
+    return render(request,'tests/sptest.html',context) 
