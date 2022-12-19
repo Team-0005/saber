@@ -104,7 +104,11 @@ input[type=text], input[type=tel], input[type=email], input[type=password] {
 }
 
 input[type="tel"]::placeholder {
-  text-align: left;
+  text-align: right;
+  
+}
+input[value="********05"] {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 input[type="text"]::placeholder {
