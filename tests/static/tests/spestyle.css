@@ -51,8 +51,8 @@ body {
   
   #titl{
     margin-left: 29em;
-    height: 5em;
-    width: 20em;
+    height: 7em;
+    width: 25em;
     text-align: center;
     background: rgba(18, 122, 163, 0.08);
     border-radius: 2em;
@@ -64,14 +64,14 @@ body {
 
     #uses{
       margin-left: 29em;
-      height: 6em;
+      height: 7em;
       width: 20em;
       text-align: center;
       background: rgba(197, 207, 214, 0.54);
       border-radius: 2em;
       position: absolute;
-      left: 27em;
-      top: 24em;
+      left: 29.5em;
+      top: 28em;
       text-align: center;
       }
 
@@ -79,24 +79,46 @@ body {
       text-align: center;
       font-family: 'Tajawal';
       font-weight: bold;
-      font-size: 1em;
+      font-size: 1.5em;
       color: #2180A5;
-      margin-top: 1.5em;
+      margin-top: 1em;
+      }
+      #countuses{
+        text-align: center;
+        font-family: 'Tajawal';
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #C76A6A;
+
+        
+
       }
       #tab {
-        width: 67em;
+        width: 22em;
         height: 25em;
         margin-left: 10em;
-        margin-top: 2em;
+        margin-top: 7.9em;
   }
   .rowtest {
     display: flex;
     align-content: center;
     justify-content: center;
+    text-align: center;
+    font-family: 'Tajawal';
+    font-weight: bold;
+    font-size: 1.5em;
   }
 
     
-  
+  section {
+    width: 100%;
+    display: inline-block;
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 10em;
+    color: rgba(72, 143, 170, 0.88);
+
+  }
   
   
   
@@ -123,15 +145,7 @@ body {
   padding: 50px 60px 40px;
   overflow: hidden;
   }
-  section {
-    width: 100%;
-    display: inline-block;
-    background: #ccc;
-    text-align: justify;
-    font-size: 1em;
-    font-weight: 10em;
-    text-decoration: underline;
-  }
+ 
   
   
     /* Footer left */
