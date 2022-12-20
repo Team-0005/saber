@@ -4,6 +4,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
      background-color: #FFFFFF;
+     background: fixed;
    background-image:im();
   
     font-family: 'Tajawal', sans-serif;
