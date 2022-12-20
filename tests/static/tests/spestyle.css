@@ -4,7 +4,6 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
      background-color: #FFFFFF;
-     background: fixed;
    background-image:im();
   
     font-family: 'Tajawal', sans-serif;
@@ -49,7 +48,7 @@ body {
     color: #488FAA;
     cursor: pointer;
   }
-  
+
   #titl{
     margin-left: 29em;
     height: 7em;
