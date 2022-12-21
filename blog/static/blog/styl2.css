@@ -1,0 +1,540 @@
+
+body {
+  background-image: url(background2.png);
+  background-attachment:scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+   background-color: #FFFFFF;
+ background-image:im();
+
+  font-family: 'Tajawal', sans-serif;
+}
+
+/*logo position*/
+#logo {
+  float: right;
+}
+
+/*styling navigation bar and footer*/
+nav, footer {
+  color: #000000;
+  text-align: center;
+}
+
+nav a, footer a {
+  font-size: 1.063em;
+  color: #000000;
+
+}
+
+
+.col7{
+float: left;
+
+}
+nav {
+
+  width: 80%;
+  float: right;
+  margin:1.5em 1em 2em 3em;
+}
+
+footer {
+  padding-top: 5em;
+}
+
+nav a {
+  text-decoration: none;
+  float: right;
+  padding:  1em 2.5em 3em;
+}
+
+nav a:hover, footer a:hover, .link:hover {
+  color: #488FAA;
+  cursor: pointer;
+}
+
+.addp p,.profile p,.recpatient p{
+  text-align: center;
+  font-family: 'Tajawal';
+  font-size: 2em;
+    color: #2180A5;
+
+}
+.j p{
+  text-align: right;
+  font-family: 'Tajawal';
+  font-size: 2em;
+    color: #2180A5;
+
+}
+.button{
+  font-family: 'Tajawal';
+  font-size: 1em;
+  color: white;
+  background-color: #2180A5;
+text-align: center;
+border: none;
+  padding: 0.5em 6em 0.5em 6em ;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0.6em;
+margin-left: 2em
+
+}
+.jender{
+  font-family: 'Tajawal';
+  display: block ;
+ margin-bottom: 12px;
+ text-align: right;
+ cursor: pointer;
+ font-size: 1em;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+form{
+
+display: block;
+margin: 3% auto 15% auto;
+width: 30%;
+background-color: #ffffff;
+
+background-color:rgba(255,255,255,0.5);
+/*text-align: center;*/
+  border-radius: 2em;
+  width: 47em !important;
+height: 55em;
+text-align: center;
+
+
+}
+input{
+  width: 35%;
+  padding: 3.5%;
+border: 2px solid rgba(195,195,195,0.5);
+border-radius: 0.5em;
+margin-left: 2.5em;
+
+}
+.profile input[type=tel],.profile input[type=email],.profile input[type=password]{
+  width: 85%;
+
+}
+.row3 {
+margin: 0em;
+text-align: ;
+  font-family: 'Tajawal';
+  font-size: 1em;
+    color: #2180A5;
+}
+#myFile {
+  width: 35%;
+  padding: 3.5%;
+border:0;
+border-radius: 0.5em;
+margin-left: 2.5em;
+}
+::placeholder {
+  font-size: 1.2em;
+  text-align:center !important;
+
+}.row{
+  display: block;
+  text-align:center ;
+  margin: 2em;
+
+}
+.col{
+  margin-left: 1em;
+  float: right;
+  width: 16em;
+  -webkit-padding-end:  3.4em;
+  display: inline-block;
+
+}
+.col1{
+  margin: 0em;
+  text-align: left;
+  display: block;
+}
+
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: white;
+  border: 2px solid rgba(195,195,195,0.5);
+  border-radius: 0.3em;
+
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 1.8em;
+  left: 1em;
+
+  border: 6px solid transparent;
+  border-color: #A9A9A9 transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+ font-family: 'Font Awesome 5 Free';
+  color: #A9A9A9;
+  padding: 1em 1em 1em 1em;
+  cursor: pointer;
+  user-select: none;
+  width: 16em;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: white;
+  width: 18em;
+
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+
+}
+/* home page for psycol*/
+
+body.home {
+  background-image: url(backpys0.png)!important;
+  background-attachment:scroll;
+  background-size: cover;
+  background-repeat: no-repeat;
+   background-color: #FFFFFF;
+ background-image:im();
+
+  font-family: 'Tajawal', sans-serif;
+}
+form.servec{
+
+  display: block;
+ margin: 9em 0 5em 0;
+background-color: transparent;
+    border-radius: 2em;
+    width: 60em !important;
+  text-align: left;
+
+
+}
+.button:hover {
+  background-color: #2180A5;
+}
+.servec img{border-radius: 9px;
+}
+.servec button{
+  position: relative;
+  background-color: #488FAA;
+  border: none;
+  font-size: 1em;
+  width: 12em;
+  height: 12em;
+  color: #FFFFFF;
+  padding: 3em;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2em;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+.col2{
+  margin-left: 1em;
+  float: right;
+  width: 16em;
+  display: inline-block;
+}
+/*------------------------------*/
+/*-------patientrec page-------*/
+form.recpatient{
+
+display: block;
+margin: 2% auto 15% auto;
+width: 30%;
+background-color: #ffffff;
+
+background-color:rgba(255,255,255,0.9);
+/*text-align: center;*/
+  border-radius: 2em;
+  width: 47em !important;
+height: auto;
+text-align: center ;
+}
+
+.se #search{
+  color: white;
+  background-color:#488FAA;
+  width: 6em ;
+  height: 4em;
+  padding:1%;
+  border: 0px solid rgba(195,195,195,0.5);
+  border-radius: 2em;
+  margin-left: 1em;
+
+}
+
+.se input{
+  width: 30em;
+  height: 4em;
+  padding:1%;
+  border: 2px solid rgba(195,195,195,0.5);
+  border-radius: 2em;
+  margin-left: 1em;
+
+}
+
+.se{
+  text-align: center;
+
+}
+.se::placeholder {
+  font-size: 1em;
+  text-align:right !important;
+}
+/*تنسيق العمود الاخير */
+tr td:first-child {
+  color: red ;
+}
+
+
+#P_record {
+  font-family: 'Tajawal', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 2em;
+  font-weight:bolder!important;
+
+
+}
+
+#P_record td ,#P_record th {
+  font-family: 'Tajawal', sans-serif;
+
+  border: 0px solid #ddd;
+  padding: 1.5em 1.5em 1.5em 1.5em;
+  text-align: Right  ;
+
+}
+#P_record a:visited {
+  color: Black;
+
+}
+
+#P_record tr:nth-child(odd){background-color: #f2f2f2;}
+
+#P_record tr:hover {background-color: #ddd;}
+
+#P_record th {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: Right ;
+  background-color: #488FAA;
+  color: white;
+}
+#P_record a {
+  text-decoration: none;
+  float: right;
+}
+/*------------------------------*/
+
+/*
+footer*
+*
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+
+
+.footer-distributed{
+background: #E6E3E8;
+box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+width: 100%;
+font: bold 16px sans-serif;
+
+text-align: left;
+padding: 50px 60px 40px;
+overflow: hidden;
+}
+
+section {
+width: 100%;
+display: inline-block;
+background: #ccc;
+text-align: justify;
+font-size: 1em;
+font-weight: 10em;
+text-decoration: underline;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+float: left;
+display:inline-block;
+}
+
+
+
+
+/* Footer links */
+
+
+.footer-distributed .footer-links a{
+display:flow-root;
+line-height:0.5em;
+padding: 1em;
+font-size: 0.9em;
+font-family: 'Tajawal';
+text-decoration:none;
+color:  inherit;
+}
+
+.footer-distributed .footer-links2 a{
+display:flow-root;
+line-height:0.5em;
+padding: 1em;
+
+font-size: 0.9em;
+font-family: 'Tajawal';
+text-decoration:none;
+color:  inherit;
+}
+.footer-distributed .footer-links3 a{
+display: flow-root;
+line-height:0.5em;
+padding: 1em;
+float: right;
+
+font-size: 0.9em;
+font-family: 'Tajawal';
+text-decoration:none;
+color:  inherit;
+}
+
+#h{
+  color:  #0E0F1D;
+font-size: 1.2em;
+
+}
+
+
+.footer-distributed .footer-company-name{
+color:  #0E0F1D;
+font-size: 1em;
+font-weight: normal;
+
+}
+
+/* Footer social icons */
+
+
+.footer-distributed h3{
+color:  #0E0F1D;
+font: bold 1em 'Tajawal', sans-serif;
+
+
+}
+
+.footer-distributed .footer-icons a{
+
+display: contents;
+width: auto;
+height: 0em;
+cursor: pointer;
+font-size: 2em;
+line-height: 1em;
+
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right  {
+float: right;
+
+}
+
+.footer-distributed .footer-right p{
+display: flow-root;
+vertical-align: top;
+margin-left: 8em;
+color: #0E0F1D;
+}
+
+
+.footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
+  color: #488FAA;
+  cursor: pointer;
+}
+
+
+
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+.footer-distributed {
+  font: bold 14px sans-serif;
+}
+
+.footer-distributed .footer-company-name{
+  font-size: 12px;
+}
+
+
+
+}
+
+@media (max-width: 800px) {
+
+.footer-distributed{
+  padding: 30px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-right{
+  float: none;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.footer-distributed .footer-left{
+  margin-bottom: 40px;
+}
+}
