@@ -21,8 +21,8 @@
   <nav>
       <div class="col6"> <a href="">الصفحة الرئيسية</a></div>
         <div class="col6"><a href="#whowe">من نحن؟</a></div>
-          <div class="col6"><a href="#footer">تواصل معنا</a></div>
-              <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل خروج </a>
+          <div class="col6"><a href="#footer">تواصل معنا</a></div> 
+              <div class="col7"> <a   id="login" href="{% url 'blog:home' %}" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل خروج </a>
                 <img id="login-pho" src="{% static "login.png" %}" width="50" height="50"></div>
     </nav>
     <br>    <br>
@@ -61,7 +61,7 @@
     <footer id="footer"class="footer-distributed">
 
       <div class="footer-right">
-        <a id="logo" href=""><img src="{% static "logod.png" %}" alt="logo" width="250" height="200"></a>
+    <a id="logo" href=""><img src="{% static "logod.png" %}" alt="logo" width="250" height="200"></a>
 
     <p class="footer-links">
      <a id="h" href="">الصفحات</a>

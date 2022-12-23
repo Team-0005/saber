@@ -13,7 +13,7 @@ from django.contrib.auth import authenticate
 
 
 def home(request):
-    return render(request, 'blog/psychologis.html')  
+    return render(request, 'blog/home.html')  
     
 
 
@@ -60,7 +60,8 @@ def signin(request):
             if pbkdf2_sha256.verify(p_password,psych.p_password):
                 if psych.req_status== 1:
                     print("signin sucess")
-                    return render(request, 'tests/test.html')
+                    context = {'psychologist' : psych }
+                    return render(request, 'blog/psychologis.html')
                 else:
                     print("not replaying yet")
                     return render(request, 'tests/test.html')
@@ -69,7 +70,7 @@ def signin(request):
                 return render(request, 'blog/home.html')
         else:
             print("the email is not register")
-            return render(request, 'blog/home.html')
+            return render(request, 'blog/home.html', context)
 
 
 
