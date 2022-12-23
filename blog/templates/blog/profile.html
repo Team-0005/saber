@@ -6,8 +6,8 @@
 <head>
   <meta charset="utf-8">
   <title> المعلومات الشخصية</title>
-  <link rel="icon" href="{% static "logo.png" %}">
-  <link rel="stylesheet" href="{% static "blog/styl2.css" %}">
+  <link   <link rel="icon" href="{% static 'logo.png' %}">
+  <link rel="stylesheet" href="{% static 'blog/styl2.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,60 +18,56 @@
 
 <body>
 
-    <a id="logo" href=""><img src="{% static "logo1.png" %}" alt="logo" width="150" height="100"></a>
+    <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
     <nav>
       <div class="col6"> <a href="">الصفحة الرئيسية</a></div>
         <div class="col6"><a href="#whowe">من نحن؟</a></div>
           <div class="col6"><a href="#footer">تواصل معنا</a></div>
               <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل خروج </a>
-                <img id="login-pho" src="{% static "login.png" %}" width="50" height="50"></div>
+                <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50"></div>
     </nav>
     <br>    <br>
     <br>
     <br>
-
-  <form class="profile" action="index.html" method="post">
+    
+  <form class="profile" action="{% url 'blog:profile' information.p_email %}" method="post">
     <br>
+     <!-- for_security -->
+     {% csrf_token %}
 
   <p>  <i class="fas fa-user-circle"></i> المعلومات الشخصية </p>
 
   <div class="row">
-    <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="userfname" placeholder=" الاسم الأول  &#xf406; " min="3"  required>
+    
+    <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name" value="{{information.p_l_name}}" placeholder=" الاسم الأخير  &#xf406;" min="3"   required >
+    <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="p_f_name" value="{{information}}"  placeholder=" الاسم الأول  &#xf406; " min="3"  required >
 
-    <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="userlname" placeholder=" الاسم الأخير  &#xf406;" min="3"   required>
 </div>
 <div class="row">
-  <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="tel" placeholder="  05XXXXXXXX  &#xf095;" min="8" required>
+  <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no" value="{{information.p_phone_no}}" placeholder="  05XXXXXXXX  &#xf095;" min="8" required >
 </div>
 <div class="row">
-  <input type="email" id="email" name="email" placeholder=" MajedAlmalki@gmail.com &#x40;"   required>
+  <input type="email" id="email" name="email" value="{{information.p_email}}" placeholder=" xxx@gmail.com &#x40;" required >
 </div>
 
-<div class="row">
-  <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="p_password" placeholder="  إدخال الرقم السري الحالي &#xf023;" min="8" required>
-
-  </div>
-  <div class="row">
-    <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="p_password" placeholder="  إدخال الرقم السري الجديد &#xf023;" min="8" required>
-
-    </div>
     <div class="row">
-      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="scfhs_no" name="scfhs_no" placeholder="&#xf15c; SCFHS : 68Y9N345 " min="3" size="10"  required>
-      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="current_job_title" placeholder="&#xf0b1; أخصائي نفسي  " min="3" size="10"  required>
+      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="scfhs_no" name="scfhs_no" value="{{information.scfhs_no}}" placeholder="&#xf15c; SCFHS : 68Y9N345 " min="3" size="10"   disabled >
+      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="current_job_title" value="{{information.current_job_title}}" placeholder="&#xf0b1; أخصائي نفسي  " min="3" size="10"   disabled>
 
 
 </div>
   <div class="row3">
 
-    <input type="file" id="myFile" name="filename" >
-    <label></i>تحميل ملف SCFHS <i class="fas fa-upload"></i></label>
+    <object data="{{information.scfhs_file}}" type="application/pdf" width="300" height="200" >
+      <a href="{{ MEDIA_URL }}/{{information.scfhs_file}}" target="_blank">ملف هيئة التخصصات الصحية</a>
+      </object>
 
   </div>
 
 <div class="row">
 
-<input class="button" type="submit" name="save" value="حفظ" disabled>
-<button class="button" type="button" name="edit" onclick="edit_func()">تعديل</button>
+<input class="button" type="hidden" name="save" id="save" value="حفظ"  hidden="hidden">
+<button class="button" type="button" name="edit" >تعديل</button>
 
 </div>
   </form>
@@ -89,17 +85,8 @@
     <footer id="footer"class="footer-distributed">
 
       <div class="footer-right">
-    <a id="logo" href=""><img src="{% static "logod.png" %}" alt="logo" width="250" height="200"></a>
+    <a id="logo" href=""><img src="{% static 'logod.png' %}" alt="logo" width="250" height="200"></a>
 
-    <p class="footer-links">
-     <a id="h" href="">الصفحات</a>
-
-     <a href="#">الصفحة الرئيسيه </a>
-
-     <a href="#">من نحــن؟</a>
-
-     <a href="#">تواصل معنا</a>
-    </p>
 
         </div>
 

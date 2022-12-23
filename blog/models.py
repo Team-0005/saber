@@ -22,6 +22,10 @@ class Psychologist(models.Model):
     req_status = models.IntegerField(verbose_name="حالة الطلب")
     p_code = models.CharField(db_column='P_code', max_length=4, blank=True, null=True)  # Field name made lowercase.
 
+    def __str__(self):
+        return self.p_f_name
+
+
     class Meta:
         managed = True
         db_table = 'psychologist'        
