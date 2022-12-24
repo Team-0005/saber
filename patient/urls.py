@@ -3,6 +3,6 @@ from . import views
 
 app_name= 'patient'
 urlpatterns = [
-    path('', views.list_of_patient, name='patient-list'),
-    path('', views.addPatient, name='add-patient'),
+    path('', views.list_of_patient, name='ptlist'),
+    path('addpt/<p_email>', views.addPatient, name='addpt'),
 ]

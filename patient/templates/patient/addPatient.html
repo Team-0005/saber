@@ -23,25 +23,25 @@
         <div class="col6"><a href="#whowe">من نحن؟</a></div>
           <div class="col6"><a href="#footer">تواصل معنا</a></div>
               <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل خروج </a>
-                <img id="login-pho" src="{% static 'login.png' %}" width="50" height="50"></div>
+                <img id="login-pho" src="{% static 'blog/login.png' %}"  width="50" height="50"></div>
     </nav>
     <br>    <br>
     <br>
     <br>
 
-  <form class="addp" action="index.html" method="post">
+  <form class="addp" action="{% url 'patient:addpt' psycho.p_email %}"  method="post">
+     <!-- for_security -->
+     {% csrf_token %}
     <br>
 
   <p> <i class="fas fa-user-plus"></i> إضافة مريض</p>
   <div class="row">
-    <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="userfname" placeholder=" الاسم الأول  &#xf406; " min="3"  required>
-
-    <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="userlname" placeholder=" الاسم الأخير  &#xf406;" min="3"   required>
+    <input style="font-family: 'Font Awesome 5 Free';"type="text" id="userfname" name="pt_name" placeholder=" اسم المريض بالكامل &#xf406; " min="3"  required>
 </div>
 <div class="row">
-  <input style="font-family: 'Font Awesome 5 Free';"type="date" id="AP_date" name="AP_date" placeholder=" تاريخ الميلاد &#xf007;"   required>
+  <input style="font-family: 'Font Awesome 5 Free';"type="date" id="AP_date" name="pt_birth_date" placeholder=" تاريخ الميلاد &#xf007;"   required>
 
-  <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="tel" placeholder="  رقم الهاتف  &#xf095;" min="8" required>
+  <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no" placeholder="  رقم الهاتف  &#xf095;" min="8" required>
 </div>
 <div class="row">
   <div class="col">
@@ -49,22 +49,22 @@
   <p >  : الجنس</p>
 </div>
   <div class="col1">
-<label class="jender">ذكر
-  <input type="radio" checked="checked" name="radio">
+<label class="gender">ذكر
+  <input type="radio" checked="checked" name="pt_gender" value="ذكر">
   <span class="checkmark"></span>
 </label>
-<label class="jender">أنثى
-  <input type="radio" name="radio">
+<label class="gender">أنثى
+  <input type="radio" name="pt_gender" value="أنثى">
   <span class="checkmark"></span>
 </label>  </div></div>
 <div class="col">
 <div class="custom-select" style="width:200px;">
-  <select  >
-    <option  value="Bachelor&Above" > المستوى التعليمي  &#xf518; </option>
-     <option  value="Bachelor&Above" > جامعي وأعلى </option>
-     <option value="Secondary">ثانوي</option>
-     <option value="Intermediate "> متوسط وأقل</option>
-     <option value="illiterate">أمـــيّ</option>
+  <select name="pt_edu_level"  required >
+    <option > المستوى التعليمي  &#xf518; </option>
+     <option value="جامعي وأعلى" > جامعي وأعلى </option>
+     <option  value="ثانوي">ثانوي</option>
+     <option  value="متوسط وأقل "> متوسط وأقل</option>
+     <option  value="أمي">أمـــيّ</option>
 
    </select>
    </div>
@@ -73,7 +73,7 @@
 </div>
 <br><br><br><br><br><br><br><br>
 <div class="row">
-  <button class="button ">التالي</button>
+  <button class="button " type="submit">إضافة</button>
 
 </div>
   </form>

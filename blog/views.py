@@ -59,7 +59,7 @@ def signin(request):
             psych = Psychologist.objects.get(p_email=p_email)
             if pbkdf2_sha256.verify(p_password,psych.p_password):
                 if psych.req_status== 1:
-                    print("signin sucess")
+                    print("signin sucess")  
                     context = {'psycho' : psych }
                     return render(request, 'blog/psychologis.html',context)
                 else:
