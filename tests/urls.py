@@ -6,4 +6,6 @@ app_name='tests'
 urlpatterns = [
     path('', views.test, name='test'),
     path('<int:id>', views.spec, name='spectest'),
+    path('iniDiag/', views.iniDiag, name='iniDiag'),
+
 ]

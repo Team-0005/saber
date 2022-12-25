@@ -1,0 +1,267 @@
+body {
+    /* background-image: url(background-testinfo.jpg); */
+    background-attachment:scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+     background-color: #FFFFFF;
+   background-image:im();
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  /* Header */
+  #logo {
+    float: right;
+  }
+  
+  /*styling navigation bar and footer*/
+  nav, footer {
+    color: #000000;
+    text-align: center;
+  }
+  
+  nav a, footer a {
+    font-size: 1.063em;
+    color: #000000;
+  
+  }
+  .col7{
+    float: left;
+  }
+  nav {
+  
+    width: 80%;
+    float: right;
+    margin:1.5em 1em 2em 3em;
+  }
+  
+  footer {
+    padding-top: 5em;
+  }
+  nav a {
+    text-decoration: none;
+    float: right;
+    padding:  1em 2.5em 3em;
+  }
+  
+  nav a:hover, footer a:hover, .link:hover {
+    color: #488FAA;
+    cursor: pointer;
+  }
+.con{
+  position: absolute;
+  width: 1139px;
+    height: 20em;
+    margin-left: 12em;
+     margin-top: 2em;
+    background: rgba(185, 177, 177, 0.12);
+    border-radius: 50px;
+    text-decoration: none;
+
+}
+ 
+.title{
+font-family: 'Tajawal';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align:center;
+margin-left: 13em;
+color: #2180A5;
+}
+    
+  section {
+    width: 100%;
+    display: inline-block;
+    text-align: justify;
+    font-size: 1em;
+    font-weight: 10em;
+    color: rgba(72, 143, 170, 0.88);
+
+  }
+  
+
+  
+  .col{
+
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #0E0F1D;
+  }
+ 
+  .conform{
+    text-align: center;
+    margin-left: 8em;
+
+  }
+  .selects {
+
+
+     background-color:  #CDCDCD;
+    border-radius: 10px;
+     border:5em;
+     align-items: center;
+    text-align: center;
+    
+    }
+
+     
+  
+  
+  
+  
+  /* footer */
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+  
+  * {
+  font-family: Roboto;
+  }
+  
+  .footer-distributed{
+  background: #E6E3E8;
+  box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
+  }
+ 
+  
+  
+    /* Footer left */
+  
+  .footer-distributed .footer-left{
+    float: left;
+    display:inline-block;
+  }
+  /* Footer links */
+  
+  
+  .footer-distributed .footer-links a{
+    display:flow-root;
+    line-height:0.5em;
+    padding: 1em;
+    font-size: 0.9em;
+    font-family: 'Tajawal';
+    text-decoration:none;
+    color:  inherit;
+    }
+  
+    .footer-distributed .footer-links2 a{
+    display:flow-root;
+    line-height:0.5em;
+    padding: 1em;
+  
+    font-size: 0.9em;
+    font-family: 'Tajawal';
+    text-decoration:none;
+    color:  inherit;
+    }
+    .footer-distributed .footer-links3 a{
+    display: flow-root;
+    line-height:0.5em;
+    padding: 1em;
+    float: right;
+  
+    font-size: 0.9em;
+    font-family: 'Tajawal';
+    text-decoration:none;
+    color:  inherit;
+    }
+    #h{
+        color:  #0E0F1D;
+      font-size: 1.2em;
+  
+      }
+  
+  
+      .footer-distributed .footer-company-name{
+      color:  #0E0F1D;
+      font-size: 1em;
+      font-weight: normal;
+  
+      }
+  /* Footer social icons */
+  
+  
+  .footer-distributed h3{
+    color:  #0E0F1D;
+    font: bold 1em 'Tajawal', sans-serif;
+  
+  
+    }
+  
+    .footer-distributed .footer-icons a{
+  
+    display: contents;
+    width: auto;
+    height: 0em;
+    cursor: pointer;
+    font-size: 2em;
+    color: #0E0F1D;
+    line-height: 1em;
+  
+    }
+  /* Footer Right */
+  
+  .footer-distributed .footer-right  {
+    float: right;
+  
+    }
+  
+    .footer-distributed .footer-right p{
+    display: flow-root;
+    vertical-align: top;
+    margin-left: 8em;
+    color: #0E0F1D;
+    }
+  
+  
+    .footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
+      color: #488FAA;
+      cursor: pointer;
+    }
+    /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 1000px) {
+  
+    .footer-distributed {
+      font: bold 14px sans-serif;
+    }
+  
+    .footer-distributed .footer-company-name{
+      font-size: 12px;
+    }
+  
+  
+  
+    }
+  
+    @media (max-width: 800px) {
+  
+    .footer-distributed{
+      padding: 30px;
+    }
+  
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-right{
+      float: none;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    .footer-distributed .footer-left{
+      margin-bottom: 40px;
+    }
+    }
