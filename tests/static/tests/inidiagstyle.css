@@ -50,7 +50,7 @@ body {
 .con{
   position: absolute;
   width: 1139px;
-    height: 20em;
+    height: 100em;
     margin-left: 12em;
      margin-top: 2em;
     background: rgba(185, 177, 177, 0.12);
@@ -93,7 +93,7 @@ color: #2180A5;
     line-height: 19px;
     display: flex;
     align-items: center;
-    text-align: center;
+    text-align: right;
     color: #0E0F1D;
   }
  
@@ -112,7 +112,13 @@ color: #2180A5;
     text-align: center;
     
     }
-
+.legend1{
+  background-color:  #982a2a;
+    border-radius: 10px;
+     border:5em;
+     align-items: center;
+    text-align: center;
+}
      
   
   
