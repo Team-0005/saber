@@ -33,7 +33,7 @@
  <form action="#" class="conform">
     <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
     
-    <fieldset>
+    <fieldset class="fieldset1">
       <legend class="legend1">التطور النفسي النمائي</legend>
         <div class="row align-items-start">
                   <div class="col order-last ">
@@ -152,8 +152,8 @@
 
         </div>
     </fieldset>
-
-    <fieldset>
+    <br>
+    <fieldset class="fieldset1">
       <legend class="legend1">مشكلات النوم والطعام</legend>
       <div class="row align-items-start">
         <div class="col order-last">
@@ -188,8 +188,8 @@
         </div>
 
     </fieldset>
-
-    <fieldset>
+    <br>
+    <fieldset class="fieldset1">
       <legend class="legend1">الجانب النفسي الجنسي</legend>
       <div class="row align-items-start">
         <div class="col order-last">
@@ -209,28 +209,112 @@
             </select> 
             <label >السن عند البلوغ</label> 
         </div>
-        <div class="col order-first">
-          <input type="text" id="VIII2" name="VIII2" style="width:14em;">
+        <div class="col ">
+         <input type="text" id="VIII3" name="VIII3" style="width:9em;">
+         <label >الناحية البيولوجية الجنسية</label>
+        </div>
+        <div class="col ">
+          <input type="text" id="VIII2" name="VIII2" style="width:9em;">
          <label>حالة البلوغ الجنسي</label>
         </div>
+
+          <div class="col order-first">
+            <input type="text" id="VIII5" name="VIII5" style="width:9em;">
+            <label>الملـخص</label>
+          </div>
 
       </div>
       <div class="row align-items-start">
         
 
-        <div class="col ">
-          <input type="text" id="VIII3" name="VIII3" style="width:14em;">
-        <label >الناحية البيولوجية الجنسية</label>
-        </div>
-
-          <div class="col order-first">
-            <input type="text" id="VII4" name="VII4" style="width:14em;">
-            <label>المشكلة</label>
-          </div>
+       
         </div>
 
     </fieldset>
+    <br>
+    <fieldset class="fieldset1">
+      <legend class="legend1">الجانب النفس الإجتماعي الإقتصادي</legend>
+      <div class="row align-items-start">
+        <div class="col order-last">
+            <select name="V1" id="V1" class="selects"style="width:10em;">  
+                <option value="V1-1">أعزب</option>
+                <option value="V1-2">متزوج</option>
+                <option value="V1-3">مطلق</option>
+                <option value="V1-4">أرمل</option>
+                <option value="V1-5">منفصل</option>
+                <option value="V1-6">أخرى</option>
+            </select> 
+            <label >الحالة الإجتماعية</label> 
+        </div>
+        <div class="col ">
+         <input type="text" id="V3" name="V3" style="width:9em;">
+         <label >عدد الزوجات</label>
+        </div>
+        <div class="col ">
+          <input type="text" id="V2" name="V2" style="width:9em;">
+         <label>عدد مرات الطلاق</label>
+        </div>
+          <div class="col order-first">
+            <input type="text" id="V4" name="V4" style="width:9em;">
+            <label>عدد الأبناء</label>
+          </div>
+      </div>
+      <div class="row align-items-start">
+        <div class="col order-last">
+          <select name="V5" id="V5" class="selects"style="width:10em;">  
+              <option value="V5-1">مع والديه وإخوته</option>
+              <option value="V5-2">مع أبنائه فقط</option>
+              <option value="V5-3">مع زوجته وأبنائه</option>
+              <option value="V5-4">مع والدته</option>
+              <option value="V5-5">مع إخوته</option>
+              <option value="V5-6">أخرى</option>
+          </select> 
+          <label >مع من يعيش</label> 
+      </div>
+      <div class="col ">
+        <select name="V7" id="V7" class="selects"style="width:10em;">  
+          <option value="V7-1">مع الوالدين</option>
+          <option value="V7-2">يتيم</option>
+          <option value="V7-3">دور إيواء </option>
+      </select>        
+      <label >نوع التنشئة الإجتماعية</label>
+      </div>
+      <div class="col ">
+        <input type="text" id="V6" name="V6" style="width:9em;">
+       <label>عدد أفراد الأسرة </label>
+      </div>
 
+       </div>
+
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <input type="text" id="V7" name="V7" style="width:9em;">
+            <label >المهنة</label> 
+        </div>
+        <div class="col ">
+          <select name="V9" id="V9" class="selects"style="width:10em;">  
+            <option value="V9-1">وظيفة</option>
+            <option value="V9-2">الوالد</option>
+            <option value="V9-3">الوالدة</option>
+            <option value="V9-4">الإخوة</option>
+            <option value="V9-5">الأخوات</option>
+            <option value="V9-6">أعمال حرة</option>
+            <option value="V9-7">جمعيات خيرية</option>
+        </select>        
+        <label >مصدر الرزق</label>
+        </div>
+        <div class="col ">
+          <select name="V8" id="V8" class="selects"style="width:10em;">  
+            <option value="V8-1">منخفض</option>
+            <option value="V8-2">متوسط</option>
+            <option value="V8-3">مرتفع</option>
+        </select> 
+         <label>مستوى الدخل</label>
+        </div>
+      </div>
+
+    </fieldset>
+    <br>
 
 
 
@@ -243,7 +327,11 @@
  <br><br><br><br>
  <br><br><br><br>
  <br><br><br><br>
-
+ <br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br><br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br>
   <footer id="footer"class="footer-distributed">
 
     <div class="footer-right">

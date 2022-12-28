@@ -47,7 +47,7 @@ body {
     color: #488FAA;
     cursor: pointer;
   }
-.con{
+/* .con{
   position: absolute;
   width: 1139px;
     height: 100em;
@@ -56,8 +56,10 @@ body {
     background: rgba(185, 177, 177, 0.12);
     border-radius: 50px;
     text-decoration: none;
+    align-items: center;
+text-align:center;
 
-}
+} */
  
 .title{
 font-family: 'Tajawal';
@@ -119,7 +121,18 @@ color: #2180A5;
      align-items: center;
     text-align: center;
 }
-     
+
+.fieldset1{
+
+  align-items: center;
+    text-align: center;
+    margin-right: 15em;
+    width: 1139px;    
+    background: rgba(185, 177, 177, 0.12);
+    border-radius: 50px;
+    position:relative;
+    margin-left: 4.5em;
+}
   
   
   
