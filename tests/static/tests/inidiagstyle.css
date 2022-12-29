@@ -72,13 +72,11 @@ text-align:center;
 .title {
   font-family: 'Tajawal';
   font-style: normal;
-  font-size: 5em;
-  line-height: 2em;
-  display: flex;
   align-items: center;
   text-align: center;
-  margin-left: 13em;
+  /* margin-left: 28em; */
   color: #2180A5;
+  font: bold;
 }
 
 section {
