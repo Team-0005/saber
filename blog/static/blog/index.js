@@ -13,13 +13,14 @@ var modal = [
 ];
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  modal.forEach((element) => {
-    if (element.style.display == "bolck") {
+window.onclick = function () {
+  for (let index = 0; index < modal.length; index++) {
+    if (modal[index].style.display == "block") {
       element.style.display = "none";
     }
-  });
+  }
 };
+
 
 function check_symbol() {}
 
