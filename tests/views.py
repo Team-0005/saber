@@ -28,3 +28,12 @@ def test1(request):
     result = sum(ocdResult)   
     print(result)
     return render(request,'tests/ocdTest.html') 
+
+def test2(request):
+    depResult = []
+    for x in range(1,22):
+        a = int (request.POST.get('q'+str(x),False))
+        depResult.append(a)
+    result = sum(depResult)   
+    print(result)
+    return render(request,'tests/depressionTest.html') 
