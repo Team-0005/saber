@@ -1,7 +1,8 @@
 from django.db import models
-from tests.models import Diagnosis , PsychoTest
+from tests.models import Diagnosis, PsychoTest
 from blog.models import Psychologist
 # Create your models here.
+
 
 class Patient(models.Model):
     pt_id = models.AutoField(primary_key=True)
@@ -12,11 +13,14 @@ class Patient(models.Model):
     pt_birth_date = models.DateField()
     pt_code = models.CharField(max_length=4, blank=True, null=True)
     pt_plan = models.CharField(max_length=1000, blank=True, null=True)
-    p_email = models.ForeignKey(Psychologist, models.DO_NOTHING, db_column='P_email', blank=True, null=True)  # Field name made lowercase.
+    # Field name made lowercase.
+    p_email = models.ForeignKey(
+        Psychologist, models.DO_NOTHING, db_column='P_email', blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'patient'
+
 
 class Result(models.Model):
     result_id = models.AutoField(primary_key=True)
@@ -29,5 +33,3 @@ class Result(models.Model):
     class Meta:
         managed = False
         db_table = 'result'
-
- 
