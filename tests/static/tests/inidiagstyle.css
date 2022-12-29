@@ -134,7 +134,12 @@ color: #2180A5;
     margin-left: 4.5em;
 }
   
-  
+.inputType{
+  padding: 0.85em 0.75em;
+  border: 0.063em solid #5399B5;
+  border-radius: 5em;
+  direction: rtl;
+}
   
   
   /* footer */
