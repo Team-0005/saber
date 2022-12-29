@@ -44,42 +44,23 @@
       <th>رقم الجوال</th>
       <th>اسم المريض</th>
     </tr>
+    {% for listp in list %}
+    {% if listp.pt.p_email.p_email == psy.p_email %}
     <tr>
-      <td> تم وضع الخطة العلاجية</td>
-      <td>0564982610</td>
-      <td><a href="#">احمد عادل العلي</a></td>
+      {% if listp.test_status == 0 %}
+            <td>  لم يتم الاختبار </td>
+      {% elif listp.test_status == 1 %}
+            <td style="color: #C58E3C ;">  بحاجة الى خطة علاجية</td>
+      {% elif listp.test_status == 2 %}
+            <td style="color: #439936 ;">    تم وضع الخطة العلاجية </td>
+      {% endif %}
+      <td>{{listp.pt.pt_phone_no}}</td>
+      <td><a href="#"> {{listp.pt.pt_name}} </a></td>
     </tr>
-    <tr>
+    {% endif %}
+    {% endfor %}
 
-      <td>بحاجة الى خطة علاجية</td>
-      <td>0563259820</td>
-      <td><a href="#">امين يوسف سعد</a></td>
-    </tr>
-    <tr>
-      <td>لم يتم الاختبار</td>
-      <td>0549857280</td>
-      <td> <a href="">احلام خالد الخالدي</a></td>
-    </tr>
-     <tr>
-      <td></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-      <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-       <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-       <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
+
 
   </table>
 </div>

@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from . import models
 from .models import Patient
+from .models import Result
 from blog.models import Psychologist
 from django.contrib import messages 
 
@@ -39,5 +40,11 @@ def addPatient(request, p_email):
 
     
 
-def list_of_patient(request):
-    return render(request, 'patient/patientRec.html')  
+def list_of_patient(request, p_email):
+    psy = Psychologist.objects.get(p_email=p_email)
+    list = Result.objects.all() 
+    context = {
+        'psy'  : psy ,
+        'list' : list
+    }
+    return render(request, 'patient/patientRec.html', context)  
