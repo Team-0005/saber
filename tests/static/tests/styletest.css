@@ -1,91 +1,103 @@
 body {
   background-image: url(background2.png);
-  background-attachment:scroll;
+  background-attachment: scroll;
   background-size: cover;
   background-repeat: no-repeat;
-   background-color: #FFFFFF;
- background-image:im();
+  background-color: #FFFFFF;
+  background-image: im();
 
   font-family: 'Tajawal', sans-serif;
 }
+
 /* Header */
 #logo {
   float: right;
 }
 
 /*styling navigation bar and footer*/
-nav, footer {
+nav,
+footer {
   color: #000000;
   text-align: center;
 }
 
-nav a, footer a {
+nav a,
+footer a {
   font-size: 1.063em;
   color: #000000;
 
 }
-.col7{
+
+.col7 {
   float: left;
 }
+
 nav {
 
   width: 80%;
   float: right;
-  margin:1.5em 1em 2em 3em;
+  margin: 1.5em 1em 2em 3em;
 }
 
 footer {
   padding-top: 5em;
 }
+
 nav a {
   text-decoration: none;
   float: right;
-  padding:  1em 2.5em 3em;
+  padding: 1em 2.5em 3em;
 }
 
-nav a:hover, footer a:hover, .link:hover {
+nav a:hover,
+footer a:hover,
+.link:hover {
   color: #488FAA;
   cursor: pointer;
 }
 
-#titl{
+#titl {
   margin-left: 29em;
   height: 6em;
   width: 28em;
   text-align: center;
   background: rgba(219, 230, 240, 0.7);
   border-radius: 2em;
-    
-  }
-  .tit{
-    text-align: center;
-    font-family: 'Tajawal';
-    font-weight: bold;
-    font-size: 2em;
-    color: #2180A5;
-    }
-    #tab {
-      width: 67em;
-      height: 25em;
-      margin-left: 10em;
-      margin-top: 2em;
-      background: rgba(255, 255, 255, 0.60);
-      border-radius: 4em;
-      text-decoration: none;
+
 }
+
+.tit {
+  text-align: center;
+  font-family: 'Tajawal';
+  font-weight: bold;
+  font-size: 2em;
+  color: #2180A5;
+}
+
+#tab {
+  width: 67em;
+  height: 25em;
+  margin-left: 10em;
+  margin-top: 2em;
+  background: rgba(255, 255, 255, 0.60);
+  border-radius: 4em;
+  text-decoration: none;
+}
+
 .rowtest {
-	display: flex;
-	align-content: center;
-	justify-content: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
-.rowtest a{
-	background-color: #488FAA;
-	align-items: center;
-	margin: 3em;
-	margin-top: 3.7em;
-	height: 7.8em;
-	width: 7.8em;
-	border-radius: 2em;
+
+.rowtest a {
+  background-color: #488FAA;
+  align-items: center;
+  margin: 3em;
+  margin-top: 3.7em;
+  height: 7.8em;
+  width: 7.8em;
+  border-radius: 2em;
 
   text-align: center;
   font-family: 'Tajawal';
@@ -95,11 +107,12 @@ nav a:hover, footer a:hover, .link:hover {
   /* margin-top: 2.5em; */
   text-decoration: none;
 }
-.tes{
+
+.tes {
   margin-top: 2.4em;
   font-family: 'Tajawal';
-}  
-	
+}
+
 
 
 
@@ -113,20 +126,21 @@ nav a:hover, footer a:hover, .link:hover {
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
 * {
-font-family: Roboto;
+  font-family: Roboto;
 }
 
-.footer-distributed{
-background: #E6E3E8;
-box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
-box-sizing: border-box;
-width: 100%;
-font: bold 16px sans-serif;
+.footer-distributed {
+  background: #E6E3E8;
+  box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
 
-text-align: left;
-padding: 50px 60px 40px;
-overflow: hidden;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
 }
+
 section {
   width: 100%;
   display: inline-block;
@@ -138,70 +152,74 @@ section {
 }
 
 
-  /* Footer left */
+/* Footer left */
 
-.footer-distributed .footer-left{
+.footer-distributed .footer-left {
   float: left;
-  display:inline-block;
+  display: inline-block;
 }
+
 /* Footer links */
 
 
-.footer-distributed .footer-links a{
-  display:flow-root;
-  line-height:0.5em;
-  padding: 1em;
-  font-size: 0.9em;
-  font-family: 'Tajawal';
-  text-decoration:none;
-  color:  inherit;
-  }
-
-  .footer-distributed .footer-links2 a{
-  display:flow-root;
-  line-height:0.5em;
-  padding: 1em;
-
-  font-size: 0.9em;
-  font-family: 'Tajawal';
-  text-decoration:none;
-  color:  inherit;
-  }
-  .footer-distributed .footer-links3 a{
+.footer-distributed .footer-links a {
   display: flow-root;
-  line-height:0.5em;
+  line-height: 0.5em;
+  padding: 1em;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-links2 a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
+
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-links3 a {
+  display: flow-root;
+  line-height: 0.5em;
   padding: 1em;
   float: right;
 
   font-size: 0.9em;
   font-family: 'Tajawal';
-  text-decoration:none;
-  color:  inherit;
-  }
-  #h{
-      color:  #0E0F1D;
-    font-size: 1.2em;
+  text-decoration: none;
+  color: inherit;
+}
 
-    }
+#h {
+  color: #0E0F1D;
+  font-size: 1.2em;
+
+}
 
 
-    .footer-distributed .footer-company-name{
-    color:  #0E0F1D;
-    font-size: 1em;
-    font-weight: normal;
+.footer-distributed .footer-company-name {
+  color: #0E0F1D;
+  font-size: 1em;
+  font-weight: normal;
 
-    }
+}
+
 /* Footer social icons */
 
 
-.footer-distributed h3{
-  color:  #0E0F1D;
+.footer-distributed h3 {
+  color: #0E0F1D;
   font: bold 1em 'Tajawal', sans-serif;
 
 
-  }
+}
 
-  .footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
 
   display: contents;
   width: auto;
@@ -211,27 +229,33 @@ section {
   color: #0E0F1D;
   line-height: 1em;
 
-  }
+}
+
 /* Footer Right */
 
-.footer-distributed .footer-right  {
+.footer-distributed .footer-right {
   float: right;
 
-  }
+}
 
-  .footer-distributed .footer-right p{
+.footer-distributed .footer-right p {
   display: flow-root;
   vertical-align: top;
   margin-left: 8em;
   color: #0E0F1D;
-  }
+}
 
 
-  .footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
-    color: #488FAA;
-    cursor: pointer;
-  }
-  /* If you don't want the footer to be responsive, remove these media queries */
+.footer-icons a:hover,
+.footer-links a:hover,
+.footer-links2 a:hover,
+.footer-links3 a:hover,
+.link:hover {
+  color: #488FAA;
+  cursor: pointer;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 1000px) {
 
@@ -239,28 +263,28 @@ section {
     font: bold 14px sans-serif;
   }
 
-  .footer-distributed .footer-company-name{
+  .footer-distributed .footer-company-name {
     font-size: 12px;
   }
 
 
 
-  }
+}
 
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
 
-  .footer-distributed{
+  .footer-distributed {
     padding: 30px;
   }
 
   .footer-distributed .footer-left,
-  .footer-distributed .footer-right{
+  .footer-distributed .footer-right {
     float: none;
     max-width: 300px;
     margin: 0 auto;
   }
 
-  .footer-distributed .footer-left{
+  .footer-distributed .footer-left {
     margin-bottom: 40px;
   }
-  }
+}

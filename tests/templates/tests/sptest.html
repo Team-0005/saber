@@ -13,53 +13,55 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
- 
+
 </head>
+
 <body>
   <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="{% url 'blog:home' %}">الصفحة الرئيسية</a></div>
-      <div class="col6"><a href="#whowe">من نحن؟</a></div>
-        <div class="col6"><a href="#footer">تواصل معنا</a></div>
-            <div class="col7"> <a   id="login" href="#" ></i>تسجيل خروج </a> 
-              <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50"></div>
+    <div class="col6"><a href="#whowe">من نحن؟</a></div>
+    <div class="col6"><a href="#footer">تواصل معنا</a></div>
+    <div class="col7"> <a id="login" href="#"></i>تسجيل خروج </a>
+      <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50">
+    </div>
   </nav>
   <br><br><br><br>
- <div id ="titl">
-  <p class="tit">{{detail}}</p>
-   
+  <div id="titl">
+    <p class="tit">{{detail}}</p>
+
   </div>
 
-  <div id ="uses">
-    <p class="tit"> :عدد مرات استخدام المقياس </p> 
-    <p id="countuses"> {{count}}  </p> 
-   </div>
+  <div id="uses">
+    <p class="tit"> :عدد مرات استخدام المقياس </p>
+    <p id="countuses"> {{count}} </p>
+  </div>
 
- <section id="tab">
-  
+  <section id="tab">
+
     <p class="rowtest">{{detail.description}}</p>
-  
- </section>
+
+  </section>
 
 
- <br><br><br><br>
-  
-  <footer id="footer"class="footer-distributed">
+  <br><br><br><br>
+
+  <footer id="footer" class="footer-distributed">
 
     <div class="footer-right">
-  <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
+      <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
 
-  <p class="footer-links">
-   <a id="h" href="">الصفحات</a>
+      <p class="footer-links">
+        <a id="h" href="">الصفحات</a>
 
-   <a href="#">الصفحة الرئيسيه </a>
+        <a href="#">الصفحة الرئيسيه </a>
 
-   <a href="#">من نحــن؟</a>
+        <a href="#">من نحــن؟</a>
 
-   <a href="#">تواصل معنا</a>
-  </p>
+        <a href="#">تواصل معنا</a>
+      </p>
 
-      </div>
+    </div>
 
 
 
@@ -78,20 +80,20 @@
         <a href="#">سجل المرضـى </a>
       </p>
 
-  </div>
-  <p class="footer-links3">
-   <a id="h" href=""> :التواصل </a>
+    </div>
+    <p class="footer-links3">
+      <a id="h" href=""> :التواصل </a>
 
-   <a href="#">+966 547876876 </a>
+      <a href="#">+966 547876876 </a>
 
-  </p>
-  <div class="footer-left">
+    </p>
+    <div class="footer-left">
       <div class="footer-icons">
-  <br><br>
+        <br><br>
 
 
-         <h3>  مواقع التواصل  </h3>
-  <br>
+        <h3> مواقع التواصل </h3>
+        <br>
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-linkedin"></i></a>
@@ -99,9 +101,9 @@
 
 
 
-    </div>
+      </div>
 
-  </div>
+    </div>
 
   </footer>
 </body>

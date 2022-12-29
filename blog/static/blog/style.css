@@ -1,12 +1,11 @@
-
 /*styling body*/
 body {
   background-image: url(background.jpg);
-  background-attachment:scroll;
+  background-attachment: scroll;
   background-size: contain;
   background-repeat: no-repeat;
-   background-color: #FFFFFF;
- background-image:im();
+  background-color: #FFFFFF;
+  background-image: im();
 
   font-family: 'Tajawal', sans-serif;
 }
@@ -17,18 +16,21 @@ body {
 }
 
 /*styling navigation bar and footer*/
-nav, footer {
+nav,
+footer {
   color: #000000;
   text-align: center;
 }
 
-nav a, footer a {
+nav a,
+footer a {
   font-size: 1.063em;
   color: #000000;
 
 }
-.col7{
-float: left;
+
+.col7 {
+  float: left;
 
 }
 
@@ -37,7 +39,7 @@ nav {
 
   width: 80%;
   float: right;
-  margin:1.5em 1em 2em 3em;
+  margin: 1.5em 1em 2em 3em;
 }
 
 footer {
@@ -47,10 +49,12 @@ footer {
 nav a {
   text-decoration: none;
   float: right;
-  padding:  1em 2.5em 3em;
+  padding: 1em 2.5em 3em;
 }
 
-nav a:hover, footer a:hover, .link:hover {
+nav a:hover,
+footer a:hover,
+.link:hover {
   color: #488FAA;
   cursor: pointer;
 }
@@ -61,30 +65,32 @@ nav a:hover, footer a:hover, .link:hover {
 
 .container1 {
   background-image: url(whowe.png);
-    background-size: contain;
-    background-repeat: no-repeat ;
-margin: 30em 5em 30em 0;
-    padding:15em 10em 30em 0em;
-    width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 30em 5em 30em 0;
+  padding: 15em 10em 30em 0em;
+  width: 100%;
   position: relative;
   text-align: center;
   color: white;
 }
+
 .row-1 {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #000000;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #000000;
   position: absolute;
-  top: 11em ;
+  top: 11em;
   left: 45%;
   transform: translate(-50%, -50%);
 }
+
 .row-2 {
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #B9B1B1;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #B9B1B1;
   position: absolute;
   margin-top: 6em;
   left: 45%;
@@ -92,7 +98,10 @@ margin: 30em 5em 30em 0;
 }
 
 /*set style for all input elements*/
-input[type=text], input[type=tel], input[type=email], input[type=password] {
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=password] {
   text-align: right;
   float: right;
   margin-left: 0.085em;
@@ -105,8 +114,9 @@ input[type=text], input[type=tel], input[type=email], input[type=password] {
 
 input[type="tel"]::placeholder {
   text-align: right;
-  
+
 }
+
 input[value="********05"] {
   color: rgba(0, 0, 0, 0.5);
 }
@@ -121,18 +131,21 @@ input[type="text"]::placeholder {
 .forms-row {
   padding-right: 6em;
 }
+
 .col {
   float: right;
-  margin:2em 4em 5em 0em;
+  margin: 2em 4em 5em 0em;
   display: inline-table;
   padding: 2em 0em 0em 0em;
 }
+
 .col8 {
-  margin:0em 6em 0em 4em;
+  margin: 0em 6em 0em 4em;
   display: inline-table;
 }
+
 .col9 {
-  margin:4em 0em 0em 4em;
+  margin: 4em 0em 0em 4em;
   display: inline-table;
   padding: 0em 3em 1em 2em;
 }
@@ -142,7 +155,7 @@ input[type="text"]::placeholder {
 
   text-align: right;
   width: 100%;
-  margin-top:0em;
+  margin-top: 0em;
   margin: 1em 0em 0em 0em;
 }
 
@@ -153,36 +166,42 @@ input[type="text"]::placeholder {
 
 }
 
-.container p{
+.container p {
   font-size: 0.8em;
 
 }
 
-.col-6{
-    margin-top: 2em;
+.col-6 {
+  margin-top: 2em;
 }
-a.col-1 a:link{
-  text-decoration-line:none !important;
+
+a.col-1 a:link {
+  text-decoration-line: none !important;
   margin-left: 1em;
-  font-family: 'Cairo'!important;
+  font-family: 'Cairo' !important;
   color: #5399B5 !important;
 }
+
 /*row */
-.row{
+.row {
   text-align: center;
 
 }
-.container.row{
+
+.container.row {
 
   width: 20em;
-  margin : 5em;
+  margin: 5em;
 
 }
+
 .row-2 {
   text-align: right;
 }
 
-.row:after,.row-2:after,.forms-row:after {
+.row:after,
+.row-2:after,
+.forms-row:after {
   content: "";
   display: table;
   clear: both;
@@ -190,7 +209,7 @@ a.col-1 a:link{
 
 
 
-.modal-content{
+.modal-content {
   background-image: url(backlog1.png);
   background-size: cover;
 
@@ -212,7 +231,7 @@ a.col-1 a:link{
 .button:hover {
   background-color: #D3E6ED;
   cursor: pointer;
-  box-shadow:.1em .1em 0.1em #D7D7D7;
+  box-shadow: .1em .1em 0.1em #D7D7D7;
 }
 
 .button:disabled {
@@ -223,18 +242,20 @@ a.col-1 a:link{
 
 /*set style for paragraphs*/
 @import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
-#buttonjoin{
-  margin-top:0em;
+
+#buttonjoin {
+  margin-top: 0em;
 }
+
 .top-p {
   float: left;
   text-align: center;
   margin-left: 3em;
-  margin-top:  5em;
+  margin-top: 5em;
   font-size: 2.5em;
   color: #000000;
   max-width: 55ch;
-  font-family:'Tajawal', serif;
+  font-family: 'Tajawal', serif;
   font-weight: bolder;
 }
 
@@ -242,14 +263,15 @@ a.col-1 a:link{
   float: left;
   text-align: center;
   margin-left: 5em;
-  margin-top:  0em;
+  margin-top: 0em;
   font-size: 1.7em;
   color: #000000;
   max-width: 100ch;
-  font-family:'Tajawal', serif;
+  font-family: 'Tajawal', serif;
   font-weight: bolder;
 }
-#buttonjoin{
+
+#buttonjoin {
 
   padding-left: 10em;
   margin-right: 1em;
@@ -259,27 +281,32 @@ a.col-1 a:link{
 
 
 
- .modal-content input[type=email], .modal-content input[type=password],.modal-content input[type=tel] {
-  width: 110% ;
+.modal-content input[type=email],
+.modal-content input[type=password],
+.modal-content input[type=tel] {
+  width: 110%;
 }
+
 ::placeholder {
   font-size: 1em;
-  text-align:right !important;
+  text-align: right !important;
 }
+
 /*singin and modal singin*/
 
 .modal-content {
 
-background-color: #D3E6ED;
-/*text-align: center;*/
+  background-color: #D3E6ED;
+  /*text-align: center;*/
   border: 0.063em solid #5399B5;
   border-radius: 2em;
   width: 47em !important;
-height: 38em;
+  height: 38em;
 
 }
+
 .sign-form {
-    padding: 2em 3em 1em 0em;
+  padding: 2em 3em 1em 0em;
   padding-right: 15em;
   line-height: 2;
   width: 60%;
@@ -373,37 +400,37 @@ footer*
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 
 * {
-font-family: Roboto;
+  font-family: Roboto;
 }
 
-.footer-distributed{
-background: #E6E3E8;
-box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
-box-sizing: border-box;
-width: 100%;
-font: bold 16px sans-serif;
+.footer-distributed {
+  background: #E6E3E8;
+  box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
 
-text-align: left;
-padding: 50px 60px 40px;
-overflow: hidden;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
 }
 
 section {
-width: 100%;
-display: inline-block;
-background: #ccc;
-text-align: justify;
-font-size: 1em;
-font-weight: 10em;
-text-decoration: underline;
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  text-align: justify;
+  font-size: 1em;
+  font-weight: 10em;
+  text-decoration: underline;
 }
 
 
 /* Footer left */
 
-.footer-distributed .footer-left{
-float: left;
-display:inline-block;
+.footer-distributed .footer-left {
+  float: left;
+  display: inline-block;
 }
 
 
@@ -412,90 +439,95 @@ display:inline-block;
 /* Footer links */
 
 
-.footer-distributed .footer-links a{
-display:flow-root;
-line-height:0.5em;
-padding: 1em;
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
+.footer-distributed .footer-links a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
 }
 
-.footer-distributed .footer-links2 a{
-display:flow-root;
-line-height:0.5em;
-padding: 1em;
+.footer-distributed .footer-links2 a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
 
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
-}
-.footer-distributed .footer-links3 a{
-display: flow-root;
-line-height:0.5em;
-padding: 1em;
-float: right;
-
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
 }
 
-#h{
-  color:  #0E0F1D;
-font-size: 1.2em;
+.footer-distributed .footer-links3 a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
+  float: right;
+
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
+}
+
+#h {
+  color: #0E0F1D;
+  font-size: 1.2em;
 
 }
 
 
-.footer-distributed .footer-company-name{
-color:  #0E0F1D;
-font-size: 1em;
-font-weight: normal;
+.footer-distributed .footer-company-name {
+  color: #0E0F1D;
+  font-size: 1em;
+  font-weight: normal;
 
 }
 
 /* Footer social icons */
 
 
-.footer-distributed h3{
-color:  #0E0F1D;
-font: bold 1em 'Tajawal', sans-serif;
+.footer-distributed h3 {
+  color: #0E0F1D;
+  font: bold 1em 'Tajawal', sans-serif;
 
 
 }
 
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
 
-display: contents;
-width: auto;
-height: 0em;
-cursor: pointer;
-font-size: 2em;
-color: #0E0F1D;
-line-height: 1em;
+  display: contents;
+  width: auto;
+  height: 0em;
+  cursor: pointer;
+  font-size: 2em;
+  color: #0E0F1D;
+  line-height: 1em;
 
 }
 
 /* Footer Right */
 
-.footer-distributed .footer-right  {
-float: right;
+.footer-distributed .footer-right {
+  float: right;
 
 }
 
-.footer-distributed .footer-right p{
-display: flow-root;
-vertical-align: top;
-margin-left: 8em;
-color: #0E0F1D;
+.footer-distributed .footer-right p {
+  display: flow-root;
+  vertical-align: top;
+  margin-left: 8em;
+  color: #0E0F1D;
 }
 
 
-.footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
+.footer-icons a:hover,
+.footer-links a:hover,
+.footer-links2 a:hover,
+.footer-links3 a:hover,
+.link:hover {
   color: #488FAA;
   cursor: pointer;
 }
@@ -507,13 +539,13 @@ color: #0E0F1D;
 
 @media (max-width: 1000px) {
 
-.footer-distributed {
-  font: bold 14px sans-serif;
-}
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
 
-.footer-distributed .footer-company-name{
-  font-size: 12px;
-}
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
 
 
 
@@ -521,39 +553,40 @@ color: #0E0F1D;
 
 @media (max-width: 800px) {
 
-.footer-distributed{
-  padding: 30px;
-}
+  .footer-distributed {
+    padding: 30px;
+  }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-right{
-  float: none;
-  max-width: 300px;
-  margin: 0 auto;
-}
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-.footer-distributed .footer-left{
-  margin-bottom: 40px;
-}
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
 }
 
 /*login*/
 
 
 /*list of test*/
-#titl{
+#titl {
   margin-left: 25em;
   height: 6em;
   width: 28em;
   text-align: center;
   background: rgba(219, 230, 240, 0.7);
   border-radius: 2em;
-      
-  }
-  .tit{
-    text-align: center;
-    font-family: 'Tajawal';
-    font-weight: bold;
-    font-size: 2em;
-    color: #2180A5;
-  }
+
+}
+
+.tit {
+  text-align: center;
+  font-family: 'Tajawal';
+  font-weight: bold;
+  font-size: 2em;
+  color: #2180A5;
+}

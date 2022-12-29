@@ -1,5 +1,6 @@
 from django import forms
 
+
 class psycho_form(forms.ModelForm):
     p_email = forms.CharField()
     p_password = forms.CharField()
@@ -9,6 +10,3 @@ class psycho_form(forms.ModelForm):
     current_job_title = forms.CharField()
     scfhs_no = forms.CharField()
     scfhs_file = forms.FileField()
-
-    
- 

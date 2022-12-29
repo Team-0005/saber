@@ -14,172 +14,175 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
-<body >
+
+<body>
   <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="{% url 'blog:home' %}">الصفحة الرئيسية</a></div>
-      <div class="col6"><a href="#whowe">من نحن؟</a></div>
-        <div class="col6"><a href="#footer">تواصل معنا</a></div>
-            <div class="col7"> <a   id="login" href="#" ></i>تسجيل خروج </a> 
-              <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50"></div>
+    <div class="col6"><a href="#whowe">من نحن؟</a></div>
+    <div class="col6"><a href="#footer">تواصل معنا</a></div>
+    <div class="col7"> <a id="login" href="#"></i>تسجيل خروج </a>
+      <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50">
+    </div>
   </nav>
   <br><br><br><br>
- 
+
   <div class="con text-center">
- <form action="#" class="conform">
-    <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
-    
-    <fieldset class="fieldset1">
-      <legend class="legend1">التطور النفسي النمائي</legend>
+    <form action="#" class="conform">
+      <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
+
+      <fieldset class="fieldset1">
+        <legend class="legend1">التطور النفسي النمائي</legend>
         <div class="row align-items-start">
-                  <div class="col order-last ">
-                      <select name="arrangementOfPatientInFamily" id="arrangementOfPatientInFamily" class="selects"style="width:10em;">  
-                          <option value="normal">الاول</option>
-                          <option value="second">الثاني</option>
-                          <option value="Third">الثالث</option>
-                          <option value="fourth">الرابع</option>
-                          <option value="V">الخامس</option>
-                          <option value="VI">السادس</option>
-                          <option value="VII">السابع</option>
-                          <option value="VIII">الثامن</option>
-                          <option value="VIIII">التاسع</option>
-                          <option value="VV">العاشر</option>
-                      </select> 
-                      <label for="cars">ترتيب المريض في الأسرة</label>
-                    
-                  </div>
+          <div class="col order-last ">
+            <select name="arrangementOfPatientInFamily" id="arrangementOfPatientInFamily" class="selects"
+              style="width:10em;">
+              <option value="normal">الاول</option>
+              <option value="second">الثاني</option>
+              <option value="Third">الثالث</option>
+              <option value="fourth">الرابع</option>
+              <option value="V">الخامس</option>
+              <option value="VI">السادس</option>
+              <option value="VII">السابع</option>
+              <option value="VIII">الثامن</option>
+              <option value="VIIII">التاسع</option>
+              <option value="VV">العاشر</option>
+            </select>
+            <label for="cars">ترتيب المريض في الأسرة</label>
 
-                  <div class="col">
-                      <select name="Pregnancy" id="Pregnancy" class="selects"style="width:10em;">  
-                          <option value="Month6">ستة شهور</option>
-                          <option value="Month7">سبعة شهور</option>
-                          <option value="Month8">ثمانية شهور</option>
-                          <option value="Month9">تسعة شهور</option>
-                          <option value="Month10">10- شهور</option>
-                      </select> 
-                      <label for="Pregnancy">مدة الحمل</label>
-                  </div>
+          </div>
 
-                  <div class="col order-first">
-                      <select name="Pregnancybr" id="Pregnancybr" class="selects" style="width:10em;">
-                          <option value="natural">طبيعي</option>
-                          <option value="Caesarean">قيصري</option>
-                      </select> 
-                      <label for="Pregnancy">نوع الولادة</label>
-                    </div>
-      
-              </div>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="IV1" id="IV1" class="selects"style="width:10em;">  
-                <option value="yesAccident">توجد</option>
-                <option value="NoAccident">لا توجد</option>
-            </select> 
-            <label for="cars">  حوادث أثناء الولادة </label> 
+          <div class="col">
+            <select name="Pregnancy" id="Pregnancy" class="selects" style="width:10em;">
+              <option value="Month6">ستة شهور</option>
+              <option value="Month7">سبعة شهور</option>
+              <option value="Month8">ثمانية شهور</option>
+              <option value="Month9">تسعة شهور</option>
+              <option value="Month10">10- شهور</option>
+            </select>
+            <label for="Pregnancy">مدة الحمل</label>
+          </div>
+
+          <div class="col order-first">
+            <select name="Pregnancybr" id="Pregnancybr" class="selects" style="width:10em;">
+              <option value="natural">طبيعي</option>
+              <option value="Caesarean">قيصري</option>
+            </select>
+            <label for="Pregnancy">نوع الولادة</label>
+          </div>
+
         </div>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="IV1" id="IV1" class="selects" style="width:10em;">
+              <option value="yesAccident">توجد</option>
+              <option value="NoAccident">لا توجد</option>
+            </select>
+            <label for="cars"> حوادث أثناء الولادة </label>
+          </div>
 
-        <div class="col">
-          <select name="IV3" id="IV3" class="selects" style="width:10em;">
-            <option value="yesIV3">لايوجد تأخر نمائي</option>
-            <option value="NoIV3">يوجد تأخر نمائي</option>
-        </select> 
-        <label for="Pregnancy"> التاريخ النمائي طفولة</label>
-        </div>
+          <div class="col">
+            <select name="IV3" id="IV3" class="selects" style="width:10em;">
+              <option value="yesIV3">لايوجد تأخر نمائي</option>
+              <option value="NoIV3">يوجد تأخر نمائي</option>
+            </select>
+            <label for="Pregnancy"> التاريخ النمائي طفولة</label>
+          </div>
 
-        <div class="col ">
-          <input type="text" id="IV2" name="IV2" class="inputType">
+          <div class="col ">
+            <input type="text" id="IV2" name="IV2" class="inputType">
             <label for="Pregnancy">اذكر حادثة الولادة</label>
-        </div>
+          </div>
 
           <div class="col order-first">
             <input type="date" id="IV4" name="IV4">
-          <label for="IV4">تاريخه </label>
+            <label for="IV4">تاريخه </label>
           </div>
         </div>
 
         <div class="row align-items-start">
           <div class="col order-last">
-              <select name="IV5" id="IV5" class="selects" style="width:10em;">
+            <select name="IV5" id="IV5" class="selects" style="width:10em;">
               <option value="yesIV5">لايوجد تأخر نمائي</option>
               <option value="NoIV5">يوجد تأخر نمائي</option>
-          </select> 
-          <label > التاريخ النمائي مراهقة</label>
+            </select>
+            <label> التاريخ النمائي مراهقة</label>
           </div>
           <div class="col">
             <select name="IV7" id="IV7" class="selects" style="width:10em;">
               <option value="yesIV3">لايوجد تأخر نمائي</option>
               <option value="NoIV3">يوجد تأخر نمائي</option>
-          </select> 
-          <label> التاريخ النمائي رشد</label>
+            </select>
+            <label> التاريخ النمائي رشد</label>
           </div>
           <div class="col ">
             <input type="date" id="IV6" name="IV6">
-          <label >تاريخه </label>
-          </div>
-
-            <div class="col order-first">
-              <input type="date" id="IV8" name="IV8">
             <label>تاريخه </label>
-            </div>
-
           </div>
 
-          <div class="row align-items-start">
-            <div class="col order-last ">
-              <select name="IV9" id="IV9" class="selects" style="width:11em;">
-                <option value="NoIV9">لا يوجد</option>
-                <option value="yesIV9-1">  التعرض لفقد أشخاص</option>
-                <option value="yesIV9-2">  التعرض لخسارة مالية</option>
-                <option value="yesIV9-3">  التعرض لإعتداء جنسي</option>
-                <option value="yesIV9-4">  التعرض لحوادث معينة</option>
-            </select> 
+          <div class="col order-first">
+            <input type="date" id="IV8" name="IV8">
+            <label>تاريخه </label>
+          </div>
+
+        </div>
+
+        <div class="row align-items-start">
+          <div class="col order-last ">
+            <select name="IV9" id="IV9" class="selects" style="width:11em;">
+              <option value="NoIV9">لا يوجد</option>
+              <option value="yesIV9-1"> التعرض لفقد أشخاص</option>
+              <option value="yesIV9-2"> التعرض لخسارة مالية</option>
+              <option value="yesIV9-3"> التعرض لإعتداء جنسي</option>
+              <option value="yesIV9-4"> التعرض لحوادث معينة</option>
+            </select>
             <label>أحداث راهنة</label>
-            </div>
+          </div>
 
-            <div class="col">
-              <input type="date" id="IV10" name="IV10">
-              <label>تاريخه </label>
-            </div>
+          <div class="col">
+            <input type="date" id="IV10" name="IV10">
+            <label>تاريخه </label>
+          </div>
 
-            <div class="col order-first">
-              <input type="text" id="IV11" name="IV11" style="width:14em;" class="inputType">
-              <label>مـــلــخــص</label>
-              </div>
+          <div class="col order-first">
+            <input type="text" id="IV11" name="IV11" style="width:14em;" class="inputType">
+            <label>مـــلــخــص</label>
+          </div>
 
         </div>
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">مشكلات النوم والطعام</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="VII1" id="VII1" class="selects"style="width:10em;">  
-                <option value="yesVII1">توجد</option>
-                <option value="NoVII1">لا توجد</option>
-            </select> 
-            <label >مشكلات الطعام</label> 
-        </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">مشكلات النوم والطعام</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="VII1" id="VII1" class="selects" style="width:10em;">
+              <option value="yesVII1">توجد</option>
+              <option value="NoVII1">لا توجد</option>
+            </select>
+            <label>مشكلات الطعام</label>
+          </div>
 
-        <div class="col">
-        <select name="VII3" id="VII3" class="selects"style="width:10em;">  
-          <option value="yesVII3">توجد</option>
-          <option value="NoVII3">لا توجد</option>
-      </select> 
-      <label>مشكلات النوم</label>
-        </div>
+          <div class="col">
+            <select name="VII3" id="VII3" class="selects" style="width:10em;">
+              <option value="yesVII3">توجد</option>
+              <option value="NoVII3">لا توجد</option>
+            </select>
+            <label>مشكلات النوم</label>
+          </div>
 
-        <div class="col ">
-          <select name="VII2" id="VII2" class="selects" style="width:10em;">
-            <option value="VII2-1"> نقص الشهيه</option>
-            <option value="VII2-2">زيادة الشهيه</option>
-            <option value="VII2-2">أخرى</option>
-        </select> 
-        <label >المــشكلة</label>
-        </div>
+          <div class="col ">
+            <select name="VII2" id="VII2" class="selects" style="width:10em;">
+              <option value="VII2-1"> نقص الشهيه</option>
+              <option value="VII2-2">زيادة الشهيه</option>
+              <option value="VII2-2">أخرى</option>
+            </select>
+            <label>المــشكلة</label>
+          </div>
 
           <div class="col order-first">
             <input type="text" id="VII4" name="VII4" style="width:14em;" class="inputType">
@@ -187,261 +190,261 @@
           </div>
         </div>
 
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">الجانب النفسي الجنسي</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="VIII1" id="VIII1" class="selects"style="width:10em;">  
-                <option value="yesVII1">10</option>
-                <option value="NoVII1">11</option>
-                <option value="yesVII1">12</option>
-                <option value="NoVII1">13</option>
-                <option value="yesVII1">14</option>
-                <option value="NoVII1">15</option>
-                <option value="yesVII1">16</option>
-                <option value="NoVII1">17</option>
-                <option value="yesVII1">18</option>
-                <option value="NoVII1">19</option>
-                <option value="yesVII1">20</option>
-                <option value="NoVII1">21</option>
-            </select> 
-            <label >السن عند البلوغ</label> 
-        </div>
-        <div class="col ">
-         <input type="text" id="VIII3" name="VIII3" style="width:9em;" class="inputType">
-         <label >الناحية البيولوجية الجنسية</label>
-        </div>
-        <div class="col ">
-          <input type="text" id="VIII2" name="VIII2" style="width:9em;" class="inputType">
-         <label>حالة البلوغ الجنسي</label>
-        </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">الجانب النفسي الجنسي</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="VIII1" id="VIII1" class="selects" style="width:10em;">
+              <option value="yesVII1">10</option>
+              <option value="NoVII1">11</option>
+              <option value="yesVII1">12</option>
+              <option value="NoVII1">13</option>
+              <option value="yesVII1">14</option>
+              <option value="NoVII1">15</option>
+              <option value="yesVII1">16</option>
+              <option value="NoVII1">17</option>
+              <option value="yesVII1">18</option>
+              <option value="NoVII1">19</option>
+              <option value="yesVII1">20</option>
+              <option value="NoVII1">21</option>
+            </select>
+            <label>السن عند البلوغ</label>
+          </div>
+          <div class="col ">
+            <input type="text" id="VIII3" name="VIII3" style="width:9em;" class="inputType">
+            <label>الناحية البيولوجية الجنسية</label>
+          </div>
+          <div class="col ">
+            <input type="text" id="VIII2" name="VIII2" style="width:9em;" class="inputType">
+            <label>حالة البلوغ الجنسي</label>
+          </div>
 
           <div class="col order-first">
             <input type="text" id="VIII5" name="VIII5" style="width:9em;" class="inputType">
             <label>الملـخص</label>
           </div>
 
-      </div>
-      <div class="row align-items-start">
-        
+        </div>
+        <div class="row align-items-start">
 
-       
+
+
         </div>
 
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">الجانب النفس الإجتماعي الإقتصادي</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="V1" id="V1" class="selects"style="width:10em;">  
-                <option value="V1-1">أعزب</option>
-                <option value="V1-2">متزوج</option>
-                <option value="V1-3">مطلق</option>
-                <option value="V1-4">أرمل</option>
-                <option value="V1-5">منفصل</option>
-                <option value="V1-6">أخرى</option>
-            </select> 
-            <label >الحالة الإجتماعية</label> 
-        </div>
-        <div class="col ">
-         <input type="text" id="V3" name="V3" style="width:9em;" class="inputType">
-         <label >عدد الزوجات</label>
-        </div>
-        <div class="col ">
-          <input type="text" id="V2" name="V2" style="width:9em;" class="inputType">
-         <label>عدد مرات الطلاق</label>
-        </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">الجانب النفس الإجتماعي الإقتصادي</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="V1" id="V1" class="selects" style="width:10em;">
+              <option value="V1-1">أعزب</option>
+              <option value="V1-2">متزوج</option>
+              <option value="V1-3">مطلق</option>
+              <option value="V1-4">أرمل</option>
+              <option value="V1-5">منفصل</option>
+              <option value="V1-6">أخرى</option>
+            </select>
+            <label>الحالة الإجتماعية</label>
+          </div>
+          <div class="col ">
+            <input type="text" id="V3" name="V3" style="width:9em;" class="inputType">
+            <label>عدد الزوجات</label>
+          </div>
+          <div class="col ">
+            <input type="text" id="V2" name="V2" style="width:9em;" class="inputType">
+            <label>عدد مرات الطلاق</label>
+          </div>
           <div class="col order-first">
             <input type="text" id="V4" name="V4" style="width:9em;">
             <label>عدد الأبناء</label>
           </div>
-      </div>
-      <div class="row align-items-start">
-        <div class="col order-last">
-          <select name="V5" id="V5" class="selects"style="width:10em;">  
+        </div>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="V5" id="V5" class="selects" style="width:10em;">
               <option value="V5-1">مع والديه وإخوته</option>
               <option value="V5-2">مع أبنائه فقط</option>
               <option value="V5-3">مع زوجته وأبنائه</option>
               <option value="V5-4">مع والدته</option>
               <option value="V5-5">مع إخوته</option>
               <option value="V5-6">أخرى</option>
-          </select> 
-          <label >مع من يعيش</label> 
-      </div>
-      <div class="col ">
-        <select name="V7" id="V7" class="selects"style="width:10em;">  
-          <option value="V7-1">مع الوالدين</option>
-          <option value="V7-2">يتيم</option>
-          <option value="V7-3">دور إيواء </option>
-      </select>        
-      <label >نوع التنشئة الإجتماعية</label>
-      </div>
-      <div class="col ">
-        <input type="text" id="V6" name="V6" style="width:9em;">
-       <label>عدد أفراد الأسرة </label>
-      </div>
+            </select>
+            <label>مع من يعيش</label>
+          </div>
+          <div class="col ">
+            <select name="V7" id="V7" class="selects" style="width:10em;">
+              <option value="V7-1">مع الوالدين</option>
+              <option value="V7-2">يتيم</option>
+              <option value="V7-3">دور إيواء </option>
+            </select>
+            <label>نوع التنشئة الإجتماعية</label>
+          </div>
+          <div class="col ">
+            <input type="text" id="V6" name="V6" style="width:9em;">
+            <label>عدد أفراد الأسرة </label>
+          </div>
 
-       </div>
+        </div>
 
         <div class="row align-items-start">
           <div class="col order-last">
             <input type="text" id="V7" name="V7" style="width:9em;" class="inputType">
-            <label >المهنة</label> 
+            <label>المهنة</label>
+          </div>
+          <div class="col ">
+            <select name="V9" id="V9" class="selects" style="width:10em;">
+              <option value="V9-1">وظيفة</option>
+              <option value="V9-2">الوالد</option>
+              <option value="V9-3">الوالدة</option>
+              <option value="V9-4">الإخوة</option>
+              <option value="V9-5">الأخوات</option>
+              <option value="V9-6">أعمال حرة</option>
+              <option value="V9-7">جمعيات خيرية</option>
+            </select>
+            <label>مصدر الرزق</label>
+          </div>
+          <div class="col ">
+            <select name="V8" id="V8" class="selects" style="width:10em;">
+              <option value="V8-1">منخفض</option>
+              <option value="V8-2">متوسط</option>
+              <option value="V8-3">مرتفع</option>
+            </select>
+            <label>مستوى الدخل</label>
+          </div>
         </div>
-        <div class="col ">
-          <select name="V9" id="V9" class="selects"style="width:10em;">  
-            <option value="V9-1">وظيفة</option>
-            <option value="V9-2">الوالد</option>
-            <option value="V9-3">الوالدة</option>
-            <option value="V9-4">الإخوة</option>
-            <option value="V9-5">الأخوات</option>
-            <option value="V9-6">أعمال حرة</option>
-            <option value="V9-7">جمعيات خيرية</option>
-        </select>        
-        <label >مصدر الرزق</label>
-        </div>
-        <div class="col ">
-          <select name="V8" id="V8" class="selects"style="width:10em;">  
-            <option value="V8-1">منخفض</option>
-            <option value="V8-2">متوسط</option>
-            <option value="V8-3">مرتفع</option>
-        </select> 
-         <label>مستوى الدخل</label>
-        </div>
-      </div>
 
-      <div class="row align-items-start">
-        <div class="col order-last">
-          <select name="V10" id="V10" class="selects"style="width:10em;">  
-            <option value="V10-1">إيجابية</option>
-            <option value="V10-2">محدودة</option>
-            <option value="V10-3">سلبية</option>
-            <option value="V10-4">تجنبية</option>
-            <option value="V10-5">عزلة</option>
-            <option value="V10-6">متوترة</option>
-            <option value="V10-7"> منعدمة</option>
-            <option value="V10-8">أخرى</option>
-        </select>          
-        <label >العلاقات الإجتماعية مع الأصدقاء</label> 
-      </div>
-      <div class="col ">
-        <select name="V11" id="V11" class="selects"style="width:10em;">  
-          <option value="V11-1">إيجابية</option>
-          <option value="V11-2">محدودة</option>
-          <option value="V11-3">سلبية</option>
-          <option value="V11-4">تجنبية</option>
-          <option value="V11-5">عزلة</option>
-          <option value="V11-6">متوترة</option>
-          <option value="V11-7"> منعدمة</option>
-          <option value="V11-8">أخرى</option>
-      </select>       
-      <label >العلاقات الإجتماعية مع الأقارب</label>
-      </div>
-      <div class="col order-first ">
-        <select name="V12" id="V12" class="selects"style="width:10em;">  
-          <option value="V12-1">إيجابية</option>
-          <option value="V12-2">محدودة</option>
-          <option value="V12-3">سلبية</option>
-          <option value="V12-4">تجنبية</option>
-          <option value="V12-5">عزلة</option>
-          <option value="V12-6">متوترة</option>
-          <option value="V12-7"> منعدمة</option>
-          <option value="V12-8">أخرى</option>
-        </select> 
-       <label>العلاقات الإجتماعية الأسرية</label>
-      </div>
-    </div>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="V10" id="V10" class="selects" style="width:10em;">
+              <option value="V10-1">إيجابية</option>
+              <option value="V10-2">محدودة</option>
+              <option value="V10-3">سلبية</option>
+              <option value="V10-4">تجنبية</option>
+              <option value="V10-5">عزلة</option>
+              <option value="V10-6">متوترة</option>
+              <option value="V10-7"> منعدمة</option>
+              <option value="V10-8">أخرى</option>
+            </select>
+            <label>العلاقات الإجتماعية مع الأصدقاء</label>
+          </div>
+          <div class="col ">
+            <select name="V11" id="V11" class="selects" style="width:10em;">
+              <option value="V11-1">إيجابية</option>
+              <option value="V11-2">محدودة</option>
+              <option value="V11-3">سلبية</option>
+              <option value="V11-4">تجنبية</option>
+              <option value="V11-5">عزلة</option>
+              <option value="V11-6">متوترة</option>
+              <option value="V11-7"> منعدمة</option>
+              <option value="V11-8">أخرى</option>
+            </select>
+            <label>العلاقات الإجتماعية مع الأقارب</label>
+          </div>
+          <div class="col order-first ">
+            <select name="V12" id="V12" class="selects" style="width:10em;">
+              <option value="V12-1">إيجابية</option>
+              <option value="V12-2">محدودة</option>
+              <option value="V12-3">سلبية</option>
+              <option value="V12-4">تجنبية</option>
+              <option value="V12-5">عزلة</option>
+              <option value="V12-6">متوترة</option>
+              <option value="V12-7"> منعدمة</option>
+              <option value="V12-8">أخرى</option>
+            </select>
+            <label>العلاقات الإجتماعية الأسرية</label>
+          </div>
+        </div>
 
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">التاريخ التعليمي الأكاديمي</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="IX1" id="IX1" class="selects"style="width:10em;">  
-                <option value="IX1-1">جامعي</option>
-                <!-- <option value="IX1-2">11</option> ناقص -->
-            </select> 
-            <label >المستوى التعليمي</label> 
-        </div>
-        <div class="col  ">
-          <select name="IX5" id="IX5" class="selects"style="width:10em;">  
-            <option value="IX5-1">يرغب بالتخصص</option>
-            <option value="IX5-1">لا يرغب بالتخصص</option>
-        </select> 
-        <label >الرغبة في التخصص</label> 
-         
-        </div>
-        <div class="col">
-          <input type="text" id="IX2" name="IX2" style="width:9em;" class="inputType">
-          <label >التخصـص</label>
-      </div>
-      <div class="col  order-first">
-       <input type="text" id="IX6" name="IX6" style="width:9em;" class="inputType">
-       <label >مرات الفشل في التعليم</label>
-      </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">التاريخ التعليمي الأكاديمي</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="IX1" id="IX1" class="selects" style="width:10em;">
+              <option value="IX1-1">جامعي</option>
+              <!-- <option value="IX1-2">11</option> ناقص -->
+            </select>
+            <label>المستوى التعليمي</label>
+          </div>
+          <div class="col  ">
+            <select name="IX5" id="IX5" class="selects" style="width:10em;">
+              <option value="IX5-1">يرغب بالتخصص</option>
+              <option value="IX5-1">لا يرغب بالتخصص</option>
+            </select>
+            <label>الرغبة في التخصص</label>
 
-      </div>
-      <div class="row align-items-start">
-        <div class="col ">
-          <select name="IX2" id="IX2" class="selects"style="width:10em;">  
-            <option value="IX2-1">طبيعي</option>
-            <option value="IX2-2">منخفض</option> 
-        </select> 
-         <label>مستوى القراءة- التهجئة</label>
+          </div>
+          <div class="col">
+            <input type="text" id="IX2" name="IX2" style="width:9em;" class="inputType">
+            <label>التخصـص</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="IX6" name="IX6" style="width:9em;" class="inputType">
+            <label>مرات الفشل في التعليم</label>
+          </div>
+
         </div>
+        <div class="row align-items-start">
+          <div class="col ">
+            <select name="IX2" id="IX2" class="selects" style="width:10em;">
+              <option value="IX2-1">طبيعي</option>
+              <option value="IX2-2">منخفض</option>
+            </select>
+            <label>مستوى القراءة- التهجئة</label>
+          </div>
 
           <div class="col">
-            <select name="IX3" id="IX3" class="selects"style="width:10em;">  
+            <select name="IX3" id="IX3" class="selects" style="width:10em;">
               <option value="IX3-1">طبيعي</option>
-              <option value="IX3-2">منخفض</option> 
-          </select>             
-          <label>مستوى الكتابة</label>
+              <option value="IX3-2">منخفض</option>
+            </select>
+            <label>مستوى الكتابة</label>
           </div>
 
           <div class="col order-first">
-            <select name="IX4" id="IX4" class="selects"style="width:10em;">  
+            <select name="IX4" id="IX4" class="selects" style="width:10em;">
               <option value="IX4-1">طبيعي</option>
-              <option value="IX4-2">منخفض</option> 
-          </select> 
-           <label>مستوى الحساب</label>
+              <option value="IX4-2">منخفض</option>
+            </select>
+            <label>مستوى الحساب</label>
           </div>
-      </div>
+        </div>
 
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">الشخصية والميول</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="X1" id="X1" class="selects"style="width:10em;">  
-                <option value="X1-1">سليمة</option>
-                <option value="X1-2">مضطربة</option>
-            </select> 
-            <label >تقييم الشخصية</label> 
-        </div>
-        <div class="col  ">
-          <input type="text" id="X2" name="X2" style="width:9em;" class="inputType">
-        <label >السمة الشخصية الجوهرية</label> 
-        </div>
-        <div class="col">
-          <input type="text" id="X3" name="X3" style="width:9em;" class="inputType">
-          <label >الميول والاهتمامات</label>
-      </div>
-      <div class="col  order-first">
-       <input type="text" id="X4" name="X4" style="width:9em;" class="inputType">
-       <label >ملخـص</label>
-      </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">الشخصية والميول</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="X1" id="X1" class="selects" style="width:10em;">
+              <option value="X1-1">سليمة</option>
+              <option value="X1-2">مضطربة</option>
+            </select>
+            <label>تقييم الشخصية</label>
+          </div>
+          <div class="col  ">
+            <input type="text" id="X2" name="X2" style="width:9em;" class="inputType">
+            <label>السمة الشخصية الجوهرية</label>
+          </div>
+          <div class="col">
+            <input type="text" id="X3" name="X3" style="width:9em;" class="inputType">
+            <label>الميول والاهتمامات</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="X4" name="X4" style="width:9em;" class="inputType">
+            <label>ملخـص</label>
+          </div>
 
-      </div>
-      <div class="row align-items-start">
-        <div class="col ">
-          <input type="text" id="X5" name="X5" style="width:9em;" class="inputType">
-         <label>سمات شخصية فرعية</label>
         </div>
+        <div class="row align-items-start">
+          <div class="col ">
+            <input type="text" id="X5" name="X5" style="width:9em;" class="inputType">
+            <label>سمات شخصية فرعية</label>
+          </div>
 
           <div class="col">
             <input type="text" id="X6" name="X6" style="width:9em;" class="inputType">
@@ -452,186 +455,186 @@
             <input type="text" id="X7" name="X7" style="width:9em;" class="inputType">
             <label>سمات شخصية فرعية</label>
           </div>
-      </div>
+        </div>
 
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">الإدمان والتاريخ الجنائي</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="XI1" id="XI1" class="selects"style="width:10em;">  
-                <option value="XI1-1">يوجد</option>
-                <option value="XI1-2">لا يوجد</option>
-            </select> 
-            <label >التاريخ الإدماني</label> 
-        </div>
-        <div class="col  ">
-          <input type="text" id="XI2" name="XI2" style="width:9em;" class="inputType">
-        <label >مدة التاريخ الإدماني</label> 
-        </div>
-        <div class="col">
-          <input type="text" id="XI3" name="XI3" style="width:9em;" class="inputType">
-          <label >نوع الإدمان</label>
-      </div>
-      <div class="col  order-first">
-       <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
-       <label >ملخص الإدمان</label>
-      </div>
-
-      </div>
-      <div class="row align-items-start">
-       <p>-------------------------------</p>
-      </div>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="XI5" id="XI5" class="selects"style="width:10em;">  
-                <option value="yesVII1">توجد</option>
-                <option value="NoVII1">لا توجد</option>
-            </select> 
-            <label >محاولات إنتحار سابقة</label> 
-        </div>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">الإدمان والتاريخ الجنائي</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="XI1" id="XI1" class="selects" style="width:10em;">
+              <option value="XI1-1">يوجد</option>
+              <option value="XI1-2">لا يوجد</option>
+            </select>
+            <label>التاريخ الإدماني</label>
+          </div>
+          <div class="col  ">
+            <input type="text" id="XI2" name="XI2" style="width:9em;" class="inputType">
+            <label>مدة التاريخ الإدماني</label>
+          </div>
           <div class="col">
             <input type="text" id="XI3" name="XI3" style="width:9em;" class="inputType">
-            <label >كم مرة</label>
-        </div>
-        <div class="col  order-first">
-        <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
-        <label >الأسباب</label>
-        </div>
-      </div>
+            <label>نوع الإدمان</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
+            <label>ملخص الإدمان</label>
+          </div>
 
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="XI8" id="XI8" class="selects"style="width:10em;">  
-                <option value="XI8-1">يوجد</option>
-                <option value="XI8-2">لا يوجد</option>
-            </select> 
-            <label >التاريج الجنائي</label> 
         </div>
-        <div class="col  ">
-          <input type="text" id="XI3" name="XI3" style="width:9em;" class="inputType">
-          <label >نوع الجناية</label>
-        </div>
-        <div class="col">
-          <input type="text" id="XI2" name="XI2" style="width:9em;" class="inputType">
-          <label >مدة التاريخ الجنائي</label>
-      </div>
-      <div class="col  order-first">
-       <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
-       <label >ملخص الجناية</label>
-      </div>
-
-      </div>
-
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">التعرض لمشكلات العنف</legend>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="XII1" id="XII1" class="selects"style="width:10em;">  
-                <option value="XII1-1">نعم</option>
-                <option value="XII1-2">لا</option>
-            </select> 
-            <label >هل مشكلة المريض نتيجة تعرضه للتعنيف</label> 
-        </div>
-        <div class="col  ">
-          <input type="text" id="XII2" name="XII2" style="width:9em;" class="inputType">
-        <label >مصدر العنف</label> 
-        </div>
-        <div class="col">
-          <input type="text" id="XII3" name="XII3" style="width:9em;" class="inputType">
-          <label >نوع العنف</label>
-      </div>
-      <div class="col  order-first">
-       <input type="text" id="XII4" name="XII4" style="width:9em;" class="inputType">
-       <label >ملخـص</label>
-      </div>
-
-      </div>
-
-    </fieldset>
-    <br>
-    <fieldset class="fieldset1">
-      <legend class="legend1">الفحص الجسدي النفسي العقلي</legend>
         <div class="row align-items-start">
-                  <div class="col order-last ">
-                      <select name="Attention" id="Attention" class="selects"style="width:10em;">  
-                          <option value="Attention-1">طبيعي</option>
-                          <option value="Attention-2">مشتت</option>
-                          <option value="Attention-3">يقظ بشكل مرتفع</option>
-                          <option value="Attention-4">غير منتبه</option>
-                          <option value="Attention-5">أخرى</option>
-                      </select> 
-                      <label for="cars">الإنتباه</label>
-                  </div>
-                  <div class="col">
-                    <select name="Focus" id="Focus" class="selects"style="width:10em;">  
-                        <option value="Focus-1">تركيز منخفض</option>
-                        <option value="Focus-2">طبيعي</option>
-                        <option value="Focus-3">تركيز عالي</option>
-                        <option value="Focus-4">تركيز مشتت</option>
-                        <option value="Focus-5">أخرى</option>
-                    </select> 
-                    <label >التركيز</label>
-                </div>
-
-                  <div class="col">
-                      <select name="memory" id="memory" class="selects"style="width:10em;">  
-                          <option value="memory-1">طبيعي</option>
-                          <option value="memory-2">قصور الذاكرة الآتية </option>
-                          <option value="memory-3">قصور الذاكرة القريبة</option>
-                          <option value="memory-4">قصور الذاكرة البعيدة</option>
-                          <option value="memory-5">قصور كافة الذاكرات</option>
-                      </select> 
-                      <label >التذكر</label>
-                  </div>
-
-                  <div class="col order-first">
-                      <select name="intelligence" id="intelligence" class="selects" style="width:10em;">
-                        <option value="intelligence-1">عادي</option>
-                          <option value="intelligence-2">مرتفع</option>
-                          <option value="intelligence-3">منحفض</option>
-                      </select> 
-                      <label for="Pregnancy">الذكاء</label>
-                    </div>
-      
-              </div>
-      <div class="row align-items-start">
-        <div class="col order-last">
-            <select name="perception" id="perception" class="selects"style="width:10em;">  
-                <option value="perception-1">سليم</option>
-                <option value="perception-2">هلاوس سمعية</option>
-                <option value="perception-3">هلاوس بصرية</option>
-                <option value="perception-4">هلاوس سمعية وبصرية</option>
-                <option value="perception-5">أخرى</option>
-            </select> 
-            <label >الإدراك الحسي</label> 
+          <p>-------------------------------</p>
+        </div>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="XI5" id="XI5" class="selects" style="width:10em;">
+              <option value="yesVII1">توجد</option>
+              <option value="NoVII1">لا توجد</option>
+            </select>
+            <label>محاولات إنتحار سابقة</label>
+          </div>
+          <div class="col">
+            <input type="text" id="XI3" name="XI3" style="width:9em;" class="inputType">
+            <label>كم مرة</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
+            <label>الأسباب</label>
+          </div>
         </div>
 
-        <div class="col">
-          <select name="orientation" id="orientation" class="selects"style="width:10em;">  
-            <option value="orientation-1">مستبصر بالزمان والمكان</option>
-            <option value="orientation-2">غير مستبصر بالزمان والمكان</option>
-            <option value="orientation-3">مستبصر بالزمان فقط</option>
-            <option value="orientation-4">مستبصر بالمكان فقط</option>
-            </select> 
-        <label >الإهتداء</label>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="XI8" id="XI8" class="selects" style="width:10em;">
+              <option value="XI8-1">يوجد</option>
+              <option value="XI8-2">لا يوجد</option>
+            </select>
+            <label>التاريج الجنائي</label>
+          </div>
+          <div class="col  ">
+            <input type="text" id="XI3" name="XI3" style="width:9em;" class="inputType">
+            <label>نوع الجناية</label>
+          </div>
+          <div class="col">
+            <input type="text" id="XI2" name="XI2" style="width:9em;" class="inputType">
+            <label>مدة التاريخ الجنائي</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="XI4" name="XI4" style="width:9em;" class="inputType">
+            <label>ملخص الجناية</label>
+          </div>
+
         </div>
 
-        <div class="col ">
-          <select name="thinking" id="thinking" class="selects"style="width:10em;">  
-            <option value="thinking-1">طبيعي-مترابط</option>
-            <option value="thinking-2">إنتقائي-مجرد </option>
-            <option value="thinking-3">منطقي</option>
-            <option value="thinking-4">غير منطقي</option>
-            </select> 
-            <label >التفكير</label>
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">التعرض لمشكلات العنف</legend>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="XII1" id="XII1" class="selects" style="width:10em;">
+              <option value="XII1-1">نعم</option>
+              <option value="XII1-2">لا</option>
+            </select>
+            <label>هل مشكلة المريض نتيجة تعرضه للتعنيف</label>
+          </div>
+          <div class="col  ">
+            <input type="text" id="XII2" name="XII2" style="width:9em;" class="inputType">
+            <label>مصدر العنف</label>
+          </div>
+          <div class="col">
+            <input type="text" id="XII3" name="XII3" style="width:9em;" class="inputType">
+            <label>نوع العنف</label>
+          </div>
+          <div class="col  order-first">
+            <input type="text" id="XII4" name="XII4" style="width:9em;" class="inputType">
+            <label>ملخـص</label>
+          </div>
+
         </div>
+
+      </fieldset>
+      <br>
+      <fieldset class="fieldset1">
+        <legend class="legend1">الفحص الجسدي النفسي العقلي</legend>
+        <div class="row align-items-start">
+          <div class="col order-last ">
+            <select name="Attention" id="Attention" class="selects" style="width:10em;">
+              <option value="Attention-1">طبيعي</option>
+              <option value="Attention-2">مشتت</option>
+              <option value="Attention-3">يقظ بشكل مرتفع</option>
+              <option value="Attention-4">غير منتبه</option>
+              <option value="Attention-5">أخرى</option>
+            </select>
+            <label for="cars">الإنتباه</label>
+          </div>
+          <div class="col">
+            <select name="Focus" id="Focus" class="selects" style="width:10em;">
+              <option value="Focus-1">تركيز منخفض</option>
+              <option value="Focus-2">طبيعي</option>
+              <option value="Focus-3">تركيز عالي</option>
+              <option value="Focus-4">تركيز مشتت</option>
+              <option value="Focus-5">أخرى</option>
+            </select>
+            <label>التركيز</label>
+          </div>
+
+          <div class="col">
+            <select name="memory" id="memory" class="selects" style="width:10em;">
+              <option value="memory-1">طبيعي</option>
+              <option value="memory-2">قصور الذاكرة الآتية </option>
+              <option value="memory-3">قصور الذاكرة القريبة</option>
+              <option value="memory-4">قصور الذاكرة البعيدة</option>
+              <option value="memory-5">قصور كافة الذاكرات</option>
+            </select>
+            <label>التذكر</label>
+          </div>
 
           <div class="col order-first">
-            <select name="thinkingObject" id="thinkingObject" class="selects"style="width:10em;">  
+            <select name="intelligence" id="intelligence" class="selects" style="width:10em;">
+              <option value="intelligence-1">عادي</option>
+              <option value="intelligence-2">مرتفع</option>
+              <option value="intelligence-3">منحفض</option>
+            </select>
+            <label for="Pregnancy">الذكاء</label>
+          </div>
+
+        </div>
+        <div class="row align-items-start">
+          <div class="col order-last">
+            <select name="perception" id="perception" class="selects" style="width:10em;">
+              <option value="perception-1">سليم</option>
+              <option value="perception-2">هلاوس سمعية</option>
+              <option value="perception-3">هلاوس بصرية</option>
+              <option value="perception-4">هلاوس سمعية وبصرية</option>
+              <option value="perception-5">أخرى</option>
+            </select>
+            <label>الإدراك الحسي</label>
+          </div>
+
+          <div class="col">
+            <select name="orientation" id="orientation" class="selects" style="width:10em;">
+              <option value="orientation-1">مستبصر بالزمان والمكان</option>
+              <option value="orientation-2">غير مستبصر بالزمان والمكان</option>
+              <option value="orientation-3">مستبصر بالزمان فقط</option>
+              <option value="orientation-4">مستبصر بالمكان فقط</option>
+            </select>
+            <label>الإهتداء</label>
+          </div>
+
+          <div class="col ">
+            <select name="thinking" id="thinking" class="selects" style="width:10em;">
+              <option value="thinking-1">طبيعي-مترابط</option>
+              <option value="thinking-2">إنتقائي-مجرد </option>
+              <option value="thinking-3">منطقي</option>
+              <option value="thinking-4">غير منطقي</option>
+            </select>
+            <label>التفكير</label>
+          </div>
+
+          <div class="col order-first">
+            <select name="thinkingObject" id="thinkingObject" class="selects" style="width:10em;">
               <option value="thinkingObject-1">مناسب</option>
               <option value="thinkingObject-2">مخاوف</option>
               <option value="thinkingObject-3">ضلالات عظيمة</option>
@@ -643,21 +646,21 @@
               <option value="thinkingObject-9">أفكار عجز ويأس</option>
               <option value="thinkingObject-10">أفكار انتحارية</option>
               <option value="thinkingObject-11">أخرى</option>
-              </select> 
-          <label >محتوى التفكير</label>
+            </select>
+            <label>محتوى التفكير</label>
           </div>
-         
+
         </div>
         <div class="row align-items-start">
           <div class="col order-last">
             <input type="text" id="IV11" name="IV11" style="width:15em;" class="inputType">
             <label>مـــلــخــص</label>
-            </div>
-            
+          </div>
+
         </div>
-    </fieldset>
-    <br>
-  
+      </fieldset>
+      <br>
+
 
 
 
@@ -667,30 +670,30 @@
     </form>
   </div>
 
- <br><br><br><br>
- <br><br><br><br>
- <br><br><br><br>
- <br><br><br><br>
- <br><br><br><br>
- <br><br><br><br><br><br><br><br>
- <br><br><br><br>
- <br><br><br><br>
-  <footer id="footer"class="footer-distributed">
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br><br><br><br><br>
+  <br><br><br><br>
+  <br><br><br><br>
+  <footer id="footer" class="footer-distributed">
 
     <div class="footer-right">
-  <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
+      <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
 
-  <p class="footer-links">
-   <a id="h" href="">الصفحات</a>
+      <p class="footer-links">
+        <a id="h" href="">الصفحات</a>
 
-   <a href="#">الصفحة الرئيسيه </a>
+        <a href="#">الصفحة الرئيسيه </a>
 
-   <a href="#">من نحــن؟</a>
+        <a href="#">من نحــن؟</a>
 
-   <a href="#">تواصل معنا</a>
-  </p>
+        <a href="#">تواصل معنا</a>
+      </p>
 
-      </div>
+    </div>
 
 
 
@@ -709,20 +712,20 @@
         <a href="#">سجل المرضـى </a>
       </p>
 
-  </div>
-  <p class="footer-links3">
-   <a id="h" href=""> :التواصل </a>
+    </div>
+    <p class="footer-links3">
+      <a id="h" href=""> :التواصل </a>
 
-   <a href="#">+966 547876876 </a>
+      <a href="#">+966 547876876 </a>
 
-  </p>
-  <div class="footer-left">
+    </p>
+    <div class="footer-left">
       <div class="footer-icons">
-  <br><br>
+        <br><br>
 
 
-         <h3>  مواقع التواصل  </h3>
-  <br>
+        <h3> مواقع التواصل </h3>
+        <br>
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-linkedin"></i></a>
@@ -730,9 +733,9 @@
 
 
 
-    </div>
+      </div>
 
-  </div>
+    </div>
 
   </footer>
 </body>
