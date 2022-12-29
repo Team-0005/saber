@@ -19,3 +19,12 @@ def iniDiag(request):
     # diag = PsychoTest.objects.all()
     # context = {'iniDiag' : diag }
     return render(request,'tests/iniDiag.html') 
+
+def test1(request):
+    ocdResult = []
+    for x in range(1,11):
+        a = int (request.POST.get('q'+str(x),False))
+        ocdResult.append(a)
+    result = sum(ocdResult)   
+    print(result)
+    return render(request,'tests/ocdTest.html') 
