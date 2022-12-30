@@ -72,13 +72,14 @@ text-align:center;
 .title {
   font-family: 'Tajawal';
   font-style: normal;
-  font-size: 5em;
-  line-height: 2em;
-  display: flex;
   align-items: center;
   text-align: center;
-  margin-left: 13em;
+  /* margin-left: 28em; */
   color: #2180A5;
+
+  font-weight: bold;
+ 
+
 }
 
 section {
@@ -115,22 +116,29 @@ section {
 .selects {
 
 
-  background-color: #CDCDCD;
+  /* background-color:#b1dbeb; */
   border-radius: 10px;
-  border: 5em;
+  border: 0.063em solid #5399B5 ;
   align-items: center;
   text-align: center;
 margin-bottom: 0.2em;
+border-radius: 2em;
 
 
 }
 
 .legend1 {
-  background-color: rgba(185, 177, 177, 0.12);
+  background-color:rgba(123, 118, 118, 0.12);
   border-radius: 10px;
   border: 5em;
   align-items: center;
   text-align: center;
+  text-align: center;
+  font-family: 'Tajawal';
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #2180A5;
+
 }
 
 .fieldset1 {
@@ -150,12 +158,29 @@ margin-bottom: 0.2em;
   border: 0.063em solid #5399B5;
   border-radius: 2em;
   direction: rtl;
-  text-align: right;
+  text-align: center;
   float: center;
   direction: rtl;
 margin-bottom: 0.2em;
 }
-
+.button{
+  font-size: 1em;
+  background-color: #5399B5;
+  border: none;
+  border-radius: 3em;
+  box-shadow: 0.06em 0.06em #D7D7D7;
+  padding: 0.625em 2em;
+  color: Black;}
+.button:hover {
+    background-color: #D3E6ED;
+    cursor: pointer;
+    box-shadow: .1em .1em 0.1em #D7D7D7;
+  }
+  
+.button:disabled {
+    background-color: #96c6bf;
+  }
+  
 
 /* footer */
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
