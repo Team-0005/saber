@@ -30,15 +30,17 @@
           <div class="row">
             <div class="col-2">
               <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
-                autofocus required>
+                autofocus required onblur="check_email('email','mailmessage');">
             </div>
+            <span class='massages' id="p_mailmessage"></span>
           </div>
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password"
-                placeholder=" &#xf023; كلمة المرور " min="8" required>
+                placeholder=" &#xf023; كلمة المرور " min="8" required onblur="check_symbol('password','passmessage');">
             </div>
+            <span class='massages'id="passmessage"></span>
           </div>
           <div class="row">
             <div class="col-1">
@@ -98,12 +100,13 @@
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userfname" name="p_f_name"
-                placeholder="&#xf007; الاسم الأول " min="3" autofocus required>
+                placeholder="&#xf007; الاسم الأول " min="3" autofocus required onblur="check_symbol('userfname','namemessage')">
             </div>
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
-                placeholder="&#xf007; الاسم الأخير " min="3" autofocus required>
+                placeholder="&#xf007; الاسم الأخير " min="3" autofocus required onblur="check_symbol('userlname','namemessage')">
             </div>
+            <span class="massages" id="namemessage"></span>
           </div>
 
           <div class="row">
@@ -116,25 +119,35 @@
 
           <div class="row">
             <div class="col-2">
-              <input type="email" id="email" name="p_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
-                autofocus required>
+              <input type="email" id="p_email" name="p_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
+                autofocus required onblur="check_email('p_email','p_mailmessage');">
+            </div>
+            <span class='massages'id="p_mailmessage"></span>
+          </div>
+
+          <div class="row">
+            <div class="col-2">
+              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="p_password" name="p_password"
+                placeholder=" &#xf023; تأكيد كلمة المرور" min="8" require onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('p_password','passmessage');">
             </div>
           </div>
 
           <div class="row">
             <div class="col-2">
-              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="p_password"
-                placeholder=" &#xf023; كلمة المرور " min="8" required>
+              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirm_password" name="confirm_password"
+                placeholder=" &#xf023; كلمة المرور " min="8" required onkeyup="check_pass('p_password','confirm_password','p_passmessage');check_symbol('confirm_password','p_passmessage');"> 
             </div>
+            <span class="massages" id="p_passmessage"></span>
           </div>
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="scfhs_no" name="scfhs_no"
-                placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required>
+                placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required onblur="check_symbol('scfhs_no','scfhsmessage')">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="current_job_title"
-                placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required>
+                placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required onblur="check_symbol('scfhs_no','scfhsmessage')">
             </div>
+            <span class="massages" id="scfhsmessage"></span>
           </div>
 
           <div class="row">
@@ -151,7 +164,7 @@
           </script>
           <div class="alert alert-success">
             <a class="close" href="#" data-dismiss="alert">×</a>
-            {{ message }}
+            <span class="massages">{{ message }}</span>
 
           </div>
 
@@ -194,9 +207,10 @@
           </div>
           <div class="row">
             <div class="col-2">
-              <input type="email" id="P_email" name="fp_email" placeholder="&#x40; البريدالالكتروني " min="3" size="25"
-                autofocus required>
+              <input type="email" id="fp_email" name="fp_email" placeholder="&#x40; البريدالالكتروني " min="3" size="25"
+                autofocus required onblur="check_email('fp_email','fp_mailmessage');">
             </div>
+            <span class='massages'id="fp_mailmessage"></span>
           </div>
 
 
@@ -246,7 +260,7 @@
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="FG_pass_R" name="FG_pass_R"
-                placeholder=" &#xf13e; رمز التحقق  " min="8" size="70" required>
+                placeholder=" &#xf13e; رمز التحقق  " min="8" size="6" required pattern="[0-9]*">
             </div>
           </div>
 
@@ -299,8 +313,16 @@
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="new_pass" name="new_pass"
-                placeholder="&#xf023; كلمة المرور  " min="3" size="10" autofocus required>
+                placeholder="&#xf023; كلمة المرور  " min="3" size="10" autofocus required onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('new_pass','new_passmessage')">
             </div>
+          </div>
+
+          div class="row">
+            <div class="col-2">
+              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirmnew_password" name="confirmnew_password"
+                placeholder=" &#xf023; كلمة المرور " min="8" required onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('confirmnew_password','new_passmessage');"> 
+            </div>
+            <span class="massages" id="new_passmessage"></span>
           </div>
 
           <div class="row">
