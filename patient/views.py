@@ -35,7 +35,18 @@ def addPatient(request, p_email):
 
 def list_of_patient(request, p_email):
     psy = Psychologist.objects.get(p_email=p_email)
-    list = Result.objects.all()
+
+    list = Result.objects.filter(pt__p_email__exact=p_email)
+    search = None
+    if 'searchField' in request.GET:
+        search = request.GET['searchField']
+        if search:
+            list = list.filter(pt__pt_name__icontains=search)
+            # list = list.filter(pt__pt_phone_no__icontains=search) 
+
+    
+
+               
     context = {
         'psy': psy,
         'list': list

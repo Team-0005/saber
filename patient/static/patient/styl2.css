@@ -103,7 +103,7 @@ footer a:hover,
   user-select: none;
 }
 
-form {
+form.recpatient {
 
   display: block;
   margin: 3% auto 15% auto;
@@ -311,6 +311,10 @@ form.servec {
 
 /*------------------------------*/
 /*-------patientrec page-------*/
+#search:hover{
+  cursor: pointer;
+}
+
 form.recpatient {
 
   display: block;

@@ -29,11 +29,15 @@
   </nav>
 
   <div class="se">
-    <button id="search" type="submit" onclick="show()">بحث </button>
+    <form action="{% url 'patient:ptlist' psy.p_email %}">
+      <div class="se">
+    <button id="search" type="submit">بحث </button>
     <input style="font-family: 'Font Awesome 5 Free'; " type="search" name="searchField"
       placeholder="  أدخل اسم المريض أو رقم الهاتف  &#xf002;">
-
-  </div>
+    </div>
+    </form>
+    
+  
 
   <form class="recpatient" action="index.html" method="post">
 
@@ -48,7 +52,6 @@
           <th>اسم المريض</th>
         </tr>
         {% for listp in list %}
-        {% if listp.pt.p_email.p_email == psy.p_email %}
         <tr>
           {% if listp.test_status == 0 %}
           <td> لم يتم الاختبار </td>
@@ -60,7 +63,6 @@
           <td>{{listp.pt.pt_phone_no}}</td>
           <td><a href="#"> {{listp.pt.pt_name}} </a></td>
         </tr>
-        {% endif %}
         {% endfor %}
 
 
@@ -140,12 +142,7 @@
 
   </footer>
 
-  <script>
-    function show() {
-      s = searchForm.searchField.value;
-      document.write("You have searched for " + s);
-    }
-  </script>
+  
 
 </body>
 

@@ -30,6 +30,7 @@ class Result(models.Model):
     test_result = models.IntegerField(blank=True, null=True)
     test_status = models.IntegerField(blank=True, null=True)
 
+
     class Meta:
         managed = False
         db_table = 'result'
