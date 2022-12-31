@@ -31,9 +31,9 @@
   <div class="se">
     <form action="{% url 'patient:ptlist' psy.p_email %}">
       <div class="se">
-    <button id="search" type="submit">بحث </button>
+    <button id="search" type="submit" >بحث </button>
     <input style="font-family: 'Font Awesome 5 Free'; " type="search" name="searchField"
-      placeholder="  أدخل اسم المريض أو رقم الهاتف  &#xf002;">
+      placeholder="  أدخل اسم المريض أو رقم الهاتف  &#xf002;" value={{search}}>
     </div>
     </form>
     
@@ -141,7 +141,6 @@
     </div>
 
   </footer>
-
   
 
 </body>

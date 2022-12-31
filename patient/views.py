@@ -6,6 +6,7 @@ from .models import Patient
 from .models import Result
 from blog.models import Psychologist
 from django.contrib import messages
+from django.db.models import Q
 
 
 # Create your views here.
@@ -41,14 +42,16 @@ def list_of_patient(request, p_email):
     if 'searchField' in request.GET:
         search = request.GET['searchField']
         if search:
-            list = list.filter(pt__pt_name__icontains=search)
-            # list = list.filter(pt__pt_phone_no__icontains=search) 
+            lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
+            list = list.filter(lookups)
+            
 
     
 
                
     context = {
         'psy': psy,
-        'list': list
+        'list': list,
+        'search': search
     }
     return render(request, 'patient/patientRec.html', context)
