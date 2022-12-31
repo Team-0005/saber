@@ -9,5 +9,6 @@ urlpatterns = [
     path('iniDiag/', views.iniDiag, name='iniDiag'),
     path('test1/', views.test1, name='ocdTest'),
     path('test2/', views.test2, name='depTest'),
+    path('test3/', views.test3, name='anxTest'),
 
 ]

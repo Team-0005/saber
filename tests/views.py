@@ -41,3 +41,12 @@ def test2(request):
     result = sum(depResult)   
     print(result)
     return render(request,'tests/depressionTest.html') 
+
+def test3(request):
+    anxResult = []
+    for x in range(1,51):
+        a = int (request.POST.get('q'+str(x),False))
+        anxResult.append(a)
+    result = sum(anxResult)   
+    print(result)
+    return render(request,'tests/anxietyTest.html') 

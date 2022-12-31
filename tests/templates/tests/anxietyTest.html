@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title> مقياس</title>
-  <link rel="icon" href="static/logo.png">
-  <link rel="stylesheet" href="static/styl2.css">
+  <link rel="icon" href="{% static 'blog/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'tests/styl2.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-  <a id="logo" href=""><img src="static/logo1.png" alt="logo" width="150" height="100"></a>
+  <a id="logo" href=""><img src="{% static 'blog/logo1.png'%}" alt="logo" width="150" height="100"></a>
 
     <br>    <br>
     <br>
@@ -25,23 +26,24 @@
       <p>اختر الاجابة اللتي تنطبق عليك (نعم/لا) أجب على كل الاسئلة من فضلك  </p>
 
 </form>
-  <form class="test" action="index.html" method="post">
+  <form class="test" action="{% url 'tests:anxTest'%}" method="post">
     <br>
-
+      <!-- for_security -->
+      {% csrf_token %}
 
 
   <div class="row">
     <p class="q">١-نومي مضطرب ومتقطع؟</p>
 
     <label class="container">
-  <input type="radio" checked="checked" name="q1">
+  <input type="radio" checked="checked" name="q1" value="1">
   <span class="checkmark"></span>
   <p class="ans">نعم</p>
 </label>
 <label class="container">
   <p class="ans">لا
 </p>
-  <input type="radio" name="q1">
+  <input type="radio" name="q1" value="0">
   <span class="checkmark"></span>
 </label>
 </div>
@@ -49,14 +51,14 @@
   <p class="q">٢-مرت بي أوقات لم أستطع خلالها النوم بسبب القلق؟</p>
 
   <label class="container">
-<input type="radio" name="q2">
+<input type="radio" name="q2" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q2">
+<input type="radio" name="q2" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -64,14 +66,14 @@
   <p class="q">٣-مخاوفي قليلة جداً بالمقارنة بأصدقائي؟</p>
 
   <label class="container">
-<input type="radio"  name="q3">
+<input type="radio"  name="q3" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q3">
+<input type="radio" name="q3" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -79,14 +81,14 @@
   <p class="q">٤-اعتقد أنني أكثر عصبية من معظم الناس؟</p>
 
   <label class="container">
-<input type="radio"  name="q4">
+<input type="radio"  name="q4" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q4">
+<input type="radio" name="q4" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -95,14 +97,14 @@
   <p class="q">٥-تنتابني أحلام مزعجة (أو كوابيس) كل عدة ليالي؟</p>
 
   <label class="container">
-<input type="radio" name="q5">
+<input type="radio" name="q5" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q5">
+<input type="radio" name="q5" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -110,14 +112,14 @@
   <p class="q">٦- لدي متاعب أحيانا في معدتي؟</p>
 
   <label class="container">
-<input type="radio"  name="q6">
+<input type="radio"  name="q6" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q6">
+<input type="radio" name="q6" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -125,14 +127,14 @@
   <p class="q">٧-غالبا ما ألاحظ أن يداي ترتجفان عندما أحاول القيام بعمل ما؟</p>
 
   <label class="container">
-<input type="radio"  name="q7">
+<input type="radio"  name="q7" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q7">
+<input type="radio" name="q7" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -140,14 +142,14 @@
   <p class="q">٨-أعاني أحيانا من نوبات إسهال؟</p>
 
   <label class="container">
-<input type="radio"  name="q8">
+<input type="radio"  name="q8" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q8">
+<input type="radio" name="q8" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -155,15 +157,15 @@
 <div class="row">
   <p class="q">٩- تثير قلقي أمور العمل والعمال؟</p>
 
-  <label class="container">
-<input type="radio"  name="q9">
+  <label class="container" >
+<input type="radio"  name="q9" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q9">
+<input type="radio" name="q9" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -172,14 +174,14 @@
   <p class="q">١٠-تصيبني نوبات من الغثيان (غمامات النفس)</p>
 
   <label class="container">
-<input type="radio"  name="q10">
+<input type="radio"  name="q10" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q10">
+<input type="radio" name="q10" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -188,14 +190,14 @@
   <p class="q">١١-كثيراً ما أخشى أن يحمر وجهي خجلاً؟</p>
 
   <label class="container">
-<input type="radio"  name="q11">
+<input type="radio"  name="q11" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q11">
+<input type="radio" name="q11" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -204,14 +206,14 @@
   <p class="q">١٢-أشعر بجوع في كل الأوقات تقريباً؟</p>
 
   <label class="container">
-<input type="radio"  name="q12">
+<input type="radio"  name="q12" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q12">
+<input type="radio" name="q12" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -220,14 +222,14 @@
   <p class="q">١٣-أثق في نفسي كثيراً</p>
 
   <label class="container">
-<input type="radio"  name="q13">
+<input type="radio"  name="q13" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q13">
+<input type="radio" name="q13" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -236,14 +238,14 @@
   <p class="q">١٤- أتعب بسرعة</p>
 
   <label class="container">
-<input type="radio"  name="q14">
+<input type="radio"  name="q14" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q14">
+<input type="radio" name="q14" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -252,14 +254,14 @@
   <p class="q">١٥-يجعلني الانتظار عصبياً</p>
 
   <label class="container">
-<input type="radio"  name="q15">
+<input type="radio"  name="q15" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q15">
+<input type="radio" name="q15" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -268,14 +270,14 @@
   <p class="q">١٦-أشعر بالإثارة لدرجة أن النوم يتعذر علي</p>
 
   <label class="container">
-<input type="radio" name="q16">
+<input type="radio" name="q16" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q16">
+<input type="radio" name="q16" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -284,14 +286,14 @@
   <p class="q">١٧- عاد ًة ما أكون هادئاً</p>
 
   <label class="container">
-<input type="radio"  name="q17">
+<input type="radio"  name="q17" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q17">
+<input type="radio" name="q17" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -300,14 +302,14 @@
   <p class="q">١٨-تمر بي فترات من عدم الاستقرار لدرجة أنني لا أستطيع الجلوس طويلا في مقعدي</p>
 
   <label class="container">
-<input type="radio" name="q18">
+<input type="radio" name="q18" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q18">
+<input type="radio" name="q18" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -316,14 +318,14 @@
   <p class="q">١٩-لا أشعر بالسعادة معظم الوقت</p>
 
   <label class="container">
-<input type="radio"  name="q19">
+<input type="radio"  name="q19" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q19">
+<input type="radio" name="q19" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -331,14 +333,14 @@
   <p class="q">٢٠-من السهل أن أركز ذهني في عمل ما</p>
 
   <label class="container">
-<input type="radio"  name="q20">
+<input type="radio"  name="q20" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q20">
+<input type="radio" name="q20" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -346,14 +348,14 @@
   <p class="q">٢١-أشعر بالقلق على شئ ما، أو شخص ما، طوال الوقت تقريبا</p>
 
   <label class="container">
-<input type="radio"  name="q21">
+<input type="radio"  name="q21" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q21">
+<input type="radio" name="q21" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -361,14 +363,14 @@
   <p class="q">٢٢- لا أتهيب الأزمات والشدائد</p>
 
   <label class="container">
-<input type="radio"  name="q22">
+<input type="radio"  name="q22" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q22">
+<input type="radio" name="q22" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -377,14 +379,14 @@
   <p class="q">٢٣-أود أن أصبح سعيداً كما يبدو الآخرين</p>
 
   <label class="container">
-<input type="radio"  name="q23">
+<input type="radio"  name="q23" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q23">
+<input type="radio" name="q23" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -392,14 +394,14 @@
   <p class="q">٢٤-كثيراً ما أجد نفسي قلقاً على شيء ماً</p>
 
   <label class="container">
-<input type="radio"  name="q24">
+<input type="radio"  name="q24" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q24">
+<input type="radio" name="q24" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -407,14 +409,14 @@
   <p class="q">٢٥- أشعر أحياناً وبشكل مؤكد أنه لا فائدة لي</p>
 
   <label class="container">
-<input type="radio"  name="q25">
+<input type="radio"  name="q25" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q25">
+<input type="radio" name="q25" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -423,14 +425,14 @@
   <p class="q">٢٦- أشعر أحياناً أنني أتمزق</p>
 
   <label class="container">
-<input type="radio"  name="q26">
+<input type="radio"  name="q26" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q26">
+<input type="radio" name="q26" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -438,14 +440,14 @@
   <p class="q">٢٧- أعرق بسهولة حتى في الأيام الباردة</p>
 
   <label class="container">
-<input type="radio"  name="q27">
+<input type="radio"  name="q27" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q27">
+<input type="radio" name="q27" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -453,14 +455,14 @@
   <p class="q">٢٨- الحياة صعبة بالنسبة لي في أغلب الأوقات</p>
 
   <label class="container">
-<input type="radio"  name="q28">
+<input type="radio"  name="q28" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q28">
+<input type="radio" name="q28" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -468,14 +470,14 @@
   <p class="q">٢٩- لا يقلقني ما يحتمل أن أقابله من سوء حظ</p>
 
   <label class="container">
-<input type="radio"  name="q29">
+<input type="radio"  name="q29" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q29">
+<input type="radio" name="q29" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -484,14 +486,14 @@
   <p class="q">٣٠- إنني حساس بدرجة غير عادية</p>
 
   <label class="container">
-<input type="radio"  name="q30">
+<input type="radio"  name="q30" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q30">
+<input type="radio" name="q30" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -499,29 +501,29 @@
   <p class="q">٣١- لاحظت أن قلبي يخفق بشدة وأحياناً تتهيج نفسي</p>
 
   <label class="container">
-<input type="radio"  name="q31">
+<input type="radio"  name="q31" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q31">
+<input type="radio" name="q31" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
 <div class="row">
   <p class="q">٣٢- لا أبكي بسهولة</p>
 
-  <label class="container">
-<input type="radio"  name="q32">
+  <label class="container" >
+<input type="radio"  name="q32" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q32">
+<input type="radio" name="q32" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -529,14 +531,14 @@
   <p class="q">٣٣- خشيت أشياء أو أشخاص أعرف أنهم لا يستطيعون إيذائي</p>
 
   <label class="container">
-<input type="radio" name="q33">
+<input type="radio" name="q33" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q33">
+<input type="radio" name="q33" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -544,14 +546,14 @@
   <p class="q">٣٤- لدي قابلية للتأثر بالأحداث تأثراً شديداً</p>
 
   <label class="container">
-<input type="radio"  name="q34">
+<input type="radio"  name="q34" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q34">
+<input type="radio" name="q34" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -559,14 +561,14 @@
   <p class="q">٣٥- كثيراً ما أصاب بصداع</p>
 
   <label class="container">
-<input type="radio"  name="q35">
+<input type="radio"  name="q35" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q35">
+<input type="radio" name="q35" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -575,14 +577,14 @@
   <p class="q">٣٦- لابد أن أعترف بأنني شعرت بالقلق على أشياء لا قيمة لها</p>
 
   <label class="container">
-<input type="radio"   name="q36">
+<input type="radio"   name="q36" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q36">
+<input type="radio" name="q36" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -590,14 +592,14 @@
   <p class="q">٣٧- لا أستطيع أن أركز تفكيري في شيء واحد</p>
 
   <label class="container">
-<input type="radio"   name="q37">
+<input type="radio"   name="q37" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q37">
+<input type="radio" name="q37" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -605,14 +607,14 @@
   <p class="q">٣٨- لا أرتبك بسهولة</p>
 
   <label class="container">
-<input type="radio"  name="q38">
+<input type="radio"  name="q38" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q38">
+<input type="radio" name="q38" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -620,14 +622,14 @@
   <p class="q">٣٩- اعتقد أحياناً أنني لا أصلح بالمرة</p>
 
   <label class="container">
-<input type="radio"  name="q39">
+<input type="radio"  name="q39" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q39">
+<input type="radio" name="q39" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -636,14 +638,14 @@
   <p class="q">٤٠- أنا شخص متوتر جداً</p>
 
   <label class="container">
-<input type="radio"  name="q40">
+<input type="radio"  name="q40" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q40">
+<input type="radio" name="q40" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -651,14 +653,14 @@
   <p class="q">٤١- أرتبك أحياناً بدرجة تجعل العرق يتساقط مني بصورة تضايقني جداً</p>
 
   <label class="container">
-<input type="radio"  name="q41">
+<input type="radio"  name="q41" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q41">
+<input type="radio" name="q41" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -666,14 +668,14 @@
   <p class="q">٤٢- يحمر وجهي خجلاً بدرجة أكبر عندما أتحدث للآخرين</p>
 
   <label class="container">
-<input type="radio"  name="q42">
+<input type="radio"  name="q42" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q42">
+<input type="radio" name="q42" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -681,14 +683,14 @@
   <p class="q">٤٣- أنا أكثر حساسية من غالبية الناس</p>
 
   <label class="container">
-<input type="radio"  name="q43">
+<input type="radio"  name="q43" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q43">
+<input type="radio" name="q43" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -696,14 +698,14 @@
   <p class="q">٤٤- مرت بي أوقات شعرت خلالها بتراكم الصعاب بحيث لا أستطيع التغلب عليها</p>
 
   <label class="container">
-<input type="radio"  name="q44">
+<input type="radio"  name="q44" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q44">
+<input type="radio" name="q44" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -711,14 +713,14 @@
   <p class="q">٤٥- أكون متوتراً للغاية أثناء القيام بعمل ما</p>
 
   <label class="container">
-<input type="radio"  name="q45">
+<input type="radio"  name="q45" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q45">
+<input type="radio" name="q45" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -726,14 +728,14 @@
   <p class="q">٤٦- يداي وقدماي باردتان في العادة</p>
 
   <label class="container">
-<input type="radio" name="q46">
+<input type="radio" name="q46" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q46">
+<input type="radio" name="q46" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -741,14 +743,14 @@
   <p class="q">٤٧- أحيانا أحلم بأشياء أفضل الاحتفاظ بها لنفسي</p>
 
   <label class="container">
-<input type="radio" name="q47">
+<input type="radio" name="q47" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q47">
+<input type="radio" name="q47" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -756,14 +758,14 @@
   <p class="q">٤٨- لا تنقصني الثقة بالنفس</p>
 
   <label class="container">
-<input type="radio"  name="q48">
+<input type="radio"  name="q48" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q48">
+<input type="radio" name="q48" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -771,14 +773,14 @@
   <p class="q">٤٩- أصاب أحيانا بالإمساك</p>
 
   <label class="container">
-<input type="radio"  name="q49">
+<input type="radio"  name="q49" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q49">
+<input type="radio" name="q49" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
@@ -786,19 +788,19 @@
   <p class="q">٥٠- لا يحمر وجهي أبداً من الخجل</p>
 
   <label class="container">
-<input type="radio"  name="q50">
+<input type="radio"  name="q50" value="1">
 <span class="checkmark"></span>
 <p class="ans">نعم</p>
 </label>
 <label class="container">
 <p class="ans">لا
 </p>
-<input type="radio" name="q50">
+<input type="radio" name="q50" value="0">
 <span class="checkmark"></span>
 </label>
 </div>
 
-<button class="button" type="button" name="next">التالي</button>
+<button class="button" type="submit" name="next" style="cursor: pointer;">التالي</button>
 
   </form>
 
