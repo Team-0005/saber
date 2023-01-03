@@ -8,6 +8,21 @@ body {
 
   font-family: 'Tajawal', sans-serif;
 }
+.title {
+  font-family: 'Tajawal';
+  font-style: normal;
+  align-items: center;
+  text-align: center;
+   /* margin-left: 22em;  */
+  color: #2180A5;
+
+  font-weight: bold;
+ 
+
+}
+
+
+
 
 /*logo position*/
 #logo {
@@ -76,19 +91,7 @@ footer a:hover,
 
 }
 
-.button {
-  font-family: 'Tajawal';
-  font-size: 1em;
-  color: white;
-  background-color: #2180A5;
-  text-align: center;
-  border: none;
-  padding: 0.5em 6em 0.5em 6em;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 0.6em;
-  margin-left: 2em
-}
+
 
 .jender {
   font-family: 'Tajawal';
@@ -120,28 +123,22 @@ form.recpatient {
 
 }
 
-input {
-  width: 35%;
-  padding: 3.5%;
-  border: 2px solid rgba(195, 195, 195, 0.5);
-  border-radius: 0.5em;
-  margin-left: 2.5em;
 
-}
 
 .profile input[type=tel],
 .profile input[type=email],
 .profile input[type=password] {
-  width: 85%;
+  /* width: 85%; */
 
 }
 
-.row3 {
+.row {
   margin: 0em;
-  text-align: ;
+  /* text-align: ; */
   font-family: 'Tajawal';
   font-size: 1em;
   color: #2180A5;
+  margin-left: 15em;
 }
 
 #myFile {
@@ -158,14 +155,14 @@ input {
 
 }
 
-.row {
+/* .row {
   display: block;
   text-align: center;
   margin: 2em;
 
-}
+} */
 
-.col {
+/* .col {
   margin-left: 1em;
   float: right;
   width: 16em;
@@ -178,13 +175,28 @@ input {
   margin: 0em;
   text-align: left;
   display: block;
+} */
+
+.col {
+
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #0E0F1D;
 }
+
 
 
 /*the container must be positioned relative:*/
 .custom-select {
   position: relative;
   font-family: Arial;
+  margin-left: 8em;
 }
 
 .custom-select select {
@@ -274,41 +286,6 @@ form.servec {
 
 }
 
-.button:hover {
-  background-color: #2180A5;
-}
-
-.servec img {
-  border-radius: 9px;
-}
-
-.servec button {
-  position: relative;
-  background-color: #488FAA;
-  border: none;
-  font-size: 1em;
-  width: 12em;
-  height: 12em;
-  color: #FFFFFF;
-  padding: 3em;
-  text-align: center;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 2em;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
-}
-
-.col2 {
-  margin-left: 1em;
-  float: right;
-  width: 16em;
-  display: inline-block;
-}
-
 /*------------------------------*/
 /*-------patientrec page-------*/
 #search:hover{
@@ -341,8 +318,99 @@ form.recpatient {
   margin-left: 1em;
 
 }
+.con{
+  position: absolute;
+  width: 1008px;
+  height: 589px;
+      margin-left: 12em;
+     margin-top: 2em;
+    background: rgba(255, 255, 255, 0.71);
+    border-radius: 50px;
+    text-decoration: none;
+    align-items: center;
+text-align:center;
 
-.se input {
+}
+.form-check-input{
+  float: center;
+  position: relative;
+  font-family: 'Tajawal';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+display: flex;
+align-items: center;
+text-align: center;
+color: rgba(0, 0, 0, 0.5);
+
+
+}
+input {
+  width: 25em; 
+  height: 4em;
+ padding: 0.8%; 
+ margin-left: 2.5em;
+
+}
+
+.inputType {
+ 
+  background-color: white;
+border: 2px solid rgba(195, 195, 195, 0.5);
+border-radius: 0.5em;
+  direction: rtl;
+  text-align: center;
+  float: center;
+  direction: rtl;
+    margin-bottom: 3em;
+  margin-left: 3em;
+  color:rgba(0, 0, 0, 0.5);
+}
+.form-check{
+
+  direction: rtl;
+  text-align: center;
+  float: center;
+  direction: rtl;
+  margin-bottom: 3em;
+margin-left: 5em;
+
+/* .button {
+  color: white;
+  background-color: #2180A5;
+  text-align: center;
+  border: none;
+  padding: 0.5em 6em 0.5em 6em;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0.6em;
+  margin-left: 2em
+} */
+}.button{
+  font-family: 'Tajawal';
+  font-size: 1em;
+  background-color:  #2180A5;
+  border: none;
+  display: inline-block;
+width: 25em  !important; 
+margin-left: 19em;
+  color: white;
+  border-radius: 3em;
+  box-shadow: 0.06em 0.06em #D7D7D7;
+  padding: 0.5em 6em 0.5em 6em;
+}  
+.button:hover {
+    background-color: #D3E6ED;
+    cursor: pointer;
+    box-shadow: .1em .1em 0.1em #D7D7D7;
+  }
+  
+.button:disabled {
+    background-color: #96c6bf;
+  }
+
+/* .se input {
   width: 30em;
   height: 4em;
   padding: 1%;
@@ -360,7 +428,7 @@ form.recpatient {
 .se::placeholder {
   font-size: 1em;
   text-align: right !important;
-}
+} */
 
 /*تنسيق العمود الاخير */
 tr td:first-child {
@@ -371,7 +439,7 @@ tr td:first-child {
 #P_record {
   font-family: 'Tajawal', sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
   border-radius: 2em;
   font-weight: bolder !important;
 
