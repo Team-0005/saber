@@ -51,3 +51,10 @@ def list_of_patient(request, p_email):
         'search': search
     }
     return render(request, 'patient/patientRec.html', context)
+
+
+
+def patientProf(request):
+    return render(request, 'patient/patientProfile.html')
+  
+
