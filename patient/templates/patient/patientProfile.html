@@ -41,7 +41,7 @@
       <br>
       <div class="row align-items-start">
         <p class="title"> 
-          <i class="fas fa-user-plus"> </i> إضافة مريض</p>
+          <i class="fas fa-user-plus"> </i>معلومات المريض</p>
       </div>
       <div class="row align-items-start">
         <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:35em; margin-left: 13em;   margin-top: 1.5em;
@@ -49,14 +49,21 @@
           placeholder=" اسم المريض بالكامل &#xf406; " min="3" required>
       </div>
       <div class="row  align-items-start">
-        <div class="col order-last ">
+        <div class="col order-first ">
+          <input class="inputType"style="font-family: 'Font Awesome 5 Free'; width:5em;" type="tel" id="age" name="pt_age"
+          placeholder="العمر :">
           <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="date" id="AP_date" name="pt_birth_date"
           placeholder=" تاريخ الميلاد &#xf007;" required>
         </div>
-       
-        <div class="col order-first">
+      
+        <div class="col order-last">
           <input class="inputType"style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"
           placeholder="  رقم الهاتف  &#xf095;" min="8" required>
+          
+          
+        </div>
+        <div class="col order-last">
+          
         </div>
 
       </div>
