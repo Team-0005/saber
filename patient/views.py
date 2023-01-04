@@ -38,17 +38,13 @@ def list_of_patient(request, p_email):
     psy = Psychologist.objects.get(p_email=p_email)
 
     list = Result.objects.filter(pt__p_email__exact=p_email)
-    search = None
+    search = ""
     if 'searchField' in request.GET:
         search = request.GET['searchField']
         if search:
             lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
             list = list.filter(lookups)
-            
-
-    
-
-               
+                       
     context = {
         'psy': psy,
         'list': list,
