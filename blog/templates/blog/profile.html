@@ -43,19 +43,20 @@
     <div class="row">
 
       <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
-        value="{{information.p_l_name}}" placeholder=" الاسم الأخير  &#xf406;" min="3" required disabled>
+        value="{{information.p_l_name}}" placeholder=" الاسم الأخير  &#xf406;" min="3" required disabled onkeypress="return  check_letter(event);">
       <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userfname" name="p_f_name"
-        value="{{information}}" placeholder=" الاسم الأول  &#xf406; " min="3" required disabled>
+        value="{{information}}" placeholder=" الاسم الأول  &#xf406; " min="3" required disabled onkeypress="return  check_letter(event);">
 
     </div>
     <div class="row">
       <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no"
-        value="{{information.p_phone_no}}" placeholder="  05XXXXXXXX  &#xf095;" min="8" required
+        value="{{information.p_phone_no}}" placeholder="  05XXXXXXXX  &#xf095;" maxlength='10' min="8" required
         onkeypress="return check_number(event);" disabled>
     </div>
     <div class="row">
       <input type="email" id="email" name="email" value="{{information.p_email}}" placeholder=" xxx@gmail.com &#x40;"
         required onblur="check_email('email','mailmessage');" disabled>
+        <span class='massages' id="mailmessage"></span>
     </div>
 
     <div class="row">
@@ -143,8 +144,8 @@
     </div>
 
   </footer>
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
   <script>
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/

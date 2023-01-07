@@ -93,6 +93,9 @@ footer a:hover,
 #cancel{
   background-color: #B7523B;
 }
+.massages{
+  color: red;
+}
 
 .jender {
   font-family: 'Tajawal';

@@ -117,7 +117,7 @@ function check_letter(event) {
 };
 
 
-$('#signin,#signup,#FG_pass').submit(function (evt) {
+$('#signin,#signup,#FG_pass,#profile').submit(function (evt) {
   if (lock) {
     evt.preventDefault();
   }
