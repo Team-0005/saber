@@ -1,52 +1,43 @@
 {% extends "blog/base.html" %}
 {% load static %}
 {% block content %}
-
 <!-- log in -->
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-  <div class="modal-content animate">
-
-
-    <div id="lo" class="container  ">
-
-
+  <span onclick="close_modal(1);" class="close" title="Close Modal">&times;</span>
+  <div id='id001' class="modal-content animate">
+    <div id="lo" class="container">
       <div class="col">
-
-
         <form id="signin" action="{% url 'blog:signin' %}" method="post">
           <!-- for_security -->
           {% csrf_token %}
+
           <div class="row">
             <div class="col-1">
-
-              <a href="# " onclick="document.getElementById('id01').style.display='block'"> تسجيل الدخول </a>
-              <a href="#"
-                onclick="document.getElementById('id01').style.display='none';document.getElementById('id00').style.display='block'">انشاء
-                حساب</a>
+              <a href="# " onclick="get_modal(1);"> تسجيل الدخول </a>
+              <a href="#" onclick="change_modal(1,0);">انشاء حساب</a>
             </div>
           </div>
+
           <div class="row">
             <div class="col-2">
               <input type="email" id="email" name="email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
-                autofocus required onblur="check_email('email','mailmessage');">
+                autofocus required onblur="check_email('email','p_email');">
             </div>
-            <span class='massages' id="p_mailmessage"></span>
+            <label class='massages' id="p_email"></label>
           </div>
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password"
-                placeholder=" &#xf023; كلمة المرور " min="8" required onblur="check_symbol('password','passmessage');">
+                placeholder=" &#xf023; كلمة المرور " min="8" required
+                onkeypress="return  check_letter(event) || check_number(event);">
             </div>
-            <span class='massages'id="passmessage"></span>
+            <label class='massages' id="p_password"></label>
           </div>
+
           <div class="row">
             <div class="col-1">
-
-              <a href="#"
-                onclick="document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='block'">هل
+              <a href="#" onclick="change_modal(1,2);">هل
                 نسيت كلمة المرور ؟</a>
             </div>
           </div>
@@ -54,16 +45,14 @@
           <div class="row">
             <div class="col-6">
               <input class="button" type="submit" value="دخول">
-              <a href=""><button class="button" type="button" name="button"> إنشاء حساب</button></a>
+              <a href="#"><button class="button" type="button" name="button" onclick="change_modal(1,0);"> إنشاء
+                  حساب</button></a>
             </div>
           </div>
-
         </form>
       </div>
     </div>
   </div>
-
-
 </div>
 
 
@@ -71,48 +60,38 @@
 
 
 <div id="id00" class="modal">
-  <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
-
+  <span onclick="close_modal(0);" class="close" title="Close Modal">&times;</span>
   <div id="id001" class="modal-content animate">
-
     <div id="lo" class="container ">
-
       <div class="col">
-
         <form id="signup" action="{% url 'blog:signup' %}" enctype="multipart/form-data" method="POST">
           <!-- for_security -->
           {% csrf_token %}
-
           <div class="row">
             <div class="col-1">
-
-              <a href="# "
-                onclick="document.getElementById('id00').style.display='none';document.getElementById('id01').style.display='block'">
+              <a href="# " onclick="change_modal(0,1);">
                 تسجيل الدخول </a>
-
-              <a href="#" onclick="document.getElementById('id00').style.display='block'">انشاء حساب</a>
-
+              <a href="#" onclick="get_modal(0)">انشاء حساب</a>
             </div>
           </div>
-
-
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userfname" name="p_f_name"
-                placeholder="&#xf007; الاسم الأول " min="3" autofocus required onblur="check_symbol('userfname','namemessage')">
+                placeholder="&#xf007; الاسم الأول " min="3" autofocus required
+                onkeypress="return  check_letter(event);">
             </div>
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
-                placeholder="&#xf007; الاسم الأخير " min="3" autofocus required onblur="check_symbol('userlname','namemessage')">
+                placeholder="&#xf007; الاسم الأخير " min="3" autofocus required
+                onkeypress="return  check_letter(event);">
             </div>
-            <span class="massages" id="namemessage"></span>
           </div>
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="p_phone_no"
-                placeholder=" &#xf095; " value="********05" min="8" pattern="[0]{1}[5]{1}[0-9]{8}"
+                placeholder=" &#xf095; " value="********05" min="8" onkeypress="return  check_number(event);"
                 title="تأكد من صحة الرقم المدخل">
             </div>
           </div>
@@ -122,20 +101,22 @@
               <input type="email" id="p_email" name="p_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
                 autofocus required onblur="check_email('p_email','p_mailmessage');">
             </div>
-            <span class='massages'id="p_mailmessage"></span>
+            <span class='massages' id="p_mailmessage"></span>
           </div>
 
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="p_password" name="p_password"
-                placeholder=" &#xf023; تأكيد كلمة المرور" min="8" require onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('p_password','passmessage');">
+                placeholder=" &#xf023; تأكيد كلمة المرور" min="8" require
+                onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('p_password','passmessage');">
             </div>
           </div>
 
           <div class="row">
             <div class="col-2">
-              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirm_password" name="confirm_password"
-                placeholder=" &#xf023; كلمة المرور " min="8" required onkeyup="check_pass('p_password','confirm_password','p_passmessage');check_symbol('confirm_password','p_passmessage');"> 
+              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirm_password"
+                name="confirm_password" placeholder=" &#xf023; كلمة المرور " min="8" required
+                onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('confirm_password','p_passmessage');">
             </div>
             <span class="massages" id="p_passmessage"></span>
           </div>
@@ -143,11 +124,12 @@
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="scfhs_no" name="scfhs_no"
-                placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required onblur="check_symbol('scfhs_no','scfhsmessage')">
+                placeholder="&#xf15c; رقم SCFHS " min="3" size="10" autofocus required
+                onkeypress="return check_letter(event) || check_number(event);">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="userlname" name="current_job_title"
-                placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required onblur="check_symbol('scfhs_no','scfhsmessage')">
+                placeholder="&#xf0b1; المسمى الوظيفي  " min="3" size="10" autofocus required
+                onkeypress="return check_letter(event);">
             </div>
-            <span class="massages" id="scfhsmessage"></span>
           </div>
 
           <div class="row">
@@ -159,7 +141,7 @@
 
           {% for message in messages %}
           <script>
-            document.getElementById('id001').classList.remove("animate");
+            document.getElementById('id000').classList.remove("animate");
             document.getElementById('id00').style.display = 'block';
           </script>
           <div class="alert alert-success">
@@ -175,49 +157,40 @@
               <input class="button" type="submit" name="btn_signup" value="إنشاء حساب">
             </div>
           </div>
-
         </form>
       </div>
     </div>
   </div>
-
 </div>
 
 <!-- forget pass -->
 
 <div id="id02" class="modal">
-  <span
-    onclick="document.getElementById('id01').style.display='none';document.getElementById('id02').style.display='none'"
-    class="close" title="Close Modal">&times;</span>
-
+  <span onclick="change_modal(1,2)" class="close" title="Close Modal">&times;</span>
   <div class="modal-content">
-
-
     <div id="lo" class="container  ">
-
       <div class="col">
-
         <form id="FG_pass" action="{% url 'blog:forget' %}" method="post">
           <!-- for_security -->
           {% csrf_token %}
+
           <div class="row">
             <div class="col-1">
               <span style="color: #2180A5; border-bottom:1px solid #2180A5; "> نسيت كلمة المرور</span>
             </div>
           </div>
+
           <div class="row">
             <div class="col-2">
               <input type="email" id="fp_email" name="fp_email" placeholder="&#x40; البريدالالكتروني " min="3" size="25"
                 autofocus required onblur="check_email('fp_email','fp_mailmessage');">
             </div>
-            <span class='massages'id="fp_mailmessage"></span>
+            <span class='massages' id="fp_mailmessage"></span>
           </div>
-
 
           <div class="row">
             <div class="col-6">
-              {% comment %} <a href="#"
-                onclick="document.getElementById('id02').style.display='none';document.getElementById('id03').style.display='block'">
+              {% comment %} <a href="#" onclick="change_modal(2,3)">
                 {% endcomment %}
                 <input class="button" type="submit" value="التالي"> </a>
             </div>
@@ -237,16 +210,10 @@
 {% comment %}
 <script src="https://cdn.userfront.com/core.js"></script>
 <div id="id03" class="modal">
-  <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-
+  <span onclick="close_modal(3)" class="close" title="Close Modal">&times;</span>
   <div class="modal-content">
-
-
     <div id="lo" class="container  ">
-
-
       <div class="col" style="float: right;">
-
         <form id="password-reset" action="" method="post">
 
           <div class="row">
@@ -260,23 +227,21 @@
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="FG_pass_R" name="FG_pass_R"
-                placeholder=" &#xf13e; رمز التحقق  " min="8" size="6" required pattern="[0-9]*">
+                placeholder=" &#xf13e; رمز التحقق  " min="8" size="6" required onkeypress="return check_number(event);">
             </div>
           </div>
 
           <div class="row">
             <div class="col-1">
-              <a href="#"
-                onclick="document.getElementById('id03').style.display='none';document.getElementById('id02').style.display='block'">
+              <a href="#" onclick="change_modal(3,2)">
                 إعادة ارسال رمز التحقق </a>
             </div>
           </div>
 
           <div class="row">
             <div class="col-2">
-              <a href="#"
-                onclick="document.getElementById('id03').style.display='none';document.getElementById('id04').style.display='block'"><button
-                  class="button" type="button" name="button"> تحقق</button></a>
+              <a href="#" onclick="change_modal(3,4)"><button class="button" type="button" name="button">
+                  تحقق</button></a>
             </div>
           </div>
 
@@ -284,8 +249,6 @@
       </div>
     </div>
   </div>
-
-
 </div> {% endcomment %}
 
 
@@ -293,16 +256,10 @@
 <!-- password reset -->
 <script src="https://cdn.userfront.com/core.js"></script>
 <div id="id04" class="modal">
-  <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
-
+  <span onclick="close_modal(4)" class="close" title="Close Modal">&times;</span>
   <div class="modal-content">
-
-
     <div id="lo" class="container  ">
-
-
       <div class="col">
-
         <form id="new_pass" action="{% url 'blog:reset' %}" method="post">
 
           <div class="row">
@@ -310,23 +267,25 @@
               <span style="color: #2180A5; border-bottom:1px solid #2180A5;"> كلمة المرور الجديدة</span>
             </div>
           </div>
+
           <div class="row">
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="new_pass" name="new_pass"
-                placeholder="&#xf023; كلمة المرور  " min="3" size="10" autofocus required onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('new_pass','new_passmessage')">
+                placeholder="&#xf023; كلمة المرور  " min="3" size="10" autofocus required
+                onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('new_pass','new_passmessage')">
             </div>
           </div>
 
-          div class="row">
+          <div class="row">
             <div class="col-2">
-              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirmnew_password" name="confirmnew_password"
-                placeholder=" &#xf023; كلمة المرور " min="8" required onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('confirmnew_password','new_passmessage');"> 
+              <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirmnew_password"
+                name="confirmnew_password" placeholder=" &#xf023; كلمة المرور " min="8" required
+                onblur="check_pass('new_pass','confirmnew_password','new_passmessage');check_symbol('confirmnew_password','new_passmessage');">
             </div>
             <span class="massages" id="new_passmessage"></span>
           </div>
 
           <div class="row">
-
             <div class="col-2">
               <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confi-pass" name="confi-pass"
                 placeholder=" &#xf023; تأكيد كلمة المرور  " min="8" required>
@@ -351,28 +310,20 @@
 <!---->
 
 <div class="sign-form">
-
   <form id="signin" action="" method="post">
-
-
     <div class="row col0">
       <p class="top-p">..نحن هنا لمســـــــــــــــــــاعدتك</p>
       <p class="top-2">لتَّشخيص بأسرع وقت وأكثر دِقة</p>
       <br>
     </div>
-    <a id="buttonjoin" href="#signup" onclick="document.getElementById('id00').style.display='block'"><button
-        class="button" type="button" name="button">إنشاء حساب</button></a>
+    <a id="buttonjoin" href="#signup" onclick="get_modal(0)"><button class="button" type="button" name="button">إنشاء
+        حساب</button></a>
   </form>
 </div>
 
-
 <div id="whowe" class="container1">
-
   <div class="row-1">نقوم بمســـــــــــاعدتك للتشخيص بإسرع وقت </div>
-
   <div class="row-2">نستطيع تشخيص مرضاك بسهولة وسرعة ودقة سواءً في العيادة أو عن بعــــــــــــــــد</div>
 </div>
-
-
 
 {% endblock %}

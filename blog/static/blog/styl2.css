@@ -90,6 +90,10 @@ footer a:hover,
   margin-left: 2em
 }
 
+#cancel{
+  background-color: #B7523B;
+}
+
 .jender {
   font-family: 'Tajawal';
   display: block;

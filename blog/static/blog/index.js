@@ -1,4 +1,4 @@
-form = false;
+lock = false;
 // Get the modal
 var modal = [
   document.getElementById("id00"),
@@ -16,68 +16,131 @@ window.onclick = function (event) {
     }
   }
 };
+// control modal
+function get_modal(x) {
+  modal[x].style.display = 'block';
+}
 
-function check_symbol(input_id,inputmessage) {
-  var input =  document.getElementById(input_id);
-  var regularExp =/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
-  if (input.value.match(regularExp)){
-    input.style.borderColor='red';
-    document.getElementById(inputmessage).innerHTML="الرجاء عدم استخدام رموز مثل */+";
-    form = false;
+function close_modal(x) {
+  modal[x].style.display = 'none';
+}
+
+function change_modal(x, y) {
+  close_modal(x);
+  get_modal(y);
+}
+
+
+
+//return style to defult
+function setDefult(input, message) {
+  message.innerHTML = null;
+  input.style.borderColor = "#5399B5";
+}
+
+//change style when error ocurs
+function setError(input) {
+  input.style.borderColor = "red";
+}
+
+
+//functions for check forms
+//1
+function check_symbol(input_id, message_id) {
+  var regularExp = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/
+  var input = document.getElementById(input_id);
+  var message = document.getElementById(message_id);
+  if (input.value.match(regularExp)) {
+    setError(input);
+    message.innerHTML = "الرجاء عدم استخدام رموز مثل */+";
+    lock = true;
   }
-  else{
-    document.getElementById(inputmessage).innerHTML= null;
-    input.style.borderColor = "#5399B5";
-    form = true;
+  else {
+    setDefult(input, message);
+    lock = false;
   }
 }
 
-function check_email(mail_id,mailmessage) {
-  var input =  document.getElementById(mail_id);
+//2
+function check_email(email_id, message_id) {
   var regularExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-  if (!input.value.match(regularExp)){
-    input.style.borderColor='red';
-    document.getElementById(mailmessage).innerHTML="الرجاء التأكد من صحة البريد الالكتروني";
+  var email = document.getElementById(email_id);
+  var message = document.getElementById(message_id);
+  if (!email.value.match(regularExp)) {
+    setError(email, message);
+    message.innerHTML = "الرجاء التأكد من صحة البريد الالكتروني";
+    lock = true;
   }
-  else{
-    document.getElementById(mailmessage).innerHTML= null;
-    input.style.borderColor = "#5399B5";
-    form = true;
+  else {
+    setDefult(email, message);
+    lock = false;
   }
 }
 
-//Checking password function
-function check_pass(pass_id,passconfirm_id,message_id) {
+//3
+function check_pass(pass_id, confirm_pass_id, message_id) {
   var pass = document.getElementById(pass_id);
-  var passconfirm = document.getElementById(passconfirm_id);
-
-  if (pass.value != passconfirm.value) {
-    pass.style.borderColor = "red";
-    passconfirm.style.borderColor = "red";
-    document.getElementById(message_id).innerHTML =
+  var confirm_pass = document.getElementById(confirm_pass_id);
+  var message = document.getElementById(message_id);
+  if (pass.value != confirm_pass.value) {
+    setError(pass);
+    setError(passconfirm);
+    message.innerHTML =
       " كلمة المرور غير متطابقة";
+    lock = true;
   } else {
     if (pass.value == "" && passconfirm.value == "") {
-      pass.style.borderColor = "red";
-      passconfirm.style.borderColor = "red";
-    } else {
-      document.getElementById("passmessage").innerHTML = null;
-      pass.style.borderColor = "#5399B5";
-      passconfirm.style.borderColor = "#5399B5";
-      form = true;
+      setError(pass);
+      setError(confirm_pass);
+      lock = true;
+    }
+    else {
+      setDefult(pass, message);
+      setDefult(passconfirm, message);
+      lock = false;
     }
   }
 }
 
+//4
+//force user to enter only number
+function check_number(event) {
+  var key = event.keyCode;
+  return (key <= 57 && key >= 48);
+}
+
+//5
+//force user to enter only letters
+function check_letter(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || (key >= 97 && key <= 122));
+};
+
+
+$('#signin,#signup,#FG_pass').submit(function (evt) {
+  if (lock) {
+    evt.preventDefault();
+  }
+});
+
 //function for edit button in page
 function edit_func() {
+  document.getElementById('save').type = 'submit';
+  document.getElementById('edit').style.display = 'none';
+  document.getElementById('cancel').style.display = 'inline-block';
   var profile = document.getElementById("profile").elements;
-  for (var i = 2; i < profile.length; i++) {
+  for (var i = 0; i < profile.length - 6; i++) {
     profile[i].removeAttribute("disabled");
   }
 }
-function check_form(){
-  if (!form){
-    
+
+//function for edit button in page
+function cancel_func() {
+  document.getElementById('save').type = 'hidden';
+  document.getElementById('edit').style.display = 'inline-block';
+  document.getElementById('cancel').style.display = 'none';
+  var profile = document.getElementById("profile").elements;
+  for (var i = 0; i < profile.length - 6; i++) {
+    profile[i].setAttribute("disabled", "disabled");
   }
 }
