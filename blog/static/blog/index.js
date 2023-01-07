@@ -136,11 +136,5 @@ function edit_func() {
 
 //function for edit button in page
 function cancel_func() {
-  document.getElementById('save').type = 'hidden';
-  document.getElementById('edit').style.display = 'inline-block';
-  document.getElementById('cancel').style.display = 'none';
-  var profile = document.getElementById("profile").elements;
-  for (var i = 0; i < profile.length - 6; i++) {
-    profile[i].setAttribute("disabled", "disabled");
-  }
+  location.reload(); 
 }
