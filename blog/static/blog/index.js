@@ -112,8 +112,13 @@ function check_number(event) {
 //5
 //force user to enter only letters
 function check_letter(event) {
-  var key = event.keyCode;
-  return ((key >= 65 && key <= 90) || (key >= 97 && key <= 122));
+  var regularExp = /[\u0600-\u06FF]/;
+  var key = event.which;
+  var str = String.fromCharCode(key);
+  if(regularExp.test(str)){
+    return true;
+  }
+  return false;
 };
 
 
