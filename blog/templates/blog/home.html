@@ -7,7 +7,7 @@
   <div id='id001' class="modal-content animate">
     <div id="lo" class="container">
       <div class="col">
-        <form id="signin" action="{% url 'blog:signin' %}" method="post">
+        <form id="signin" action="{% url 'signin' %}" method="post">
           <!-- for_security -->
           {% csrf_token %}
 
@@ -64,7 +64,7 @@
   <div id="id001" class="modal-content animate">
     <div id="lo" class="container ">
       <div class="col">
-        <form id="signup" action="{% url 'blog:signup' %}" enctype="multipart/form-data" method="POST">
+        <form id="signup" action="{% url 'signup' %}" enctype="multipart/form-data" method="POST">
           <!-- for_security -->
           {% csrf_token %}
           <div class="row">
@@ -170,7 +170,7 @@
   <div class="modal-content">
     <div id="lo" class="container  ">
       <div class="col">
-        <form id="FG_pass" action="{% url 'blog:forget' %}" method="post">
+        <form id="FG_pass" action="{% url 'forget' %}" method="post">
           <!-- for_security -->
           {% csrf_token %}
 
@@ -260,7 +260,7 @@
   <div class="modal-content">
     <div id="lo" class="container  ">
       <div class="col">
-        <form id="new_pass" action="{% url 'blog:reset' %}" method="post">
+        <form id="new_pass" action="{% url 'reset' %}" method="post">
 
           <div class="row">
             <div class="col-1">
