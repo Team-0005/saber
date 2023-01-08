@@ -61,7 +61,7 @@
           <td style="color: #439936 ;"> تم وضع الخطة العلاجية </td>
           {% endif %}
           <td>{{listp.pt.pt_phone_no}}</td>
-          <td><a href="#"> {{listp.pt.pt_name}} </a></td>
+          <td><a href="{% url 'patient:patientProfile' listp.pt.pt_id %}"> {{listp.pt.pt_name}} </a></td>
         </tr>
         {% endfor %}
          

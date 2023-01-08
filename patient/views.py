@@ -54,7 +54,11 @@ def list_of_patient(request, p_email):
 
 
 
-def patientProf(request):
-    return render(request, 'patient/patientProfile.html')
+def patientProf(request, pt_id):
+    pat = Result.objects.get(pt__pt_id=pt_id)
+    context = {
+        'pat': pat,
+    }
+    return render(request, 'patient/patientProfile.html',context)
   
 
