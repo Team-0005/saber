@@ -135,7 +135,7 @@ font-style: normal;
         <div class="col order-last">
           <div class="p_age" style="padding-top: 0.6em;"> 
             <label class="labelin">: الجنس</label>
-         <h6 labelin> أنثى</h6>
+         <h6 labelin>{{pat.pt.pt_gender}}</h6>
           </div>
         </div>
         <div class="col order-first">
@@ -160,7 +160,11 @@ font-style: normal;
             </tr>
             <tr>
               <td>
+                {% if pat.pt.pt_plan != Null %}
+                <input class="plan" style="font-family: 'Font Awesome 5 Free'; " type="text" name="p_tr" id="p_tr" value="{{pat.pt.pt_plan}}"/>
+                {% else %} 
                 <input class="plan" style="font-family: 'Font Awesome 5 Free'; " type="text" name="p_tr" id="p_tr"/>
+                {% endif %}  
               </td>
               <td>
                 <div class="result">             

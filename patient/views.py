@@ -125,6 +125,7 @@ def tretmentPlan(request, pt_id):
        temp_pat.save()
        pat.test_status = 2
        pat.save()
+       return list_of_patient(request, temp_pat.p_email.p_email)
        
     context = {
         'pat': pat,
