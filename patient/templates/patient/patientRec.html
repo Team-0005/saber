@@ -56,7 +56,7 @@
           {% if listp.test_status == 0 %}
           <td> لم يتم الاختبار </td>
           {% elif listp.test_status == 1 %}
-          <td style="color: #C58E3C ;"> بحاجة الى خطة علاجية</td>
+          <td> <a href="{% url 'patient:confResult' listp.pt.pt_id %}" style="color: #C58E3C ;"> بحاجة الى خطة علاجية</a></td>
           {% elif listp.test_status == 2 %}
           <td style="color: #439936 ;"> تم وضع الخطة العلاجية </td>
           {% endif %}
