@@ -21,7 +21,7 @@
   position: absolute;
   width: 1008px;
   height: 789px;
-      margin-left: 12em;
+      margin-left: 15.5em;
      margin-top: 2em;
     background: rgba(255, 255, 255, 0.71);
     border-radius: 50px;
@@ -51,6 +51,7 @@ td{
   padding-right: 3em;
   color: #2180A5 !important;
   text-align: center;
+  
 }
 .plan{
   width: 694px;
@@ -105,15 +106,19 @@ font-style: normal;
         <p class="title"> معلومات المريض</p>
       </div>
       <div class="row align-items-start">
-        <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:35em; margin-left: 13em;   margin-top: 1.5em;" 
+        <div class="col order-last">
+        <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:25em; margin-left: 15em;   margin-top: 1.5em;" 
         type="text" id="userfname" name="pt_name" value="{{pat.pt.pt_name}}"
           placeholder=" اسم المريض بالكامل &#xf406; " min="3" required>
+          <label class="labelin"style="  padding-bottom: 1.9em;">الاسم الكامل </label>
+        </div>
       </div>
 
       <div class="row  align-items-start">
         <div class="col order-last ">
            <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="text" id="AP_date" name="pt_birth_date"
            value="{{pat.pt.pt_birth_date}}" placeholder=" تاريخ الميلاد &#xf007;" required onfocus ="(this.type='date')" >
+           <label class="labelin"style="padding-bottom: 2.9em; padding-right: 1em;">تاريخ الميلاد </label>
         </div>
         <div class="col-6 col-sm-3 ">
           <p class="p_age" >  {{age}} العمر</p>
@@ -121,6 +126,7 @@ font-style: normal;
         <div class="col order-first">
           <input class="inputType"style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"
           value="{{pat.pt.pt_phone_no}}" placeholder="  رقم الهاتف  &#xf095;" min="8" required>
+          <label class="labelin"style="padding-bottom: 2.9em; padding-right: 1em;">رقم الهاتف</label>
         </div>
       
       </div>
@@ -128,7 +134,7 @@ font-style: normal;
       <div class="row align-items-start">
         <div class="col order-last">
           <div class="p_age" style="padding-top: 0.6em;"> 
-            <label >: الجنس</label>
+            <label class="labelin">: الجنس</label>
          <h6 labelin> أنثى</h6>
           </div>
         </div>
