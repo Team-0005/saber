@@ -109,9 +109,26 @@ def patientProf(request, pt_id):
 
 def confResult(request, pt_id):
     pat = Result.objects.get(pt__pt_id=pt_id)
-
+    sever = severity(pat.test.test_id, pat.test_result)
     context = {
         'pat': pat,
+        'sever': sever,
     }
     return render(request, 'patient/conf_result.html',context)
+
+def tretmentPlan(request, pt_id):
+    pat = Result.objects.get(pt__pt_id=pt_id)
+    temp_pat = Patient.objects.get(pt_id=pt_id)
+    sever = severity(pat.test.test_id, pat.test_result)
+    if request.method == "POST":
+       temp_pat.pt_plan = request.POST['pt_plan']
+       temp_pat.save()
+       pat.test_status = 2
+       pat.save()
+       
+    context = {
+        'pat': pat,
+        'sever': sever,
+    }
+    return render(request, 'patient/tretment.html',context)
   

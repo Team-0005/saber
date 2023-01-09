@@ -35,24 +35,26 @@
 
 
       <p>  نتيجة اختبار </p>
-       <p class="r"> مقياس ييل بروان للوسواس القهري</p>
+       <p class="r"> {{pat.test}}</p>
        <p> للمريض </p>
-        <p class="r"> امين يوسف سعد  </p>
+        <p class="r"> {{pat.pt.pt_name}}  </p>
 
     </div>
   <div class="row4">
     <p> هي </p>
-     <p class="r2"> 25 </p>
+     <p class="r2"> {{pat.test_result}} </p>
      <p> شدة الاضطراب  </p>
-      <p class="r2"> ملحـــــوظ  </p>
+      <p class="r2"> {{sever}}  </p>
     </div>
 </form>
-  <form class="conf_r" action="index.html" method="post">
+  <form class="conf_r" action="index.html" method="get">
+          <!-- for_security -->
+          {% csrf_token %}
     <br>
 
 
 
-<button class="button" type="submit" name="next" formaction="tretment.html">موافق</button>
+<button class="button" type="submit" name="next" formaction="{% url 'patient:tretmentPlan' pat.pt.pt_id %}">موافق</button>
 <br>
 
   </form>

@@ -1,13 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title> الخطة العلاجية</title>
-  <link rel="icon" href="static/logo.png">
-  <link rel="stylesheet" href="static/styl2.css">
+  <link rel="icon" href="{% static 'blog/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'patient/stylres.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +16,13 @@
 </head>
 
 <body>
-  <a id="logo" href=""><img src="static/logo1.png" alt="logo" width="150" height="100"></a>
+  <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="">الصفحة الرئيسية</a></div>
       <div class="col6"><a href="#whowe">من نحن؟</a></div>
         <div class="col6"><a href="#footer">تواصل معنا</a></div>
             <div class="col7"> <a   id="login" href="#" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل خروج </a>
-              <img id="login-pho" src="static/login.png" width="50" height="50"></div>
+              <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50"></div>
   </nav>
   <br>    <br>
   <br>
@@ -32,24 +32,25 @@
       <div class="row4">
 
 
-      <p>  نتيجة اختبار </p>
-       <p class="r"> مقياس ييل بروان للوسواس القهري</p>
-       <p> للمريض </p>
-        <p class="r"> امين يوسف سعد  </p>
-
+        <p>  نتيجة اختبار </p>
+        <p class="r"> {{pat.test}}</p>
+        <p> للمريض </p>
+         <p class="r"> {{pat.pt.pt_name}}  </p>
     </div>
   <div class="row4">
     <p> هي </p>
-     <p class="r2"> 25 </p>
+     <p class="r2"> {{pat.test_result}} </p>
      <p> شدة الاضطراب  </p>
-      <p class="r2"> ملحـــــوظ  </p>
+      <p class="r2"> {{sever}}  </p>
     </div>
 </form>
-  <form class="tret" action="index.html" method="post">
+  <form class="tret" action="{% url 'patient:tretmentPlan' pat.pt.pt_id %}" method="post">
+          <!-- for_security -->
+          {% csrf_token %}
     <br>
   <p>   : الخطة العلاجية  </p>
-  <input type="text" style="font-family: 'Font Awesome 5 Free';" placeholder="نص  &#xf481; " >
-  <button class="button" type="button" name="next"  >حفظ</button>
+  <input type="text" style="font-family: 'Font Awesome 5 Free';" placeholder="نص  &#xf481; " name="pt_plan" >
+  <button class="button" type="submit" name="next">حفظ</button>
 
 
 
@@ -70,7 +71,7 @@
     <footer id="footer"class="footer-distributed">
 
       <div class="footer-right">
-    <a id="logo" href=""><img src="static/logod.png" alt="logo" width="250" height="200"></a>
+    <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
 
     <p class="footer-links">
      <a id="h" href="">الصفحات</a>

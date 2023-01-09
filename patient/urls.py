@@ -7,4 +7,5 @@ urlpatterns = [
     path('addpt/<p_email>', views.addPatient, name='addpt'),
     path('<pt_id>/', views.patientProf , name='patientProfile'),
     path('confResult/<pt_id>/', views.confResult , name='confResult'),
+    path('tretmentPlan/<pt_id>/', views.tretmentPlan , name='tretmentPlan'),
 ]
