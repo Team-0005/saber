@@ -21,7 +21,7 @@
   position: absolute;
   width: 1008px;
   height: 789px;
-      margin-left: 12em;
+      margin-left: 15.5em;
      margin-top: 2em;
     background: rgba(255, 255, 255, 0.71);
     border-radius: 50px;
@@ -51,6 +51,7 @@ td{
   padding-right: 3em;
   color: #2180A5 !important;
   text-align: center;
+  
 }
 .plan{
   width: 694px;
@@ -75,6 +76,7 @@ font-weight: bold;
 font-family: 'Tajawal';
 font-style: normal;
 }
+
 </style>
 
 </head>
@@ -104,15 +106,19 @@ font-style: normal;
         <p class="title"> معلومات المريض</p>
       </div>
       <div class="row align-items-start">
-        <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:35em; margin-left: 13em;   margin-top: 1.5em;" 
+        <div class="col order-last">
+        <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:25em; margin-left: 15em;   margin-top: 1.5em;" 
         type="text" id="userfname" name="pt_name" value="{{pat.pt.pt_name}}"
           placeholder=" اسم المريض بالكامل &#xf406; " min="3" required>
+          <label class="labelin"style="  padding-bottom: 1.9em;">الاسم الكامل </label>
+        </div>
       </div>
 
       <div class="row  align-items-start">
         <div class="col order-last ">
            <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="text" id="AP_date" name="pt_birth_date"
            value="{{pat.pt.pt_birth_date}}" placeholder=" تاريخ الميلاد &#xf007;" required onfocus ="(this.type='date')" >
+           <label class="labelin"style="padding-bottom: 2.9em; padding-right: 1em;">تاريخ الميلاد </label>
         </div>
         <div class="col-6 col-sm-3 ">
           <p class="p_age" >  {{age}} العمر</p>
@@ -120,22 +126,17 @@ font-style: normal;
         <div class="col order-first">
           <input class="inputType"style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"
           value="{{pat.pt.pt_phone_no}}" placeholder="  رقم الهاتف  &#xf095;" min="8" required>
+          <label class="labelin"style="padding-bottom: 2.9em; padding-right: 1em;">رقم الهاتف</label>
         </div>
       
       </div>
 
       <div class="row align-items-start">
         <div class="col order-last">
-          <div class="form-check">
-            <input class="form-check-input" style="font-family: 'Font Awesome 5 Free'; " type="radio" name="pt_gender"  checked="checked" value="ذكر"/>
-            <label class="form-check-label"style="color:rgba(0, 0, 0, 0.5);" for="pt_gender" >ذكر</label>
+          <div class="p_age" style="padding-top: 0.6em;"> 
+            <label class="labelin">: الجنس</label>
+         <h6 labelin> أنثى</h6>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pt_gender"  checked="checked" value="أنثى"/>
-            <label class="form-check-label"style="color:rgba(0, 0, 0, 0.5);"  for="pt_gender" >أنثى</label>
-          </div>
-          <label style="color:rgba(0, 0, 0, 0.5);"  >الجنس</label>
-
         </div>
         <div class="col order-first">
           <div class="custom-select" style="width: 25em;">
@@ -164,15 +165,15 @@ font-style: normal;
               <td>
                 <div class="result">             
                     <h5 style="text-align: center; color: #000000;">{{pat.test}}</h5>                 
-                    <h5 style=" color: #77624F;"> :نتيجة الاختبار </h5>  
+                    <h5 style=" color: #77624F;">:نتيجة الاختبار </h5>  
                                            {% if pat.test_result == Null %}
                     <h6 style="color: #C76A6A;" >لم يتم الاختبار</h6>
                                            {% else %}  
                     <h6 style="color: #C76A6A;" >{{pat.test_result}}</h6>
                                            {% endif %}       
                     <h5 style="color: #77624F;"> :شدة الاضطراب </h5>
-                    <h6 style="color: #C76A6A;" >{{sever}}</h6>    
-      `        </div>
+                    <h6 style="color: #C76A6A;">{{sever}}</h6>    
+              </div>
               </td>
             </tr>
           </table>
