@@ -53,6 +53,42 @@ def list_of_patient(request, p_email):
     }
     return render(request, 'patient/patientRec.html', context)
 
+def severity(test, result):
+    if test == 1:
+        if result >= 0 and result <= 16:
+            return 'لا يوجد قلق'
+        elif result >= 17 and result <= 20:
+            return 'قلق بسيط'
+        elif result >= 21 and result <= 26:
+            return 'قلق متوسط'
+        elif result >= 27 and result <= 29:
+            return 'قلق شديد'
+        else:
+            return 'قلق شديد جدا'
+
+    elif test == 2:
+        if result >= 0 and result <= 7:
+            return 'وسواس خفيف جدا'
+        elif result >= 8 and result <= 15:
+            return 'وسواس خفيف'
+        elif result >= 16 and result <= 23:
+            return 'وسواس متوسط'
+        elif result >= 24 and result <= 31:
+            return 'وسواس ملحوظ'
+        else:
+            return 'وسواس شديد'
+        
+    else:
+        if result >= 0 and result <= 9:
+            return  'لا يوجد اكتئاب'
+        elif result >= 10 and result <= 15:
+            return 'اكتئاب بسيط'
+        elif result >= 16 and result <= 23:
+            return 'اكتئاب متوسط'
+        elif result >= 24 and result <= 36:
+            return 'اكتئاب شديد'
+        else:
+            return 'اكتئاب شديد جدا'
 
 
 def patientProf(request, pt_id):
@@ -60,10 +96,14 @@ def patientProf(request, pt_id):
     date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
     today = date.today()
     age = today.year - date.year
+    sever=''
+    if pat.test_result:
+       sever = severity(pat.test.test_id, pat.test_result)
+    
     context = {
         'pat': pat,
         'age': age,
+        'sever': sever,
     }
     return render(request, 'patient/patientProfile.html',context)
   
-

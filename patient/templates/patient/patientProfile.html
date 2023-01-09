@@ -164,10 +164,14 @@ font-style: normal;
               <td>
                 <div class="result">             
                     <h5 style="text-align: center; color: #000000;">{{pat.test}}</h5>                 
-                    <h5 style=" color: #77624F;"> :نتيجة الاختبار </h5>    
-                    <h6 style="color: #C76A6A;" >25</h6>       
+                    <h5 style=" color: #77624F;"> :نتيجة الاختبار </h5>  
+                                           {% if pat.test_result == Null %}
+                    <h6 style="color: #C76A6A;" >لم يتم الاختبار</h6>
+                                           {% else %}  
+                    <h6 style="color: #C76A6A;" >{{pat.test_result}}</h6>
+                                           {% endif %}       
                     <h5 style="color: #77624F;"> :شدة الاضطراب </h5>
-                    <h6 style="color: #C76A6A;" >25</h6>    
+                    <h6 style="color: #C76A6A;" >{{sever}}</h6>    
       `        </div>
               </td>
             </tr>
