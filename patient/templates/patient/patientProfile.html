@@ -111,11 +111,11 @@ font-style: normal;
 
       <div class="row  align-items-start">
         <div class="col order-last ">
-           <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="date" id="AP_date" name="pt_birth_date"
-           value="{{pat.pt.pt_birth_date}}" placeholder=" تاريخ الميلاد &#xf007;" required>
+           <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="text" id="AP_date" name="pt_birth_date"
+           value="{{pat.pt.pt_birth_date}}" placeholder=" تاريخ الميلاد &#xf007;" required onfocus ="(this.type='date')" >
         </div>
         <div class="col-6 col-sm-3 ">
-          <p class="p_age" >  23 العمر</p>
+          <p class="p_age" >  {{age}} العمر</p>
         </div>
         <div class="col order-first">
           <input class="inputType"style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"

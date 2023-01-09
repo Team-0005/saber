@@ -7,6 +7,7 @@ from .models import Result
 from blog.models import Psychologist
 from django.contrib import messages
 from django.db.models import Q
+from datetime import *
 
 
 # Create your views here.
@@ -56,8 +57,12 @@ def list_of_patient(request, p_email):
 
 def patientProf(request, pt_id):
     pat = Result.objects.get(pt__pt_id=pt_id)
+    date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
+    today = date.today()
+    age = today.year - date.year
     context = {
         'pat': pat,
+        'age': age,
     }
     return render(request, 'patient/patientProfile.html',context)
   
