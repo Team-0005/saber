@@ -75,6 +75,7 @@ font-weight: bold;
 font-family: 'Tajawal';
 font-style: normal;
 }
+
 </style>
 
 </head>
@@ -126,16 +127,10 @@ font-style: normal;
 
       <div class="row align-items-start">
         <div class="col order-last">
-          <div class="form-check">
-            <input class="form-check-input" style="font-family: 'Font Awesome 5 Free'; " type="radio" name="pt_gender"  checked="checked" value="ذكر"/>
-            <label class="form-check-label"style="color:rgba(0, 0, 0, 0.5);" for="pt_gender" >ذكر</label>
+          <div class="p_age" style="padding-top: 0.6em;"> 
+            <label >: الجنس</label>
+         <h6 labelin> أنثى</h6>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="pt_gender"  checked="checked" value="أنثى"/>
-            <label class="form-check-label"style="color:rgba(0, 0, 0, 0.5);"  for="pt_gender" >أنثى</label>
-          </div>
-          <label style="color:rgba(0, 0, 0, 0.5);"  >الجنس</label>
-
         </div>
         <div class="col order-first">
           <div class="custom-select" style="width: 25em;">
@@ -164,15 +159,15 @@ font-style: normal;
               <td>
                 <div class="result">             
                     <h5 style="text-align: center; color: #000000;">{{pat.test}}</h5>                 
-                    <h5 style=" color: #77624F;"> :نتيجة الاختبار </h5>  
+                    <h5 style=" color: #77624F;">:نتيجة الاختبار </h5>  
                                            {% if pat.test_result == Null %}
                     <h6 style="color: #C76A6A;" >لم يتم الاختبار</h6>
                                            {% else %}  
                     <h6 style="color: #C76A6A;" >{{pat.test_result}}</h6>
                                            {% endif %}       
                     <h5 style="color: #77624F;"> :شدة الاضطراب </h5>
-                    <h6 style="color: #C76A6A;" >{{sever}}</h6>    
-      `        </div>
+                    <h6 style="color: #C76A6A;">{{sever}}</h6>    
+              </div>
               </td>
             </tr>
           </table>
