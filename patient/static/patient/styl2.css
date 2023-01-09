@@ -339,12 +339,9 @@ color: rgba(0, 0, 0, 0.5);
   font-family: 'Tajawal';
   font-style: normal;
   font-weight: bold;
-  /* font-size: 0.5em !important; */
-  /* line-height: 19px; */
-  /* display: flex; */
   align-items: center;
   text-align: right;
-  color: #0E0F1D;
+  color: rgba(0, 0, 0, 0.5);
   padding-bottom: 1em;
 
 }
