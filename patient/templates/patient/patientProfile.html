@@ -98,7 +98,7 @@ font-style: normal;
   <br>
  
   <div class="con text-center">
-    <form class="addp" action="" method="post">
+    <form class="addp" action="{% url 'patient:patientProfile' pat.pt.pt_id %}" method="post">
       <br>
       <!-- for_security -->
        {% csrf_token %}

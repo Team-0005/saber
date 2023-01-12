@@ -99,7 +99,15 @@ def patientProf(request, pt_id):
     sever=''
     if pat.test_result:
        sever = severity(pat.test.test_id, pat.test_result)
-    
+
+    if request.method == "POST":
+       temp_pat = Patient.objects.get(pt_id=pt_id)
+       temp_pat.pt_name =  request.POST['pt_name']
+       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
+    #    temp_pat.pt_birth_date =  request.POST['pt_birth_date']
+       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
+       temp_pat.save()
+
     context = {
         'pat': pat,
         'age': age,
