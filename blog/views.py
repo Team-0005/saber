@@ -41,7 +41,7 @@ def signup(request):
             print("This is wrong")
             return render(request, 'blog/home.html')
         else:
-            # messages.SUCCESS(request,"تم إرسال الطلب بنجاح")
+            messages.success(request,"تم إرسال الطلب بنجاح")
             print("create account success")
             psycho.save()
             return render(request, 'blog/home.html')
@@ -61,13 +61,15 @@ def signin(request):
                     context = {'psycho': psych}
                     return render(request, 'blog/psychologis.html', context)
                 else:
-                    print("not replaying yet")
-                    return render(request, 'tests/test.html')
+                    messages.error(request, "طلبك قيد المراجعة الرجاء انتظار الرد")
+                    return render(request, 'blog/home.html')
             else:
                 print("wrong password")
+                messages.error(request, "كلمة المرور خاطئة")
                 return render(request, 'blog/home.html')
         else:
             print("the email is not register")
+            messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
             return render(request, 'blog/home.html')
 
 
@@ -78,6 +80,7 @@ def profile(request, p_email):
             temp_email = request.POST.get('email', False)
             if Psychologist.objects.filter(p_email=temp_email):
                 print("this email already exisit")
+                messages.error(request,"هذا الإيميل مسجّل في سابِر مسبقًا")
                 context = {'information': temp_psycho}
                 return render(request, 'blog/profile.html', context)
             else:
@@ -91,9 +94,10 @@ def profile(request, p_email):
                 temp_psycho.p_phone_no = request.POST['p_phone_no']
                 temp_psycho.save()
                 context = {'information': temp_psycho}
+                messages.success(request,"تم حفظ التعديلات بنجاح")
                 return render(request, 'blog/profile.html', context)
             else:
-                print("this email already exisit")
+                messages.error(request,"هناك خطأ في البيانات المدخلة")
                 context = {'information': temp_psycho}
                 return render(request, 'blog/profile.html', context)
     else:

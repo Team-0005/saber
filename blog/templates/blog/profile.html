@@ -75,6 +75,11 @@
 
     </div>
 
+    {% for message in messages %}
+        
+    <span class="massages">{{ message }}</span>
+
+  {% endfor %}
     <div class="row">
       <button class="button" type="button" id='cancel' name="cancel" onclick="cancel_func();"
         style="display: none;">إلغاء</button>

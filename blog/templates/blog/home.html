@@ -42,6 +42,11 @@
             </div>
           </div>
 
+          {% for message in messages %}
+         
+            <span class="massages">{{ message }}</span>
+
+          {% endfor %}
           <div class="row">
             <div class="col-6">
               <input class="button" type="submit" value="دخول">
@@ -151,6 +156,8 @@
           </div>
 
           {% endfor %}
+
+       
 
           <div class="row">
             <div class="col-6">
