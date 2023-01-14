@@ -119,7 +119,7 @@ font-style: normal;
       <div class="row  align-items-start">
         <div class="col order-last ">
            <input class="inputType" style="font-family: 'Font Awesome 5 Free';" type="text" id="AP_date" name="pt_birth_date"
-           value="{{pat.pt.pt_birth_date}}" placeholder=" تاريخ الميلاد &#xf007;" required onfocus ="(this.type='date')" >
+           value="{{dateBirth}}" placeholder=" تاريخ الميلاد &#xf007;" required onfocus ="(this.type='date')" >
            <label class="labelin"style="padding-bottom: 2.9em; padding-right: 1em;">تاريخ الميلاد </label>
         </div>
         <div class="col-6 col-sm-3 ">
@@ -165,7 +165,7 @@ font-style: normal;
                 {% if pat.pt.pt_plan != Null %}
                 <input class="plan" style="font-family: 'Font Awesome 5 Free'; " type="text" name="p_tr" id="p_tr" value="{{pat.pt.pt_plan}}"/>
                 {% else %} 
-                <input class="plan" style="font-family: 'Font Awesome 5 Free'; " type="text" name="p_tr" id="p_tr"/>
+                <input class="plan" style="font-family: 'Font Awesome 5 Free'; " type="text"  id="p_tr" disabled/>
                 {% endif %}  
               </td>
               <td>
@@ -186,6 +186,11 @@ font-style: normal;
        </div>
       </div>
 <br>
+  {% for message in messages %}
+        
+    <span class="massages">{{ message }}</span>
+
+  {% endfor %}
       <div class="row align-items-start">
         <button class="button" type="button" id='cancel' name="cancel" onclick="cancel_func();"
         style="display: none;">إلغاء</button>

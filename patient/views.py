@@ -8,6 +8,7 @@ from blog.models import Psychologist
 from django.contrib import messages
 from django.db.models import Q
 from datetime import *
+from django.contrib import messages
 
 
 def addPatient(request):
@@ -99,26 +100,32 @@ def severity(test, result):
 
 
 def patientProf(request, pt_id):
+    if request.method == "POST":
+       temp_pat = Patient.objects.get(pt_id=pt_id)
+       temp_pat.pt_name =  request.POST['pt_name']
+       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
+       temp_pat.pt_birth_date =  request.POST['pt_birth_date']
+       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
+       if temp_pat.pt_plan:
+           temp_pat.pt_plan = request.POST['p_tr']
+           
+       temp_pat.save()
+       messages.success(request,"تم حفظ التعديلات بنجاح")
+    
     pat = Result.objects.get(pt__pt_id=pt_id)
     date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
     today = date.today()
+    dateBirth = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
     age = today.year - date.year
     sever=''
     if pat.test_result:
        sever = severity(pat.test.test_id, pat.test_result)
 
-    if request.method == "POST":
-       temp_pat = Patient.objects.get(pt_id=pt_id)
-       temp_pat.pt_name =  request.POST['pt_name']
-       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
-    #    temp_pat.pt_birth_date =  request.POST['pt_birth_date']
-       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
-       temp_pat.save()
-
     context = {
         'pat': pat,
         'age': age,
         'sever': sever,
+        'dateBirth': dateBirth,
     }
     return render(request, 'patient/patientProfile.html',context)
 
