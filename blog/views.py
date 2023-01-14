@@ -12,7 +12,13 @@ from django.contrib.auth import authenticate
 
 
 def home(request):
-    return render(request, 'blog/home.html')
+    try:
+        psycho_email= request.session['psycho_email']
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        context = {'psycho': psych}
+        return render(request, 'blog/psychologis.html', context)
+    except:
+        return render(request, 'blog/home.html')
 
 
 def signup(request):
@@ -41,7 +47,7 @@ def signup(request):
             print("This is wrong")
             return render(request, 'blog/home.html')
         else:
-            # messages.SUCCESS(request,"تم إرسال الطلب بنجاح")
+            messages.success(request,"تم إرسال الطلب بنجاح")
             print("create account success")
             psycho.save()
             return render(request, 'blog/home.html')
@@ -58,49 +64,93 @@ def signin(request):
             if pbkdf2_sha256.verify(p_password, psych.p_password):
                 if psych.req_status == 1:
                     print("signin sucess")
+                    psycho_email= request.session['psycho_email'] = psych.p_email
+
                     context = {'psycho': psych}
                     return render(request, 'blog/psychologis.html', context)
                 else:
-                    print("not replaying yet")
-                    return render(request, 'tests/test.html')
+                    messages.error(request, "طلبك قيد المراجعة الرجاء انتظار الرد")
+                    return render(request, 'blog/home.html')
             else:
                 print("wrong password")
+                messages.error(request, "كلمة المرور خاطئة")
                 return render(request, 'blog/home.html')
         else:
             print("the email is not register")
+            messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
             return render(request, 'blog/home.html')
 
 
-def profile(request, p_email):
-    if request.method == "POST":
-        temp_psycho = Psychologist.objects.get(p_email=p_email)
-        if request.POST.get('email', False) != p_email:
-            temp_email = request.POST.get('email', False)
-            if Psychologist.objects.filter(p_email=temp_email):
-                print("this email already exisit")
-                context = {'information': temp_psycho}
-                return render(request, 'blog/profile.html', context)
+# def profile(request, p_email):
+#     if request.method == "POST":
+#         temp_psycho = Psychologist.objects.get(p_email=p_email)
+#         if request.POST.get('email', False) != p_email:
+#             temp_email = request.POST.get('email', False)
+#             if Psychologist.objects.filter(p_email=temp_email):
+#                 print("this email already exisit")
+#                 messages.error(request,"هذا الإيميل مسجّل في سابِر مسبقًا")
+#                 context = {'information': temp_psycho}
+#                 return render(request, 'blog/profile.html', context)
+#             else:
+#                 change = True
+#         else:
+#             change = True
+#             if change:
+#                 temp_psycho.p_email = request.POST.get('email', False)
+#                 temp_psycho.p_f_name = request.POST['p_f_name']
+#                 temp_psycho.p_l_name = request.POST['p_l_name']
+#                 temp_psycho.p_phone_no = request.POST['p_phone_no']
+#                 temp_psycho.save()
+#                 context = {'information': temp_psycho}
+#                 messages.success(request,"تم حفظ التعديلات بنجاح")
+#                 return render(request, 'blog/profile.html', context)
+#             else:
+#                 messages.error(request,"هناك خطأ في البيانات المدخلة")
+#                 context = {'information': temp_psycho}
+#                 return render(request, 'blog/profile.html', context)
+#     else:
+#         psych = Psychologist.objects.get(p_email=p_email)
+#         context = {'information': psych}
+#         return render(request, 'blog/profile.html', context)
+
+
+def profile(request):
+    try:
+        psycho_email= request.session['psycho_email']
+        if request.method == "POST":
+            temp_psycho = Psychologist.objects.get(p_email=psycho_email)
+            if request.POST.get('email', False) != psycho_email:
+                temp_email = request.POST.get('email', False)
+                if Psychologist.objects.filter(p_email=temp_email):
+                    print("this email already exisit")
+                    messages.error(request,"هذا الإيميل مسجّل في سابِر مسبقًا")
+                    context = {'information': temp_psycho}
+                    return render(request, 'blog/profile.html', context)
+                else:
+                    change = True
             else:
                 change = True
+                if change:
+                    temp_psycho.p_email = request.POST.get('email', False)
+                    temp_psycho.p_f_name = request.POST['p_f_name']
+                    temp_psycho.p_l_name = request.POST['p_l_name']
+                    temp_psycho.p_phone_no = request.POST['p_phone_no']
+                    temp_psycho.save()
+                    context = {'information': temp_psycho}
+                    messages.success(request,"تم حفظ التعديلات بنجاح")
+                    return render(request, 'blog/profile.html', context)
+                else:
+                    messages.error(request,"هناك خطأ في البيانات المدخلة")
+                    context = {'information': temp_psycho}
+                    return render(request, 'blog/profile.html', context)
         else:
-            change = True
-            if change:
-                temp_psycho.p_email = request.POST.get('email', False)
-                temp_psycho.p_f_name = request.POST['p_f_name']
-                temp_psycho.p_l_name = request.POST['p_l_name']
-                temp_psycho.p_phone_no = request.POST['p_phone_no']
-                temp_psycho.save()
-                context = {'information': temp_psycho}
-                return render(request, 'blog/profile.html', context)
-            else:
-                print("this email already exisit")
-                context = {'information': temp_psycho}
-                return render(request, 'blog/profile.html', context)
-    else:
-        psych = Psychologist.objects.get(p_email=p_email)
-        context = {'information': psych}
-        return render(request, 'blog/profile.html', context)
+            psych = Psychologist.objects.get(p_email=psycho_email)
+            context = {'information': psych}
+            return render(request, 'blog/profile.html', context)
 
+    except:
+        pass    
+    
 
 def forget(request):
     print("you are in forget password")
@@ -133,5 +183,6 @@ def reset(request):
     return render(request, 'blog/home.html')
 
 
-# def signout(request):
-#     pass
+def signout(request):
+    request.session.clear()
+    return render(request, 'blog/home.html')
