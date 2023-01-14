@@ -31,11 +31,5 @@ urlpatterns = [
     # path('<p_email>', core_views.profile, name='profile'),
     path('forget/', core_views.forget, name='forget'),
     path('reset/', core_views.reset, name='reset'),
-<<<<<<< HEAD
-    # path('signout', views.signout, name='signout'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-=======
     path('signout', core_views.signout, name='signout'),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
-
->>>>>>> 89c0987a5faadd3bf041be689e3fbbbbe19ad139
