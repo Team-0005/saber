@@ -87,7 +87,8 @@ footer a:hover,
   text-decoration: none;
   display: inline-block;
   border-radius: 0.6em;
-  margin-left: 2em
+  margin-top: 0.5em;
+  /* margin-left: 2em */
 }
 
 #cancel{
@@ -128,12 +129,22 @@ form {
 }
 
 input {
-  width: 35%;
   padding: 3.5%;
   border: 2px solid rgba(195, 195, 195, 0.5);
   border-radius: 0.5em;
   margin-left: 2.5em;
-
+  text-align: center;
+ 
+}
+.inputType {
+ border: 2px solid rgba(195, 195, 195, 0.5);
+border-radius: 0.5em;
+  direction: rtl;
+  text-align: center;
+  float: center;
+  direction: rtl;
+  height: 0.5em;
+  color:rgba(0, 0, 0, 0.5);
 }
 
 .profile input[type=tel],
@@ -145,7 +156,7 @@ input {
 
 .row3 {
   margin: 0em;
-  text-align: ;
+  /* text-align: ; */
   font-family: 'Tajawal';
   font-size: 1em;
   color: #2180A5;
@@ -415,6 +426,19 @@ tr td:first-child {
 #P_record a {
   text-decoration: none;
   float: right;
+}
+
+
+.labelin{
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: bold;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  
+  
+
 }
 
 /*------------------------------*/
