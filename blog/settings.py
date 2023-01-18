@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "blog.apps.BlogConfig",
     "tests.apps.TestsConfig",
     "patient.apps.PatientConfig",
+    "diagnosis.apps.DiagnosisConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
