@@ -23,14 +23,9 @@ urlpatterns = [
     path("", core_views.home, name='home'),
     path("admin/", admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
-<<<<<<< HEAD
     path("tests/",include('tests.urls',namespace='tests')),
     path("patient/",include('patient.urls',namespace='patient')),
     path("diagnosis/",include('diagnosis.urls',namespace='diagnosis')),
-=======
-    path("tests/", include('tests.urls', namespace='tests')),
-    path("patient/", include('patient.urls', namespace='patient')),
->>>>>>> 58eeca80c28469f82e06feca2d2a97a078d19af5
     path('signup/', core_views.signup, name='signup'),
     path('signin/', core_views.signin, name='signin'),
     path('profile/', core_views.profile, name='profile'),
