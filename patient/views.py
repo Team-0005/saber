@@ -8,31 +8,7 @@ from blog.models import Psychologist
 from django.contrib import messages
 from django.db.models import Q
 from datetime import *
-
-
-# Create your views here.
-# def addPatient(request, p_email):
-#     print("you are in add patient page")
-#     psych = Psychologist.objects.get(p_email=p_email)
-#     context = {'psycho': psych}
-#     if request.method != "POST":
-#         return render(request, 'patient/addPatient.html', context)
-#     else:
-#         name = request.POST['pt_name']
-#         bdate = request.POST['pt_birth_date']
-#         gender = request.POST.get('pt_gender', False)
-#         phone = request.POST['pt_phone_no']
-#         edu_level = request.POST['pt_edu_level']
-#         new_patient = Patient(pt_phone_no=phone, pt_name=name, pt_gender=gender, pt_edu_level=edu_level,
-#                               pt_birth_date=bdate, p_email=Psychologist.objects.get(p_email=p_email))
-#         if Patient.objects.filter(pt_phone_no=phone) and Patient.objects.filter(p_email=p_email):
-#             messages.error(request, "المرض مخزّن مسبقًا")
-#             print("This is wrong")
-#             return render(request, 'patient/addPatient.html', context)
-#         else:
-#             print("add patient success")
-#             new_patient.save()
-#             return render(request, 'blog/psychologis.html', context)
+from django.contrib import messages
 
 
 def addPatient(request):
@@ -65,23 +41,25 @@ def addPatient(request):
     
 
 
-def list_of_patient(request, p_email):
-    psy = Psychologist.objects.get(p_email=p_email)
 
-    list = Result.objects.filter(pt__p_email__exact=p_email)
-    search = ""
-    if 'searchField' in request.GET:
-        search = request.GET['searchField']
-        if search:
-            lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
-            list = list.filter(lookups)
+def list_of_patient(request):
+    try:
+        psycho_email= request.session['psycho_email']
+        list = Result.objects.filter(pt__p_email__exact=psycho_email)
+        search = ""
+        if 'searchField' in request.GET:
+            search = request.GET['searchField']
+            if search:
+               lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
+               list = list.filter(lookups)
                        
-    context = {
-        'psy': psy,
-        'list': list,
-        'search': search
-    }
-    return render(request, 'patient/patientRec.html', context)
+        context = {
+          'list': list,
+          'search': search
+        }
+        return render(request, 'patient/patientRec.html', context)
+    except:
+        pass
 
 def severity(test, result):
     if test == 1:
@@ -122,26 +100,32 @@ def severity(test, result):
 
 
 def patientProf(request, pt_id):
+    if request.method == "POST":
+       temp_pat = Patient.objects.get(pt_id=pt_id)
+       temp_pat.pt_name =  request.POST['pt_name']
+       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
+       temp_pat.pt_birth_date =  request.POST['pt_birth_date']
+       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
+       if temp_pat.pt_plan:
+           temp_pat.pt_plan = request.POST['p_tr']
+           
+       temp_pat.save()
+       messages.success(request,"تم حفظ التعديلات بنجاح")
+    
     pat = Result.objects.get(pt__pt_id=pt_id)
     date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
     today = date.today()
+    dateBirth = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
     age = today.year - date.year
     sever=''
     if pat.test_result:
        sever = severity(pat.test.test_id, pat.test_result)
 
-    if request.method == "POST":
-       temp_pat = Patient.objects.get(pt_id=pt_id)
-       temp_pat.pt_name =  request.POST['pt_name']
-       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
-    #    temp_pat.pt_birth_date =  request.POST['pt_birth_date']
-       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
-       temp_pat.save()
-
     context = {
         'pat': pat,
         'age': age,
         'sever': sever,
+        'dateBirth': dateBirth,
     }
     return render(request, 'patient/patientProfile.html',context)
 
@@ -163,7 +147,7 @@ def tretmentPlan(request, pt_id):
        temp_pat.save()
        pat.test_status = 2
        pat.save()
-       return list_of_patient(request, temp_pat.p_email.p_email)
+       return list_of_patient(request)
        
     context = {
         'pat': pat,

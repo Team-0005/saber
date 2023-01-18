@@ -16,6 +16,7 @@ window.onclick = function (event) {
     }
   }
 };
+
 // control modal
 function get_modal(x) {
   modal[x].style.display = 'block';
@@ -30,8 +31,6 @@ function change_modal(x, y) {
   get_modal(y);
 }
 
-
-
 //return style to defult
 function setDefult(input, message) {
   message.innerHTML = null;
@@ -42,7 +41,6 @@ function setDefult(input, message) {
 function setError(input) {
   input.style.borderColor = "red";
 }
-
 
 //functions for check forms
 //1
@@ -61,6 +59,7 @@ function check_symbol(input_id, message_id) {
   }
 }
 
+
 //2
 function check_email(email_id, message_id) {
   var regularExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
@@ -76,6 +75,7 @@ function check_email(email_id, message_id) {
     lock = false;
   }
 }
+
 
 //3
 function check_pass(pass_id, confirm_pass_id, message_id) {
