@@ -32,7 +32,7 @@
   <br><br><br><br>
 
   <div class="con text-center">
-    <form action="#" class="conform">
+    <form action="{% url 'diagnosis:iniDiag' %}" class="conform">
       <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
 
       <fieldset class="fieldset1">
@@ -99,7 +99,7 @@
           </div>
 
           <div class="col order-first">
-            <input type="date" id="IV4" name="IV4"  style="width:7.5em;"class="inputType">
+            <input type="date" id="IV4" name="IV4" style="width:7.5em;" class="inputType">
             <label for="IV4">تاريخه </label>
           </div>
         </div>
@@ -120,7 +120,7 @@
             <label> التاريخ النمائي رشد</label>
           </div>
           <div class="col ">
-            <input type="date" id="IV6" name="IV6"  style="width:7.5em;" class="inputType">
+            <input type="date" id="IV6" name="IV6" style="width:7.5em;" class="inputType">
             <label>تاريخه </label>
           </div>
 
@@ -258,7 +258,7 @@
             <label>عدد مرات الطلاق</label>
           </div>
           <div class="col order-first">
-            <input type="text" id="V4" name="V4" style="width:9em;" class="inputType" >
+            <input type="text" id="V4" name="V4" style="width:9em;" class="inputType">
             <label>عدد الأبناء</label>
           </div>
         </div>
@@ -558,7 +558,7 @@
       <br>
       <fieldset class="fieldset1">
         <legend class="legend1">الفحص الجسدي النفسي العقلي</legend>
-        <p class="title"> الفحص العقلي المعرفي</p> 
+        <p class="title"> الفحص العقلي المعرفي</p>
         <div class="row align-items-start">
           <div class="col order-last ">
             <select name="Attention" id="Attention" class="selects" style="width:10em;">
@@ -659,22 +659,22 @@
           </div>
         </div>
         <div class="row align-items-start">
-             <p class="title"> الفحص النفسي السلوكي</p> 
+          <p class="title"> الفحص النفسي السلوكي</p>
         </div>
         <div class="row align-items-start">
           <div class="col order-last ">
-            <select name="behavior" id="behavior" class="selects" style="width:12em;"aria-checked="true">
-              <option value="behavior-1" >عدواني - سلبي</option>
-               <option value="behavior-2">مرح</option>
+            <select name="behavior" id="behavior" class="selects" style="width:12em;" aria-checked="true">
+              <option value="behavior-1">عدواني - سلبي</option>
+              <option value="behavior-2">مرح</option>
               <option value="behavior-3">متحكم-مسيطر</option>
               <option value="behavior-4">مساعد</option>
               <option value="behavior-5">متجنب</option>
-              <option value="behavior-6">مراوغ</option> 
-              <option value="behavior-7">متعاون</option> 
-              <option value="behavior-8">منسحب</option> 
-              <option value="behavior-9">غريب</option> 
+              <option value="behavior-6">مراوغ</option>
+              <option value="behavior-7">متعاون</option>
+              <option value="behavior-8">منسحب</option>
+              <option value="behavior-9">غريب</option>
               <option value="behavior-10">إعتمادي</option>
-              <option value="behavior-11">غير مبالي</option>  
+              <option value="behavior-11">غير مبالي</option>
             </select>
             <label for="cars">السلوك</label>
           </div>
@@ -700,7 +700,7 @@
               <option value="faceFeatures-6">غاضب</option>
               <option value="faceFeatures-7">أخرى</option>
             </select>
-            <label >تعابير الوجه</label>
+            <label>تعابير الوجه</label>
           </div>
 
         </div>
@@ -708,13 +708,13 @@
           <div class="col order-last ">
             <select name="conscience" id="conscience" class="selects" style="width:12em;">
               <option value="conscience-1">قلق</option>
-               <option value="conscience-2">ملائم للأفكار والموقف</option>
+              <option value="conscience-2">ملائم للأفكار والموقف</option>
               <option value="conscience-3">غير ملائم للأفكار والموقف</option>
               <option value="conscience-4">مسطح-ضحل</option>
               <option value="conscience-5">تناقض وجداني</option>
               <option value="conscience-6">مرح ونشوة</option>
               <option value="conscience-7">هلع</option>
-              <option value="conscience-8">أخرى</option> 
+              <option value="conscience-8">أخرى</option>
             </select>
             <label for="cars">الوجدان</label>
           </div>
@@ -748,18 +748,18 @@
 
           <div class="col order-first">
             <input type="text" id="V3" name="V3" style="width:9em;" class="inputType">
-            <label >ملخص الفحص النفسي السلوكي</label>
+            <label>ملخص الفحص النفسي السلوكي</label>
           </div>
-          
+
         </div>
         <div class="row align-items-start">
-          <p class="title">الفحص الجسدي والمظهر العام</p> 
+          <p class="title">الفحص الجسدي والمظهر العام</p>
         </div>
         <div class="row align-items-start">
           <div class="col order-last ">
             <select name="BodyHealth" id="BodyHealth" class="selects" style="width:12em;">
               <option value="BodyHealth-1">ضعيفة</option>
-               <option value="BodyHealth-2" >جيدة</option>
+              <option value="BodyHealth-2">جيدة</option>
             </select>
             <label>صحة الجسد</label>
           </div>
@@ -774,7 +774,7 @@
             <label>وضع الجسم</label>
           </div>
 
-          <div class="col order-first" >
+          <div class="col order-first">
             <select name="disabilities" id="disabilities" class="selects" style="width:10em;">
               <option value="disabilities-1">لايوجد</option>
               <option value="disabilities-2">إعاقة حركية أطراف علويه</option>
@@ -789,7 +789,7 @@
           <div class="col order-last ">
             <select name="generalLook" id="generalLook" class="selects" style="width:12em;">
               <option value="generalLook-1">عادي مرتب</option>
-              <option value="generalLook-2" >أنيق بشكل مبالغ</option>
+              <option value="generalLook-2">أنيق بشكل مبالغ</option>
               <option value="generalLook-1">متسخ ومهمل</option>
               <option value="generalLook-1">لباس غير لائق</option>
             </select>
@@ -806,7 +806,7 @@
             <label>الحمل</label>
           </div>
 
-          <div class="col order-first" >
+          <div class="col order-first">
             <select name="menstruation" id="menstruation" class="selects" style="width:10em;">
               <option value="menstruation-1">منتظمة</option>
               <option value="menstruation-2">غير منتظمة</option>
@@ -818,7 +818,7 @@
           <div class="col order-last ">
             <select name="weight" id="weight" class="selects" style="width:12em;">
               <option value="weight-1">طبيعي</option>
-              <option value="weight-2" >زيادة الوزن</option>
+              <option value="weight-2">زيادة الوزن</option>
               <option value="weight-1">إنخفاض الوزن</option>
             </select>
             <label>الوزن</label>
@@ -846,7 +846,7 @@
             <label>الحركة</label>
           </div>
 
-          <div class="col order-first" >
+          <div class="col order-first">
             <input type="text" id="tall-m" name="tall-m" style="width:9em;" class="inputType">
             <label>الطول بالمتر</label>
           </div>
@@ -855,7 +855,7 @@
           <div class="col order-last ">
             <select name="sight" id="sight" class="selects" style="width:12em;">
               <option value="sight-1">قصر البصر</option>
-              <option value="sight-2" >سليمة</option>
+              <option value="sight-2">سليمة</option>
               <option value="sight-1">طول البصر</option>
               <option value="sight-1">إعاقات أخرى</option>
             </select>
@@ -864,7 +864,7 @@
           <div class="col  ">
             <select name="SenseOfTouch" id="SenseOfTouch" class="selects" style="width:12em;">
               <option value="SenseOfTouch-1">قصور في اللمس</option>
-              <option value="SenseOfTouch-2" >سليمة</option>
+              <option value="SenseOfTouch-2">سليمة</option>
               <option value="SenseOfTouch-1">إستثارة في اللمس</option>
             </select>
             <label>حاسة اللمس</label>
@@ -881,7 +881,7 @@
             <label>حاسة السمع</label>
           </div>
 
-          <div class="col order-first" >
+          <div class="col order-first">
             <select name="menstruation" id="menstruation" class="selects" style="width:10em;">
               <option value="menstruation-1">سليمة</option>
               <option value="menstruation-2">قصور في التذوق</option>
@@ -893,7 +893,7 @@
         <div class="row align-items-start">
           <div class="col md-8 offset-md-4">
             <input type="text" id="V3" name="V3" style="width:15em;" class="inputType">
-            <label >ملخص  الفحص الجسدي</label>
+            <label>ملخص الفحص الجسدي</label>
           </div>
         </div>
 
