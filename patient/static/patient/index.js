@@ -36,7 +36,7 @@ function edit_func() {
     if (profile[i].hasAttribute("value")) {
       profile[i].removeAttribute("disabled");
     }
-    // profile[i].removeAttribute("disabled");
+
   }
 }
 
