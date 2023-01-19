@@ -33,7 +33,10 @@ function edit_func() {
   document.getElementById('cancel').style.display = 'inline-block';
   var profile = document.getElementById("profile").elements;
   for (var i = 0; i < profile.length - 1; i++) {
-    profile[i].removeAttribute("disabled");
+    if (profile[i].hasAttribute("value")) {
+      profile[i].removeAttribute("disabled");
+    }
+    // profile[i].removeAttribute("disabled");
   }
 }
 
