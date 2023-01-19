@@ -45,13 +45,14 @@ def signup(request):
             messages.error(
                 request, "الإيميل أو رقم الرخصة مسجّل في سابر مسبقًا")
             print("This is wrong")
-            return render(request, 'blog/home.html')
+            return render(request, 'blog/signUp.html') 
         else:
             messages.success(request,"تم إرسال الطلب بنجاح")
             print("create account success")
             psycho.save()
             return render(request, 'blog/home.html')
-
+    else:
+          return render(request, 'blog/signUp.html')  
 
 def signin(request):
     print("you are in signin")
@@ -70,15 +71,55 @@ def signin(request):
                     return render(request, 'blog/psychologis.html', context)
                 else:
                     messages.error(request, "طلبك قيد المراجعة الرجاء انتظار الرد")
-                    return render(request, 'blog/home.html')
+                    return render(request, 'blog/signIn.html')
             else:
                 print("wrong password")
                 messages.error(request, "كلمة المرور خاطئة")
-                return render(request, 'blog/home.html')
+                return render(request, 'blog/signIn.html')
         else:
             print("the email is not register")
             messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
-            return render(request, 'blog/home.html')
+            return render(request, 'blog/signIn.html')
+    else:
+          return render(request, 'blog/signIn.html')      
+
+def forget(request):
+    print("you are in forget password")
+    if request.method == "POST":
+        p_email = request.POST.get('fp_email', False)
+        if Psychologist.objects.filter(p_email=p_email):
+            psych = Psychologist.objects.get(p_email=p_email)
+            print("correct email")
+            context = {'psycho': psych}
+            return render(request, 'blog/changPass.html',context)
+        else:
+            messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
+            print("the email is not register")
+            return render(request, 'blog/forgetPass.html')
+    else:        
+         return render(request, 'blog/forgetPass.html')
+
+def reset(request,p_email):
+    print("you are in reset password")
+    if request.method == "POST":
+        psych = Psychologist.objects.get(p_email=p_email)
+        p_password = request.POST['password']
+        enc_pass = pbkdf2_sha256.encrypt(
+            p_password, rounds=12000, salt_size=32)
+        psych.p_password = enc_pass
+        psych.save()
+        context = {'psycho': psych}
+        print("password updated")
+        messages.success(request,"تم تغيير كلمة المرور بنجاح")
+        return render(request, 'blog/changPass.html',context)
+    else:
+        return render(request, 'blog/changPass.html')
+
+
+
+def passCode(request):
+     return render(request, 'blog/passCode.html')
+
 
 
 def profile(request):
@@ -119,35 +160,22 @@ def profile(request):
         pass    
     
 
-def forget(request):
-    print("you are in forget password")
-    if request.method == "POST":
-        p_email = request.POST.get('fp_email', False)
-        if Psychologist.objects.filter(p_email=p_email):
-            psych = Psychologist.objects.get(p_email=p_email)
-            print("correct email")
-            return render(request, 'blog/home.html')
-        else:
-            print("the email is not register")
-            return render(request, 'blog/home.html')
+# def forget(request):
+#     print("you are in forget password")
+#     if request.method == "POST":
+#         p_email = request.POST.get('fp_email', False)
+#         if Psychologist.objects.filter(p_email=p_email):
+#             psych = Psychologist.objects.get(p_email=p_email)
+#             print("correct email")
+#             return render(request, 'blog/home.html')
+#         else:
+#             print("the email is not register")
+#             return render(request, 'blog/home.html')
 
-    return render(request, 'blog/home.html')
+#     return render(request, 'blog/home.html')
 
 
-def reset(request):
-    print("you are in reset password")
-    if request.method == "POST":
-        p_email = request.POST['p_email']
-        psych = Psychologist.objects.get(p_email=p_email)
-        p_password = request.POST['p_password']
-        enc_pass = pbkdf2_sha256.encrypt(
-            p_password, rounds=12000, salt_size=32)
-        psych.p_password = enc_pass
-        psych.save()
-        print("password updated")
-        return render(request, 'blog/home.html')
 
-    return render(request, 'blog/home.html')
 
 
 def signout(request):

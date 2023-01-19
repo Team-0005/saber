@@ -13,8 +13,8 @@
 
           <div class="row">
             <div class="col-1">
-              <a href="# " onclick="get_modal(1);"> تسجيل الدخول </a>
-              <a href="#" onclick="change_modal(1,0);">انشاء حساب</a>
+              <a href="{% url 'signin' %}" > تسجيل الدخول </a>
+              <a href="{% url 'signup' %}" >انشاء حساب</a>
             </div>
           </div>
 
@@ -259,7 +259,7 @@
 </div> {% endcomment %}
 
 
-
+{% comment %} 
 <!-- password reset -->
 <script src="https://cdn.userfront.com/core.js"></script>
 <div id="id04" class="modal">
@@ -310,7 +310,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 
 
@@ -323,7 +323,7 @@
       <p class="top-2">لتَّشخيص بأسرع وقت وأكثر دِقة</p>
       <br>
     </div>
-    <a id="buttonjoin" href="#signup" onclick="get_modal(0)"><button class="button" type="button" name="button">إنشاء
+    <a id="buttonjoin" href="{% url 'signup' %}" ><button class="button" type="button" name="button">إنشاء
         حساب</button></a>
   </form>
 </div>

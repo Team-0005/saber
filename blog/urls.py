@@ -25,11 +25,11 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path("tests/",include('tests.urls',namespace='tests')),
     path("patient/",include('patient.urls',namespace='patient')),
-    # path("diagnosis/",include('diagnosis.urls',namespace='diagnosis')),
+   # path("diagnosis/",include('diagnosis.urls',namespace='diagnosis')),
     path('signup/', core_views.signup, name='signup'),
     path('signin/', core_views.signin, name='signin'),
     path('profile/', core_views.profile, name='profile'),
     path('forget/', core_views.forget, name='forget'),
-    path('reset/', core_views.reset, name='reset'),
+    path('<p_email>/', core_views.reset, name='reset'),
     path('signout', core_views.signout, name='signout'),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
