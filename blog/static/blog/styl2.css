@@ -615,3 +615,193 @@ section {
     margin-bottom: 40px;
   }
 }
+/*sign in page*/
+body.sign{
+  background-image: url(background.jpg);
+  background-attachment:scroll;
+  background-size: contain;
+  background-repeat: no-repeat;
+   background-color: #FFFFFF;
+ background-image:im();
+}
+.signin p{
+  text-align: center;
+font-family: 'Tajawal';
+font-size: 2em;
+color: #2180A5;
+}
+
+form.signin{
+  background-image: url(backlog1.png);
+  background-size: cover;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 2em;
+  width: 47em !important;
+height: 38em;
+}
+.signin input[type=email],.signin input[type=password]{
+  width: 25em;
+  height: 0.5em;
+}
+.signin a{
+  text-decoration: none;
+  margin-left: 1em;
+  color: #2180A5;
+
+}
+a:hover{
+  color: #a42198;
+}
+.row1{
+  margin: 2.5em;
+  text-align: right!important ;
+}
+.row11{
+  margin-top: 4em;
+}
+.row1 ::placeholder{
+  font-size: 1.2em;
+  text-align:right !important;
+}
+/*sign up page*/
+
+.signup p{
+  text-align: center;
+font-family: 'Tajawal';
+font-size: 2em;
+color: #2180A5;
+margin: 1em 0em 0.5em 0em ;
+}
+.col-1 {
+  font-family: 'Tajawal', sans-serif;
+  text-align: right;
+  width: 100%;
+  margin-top:0em;
+}
+.col-1 p{
+text-align: right;
+font-size: 1em;
+margin-top: 1em;
+margin-bottom: 0em!important;
+
+}
+.col-2 {
+  text-align: right;
+  width: 100%;
+  margin-top: 1em;
+
+}
+
+form.signup{
+  background-image: url(backlog1.png);
+  background-size: cover;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 2em;
+  width: 47em !important;
+height: 38em;
+margin-top: 5em;
+}
+.signup input[type=text]{
+  width: 10em;
+  height: 0.2em;
+  padding: 1.5em;
+  margin-left:.7em;
+  margin-right: .5em;
+  margin-top: 1em;
+}
+.sign #myFile {
+  width: 35%;
+padding: 1em;
+padding-left: 3em;
+border:0;
+text-align: right;
+border-radius: 0.5em;
+margin-left:2em;
+
+}
+.signup input[type=email],.signup input[type=password],.signup input[type=tel]{
+  padding: 1.2em;
+  padding-left: 1.5em;
+  margin-right: .5em;
+  width: 25em;
+}
+.signup a{
+  text-decoration: none;
+  margin-right: 1em;
+  margin-left: 0em;
+  color: #2180A5;
+
+}
+a:hover{
+  color: #a42198;
+}
+.rowu{
+  margin: .5em;
+  text-align: right!important ;
+}
+
+.rowu ::placeholder{
+  font-size: 1.2em;
+  text-align:right !important;
+}
+.singup .button{
+  text-align: right;
+  margin-left: 5em;
+  padding: 5em;
+}
+/*forget pass*/
+.forget p{
+  text-align: center;
+font-family: 'Tajawal';
+font-size: 2em;
+color: #2180A5;
+margin: 1em 0em 0.5em 0em ;
+}
+
+
+form.forget{
+  background-image: url(backlog1.png);
+  background-size: cover;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 2em;
+  width: 47em !important;
+height: 38em;
+}
+.forget input[type=email]{
+  padding: 1.2em;
+  padding-left: 1.5em;
+  margin-right: 1.5em;
+  width: 25em;
+}
+.forget a{
+  text-decoration: none;
+  margin-right: 1em;
+  margin-left: 0em;
+     color: #2180A5;
+}
+.rowf  {
+  text-align:right;
+  margin-top: 2em;
+}
+.rowf1 {
+  text-align:right;
+  margin-top: 12em;
+}
+
+  .forget .button{
+    text-align: right;
+    margin: 1.5em 2em;
+    padding: .5em 7em;
+
+  }
+  .rowf ::placeholder{
+    font-size: 1.2em;
+    text-align:right !important;
+  }
+  /*forget pass code*/
+  .forget input[type=text],  .forget input[type=password]{
+    padding: 1.2em;
+    padding-left: 1.5em;
+    margin-right: 1.5em;
+    width: 25em;
+  }
