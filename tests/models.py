@@ -20,8 +20,10 @@ class PsychoTest(models.Model):
     # Field name made lowercase.
     description = models.CharField(db_column='Description', max_length=400)
     # Field name made lowercase.
+    test_file = models.FileField(
+        db_column='test_file', upload_to="blog/static/blog/files/", blank=True, null=True)
     diagnosis_fk = models.ForeignKey(
-        Diagnosis, models.DO_NOTHING, db_column='diagnosis_ID')
+        Diagnosis, models.DO_NOTHING, db_column='diagnosis_ID', blank=True, null=True)
 
     def __str__(self):
         return self.test_name
