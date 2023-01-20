@@ -67,11 +67,12 @@ def signin(request):
             psych = Psychologist.objects.get(p_email=p_email)
             if pbkdf2_sha256.verify(p_password, psych.p_password):
                 if psych.req_status == 1:
+                    sendEmail(psych.p_email)
                     print("signin sucess")
-                    psycho_email= request.session['psycho_email'] = psych.p_email
-
+                    passCodeSession= request.session['passCodeSession'] = 2
                     context = {'psycho': psych}
-                    return render(request, 'blog/psychologis.html', context)
+                    return render(request, 'blog/forgetPassCode.html',context)
+                   # return render(request, 'blog/psychologis.html', context)
                 else:
                     messages.error(request, "طلبك قيد المراجعة الرجاء انتظار الرد")
                     return render(request, 'blog/signIn.html')
@@ -92,26 +93,9 @@ def forget(request):
         p_email = request.POST.get('fp_email', False)
         if Psychologist.objects.filter(p_email=p_email):
             psych = Psychologist.objects.get(p_email=p_email)
-            n = random.randint(1000,9999)
-            psych.p_code = n
-            psych.save()
-            user = "saber27.team@gmail.com"
-            password = "xzvwkvysilwyxssw"
-            msg = EmailMessage()
-            msg.set_content("كود التحقق لتغيير كلمة المرور هو: "+ str(n))
-            msg['subject'] = "كود التححق من سابِر "
-            msg['to'] = p_email
-            msg['from'] = user
-            
-            print("correct email")
-            print(n)
-
-            server = smtplib.SMTP("smtp.gmail.com",25)
-            server.starttls()
-            server.login(user, password)
-            server.send_message(msg)
-            server.quit()
+            sendEmail(psych.p_email)
             context = {'psycho': psych}
+            passCodeSession= request.session['passCodeSession'] = 1
             return render(request, 'blog/forgetPassCode.html',context)
         else:
             messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
@@ -137,8 +121,28 @@ def reset(request,p_email):
         return render(request,'blog/changPass.html')
 
 
+def sendEmail(p_email):
+    n = random.randint(1000,9999)
+    psych = Psychologist.objects.get(p_email=p_email)
+    psych.p_code = n
+    psych.save()
+    user = "saber27.team@gmail.com"
+    password = "xzvwkvysilwyxssw"
+    msg = EmailMessage()
+    msg.set_content("رمز التحقق الخاص بك هو : "+ str(n))
+    msg['subject'] = "رمز التححق من سابِر "
+    msg['to'] = p_email
+    msg['from'] = user        
+    print("correct email")
+    server = smtplib.SMTP("smtp.gmail.com",25)
+    server.starttls()
+    server.login(user, password)
+    server.send_message(msg)
+    server.quit()
 
-def passCode(request,p_email):
+
+
+def passCode(request,p_email,check=0):
     if request.method == "POST":
         psych = Psychologist.objects.get(p_email=p_email)
         p_code = request.POST['p_code']
@@ -147,7 +151,20 @@ def passCode(request,p_email):
             psych.p_code = None
             psych.save()
             context = {'psycho': psych}
-            return render(request,'blog/changPass.html',context)
+            try:
+                passCodeSession= request.session['passCodeSession'] 
+                if(passCodeSession==1):
+                    request.session.clear()
+                    return render(request,'blog/changPass.html',context)
+                else:
+                    request.session.clear()
+                    psycho_email= request.session['psycho_email'] = psych.p_email
+                    return render(request, 'blog/psychologis.html', context)
+            except:
+                print("something wrong")
+                return render(request,'blog/forgetPassCode.html',context)
+                
+
         else:
             messages.error(request,"الكود المدخل غير صحيح الرجاء التأكد")
             return render(request,'blog/forgetPassCode.html',context)
@@ -192,21 +209,6 @@ def profile(request):
     except:
         pass    
     
-
-# def forget(request):
-#     print("you are in forget password")
-#     if request.method == "POST":
-#         p_email = request.POST.get('fp_email', False)
-#         if Psychologist.objects.filter(p_email=p_email):
-#             psych = Psychologist.objects.get(p_email=p_email)
-#             print("correct email")
-#             return render(request, 'blog/home.html')
-#         else:
-#             print("the email is not register")
-#             return render(request, 'blog/home.html')
-
-#     return render(request, 'blog/home.html')
-
 
 
 

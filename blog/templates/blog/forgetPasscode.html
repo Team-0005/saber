@@ -29,7 +29,7 @@
     <br>
     <br>
 
-  <form class="forget" action="{% url 'passcode'  psycho.p_email %}" method="post">
+  <form class="forget" action="{% url 'passcode'  psycho.p_email  %}" method="post">
       <!-- for_security -->
       {% csrf_token %}
      <br>

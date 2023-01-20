@@ -31,6 +31,6 @@ urlpatterns = [
     path('profile/', core_views.profile, name='profile'),
     path('forget/', core_views.forget, name='forget'),
     path('<p_email>/', core_views.reset, name='reset'),
-    path('passcode/<p_email>/', core_views.passCode, name='passcode'),
+    path('passcode/<p_email>', core_views.passCode, name='passcode'),
     path('signout', core_views.signout, name='signout'),
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
