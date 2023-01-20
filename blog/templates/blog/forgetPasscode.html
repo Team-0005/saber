@@ -29,11 +29,10 @@
     <br>
     <br>
 
-  <form class="forget" action="index.html" method="post">
-    <br>
-
-
-
+  <form class="forget" action="{% url 'passcode'  psycho.p_email %}" method="post">
+      <!-- for_security -->
+      {% csrf_token %}
+     <br>
   <div class="rowf1">
 
         <a href="# "> الرجاء ادخال رقم التأكيد الذي تم إرساله على البريد الالكتروني</a>
@@ -43,7 +42,7 @@
 
   <div class="rowf">
     <div class="col-2">
-      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="text-code" name="text-code" placeholder="  رمز التحقق  &#xf13e;" min="8" required>
+      <input style="font-family: 'Font Awesome 5 Free'; " type="text" id="p_code" name="p_code" placeholder="  رمز التحقق  &#xf13e;" min="8" required>
     </div>
   </div>
 
@@ -52,9 +51,14 @@
         <a href="# ">إعادة ارسال رمز التحقق</a>
 
   </div>
+  {% for message in messages %}
+         
+  <span class="massages">{{ message }}</span>
+
+{% endfor %}
     <div class="rowu">
 
-        <button class="button" type="submit" name="button" formaction="chang pass.html">التالي</button>
+        <button class="button" type="submit" name="button" >التالي</button>
 
     </div>
   </form>

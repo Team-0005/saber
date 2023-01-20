@@ -8,6 +8,9 @@ from .models import Psychologist
 from django.contrib import messages
 from passlib.hash import pbkdf2_sha256
 from django.contrib.auth import authenticate
+from email.message import EmailMessage
+import smtplib
+import random
 # Create your views here.
 
 
@@ -89,9 +92,27 @@ def forget(request):
         p_email = request.POST.get('fp_email', False)
         if Psychologist.objects.filter(p_email=p_email):
             psych = Psychologist.objects.get(p_email=p_email)
+            n = random.randint(1000,9999)
+            psych.p_code = n
+            psych.save()
+            user = "saber27.team@gmail.com"
+            password = "xzvwkvysilwyxssw"
+            msg = EmailMessage()
+            msg.set_content("كود التحقق لتغيير كلمة المرور هو: "+ str(n))
+            msg['subject'] = "كود التححق من سابِر "
+            msg['to'] = p_email
+            msg['from'] = user
+            
             print("correct email")
+            print(n)
+
+            server = smtplib.SMTP("smtp.gmail.com",25)
+            server.starttls()
+            server.login(user, password)
+            server.send_message(msg)
+            server.quit()
             context = {'psycho': psych}
-            return render(request, 'blog/changPass.html',context)
+            return render(request, 'blog/forgetPassCode.html',context)
         else:
             messages.error(request, "هذا الإيميل غير مسجّل في موقع سابر")
             print("the email is not register")
@@ -111,15 +132,27 @@ def reset(request,p_email):
         context = {'psycho': psych}
         print("password updated")
         messages.success(request,"تم تغيير كلمة المرور بنجاح")
-        return render(request, 'blog/changPass.html',context)
+        return render(request, 'blog/signIn.html',context)
     else:
-        return render(request, 'blog/changPass.html')
+        return render(request,'blog/changPass.html')
 
 
 
-def passCode(request):
-     return render(request, 'blog/passCode.html')
-
+def passCode(request,p_email):
+    if request.method == "POST":
+        psych = Psychologist.objects.get(p_email=p_email)
+        p_code = request.POST['p_code']
+        context = {'psycho': psych}
+        if (psych.p_code == p_code):
+            psych.p_code = None
+            psych.save()
+            context = {'psycho': psych}
+            return render(request,'blog/changPass.html',context)
+        else:
+            messages.error(request,"الكود المدخل غير صحيح الرجاء التأكد")
+            return render(request,'blog/forgetPassCode.html',context)
+    else:        
+        return render(request, 'blog/forgetPassCode.html')
 
 
 def profile(request):
