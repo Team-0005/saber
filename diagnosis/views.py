@@ -40,7 +40,7 @@ def iniDiag(request):
 
 
 def Datapreprocessing(name,value):
-    soup = BeautifulSoup(open('diagnosis/templates/diagnosis/iniDiag.html'),"html.parser")
+    soup = BeautifulSoup(open('diagnosis/templates/diagnosis/iniDiag.html','r'),"html.parser")
     select = soup.find(attrs={'name':name})
     for option in select.find_all('option'):
          if value == option['value']:
