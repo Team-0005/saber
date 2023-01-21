@@ -34,7 +34,8 @@ def addPatient(request):
             else:
                 print("add patient success")
                 new_patient.save()
-                return render(request, 'blog/psychologis.html', context)
+                context = {'patient' : new_patient}
+                return render(request, 'diagnosis/iniDiag.html', context)
 
     except:
         pass

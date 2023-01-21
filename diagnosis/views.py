@@ -4,14 +4,15 @@ import keras
 from keras.models import load_model
 from blog.models import Psychologist
 from bs4 import BeautifulSoup
-
+from patient.models import Result
 model_path = 'diagnosis\saber.h5'
 model = load_model(model_path, compile=False)
 disorder = ["desperation","anxiety","OCD"]
 fields=[]
 
-def iniDiag(request):
+def iniDiag(request,pt_id):
     try:
+        psycho_email= request.session['psycho_email']
         if  request.method == "POST":
             print("prediction start")
             Datapreprocessing('eating_problems',request.POST['eating_problems'])
@@ -31,11 +32,25 @@ def iniDiag(request):
             label = disorder[preds.argmax()]
             print(fields)
             print(label)
+            if label == "desperation":
+                the_id = 1
+            elif label == "OCD":
+                the_id = 2
+            elif label == "anxiety":
+                the_id = 3
+            
             fields.clear()
+            save_result = Result( pt_id = pt_id , fk_diagnosis_id=the_id , test_id=the_id , test_status=0)
+            save_result.save()
+            print("add result success")
+            psych = Psychologist.objects.get(p_email=psycho_email)
+            context = {'psycho': psych}
+            return render(request, 'blog/psychologis.html', context)
+            
         return render(request,'diagnosis/iniDiag.html')
     except:
         pass
-        return render(request,'diagnosis/iniDiag.html')
+        return render(request, 'blog/home.html')
 
 
 
