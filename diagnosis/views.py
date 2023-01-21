@@ -12,7 +12,7 @@ fields=[]
 def iniDiag(request):
     try:
         if  request.method == "POST":
-            print("predction start")
+            print("prediction start")
             Datapreprocessing('eating_problems',request.POST['eating_problems'],4)
             Datapreprocessing('sleep_problems',request.POST['sleep_problems'],3)
             Datapreprocessing('conscience',request.POST['conscience'],4)
