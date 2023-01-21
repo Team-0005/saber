@@ -93,7 +93,7 @@ def forget(request):
         p_email = request.POST.get('fp_email', False)
         if Psychologist.objects.filter(p_email=p_email):
             psych = Psychologist.objects.get(p_email=p_email)
-            sendEmail(psych.p_email)
+            # sendEmail(psych.p_email)
             context = {'psycho': psych}
             passCodeSession= request.session['passCodeSession'] = 1
             return render(request, 'blog/forgetPassCode.html',context)
@@ -142,11 +142,12 @@ def sendEmail(p_email):
 
 
 
-def passCode(request,p_email,check=0):
+def passCode(request,p_email):
+
     if request.method == "POST":
         psych = Psychologist.objects.get(p_email=p_email)
+        context = {'psycho': psych} 
         p_code = request.POST['p_code']
-        context = {'psycho': psych}
         if (psych.p_code == p_code):
             psych.p_code = None
             psych.save()
@@ -168,8 +169,11 @@ def passCode(request,p_email,check=0):
         else:
             messages.error(request,"الكود المدخل غير صحيح الرجاء التأكد")
             return render(request,'blog/forgetPassCode.html',context)
-    else:        
-        return render(request, 'blog/forgetPassCode.html')
+    else: 
+        sendEmail(p_email)
+        psych = Psychologist.objects.get(p_email=p_email)
+        context = {'psycho': psych}       
+        return render(request, 'blog/forgetPassCode.html',context)
 
 
 def profile(request):
