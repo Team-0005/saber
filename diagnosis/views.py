@@ -3,6 +3,7 @@ import numpy as np
 import keras
 from keras.models import load_model
 from blog.models import Psychologist
+from bs4 import BeautifulSoup
 
 model_path = 'diagnosis\saber.h5'
 model = load_model(model_path, compile=False)
@@ -13,21 +14,22 @@ def iniDiag(request):
     try:
         if  request.method == "POST":
             print("prediction start")
-            Datapreprocessing('eating_problems',request.POST['eating_problems'],4)
-            Datapreprocessing('sleep_problems',request.POST['sleep_problems'],3)
-            Datapreprocessing('conscience',request.POST['conscience'],4)
-            Datapreprocessing('communication',request.POST['communication'],3)
-            Datapreprocessing('faceFeatures',request.POST['faceFeatures'],4)
-            Datapreprocessing('talk',request.POST['talk'],4)
-            Datapreprocessing('mood',request.POST['mood'],4)
-            Datapreprocessing('behavior',request.POST['behavior'],4)
-            Datapreprocessing('thinkingObject',request.POST['thinkingObject'],4)
-            Datapreprocessing('thinking',request.POST['thinking'],4)
-            Datapreprocessing('Focus',request.POST['Focus'],3)
-            Datapreprocessing('Attention',request.POST['Attention'],4)
-            Datapreprocessing('orientation',request.POST['orientation'],3)
+            Datapreprocessing('eating_problems',request.POST['eating_problems'])
+            Datapreprocessing('sleep_problems',request.POST['sleep_problems'])
+            Datapreprocessing('conscience',request.POST['conscience'])
+            Datapreprocessing('communication',request.POST['communication'])
+            Datapreprocessing('faceFeatures',request.POST['faceFeatures'])
+            Datapreprocessing('talk',request.POST['talk'])
+            Datapreprocessing('mood',request.POST['mood'])
+            Datapreprocessing('behavior',request.POST['behavior'])
+            Datapreprocessing('thinkingObject',request.POST['thinkingObject'])
+            Datapreprocessing('thinking',request.POST['thinking'])
+            Datapreprocessing('Focus',request.POST['Focus'])
+            Datapreprocessing('Attention',request.POST['Attention'])
+            Datapreprocessing('orientation',request.POST['orientation'])
             preds = model.predict([fields])[0] 
             label = disorder[preds.argmax()]
+            print(fields)
             print(label)
             fields.clear()
         return render(request,'diagnosis/iniDiag.html')
@@ -37,9 +39,12 @@ def iniDiag(request):
 
 
 
-def Datapreprocessing(option,value,n):
-    for i in range(1,n):
-        if value == (option+"-"+str(i)):
+def Datapreprocessing(name,value):
+    soup = BeautifulSoup(open('diagnosis/templates/diagnosis/iniDiag.html'),"html.parser")
+    select = soup.find(attrs={'name':name})
+    for option in select.find_all('option'):
+         if value == option['value']:
             fields.append(1)
-        else:
-            fields.append(0)
+         else:
+             fields.append(0)
+    fields.pop()
