@@ -32,9 +32,9 @@
   <br><br><br><br>
 
   <div class="con text-center">
-    <form action="{% url 'diagnosis:iniDiag' %}" class="conform">
+    <form action="{% url 'diagnosis:iniDiag' %}" class="conform" method="post">
       <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
-
+      {% csrf_token %} 
       <fieldset class="fieldset1">
         <legend class="legend1">التطور النفسي النمائي</legend>
         <div class="row align-items-start">
@@ -155,20 +155,20 @@
         <legend class="legend1">مشكلات النوم والطعام</legend>
         <div class="row align-items-start">
           <div class="col order-last" >
-            <select name="VII1" id="VII1" class="selects" style="width:10em; margin-left: 8em; ">
-              <option value="yesVII1">طبيعي</option>
-              <option value="NoVII1">لا توجد</option>
-              <option value="VII2-1"> نقص الشهيه</option>
-              <option value="VII2-2">زيادة الشهيه</option>
+            <select name="eating_problems" id="VII1" class="selects" style="width:10em; margin-left: 8em; " required>
+              <option value="eating_problems-2">طبيعي</option>
+              <option value="eating_problems-3"> نقص الشهية</option>
+              <option value="eating_problems-1">زيادة الشهية</option>
+              <option value="eating_problems-4">أنواع ثابتة</option>
             </select>
             <label>مشكلات الطعام</label>
           </div>
 
           <div class="col order-first">
-            <select name="VII3" id="VII3" class="selects" style="width:10em; margin-left: 10em;">
-              <option value="yesVII3">أرق</option>
-              <option value="NoVII3">زيادة</option>
-              <option value="NoVII3">طبيعي</option>
+            <select name="sleep_problems" id="VII3" class="selects" style="width:10em; margin-left: 10em;" required>
+              <option value="sleep_problems-2">طبيعي</option>
+              <option value="sleep_problems-1">زيادة</option>
+              <option value="sleep_problems-3">ارق</option>
             </select>
             <label>مشكلات النوم</label>
           </div>
@@ -525,19 +525,19 @@
         <p class="title"> الفحص العقلي المعرفي</p>
         <div class="row align-items-start">
           <div class="col order-last ">
-            <select name="Attention" id="Attention" class="selects" style="width:10em;">
-              <option value="Attention-1">طبيعي</option>
-              <option value="Attention-2">مشتت</option>
-              <option value="Attention-3">منخفض</option>
+            <select name="Attention" id="Attention" class="selects" style="width:10em;"required>
+              <option value="Attention-2">طبيعي</option>
+              <option value="Attention-3">مشتت</option>
+              <option value="Attention-1">منخفض</option>
               <option value="Attention-4">شرود ذهني</option>
             </select>
             <label for="cars">الإنتباه</label>
           </div>
           <div class="col">
-            <select name="Focus" id="Focus" class="selects" style="width:10em;">
-              <option value="Focus-1"> منخفض</option>
-              <option value="Focus-2">طبيعي</option>
-              <option value="Focus-4"> مشتت</option>
+            <select name="Focus" id="Focus" class="selects" style="width:10em;"required>
+              <option value="Focus-2"> منخفض</option>
+              <option value="Focus-1"> مشتت</option>
+              <option selected="selected" value="Focus-3">طبيعي</option>
             </select>
             <label>التركيز</label>
           </div>
@@ -576,40 +576,32 @@
           </div>
 
           <div class="col">
-            <select name="orientation" id="orientation" class="selects" style="width:10em;">
-              <option value="orientation-1">مستبصر بالزمان والمكان</option>
-              <option value="orientation-2">غير مستبصر بالزمان والمكان</option>
-              <option value="orientation-3">مستبصر بالزمان فقط</option>
-              <option value="orientation-4">مستبصر بالمكان فقط</option>
+            <select name="orientation" id="orientation" class="selects" style="width:10em;"required>
+              <option value="orientation-1">ستة أشهر</option>
+              <option value="orientation-2">مستمرة</option>
+              <option value="orientation-3">أسبوعين</option>
             </select>
-            <label>الإهتداء</label>
+            <label>المدة أكثر من</label>
           </div>
 
           <div class="col ">
-            <select name="thinking" id="thinking" class="selects" style="width:10em;">
-              <option value="thinking-1">طبيعي</option>
-              <option value="thinking-2">أفكار ملحة</option>
-              <option value="thinking-3">أفكار عجز ويأس</option>
-              <option value="thinking-4">مترابط</option>
+            <select name="thinking" id="thinking" class="selects" style="width:10em;"required>
+              <option value="thinking-2">طبيعي</option>
+              <option value="thinking-1">أفكار ملحة</option>
+              <option value="thinking-3">غير مترابط </option>
+              <option value="thinking-4">أفكار عجز ويأس</option>
             </select>
             <label>التفكير</label>
           </div>
 
           <div class="col order-first">
-            <select name="thinkingObject" id="thinkingObject" class="selects" style="width:10em;">
-              <option value="thinkingObject-1">مناسب</option>
-              <option value="thinkingObject-2">مخاوف</option>
-              <option value="thinkingObject-3">ضلالات عظيمة</option>
-              <option value="thinkingObject-4">ضلالات إضطهاد</option>
-              <option value="thinkingObject-5">ضلالات إضطهاد</option>
-              <option value="thinkingObject-6">ضلالات أهمية</option>
-              <option value="thinkingObject-7">ضلالات خيانة</option>
-              <option value="thinkingObject-8">ضلالات ذنوب</option>
-              <option value="thinkingObject-9">أفكار عجز ويأس</option>
-              <option value="thinkingObject-10">أفكار انتحارية</option>
-              <option value="thinkingObject-11">أخرى</option>
+            <select name="thinkingObject" id="thinkingObject" class="selects" style="width:10em;"required>
+              <option value="thinkingObject-2">طبيعي</option>
+              <option value="thinkingObject-3">مخاوف</option>
+              <option value="thinkingObject-1">شكوك</option>
+              <option value="thinkingObject-4">حزين</option>>
             </select>
-            <label>محتوى التفكير</label>
+            <label>المخاوف</label>
           </div>
 
         </div>
@@ -619,30 +611,30 @@
         </div>
         <div class="row align-items-start">
           <div class="col order-last ">
-            <select name="behavior" id="behavior" class="selects" style="width:10em; margin-left: 5em" aria-checked="true">
-              <option value="behavior-5">متجنب</option>
-              <option value="behavior-6">تكرار</option>
-              <option value="behavior-7">طبيعي</option>
-              <option value="behavior-8">منسحب</option>
+            <select name="behavior" id="behavior" class="selects" style="width:10em; margin-left: 5em" aria-checked="true" required>
+              <option value="behavior-1">طبيعي</option>
+              <option value="behavior-2">متجنب</option>
+              <option value="behavior-3">منسحب</option>
+              <option value="behavior-4">تكرار</option>
             </select>
             <label for="cars">السلوك</label>
           </div>
           <div class="col">
-            <select name="mood" id="mood" class="selects" style="width:10em; margin-left: 5em">
-              <option value="mood-1">طبيعي</option>
-              <option value="mood-2">قلق</option>
-              <option value="mood-3">حزين</option>
-              <option value="mood-4">سريع الاستثارة</option>
+            <select name="mood" id="mood" class="selects" style="width:10em; margin-left: 5em"required>
+              <option value="mood-2">طبيعي</option>
+              <option value="mood-3">قلق</option>
+              <option value="mood-1">سريع الاستثارة</option>
+              <option value="mood-4">حزين</option>
             </select>
             <label>المزاج</label>
           </div>
 
           <div class="col order-first">
-            <select name="faceFeatures" id="faceFeatures" class="selects" style="width:10em; margin-left:5em">
+            <select name="faceFeatures" id="faceFeatures" class="selects" style="width:10em; margin-left:5em"required>
               <option value="faceFeatures-1">طبيعي</option>
               <option value="faceFeatures-3">متوتر</option>
-              <option value="faceFeatures-4">قلق</option>
-              <option value="faceFeatures-5">حزين</option>
+              <option value="faceFeatures-2">قلق</option>
+              <option value="faceFeatures-4">حزين</option>
             </select>
             <label>تعابير الوجه</label>
           </div>
@@ -650,29 +642,29 @@
         </div>
         <div class="row align-items-start">
           <div class="col order-last ">
-            <select name="conscience" id="conscience" class="selects" style="width:10em; margin-left: 5em">
-              <option value="conscience-1">قلق</option>
-              <option value="conscience-3">غير ملائم للأفكار والموقف</option>
+            <select name="conscience" id="conscience" class="selects" style="width:10em; margin-left: 5em"required>
+              <option value="conscience-1">طبيعي</option>
+              <option value="conscience-3">قلق</option>
+              <option value="conscience-2">غير ملائم للأفكار والموقف</option>
               <option value="conscience-4">حزين</option>
-              <option value="conscience-8">طبيعي</option>
             </select>
             <label for="cars">الوجدان</label>
           </div>
           <div class="col">
-            <select name="communication" id="communication" class="selects" style="width:10em; margin-left: 5em">
-              <option value="communication-1">طبيعي</option>
-              <option value="communication-2">لمحة خاطفة</option>
-              <option value="communication-4">متجنب</option>
+            <select name="communication" id="communication" class="selects" style="width:10em; margin-left: 5em"required>
+              <option value="communication-1">لمحة خاطفة</option>
+              <option value="communication-2">متجنب</option>
+              <option selected="selected" value="communication-1">طبيعي</option>
             </select>
             <label>التواصل</label>
           </div>
 
           <div class="col">
-            <select name="talk" id="talk" class="selects" style="width:10em; margin-left: 5em">
-              <option value="talk-1">طبيعي</option>
-              <option value="talk-2">صامت</option>
-              <option value="talk-3">تكرار</option>
-              <option value="talk-5">كثير الكلام</option>
+            <select name="talk" id="talk" class="selects" style="width:10em; margin-left: 5em"required>
+              <option value="talk-2">طبيعي</option>
+              <option value="talk-1">صامت</option>
+              <option value="talk-3">كثير الكلام</option>
+              <option value="talk-4">تكرار</option>
             </select>
             <label>الكلام</label>
           </div>
