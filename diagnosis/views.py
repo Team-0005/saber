@@ -32,11 +32,11 @@ def iniDiag(request,pt_id):
             label = disorder[preds.argmax()]
             print(fields)
             print(label)
-            if label == "desperation":
+            if label == "anxiety":
                 the_id = 1
             elif label == "OCD":
                 the_id = 2
-            elif label == "anxiety":
+            elif label == "desperation":
                 the_id = 3
             
             fields.clear()
