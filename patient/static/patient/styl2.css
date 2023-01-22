@@ -8,16 +8,17 @@ body {
 
   font-family: 'Tajawal', sans-serif;
 }
+
 .title {
   font-family: 'Tajawal';
   font-style: normal;
   align-items: center;
   text-align: center;
-   /* margin-left: 22em;  */
+  /* margin-left: 22em;  */
   color: #2180A5;
 
   font-weight: bold;
- 
+
 
 }
 
@@ -73,7 +74,7 @@ footer a:hover,
   cursor: pointer;
 }
 
- .addp p,
+.addp p,
 .profile p,
 .recpatient p {
   text-align: center;
@@ -81,18 +82,18 @@ footer a:hover,
   font-size: 2em;
   color: #2180A5;
 
-} 
+}
 
-.p_age{
-padding-top: 1.5em;
- text-align: center;
+.p_age {
+  padding-top: 1.5em;
+  text-align: center;
   font-family: 'Tajawal';
   font-size: 0.9em !important;
   color: #2180A5;
-background: rgba(185, 177, 177, 0.12);
-border-radius: 50px;
-width: 15em !important; 
-height: 4.5em !important;
+  background: rgba(185, 177, 177, 0.12);
+  border-radius: 50px;
+  width: 15em !important;
+  height: 4.5em !important;
 }
 
 
@@ -144,28 +145,6 @@ form.recpatient {
   text-align: center !important;
 
 }
-
-/* .row {
-  display: block;
-  text-align: center;
-  margin: 2em;
-
-} */
-
-/* .col {
-  margin-left: 1em;
-  float: right;
-  width: 16em;
-  -webkit-padding-end: 3.4em;
-  display: inline-block;
-
-}
-
-.col1 {
-  margin: 0em;
-  text-align: left;
-  display: block;
-} */
 
 .col {
 
@@ -278,7 +257,7 @@ form.servec {
 
 /*------------------------------*/
 /*-------patientrec page-------*/
-#search:hover{
+#search:hover {
   cursor: pointer;
 }
 
@@ -308,75 +287,137 @@ form.recpatient {
   margin-left: 1em;
 
 }
-.con{
+
+.con {
+  position: absolute;
+  width: 60em;
+  height: 40em;
+  margin-left: 15.9em;
+  margin-top: 2em;
+  background: rgba(255, 255, 255, 0.71);
+  border-radius: 50px;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+}
+
+.con .button {
+  width: 15em !important;
+  margin-left: 23em;
+}
+
+.con.add {
   position: absolute;
   width: 1008px;
-  height: 900px;
-      margin-left: 15.9em;
-     margin-top: 2em;
-    background: rgba(255, 255, 255, 0.71);
-    border-radius: 50px;
-    text-decoration: none;
-    align-items: center;
-text-align:center;
+  height: 820px;
+  margin-left: 15.5em;
+}
+
+.con.add  td {
+  text-align: right;
+  font-weight: bold;
+  /* margin-right: em; */
+  font-size: 15px;
+  padding-right: 3em;
+  color: #2180A5 !important;
+  text-align: center;
 
 }
-.form-check-input{
+.con.add h5 {
+  font-size: 0.9em !important;
+  padding-top: 3em;
+  font-weight: bold;
+  font-family: 'Tajawal';
+  font-style: normal;
+}
+.plan {
+  width: 694px;
+  height: 238px;
+  border: 1.4783px solid rgba(11, 70, 84, 0.25);
+  border-radius: 5.91319px;
+  margin-left: 5em;
+  font-size: 0.9em !important;
+  color: rgba(0, 0, 0, 0.5);
+}
+.result {
+  width: 140px;
+  height: 242px;
+  background: rgba(33, 128, 165, 0.16);
+  border-radius: 5.91319px;
+  font-size: 0.9em !important;
+}
+
+
+.con.add .button {
+  width: 15em !important;
+  margin-left: 10em;
+  margin-top: 1em !important;
+  height: 2.5em !important;
+}
+
+#edit {
+  width: 15em !important;
+  margin-left: 22.5em;
+  margin-top: 1em;
+}
+
+.form-check-input {
   float: center;
   position: relative;
   font-family: 'Tajawal';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-display: flex;
-align-items: center;
-text-align: center;
-color: rgba(0, 0, 0, 0.5);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
 
 }
-.labelin{
+
+.labelin {
   font-family: 'Tajawal';
   font-style: normal;
   font-weight: bold;
   align-items: center;
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
-  
-  
 
 }
+
 input {
-  width: 15em; 
+  width: 15em;
   height: 4em;
- padding: 0.7%; 
- margin-left: 2.5em;
+  padding: 0.7%;
+  margin-left: 2.5em;
 
 }
 
 .inputType {
- 
+
   background-color: white;
-border: 2px solid rgba(195, 195, 195, 0.5);
-border-radius: 0.5em;
+  border: 2px solid rgba(195, 195, 195, 0.5);
+  border-radius: 0.5em;
   direction: rtl;
   text-align: center;
   float: center;
   direction: rtl;
-    margin-bottom: 3em;
+  margin-bottom: 3em;
   margin-left: 3.5em;
-  color:rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: none;
-  
+
 }
-.form-check{
+
+.form-check {
 
   direction: rtl;
   text-align: center;
   float: center;
   direction: rtl;
   margin-bottom: 3em;
-margin-left: 5em;
+  margin-left: 5em;
 
 
 }
@@ -394,25 +435,28 @@ margin-left: 5em;
   border-radius: 0.6em;
   margin-top: 0.5em;
   /* margin-left: 2em */
-  
+
 }
-#cancel{
+
+#cancel {
   background-color: #B7523B;
 }
-.massages{
+
+.massages {
+  margin-right: 3em;
   color: red;
 }
 
 
 .button:hover {
-    background-color: #D3E6ED;
-    cursor: pointer;
-    box-shadow: .1em .1em 0.1em #D7D7D7;
-  }
-  
+  background-color: #D3E6ED;
+  cursor: pointer;
+  box-shadow: .1em .1em 0.1em #D7D7D7;
+}
+
 .button:disabled {
-    background-color: #96c6bf;
-  }
+  background-color: #96c6bf;
+}
 
 
 tr td:first-child {
@@ -466,7 +510,7 @@ tr td:first-child {
   float: right;
 }
 
-.massages{
+.massages {
   color: red;
 }
 
