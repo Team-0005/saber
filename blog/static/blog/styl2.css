@@ -89,7 +89,7 @@ footer a:hover,
   border-radius: 0.6em;
   margin-top: 0.5em;
   /* margin-left: 2em */
-  
+
 }
 
 #cancel {
@@ -896,4 +896,16 @@ form.appro {
   width: 47em !important;
   height: auto;
   text-align: center;
+}
+
+.profile .button {
+  width: 15em !important;
+  margin-left: 6.2em;
+  margin-top: 1em !important;
+}
+
+#edit {
+  width: 15em !important;
+  margin-left: 16.5em;
+  margin-top: 1em;
 }

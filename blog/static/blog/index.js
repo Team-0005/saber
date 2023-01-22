@@ -35,9 +35,8 @@ function check_email(email_id, message_id) {
   var message = document.getElementById(message_id);
   if (!email.value.match(regularExp)) {
     setError(email, message);
-    if(message.innerHTML==null){
-      message.innerHTML = "الرجاء التأكد من صحة البريد الالكتروني";
-    }
+    message.innerHTML = null;
+    message.innerHTML = "الرجاء التأكد من صحة البريد الالكتروني";
     lock = true;
   }
   else {
@@ -55,8 +54,7 @@ function check_pass(pass_id, confirm_pass_id, message_id) {
   if (pass.value != confirm_pass.value) {
     setError(pass);
     setError(confirm_pass);
-    message.innerHTML =
-      " كلمة المرور غير متطابقة";
+    message.innerHTML =" كلمة المرور غير متطابقة";
     lock = true;
   } else {
     if (pass.value == "" && confirm_pass.value == "") {

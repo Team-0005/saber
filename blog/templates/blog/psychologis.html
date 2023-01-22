@@ -8,7 +8,6 @@
   <link rel="icon" href="{% static 'logo.png' %}">
   <link rel="stylesheet" href="{% static 'blog/styl2.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,121 +21,77 @@
     <div class="col6"> <a href="{% url 'home' %}">الصفحة الرئيسية</a></div>
     <div class="col6"><a href="#whowe">من نحن؟</a></div>
     <div class="col6"><a href="#footer">تواصل معنا</a></div>
-    <div class="col7"><a href="{% url 'profile' %}">{{psycho}} {{psycho.p_l_name}}</a>
-
-
-    </div>
+    <div class="col7"><a href="{% url 'profile' %}">{{psycho}} {{psycho.p_l_name}}</a></div>
     <div class="col7">
       <img id="login-pho" src="{% static 'blog/login.png' %}" width="50" height="50">
       <a id="login" href="{% url 'signout' %}" onclick="document.getElementById('id01').style.display='block'"></i>تسجيل
         خروج </a>
     </div>
   </nav>
-  <br> <br>
+
   <br>
   <br>
-
-
-
-  </form>
+  <br>
+  <br>
 
   <form class="servec" action="psychologis.html" method="">
     <!-- for_security -->
     {% csrf_token %}
     <br>
-
     <div class="row">
 
       <div class="col2">
         <button class="button button1" type="submit" formaction="{% url 'patient:addpt' %}"><img
             src="{% static 'patient/npat.png' %}" width="70" height="70"> إضافة مريض</button>
       </div>
+
       <div class="col2">
         <button class="button button1" type="submit" formaction="{% url 'tests:test' %}"><img
             src="{% static 'patient/m.png' %}" width="70" height="70">المقاييس النفسيه</button>
       </div>
+
       <div class="col2">
         <button class="button button1" type="submit" formaction="{% url 'patient:ptlist' %}"><img
             src="{% static 'patient/precord.png' %}" width="60" height="60"> سجل المرضى </button>
       </div>
 
     </div>
-
   </form>
 
-
-
-
-
-
-
-
-
-
-
   <footer id="footer" class="footer-distributed">
-
     <div class="footer-right">
       <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
-
       <p class="footer-links">
         <a id="h" href="">الصفحات</a>
-
         <a href="#">الصفحة الرئيسيه </a>
-
         <a href="#">من نحــن؟</a>
-
         <a href="#">تواصل معنا</a>
       </p>
-
     </div>
-
-
-
-
     <div class="footer-right">
-
-
-
       <p class="footer-links2">
         <a id="h" href="">الخدمات </a>
-
         <a href="#">اضافة مريض </a>
-
         <a href="#">المقاييــس النفسية</a>
-
         <a href="#">سجل المرضـى </a>
       </p>
-
     </div>
     <p class="footer-links3">
       <a id="h" href=""> :التواصل </a>
-
       <a href="#">+966 547876876 </a>
-
     </p>
     <div class="footer-left">
       <div class="footer-icons">
-        <br><br>
-
-
+        <br>
+        <br>
         <h3> مواقع التواصل </h3>
         <br>
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-linkedin"></i></a>
         <a href="#"><i class="fa fa-github"></i></a>
-
-
-
       </div>
-
     </div>
-
   </footer>
-
-
-
 </body>
-
 </html>

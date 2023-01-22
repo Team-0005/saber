@@ -8,7 +8,6 @@
   <link rel="icon" href="{% static 'logo.png' %}">
   <link rel="stylesheet" href="{% static 'blog/styl2.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +27,9 @@
       <img id="login-pho" src="{% static 'blog/login.png'%}" width="50" height="50">
     </div>
   </nav>
-  <br> <br>
+
+  <br>
+  <br>
   <br>
   <br>
 
@@ -36,34 +37,25 @@
     <!-- for_security -->
     {% csrf_token %}
     <br>
-
-
-
     <div class="rowf1">
-
       <a href="{% url 'forget' %}"> نسيت كلمة المرور</a>
-
     </div>
-
 
     <div class="rowf">
       <div class="col-2">
         <input type="email" id="fp_email" name="fp_email" placeholder="&#x40; البريدالالكتروني " min="3" size="10"
           autofocus required onblur="check_email('fp_email','p_email');">
       </div>
+
       <div class="col-2">
         {% for message in messages %}
-
         <label class='massages' id="p_email">{{ message }}</label>
-
         {% endfor %}
       </div>
     </div>
 
     <div class="rowu">
-
       <input class="button" type="submit" name="التالي">
-
     </div>
   </form>
 
@@ -72,65 +64,45 @@
 
     <div class="footer-right">
       <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
-
       <p class="footer-links">
         <a id="h" href="">الصفحات</a>
-
         <a href="#">الصفحة الرئيسيه </a>
-
         <a href="#">من نحــن؟</a>
-
         <a href="#">تواصل معنا</a>
       </p>
-
     </div>
-
-
-
 
     <div class="footer-right">
-
-
-
       <p class="footer-links2">
         <a id="h" href="">الخدمات </a>
-
         <a href="#">اضافة مريض </a>
-
         <a href="#">المقاييــس النفسية</a>
-
         <a href="#">سجل المرضـى </a>
       </p>
-
     </div>
+
     <p class="footer-links3">
       <a id="h" href=""> :التواصل </a>
-
       <a href="#">+966 547876876 </a>
-
     </p>
+
     <div class="footer-left">
       <div class="footer-icons">
-        <br><br>
-
-
+        <br>
+        <br>
         <h3> مواقع التواصل </h3>
         <br>
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-linkedin"></i></a>
         <a href="#"><i class="fa fa-github"></i></a>
-
-
-
       </div>
-
     </div>
 
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
-</body>
 
+</body>
 </html>
