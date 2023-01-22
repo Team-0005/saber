@@ -130,7 +130,7 @@ section {
 
 }
 
-.button{
+.button {
   font-size: 1.3em;
   background-color: #5399B5;
   border: none;
@@ -140,16 +140,18 @@ section {
   border-radius: 4em;
   box-shadow: 0.06em 0.06em #D7D7D7;
   padding: 0.625em 2em;
-  color:#D3E6ED;}
+  color: #D3E6ED;
+}
+
 .button:hover {
-    background-color: #D3E6ED;
-    cursor: pointer;
-    box-shadow: .1em .1em 0.1em #D7D7D7;
-  }
-  
+  background-color: #D3E6ED;
+  cursor: pointer;
+  box-shadow: .1em .1em 0.1em #D7D7D7;
+}
+
 .button:disabled {
-    background-color: #96c6bf;
-  }
+  background-color: #96c6bf;
+}
 
 
 

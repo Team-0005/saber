@@ -1,11 +1,10 @@
-
 body {
   background-image: url(background2.png);
-  background-attachment:scroll;
+  background-attachment: scroll;
   background-size: cover;
   background-repeat: no-repeat;
-   background-color: #FFFFFF;
- background-image:im();
+  background-color: #FFFFFF;
+  background-image: im();
 
   font-family: 'Tajawal', sans-serif;
 }
@@ -16,27 +15,30 @@ body {
 }
 
 /*styling navigation bar and footer*/
-nav, footer {
+nav,
+footer {
   color: #000000;
   text-align: center;
 }
 
-nav a, footer a {
+nav a,
+footer a {
   font-size: 1.063em;
   color: #000000;
 
 }
 
 
-.col7{
-float: left;
+.col7 {
+  float: left;
 
 }
+
 nav {
 
   width: 80%;
   float: right;
-  margin:1.5em 1em 2em 3em;
+  margin: 1.5em 1em 2em 3em;
 }
 
 footer {
@@ -46,115 +48,133 @@ footer {
 nav a {
   text-decoration: none;
   float: right;
-  padding:  1em 2.5em 3em;
+  padding: 1em 2.5em 3em;
 }
 
-nav a:hover, footer a:hover, .link:hover {
+nav a:hover,
+footer a:hover,
+.link:hover {
   color: #488FAA;
   cursor: pointer;
 }
 
-.addp p,.profile p,.recpatient p{
+.addp p,
+.profile p,
+.recpatient p {
   text-align: center;
   font-family: 'Tajawal';
   font-size: 2em;
-    color: #2180A5;
+  color: #2180A5;
 
 }
-.j p{
+
+.j p {
   text-align: right;
   font-family: 'Tajawal';
   font-size: 2em;
-    color: #2180A5;
+  color: #2180A5;
 
 }
-.button{
+
+.button {
   font-family: 'Tajawal';
   font-size: 1em;
   color: white;
   background-color: #2180A5;
-text-align: center;
-border: none;
-  padding: 0.5em 6em 0.5em 6em ;
+  text-align: center;
+  border: none;
+  padding: 0.5em 6em 0.5em 6em;
   text-decoration: none;
   display: inline-block;
   border-radius: 0.6em;
-margin-left: 2em
-
+  margin-left: 2em
 }
-.jender{
+
+.jender {
   font-family: 'Tajawal';
-  display: block ;
- margin-bottom: 12px;
- text-align: right;
- cursor: pointer;
- font-size: 1em;
- -webkit-user-select: none;
- -moz-user-select: none;
- -ms-user-select: none;
- user-select: none;
+  display: block;
+  margin-bottom: 12px;
+  text-align: right;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-form{
 
-display: block;
-margin: 3% auto 15% auto;
-width: 30%;
-background-color: #ffffff;
+form {
 
-background-color:rgba(255,255,255,0.5);
-/*text-align: center;*/
+  display: block;
+  margin: 3% auto 15% auto;
+  width: 30%;
+  background-color: #ffffff;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  /*text-align: center;*/
   border-radius: 2em;
   width: 47em !important;
-height: 55em;
-text-align: center;
+  height: 55em;
+  text-align: center;
 
 
 }
-input{
+
+input {
   width: 35%;
   padding: 3.5%;
-border: 2px solid rgba(195,195,195,0.5);
-border-radius: 0.5em;
-margin-left: 2.5em;
+  border: 2px solid rgba(195, 195, 195, 0.5);
+  border-radius: 0.5em;
+  margin-left: 2.5em;
 
 }
-.profile input[type=tel],.profile input[type=email],.profile input[type=password]{
+
+.profile input[type=tel],
+.profile input[type=email],
+.profile input[type=password] {
   width: 85%;
 
 }
+
 .row3 {
-margin: 0em;
-text-align: ;
+  margin: 0em;
+  text-align: ;
   font-family: 'Tajawal';
   font-size: 1em;
-    color: #2180A5;
+  color: #2180A5;
 }
+
 #myFile {
   width: 35%;
   padding: 3.5%;
-border:0;
-border-radius: 0.5em;
-margin-left: 2.5em;
+  border: 0;
+  border-radius: 0.5em;
+  margin-left: 2.5em;
 }
+
 ::placeholder {
   font-size: 1.2em;
-  text-align:center !important;
+  text-align: center !important;
 
-}.row{
+}
+
+.row {
   display: block;
-  text-align:center ;
+  text-align: center;
   margin: 2em;
 
 }
-.col{
+
+.col {
   margin-left: 1em;
   float: right;
   width: 16em;
-  -webkit-padding-end:  3.4em;
+  -webkit-padding-end: 3.4em;
   display: inline-block;
 
 }
-.col1{
+
+.col1 {
   margin: 0em;
   text-align: left;
   display: block;
@@ -168,12 +188,13 @@ margin-left: 2.5em;
 }
 
 .custom-select select {
-  display: none; /*hide original SELECT element:*/
+  display: none;
+  /*hide original SELECT element:*/
 }
 
 .select-selected {
   background-color: white;
-  border: 2px solid rgba(195,195,195,0.5);
+  border: 2px solid rgba(195, 195, 195, 0.5);
   border-radius: 0.3em;
 
 }
@@ -196,8 +217,9 @@ margin-left: 2.5em;
 }
 
 /*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
- font-family: 'Font Awesome 5 Free';
+.select-items div,
+.select-selected {
+  font-family: 'Font Awesome 5 Free';
   color: #A9A9A9;
   padding: 1em 1em 1em 1em;
   cursor: pointer;
@@ -221,39 +243,46 @@ margin-left: 2.5em;
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 
 }
+
 /* home page for psycol*/
 
 body.home {
-  background-image: url(backpys0.png)!important;
-  background-attachment:scroll;
+  background-image: url(backpys0.png) !important;
+  background-attachment: scroll;
   background-size: cover;
   background-repeat: no-repeat;
-   background-color: #FFFFFF;
- background-image:im();
+  background-color: #FFFFFF;
+  background-image: im();
 
   font-family: 'Tajawal', sans-serif;
 }
-form.servec{
+
+form.servec {
 
   display: block;
- margin: 9em 0 5em 0;
-background-color: transparent;
-    border-radius: 2em;
-    width: 60em !important;
+  margin: 9em 0 5em 0;
+  background-color: transparent;
+  border-radius: 2em;
+  width: 60em !important;
   text-align: left;
 
 
 }
+
 .button:hover {
   background-color: #2180A5;
 }
-.servec img{border-radius: 9px;
+
+.servec img {
+  border-radius: 9px;
 }
-.servec button{
+
+.servec button {
   position: relative;
   background-color: #488FAA;
   border: none;
@@ -268,66 +297,70 @@ background-color: transparent;
   overflow: hidden;
   cursor: pointer;
   border-radius: 2em;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 
 }
-.col2{
+
+.col2 {
   margin-left: 1em;
   float: right;
   width: 16em;
   display: inline-block;
 }
+
 /*------------------------------*/
 /*-------patientrec page-------*/
-form.recpatient{
+form.recpatient {
 
-display: block;
-margin: 2% auto 15% auto;
-width: 30%;
-background-color: #ffffff;
+  display: block;
+  margin: 2% auto 15% auto;
+  width: 30%;
+  background-color: #ffffff;
 
-background-color:rgba(255,255,255,0.9);
-/*text-align: center;*/
+  background-color: rgba(255, 255, 255, 0.9);
+  /*text-align: center;*/
   border-radius: 2em;
   width: 47em !important;
-height: auto;
-text-align: center ;
+  height: auto;
+  text-align: center;
 }
 
-.se #search{
+.se #search {
   color: white;
-  background-color:#488FAA;
-  width: 6em ;
+  background-color: #488FAA;
+  width: 6em;
   height: 4em;
-  padding:1%;
-  border: 0px solid rgba(195,195,195,0.5);
+  padding: 1%;
+  border: 0px solid rgba(195, 195, 195, 0.5);
   border-radius: 2em;
   margin-left: 1em;
 
 }
 
-.se input{
+.se input {
   width: 30em;
   height: 4em;
-  padding:1%;
-  border: 2px solid rgba(195,195,195,0.5);
+  padding: 1%;
+  border: 2px solid rgba(195, 195, 195, 0.5);
   border-radius: 2em;
   margin-left: 1em;
 
 }
 
-.se{
+.se {
   text-align: center;
 
 }
+
 .se::placeholder {
   font-size: 1em;
-  text-align:right !important;
+  text-align: right !important;
 }
+
 /*تنسيق العمود الاخير */
 tr td:first-child {
-  color: red ;
+  color: red;
 }
 
 
@@ -336,39 +369,47 @@ tr td:first-child {
   border-collapse: collapse;
   width: 100%;
   border-radius: 2em;
-  font-weight:bolder!important;
+  font-weight: bolder !important;
 
 
 }
 
-#P_record td ,#P_record th {
+#P_record td,
+#P_record th {
   font-family: 'Tajawal', sans-serif;
 
   border: 0px solid #ddd;
   padding: 1.5em 1.5em 1.5em 1.5em;
-  text-align: Right  ;
+  text-align: Right;
 
 }
+
 #P_record a:visited {
   color: Black;
 
 }
 
-#P_record tr:nth-child(odd){background-color: #f2f2f2;}
+#P_record tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
 
-#P_record tr:hover {background-color: #ddd;}
+#P_record tr:hover {
+  background-color: #ddd;
+}
 
 #P_record th {
   padding-top: 1em;
   padding-bottom: 1em;
-  text-align: Right ;
+  text-align: Right;
   background-color: #488FAA;
   color: white;
 }
+
 #P_record a {
   text-decoration: none;
   float: right;
 }
+
 /*------------------------------*/
 
 /*
@@ -379,34 +420,34 @@ footer*
 
 
 
-.footer-distributed{
-background: #E6E3E8;
-box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
-box-sizing: border-box;
-width: 100%;
-font: bold 16px sans-serif;
+.footer-distributed {
+  background: #E6E3E8;
+  box-shadow: 0 2em 2em 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
 
-text-align: left;
-padding: 50px 60px 40px;
-overflow: hidden;
+  text-align: left;
+  padding: 50px 60px 40px;
+  overflow: hidden;
 }
 
 section {
-width: 100%;
-display: inline-block;
-background: #ccc;
-text-align: justify;
-font-size: 1em;
-font-weight: 10em;
-text-decoration: underline;
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  text-align: justify;
+  font-size: 1em;
+  font-weight: 10em;
+  text-decoration: underline;
 }
 
 
 /* Footer left */
 
-.footer-distributed .footer-left{
-float: left;
-display:inline-block;
+.footer-distributed .footer-left {
+  float: left;
+  display: inline-block;
 }
 
 
@@ -415,89 +456,94 @@ display:inline-block;
 /* Footer links */
 
 
-.footer-distributed .footer-links a{
-display:flow-root;
-line-height:0.5em;
-padding: 1em;
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
+.footer-distributed .footer-links a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
 }
 
-.footer-distributed .footer-links2 a{
-display:flow-root;
-line-height:0.5em;
-padding: 1em;
+.footer-distributed .footer-links2 a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
 
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
-}
-.footer-distributed .footer-links3 a{
-display: flow-root;
-line-height:0.5em;
-padding: 1em;
-float: right;
-
-font-size: 0.9em;
-font-family: 'Tajawal';
-text-decoration:none;
-color:  inherit;
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
 }
 
-#h{
-  color:  #0E0F1D;
-font-size: 1.2em;
+.footer-distributed .footer-links3 a {
+  display: flow-root;
+  line-height: 0.5em;
+  padding: 1em;
+  float: right;
+
+  font-size: 0.9em;
+  font-family: 'Tajawal';
+  text-decoration: none;
+  color: inherit;
+}
+
+#h {
+  color: #0E0F1D;
+  font-size: 1.2em;
 
 }
 
 
-.footer-distributed .footer-company-name{
-color:  #0E0F1D;
-font-size: 1em;
-font-weight: normal;
+.footer-distributed .footer-company-name {
+  color: #0E0F1D;
+  font-size: 1em;
+  font-weight: normal;
 
 }
 
 /* Footer social icons */
 
 
-.footer-distributed h3{
-color:  #0E0F1D;
-font: bold 1em 'Tajawal', sans-serif;
+.footer-distributed h3 {
+  color: #0E0F1D;
+  font: bold 1em 'Tajawal', sans-serif;
 
 
 }
 
-.footer-distributed .footer-icons a{
+.footer-distributed .footer-icons a {
 
-display: contents;
-width: auto;
-height: 0em;
-cursor: pointer;
-font-size: 2em;
-line-height: 1em;
+  display: contents;
+  width: auto;
+  height: 0em;
+  cursor: pointer;
+  font-size: 2em;
+  line-height: 1em;
 
 }
 
 /* Footer Right */
 
-.footer-distributed .footer-right  {
-float: right;
+.footer-distributed .footer-right {
+  float: right;
 
 }
 
-.footer-distributed .footer-right p{
-display: flow-root;
-vertical-align: top;
-margin-left: 8em;
-color: #0E0F1D;
+.footer-distributed .footer-right p {
+  display: flow-root;
+  vertical-align: top;
+  margin-left: 8em;
+  color: #0E0F1D;
 }
 
 
-.footer-icons a:hover, .footer-links a:hover,.footer-links2 a:hover,.footer-links3 a:hover, .link:hover {
+.footer-icons a:hover,
+.footer-links a:hover,
+.footer-links2 a:hover,
+.footer-links3 a:hover,
+.link:hover {
   color: #488FAA;
   cursor: pointer;
 }
@@ -509,13 +555,13 @@ color: #0E0F1D;
 
 @media (max-width: 1000px) {
 
-.footer-distributed {
-  font: bold 14px sans-serif;
-}
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
 
-.footer-distributed .footer-company-name{
-  font-size: 12px;
-}
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
 
 
 
@@ -523,20 +569,20 @@ color: #0E0F1D;
 
 @media (max-width: 800px) {
 
-.footer-distributed{
-  padding: 30px;
-}
+  .footer-distributed {
+    padding: 30px;
+  }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-right{
-  float: none;
-  max-width: 300px;
-  margin: 0 auto;
-}
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 
-.footer-distributed .footer-left{
-  margin-bottom: 40px;
-}
+  .footer-distributed .footer-left {
+    margin-bottom: 40px;
+  }
 }
 
 /*------------------------------
@@ -546,40 +592,42 @@ test page
 
 ------------------------------*/
 
-form.cont{
+form.cont {
 
-display: block;
-margin: 2% auto 0% auto;
-width: 30%;
+  display: block;
+  margin: 2% auto 0% auto;
+  width: 30%;
 
-background-color:rgba(33,128,165,0.19);
-/*text-align: center;*/
+  background-color: rgba(33, 128, 165, 0.19);
+  /*text-align: center;*/
   border-radius: 2em;
   width: 47em !important;
-height: auto ;
+  height: auto;
 
-text-align: center ;
+  text-align: center;
 }
-.cont p{
-  text-align: right ;
+
+.cont p {
+  text-align: right;
   padding: 1em;
-   color: #2180A5;
-   font-weight: bolder;
-   font-size: 1em;
+  color: #2180A5;
+  font-weight: bolder;
+  font-size: 1em;
 
 }
-form.test{
 
-display: block;
-margin: 2% auto 0% auto;
-width: 30%;
-padding-bottom: 1em;
-background-color:rgba(185,177,177,0.1);
-/*text-align: center;*/
+form.test {
+
+  display: block;
+  margin: 2% auto 0% auto;
+  width: 30%;
+  padding-bottom: 1em;
+  background-color: rgba(185, 177, 177, 0.1);
+  /*text-align: center;*/
   border-radius: 2em;
   width: 47em !important;
-height: auto;
-text-align: center ;
+  height: auto;
+  text-align: center;
 }
 
 
@@ -620,12 +668,12 @@ text-align: center ;
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.container:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.container input:checked~.checkmark {
   background-color: #2196F3;
 
 }
@@ -638,7 +686,7 @@ text-align: center ;
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.container input:checked~.checkmark:after {
   display: block;
 
 }
@@ -656,31 +704,34 @@ text-align: center ;
   transform: rotate(45deg);
 
 }
-.test p{
+
+.test p {
   text-align: right;
   font-size: 1.2em;
   font-weight: bolder;
   color: #777777;
 
 }
-.container p{
+
+.container p {
   padding: .5em;
-font-weight: normal;
+  font-weight: normal;
   text-align: right;
   font-size: 0.8em;
-  background-color:rgba(238, 238, 238, 0.9);
+  background-color: rgba(238, 238, 238, 0.9);
   border-radius: .5em;
 
 }
-.checkmark{
+
+.checkmark {
 
   margin-right: 1em;
   height: 1.8em;
   width: 1.8em;
 
-    border-radius: .5em;
+  border-radius: .5em;
 }
 
-.test.button{
+.test.button {
   margin-left: 5em;
 }

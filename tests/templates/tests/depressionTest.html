@@ -8,7 +8,6 @@
   <link rel="icon" href="{% static 'blog/logo.png' %}">
   <link rel="stylesheet" href="{% static 'tests/styl2.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,598 +16,587 @@
 
 <body>
   <a id="logo" href=""><img src="{% static 'blog/logo1.png'%}" alt="logo" width="150" height="100"></a>
-
-    <br>    <br>
-    <br>
-
-    <form class="cont" action="index.html" method="post">
-
-      <p> رجاءً .. قم باختيار الجملة التي توضح معدل حدوث كل بند خلال السبعة أيام الماضية بما فيها وقت هذه الجلسة </p>
-
-</form>
+  <br>
+  <br>
+  <br>
+  <form class="cont" action="index.html" method="post">
+    <p> رجاءً .. قم باختيار الجملة التي توضح معدل حدوث كل بند خلال السبعة أيام الماضية بما فيها وقت هذه الجلسة </p>
+  </form>
 
 
 
   <form class="test" action="{% url 'tests:depTest'%}" method="post">
     <br>
 
- <!-- for_security -->
- {% csrf_token %}
-
-  <div class="row">
-    <p class="q">أولاً</p>
-
-    <label class="container">
-  <input type="radio" checked="checked" name="q1" value="0" required>
-  <span class="checkmark"></span>
-  <p class="ans">لا أشعر بالحزن.</p>
-</label>
-<label class="container">
-  <p class="ans">أشعر بالحزن
-</p>
-  <input type="radio" name="q1" value="1">
-  <span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أشعر بالحزن طوال الوقت ،ولا أستطيع التخلص منه .
-</p>
-  <input type="radio" name="q1" value="2">
-  <span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-  <p class="ans"> أنني حزين لدرجة لا أستطيع تحملها
-  <input type="radio" name="q1" value="3">
-  <span class="checkmark"></span>
-</label>
-</div>
-  <div class="row">
-    <p class="q">ثانيًا</p>
-
-    <label class="container">
-  <input type="radio"  name="q2"value="0" required>
-  <span class="checkmark"></span>
-  <p class="ans"> لست متشائماً بالنسبة للمستقبل </p>
-</label>
-<label class="container">
-  <p class="ans"> أشعر بتشاؤم بالنسبة للمستقبل
-</p>
-  <input type="radio" name="q2" value="1">
-  <span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أشعر بأنه ليس هناك شيء يشدني للمستقبل</p>
-  <input type="radio" name="q2" value="2">
-  <span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-  <p class="ans">أشعر بأن المستقبل لا أمل فيه وأن الامور لن تتحسن</p>
-  <input type="radio" name="q2" value="3">
-  <span class="checkmark"></span>
-</label>
-
-
-</div>
-<div class="row">
-  <p class="q">ثالثًا </p>
-
-  <label class="container">
-<input type="radio"  name="q3" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر بأني فاشل</p>
-</label>
-<label class="container">
-<p class="ans">أشعر بأني فشلت أكثر من المعتاد
-</p>
-<input type="radio" name="q3" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">عندما انظر الى ما مضى من سنوات عمري فأنا لا أرى سوى الفشل الذريع</p>
-<input type="radio" name="q3" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans">أشعر بأني شخص فاشل تماماً </p>
-<input type="radio" name="q3" value="3">
-<span class="checkmark"></span>
-
-
-</div>
-
-<div class="row">
-  <p class="q">رابعًا</p>
-
-  <label class="container">
-<input type="radio"  name="q4" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">استمتع بدرجة كافية بجوانب الحياة كما اعتدت من قبل</p>
-</label>
-<label class="container">
-<p class="ans">لا استمتع بجوانب الحياة على النحو الذي تعودت عليه
-</p>
-<input type="radio" name="q4" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">لم اعد احصل على استمتاع حقيقي في أي شيء في الحياة </p>
-<input type="radio" name="q4" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans">لا استمتع إطلاقًا بأي شيء في الحياة  </p>
-<input type="radio" name="q4" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-
-
-<div class="row">
-  <p class="q">خامسًا</p>
-
-  <label class="container">
-<input type="radio"  name="q5" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر بالذنب</p>
-</label>
-<label class="container">
-<p class="ans">أشعر بأني قد أكون مذنبا</p>
-<input type="radio" name="q5" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أشعر بشعور عميق بالذنب في أغلب الأوقات</p>
-<input type="radio" name="q5" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans">أشعر بالذنب بصفة عامة</p>
-<input type="radio" name="q5" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-
-<div class="row">
-<p class="q">  سادسًا </p>
-
-  <label class="container">
-<input type="radio" name="q6" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر بأني أتلقى عقابًا</p>
-</label>
-<label class="container">
-<p class="ans"> أشعر بأني قد أتعرض للعقاب
-</p>
-<input type="radio" name="q6" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أتوقع أن أعاقب
-</p>
-<input type="radio" name="q6" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> أشعر بأني أتلقى عقابًا
-</p>
-<input type="radio" name="q6" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-
-<div class="row">
-  <p class="q">سابعًا</p>
-
-  <label class="container">
-<input type="radio"  name="q7" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر بعدم الرضا عن نفسي</p>
-</label>
-<label class="container">
-<p class="ans"> أنا غير راضي عن نفسي
-</p>
-<input type="radio" name="q7" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أنا ممتعض من نفسي</p>
-<input type="radio" name="q7" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> أكره نفسي</p>
-<input type="radio" name="q7" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-<div class="row">
-  <p class="q">ثامنًا</p>
-
-  <label class="container">
-<input type="radio"  name="q8" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر بأني أسوأ من الآخرين</p>
-</label>
-<label class="container">
-<p class="ans"> أنقد نفسي بسبب ضعفي وأخطائي</p>
-<input type="radio" name="q8" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> ألوم نفسي معظم الوقت على أخطائي</p>
-<input type="radio" name="q8" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> ألوم نفسي على كل شيء سيء يحدث</p>
-<input type="radio" name="q8" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-
-<div class="row">
-  <p class="q">تاسعًا</p>
-
-  <label class="container">
-<input type="radio"  name="q9" value="0" required>
-<span class="checkmark"></span>
-<p class="ans"> أشعر بضيق من الحياة </p>
-</label>
-<label class="container">
-<p class="ans"> ليس لي رغبة في الحياة</p>
-<input type="radio" name="q9" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">أصبحت أكره الحياة</p>
-<input type="radio" name="q9" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> أتمنى الموت إذا وجدت فرصة لذلك</p>
-<input type="radio" name="q9" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-
-<div class="row">
-  <p class="q">عاشرًا </p>
-
-  <label class="container">
-<input type="radio"  name="q10" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أبكي اكثر من المعتاد </p>
-</label>
-<label class="container">
-<p class="ans"> أبكي الان أكثر من ذي قبل</p>
-<input type="radio" name="q10" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">أبكي طوال الوقت </p>
-<input type="radio" name="q10" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لقد كنت قادرًا على البكاء فيما مضى ولكم لا أسنطيع البكاءحتى لو كانت لي رغبة في ذلك</p>
-<input type="radio" name="q10" value="3">
-<span class="checkmark"></span>
-</label>
-
-
-</div>
-
-<div class="row">
-  <p class="q">الحادي عشر</p>
-
-  <label class="container">
-<input type="radio"  name="q11" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لست متوترًا اكثر من قبل </p>
-</label>
-<label class="container">
-<p class="ans">اتوتر واتضايق أكثر من ذي قبل </p>
-<input type="radio" name="q11" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">أشعر بالتوتر كل الوقت</p>
-<input type="radio" name="q11" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لا أتوتر ابدًا من الأشياء لتي كانت توترني فيما مضى</p>
-<input type="radio" name="q11" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">الثاني عشر</p>
-
-  <label class="container">
-<input type="radio"  name="q12" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لم أفقد الاهتمام بالناس الآخرين</p>
-</label>
-<label class="container">
-<p class="ans">إني اقل اهتمامًا بالآخرين مما أعتدت ان اكون</p>
-<input type="radio" name="q12" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">لقد فقدت معظم اهتمامي بالناس الآخرين</p>
-<input type="radio" name="q12" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لقد فقدت كل اهتمامي بالناس الآخرين </p>
-<input type="radio" name="q12" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">الثالث عشر</p>
-
-  <label class="container">
-<input type="radio"  name="q13" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">اتخذ قرارات على نفس المستوى الذي اعتدت عليه </p>
-</label>
-<label class="container">
-<p class="ans">لقد توقفت عن اتخاذ القرارات بصورة اكبر من الماضي</p>
-<input type="radio" name="q13" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">أجد صعوبة اكبر في اتخاذ القرارات عما كنت أقوم به</p>
-<input type="radio" name="q13" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لم أعد استطيع اتخاذ القراراتعلى الاطلاق</p>
-<input type="radio" name="q13" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">الرابع عشر</p>
-
-  <label class="container">
-<input type="radio"  name="q14" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا أشعر اني أبدو في حالة اسوأ عما اعتدت عليه</p>
-</label>
-<label class="container">
-<p class="ans">يقلقني ان ابدو اكبر سنًا واقل حيوية</p>
-<input type="radio" name="q14" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans"> أشعر بأن هناك تغيرات مستديمة في مظهري تجعلني ابدو اقل حيوية</p>
-<input type="radio" name="q14" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> أعتقد اني ابدو قبيحًا </p>
-<input type="radio" name="q14" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">الخامس عشر </p>
-
-  <label class="container">
-<input type="radio"  name="q15" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">استطيع ان اقوم بعملي كما تعودت</p>
-</label>
-<label class="container">
-<p class="ans"> احتاج لجهد كبير لكي ابدأ في عمل شيء ما</p>
-<input type="radio" name="q15" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">إن علي ان اضغط على نفسي بشدة لعمل اي شيء</p>
-<input type="radio" name="q15" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لا استطيع عمل اي شيء على الاطلاق</p>
-<input type="radio" name="q15" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">السادس عشر</p>
-
-  <label class="container">
-<input type="radio"  name="q16" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">استطيع ان انام كالمعتاد </p>
-</label>
-<label class="container">
-<p class="ans">لا أنام كالمعتاد</p>
-<input type="radio" name="q16" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">استيقظ قبل موعدي بساعة أو ساعتين وأجد صعوبه في النوم مره أخرى</p>
-<input type="radio" name="q16" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> استيقظ قبل بضعة ساعات من موعدي المعتاد ولا استطيع العودة للنوم مرة اخرى</p>
-<input type="radio" name="q16" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-
-<div class="row">
-  <p class="q">السابع عشر </p>
-
-  <label class="container">
-<input type="radio"  name="q17" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لا اشعر بالتعب أكثر من المعتاد </p>
-</label>
-<label class="container">
-<p class="ans">اتعب بسرعة عن المعتاد </p>
-<input type="radio" name="q17" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">اتعب من القيام بأي جهد في عمل أي شيء</p>
-<input type="radio" name="q17" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> إني أتعب لدرجة أنني لا أستطيع أن اقوم بأي عمل</p>
-<input type="radio" name="q17" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-<div class="row">
-  <p class="q">الثامن عشر </p>
-
-  <label class="container">
-<input type="radio"  name="q18" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">ان شهيتي للطعام ليست أقل من المعتاد </p>
-</label>
-<label class="container">
-<p class="ans">إن شهيتي للطعام ليست جيدة كالمعتاد </p>
-<input type="radio" name="q18" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">إن شهيتي للطعام أسوأ كثيرًا الآن</p>
-<input type="radio" name="q18" value="2" >
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> ليس لدي شهية على الاطلاق في الوقت الحاضر</p>
-<input type="radio" name="q18" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-
-<div class="row">
-  <p class="q">التاسع عشر  </p>
-
-  <label class="container">
-<input type="radio"  name="q19" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لم ينقص وزني في الآونة الاخيرة </p>
-</label>
-<label class="container">
-<p class="ans"> فقدت أكثر من كيلو جرامات من وزني</p>
-<input type="radio" name="q19" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">فقدت اربعة من كيلو جرامات من وزني</p>
-<input type="radio" name="q19" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> فقدت ستة من كيلو جرامات من وزني</p>
-<input type="radio" name="q19" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-<div class="row">
-  <p class="q">العشرون</p>
-
-  <label class="container">
-<input type="radio"  name="q20" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لست مشغولًا على صحتي أكثر من السابق</p>
-</label>
-<label class="container">
-<p class="ans">أني مشغول جدًا ببعض المشكلات البدنية مثل الاوجاع واضطرابات المعدة والأمساك</p>
-<input type="radio" name="q20" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">أني مشغول جدًا ببعض المشكلات اليومية ومن الصعب أن افكر في اي شيء آخر</p>
-<input type="radio" name="q20" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> أني مشغول جدًا ببعض المشكلات البدنية لدرجة اني لا أستطيع أن افكر في شيء آخر </p>
-<input type="radio" name="q20" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-<div class="row">
-  <p class="q">الواحد والعشرون </p>
-
-  <label class="container">
-<input type="radio"  name="q21" value="0" required>
-<span class="checkmark"></span>
-<p class="ans">لم ألاحظ اي تغيرات حديثة في أهتمامي الجنسية </p>
-</label>
-<label class="container">
-<p class="ans">انني اقل اهنماما في الجنس عن المعتاد </p>
-<input type="radio" name="q21" value="1">
-<span class="checkmark"></span>
-</label>
-<label class="container">
-<p class="ans">لقد قل اهنمامي بالجنس كثيرًا</p>
-<input type="radio" name="q21" value="2">
-<span class="checkmark" name="radio"></span>
-</label>
-<label class="container">
-<p class="ans"> لقد فقدت اهتمامي بالجنس تمامًا</p>
-<input type="radio" name="q21" value="3">
-<span class="checkmark"></span>
-</label>
-
-</div>
-<button class="button" type="submit" name="next" style="cursor: pointer;">التالي</button>
-
+    <!-- for_security -->
+    {% csrf_token %}
+
+    <div class="row">
+      <p class="q">أولاً</p>
+
+      <label class="container">
+        <input type="radio" checked="checked" name="q1" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بالحزن.</p>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بالحزن
+        </p>
+        <input type="radio" name="q1" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بالحزن طوال الوقت ،ولا أستطيع التخلص منه .
+        </p>
+        <input type="radio" name="q1" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أنني حزين لدرجة لا أستطيع تحملها
+          <input type="radio" name="q1" value="3">
+          <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="row">
+      <p class="q">ثانيًا</p>
+
+      <label class="container">
+        <input type="radio" name="q2" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans"> لست متشائماً بالنسبة للمستقبل </p>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بتشاؤم بالنسبة للمستقبل
+        </p>
+        <input type="radio" name="q2" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بأنه ليس هناك شيء يشدني للمستقبل</p>
+        <input type="radio" name="q2" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بأن المستقبل لا أمل فيه وأن الامور لن تتحسن</p>
+        <input type="radio" name="q2" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+    <div class="row">
+      <p class="q">ثالثًا </p>
+
+      <label class="container">
+        <input type="radio" name="q3" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بأني فاشل</p>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بأني فشلت أكثر من المعتاد
+        </p>
+        <input type="radio" name="q3" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">عندما انظر الى ما مضى من سنوات عمري فأنا لا أرى سوى الفشل الذريع</p>
+        <input type="radio" name="q3" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بأني شخص فاشل تماماً </p>
+        <input type="radio" name="q3" value="3">
+        <span class="checkmark"></span>
+
+
+    </div>
+
+    <div class="row">
+      <p class="q">رابعًا</p>
+
+      <label class="container">
+        <input type="radio" name="q4" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">استمتع بدرجة كافية بجوانب الحياة كما اعتدت من قبل</p>
+      </label>
+      <label class="container">
+        <p class="ans">لا استمتع بجوانب الحياة على النحو الذي تعودت عليه
+        </p>
+        <input type="radio" name="q4" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">لم اعد احصل على استمتاع حقيقي في أي شيء في الحياة </p>
+        <input type="radio" name="q4" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans">لا استمتع إطلاقًا بأي شيء في الحياة </p>
+        <input type="radio" name="q4" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+
+
+    <div class="row">
+      <p class="q">خامسًا</p>
+
+      <label class="container">
+        <input type="radio" name="q5" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بالذنب</p>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بأني قد أكون مذنبا</p>
+        <input type="radio" name="q5" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بشعور عميق بالذنب في أغلب الأوقات</p>
+        <input type="radio" name="q5" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بالذنب بصفة عامة</p>
+        <input type="radio" name="q5" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+
+    <div class="row">
+      <p class="q"> سادسًا </p>
+
+      <label class="container">
+        <input type="radio" name="q6" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بأني أتلقى عقابًا</p>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بأني قد أتعرض للعقاب
+        </p>
+        <input type="radio" name="q6" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أتوقع أن أعاقب
+        </p>
+        <input type="radio" name="q6" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بأني أتلقى عقابًا
+        </p>
+        <input type="radio" name="q6" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">سابعًا</p>
+
+      <label class="container">
+        <input type="radio" name="q7" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بعدم الرضا عن نفسي</p>
+      </label>
+      <label class="container">
+        <p class="ans"> أنا غير راضي عن نفسي
+        </p>
+        <input type="radio" name="q7" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أنا ممتعض من نفسي</p>
+        <input type="radio" name="q7" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أكره نفسي</p>
+        <input type="radio" name="q7" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+    <div class="row">
+      <p class="q">ثامنًا</p>
+
+      <label class="container">
+        <input type="radio" name="q8" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر بأني أسوأ من الآخرين</p>
+      </label>
+      <label class="container">
+        <p class="ans"> أنقد نفسي بسبب ضعفي وأخطائي</p>
+        <input type="radio" name="q8" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> ألوم نفسي معظم الوقت على أخطائي</p>
+        <input type="radio" name="q8" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> ألوم نفسي على كل شيء سيء يحدث</p>
+        <input type="radio" name="q8" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">تاسعًا</p>
+
+      <label class="container">
+        <input type="radio" name="q9" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans"> أشعر بضيق من الحياة </p>
+      </label>
+      <label class="container">
+        <p class="ans"> ليس لي رغبة في الحياة</p>
+        <input type="radio" name="q9" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أصبحت أكره الحياة</p>
+        <input type="radio" name="q9" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أتمنى الموت إذا وجدت فرصة لذلك</p>
+        <input type="radio" name="q9" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">عاشرًا </p>
+
+      <label class="container">
+        <input type="radio" name="q10" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أبكي اكثر من المعتاد </p>
+      </label>
+      <label class="container">
+        <p class="ans"> أبكي الان أكثر من ذي قبل</p>
+        <input type="radio" name="q10" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أبكي طوال الوقت </p>
+        <input type="radio" name="q10" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لقد كنت قادرًا على البكاء فيما مضى ولكم لا أسنطيع البكاءحتى لو كانت لي رغبة في ذلك</p>
+        <input type="radio" name="q10" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+
+    </div>
+
+    <div class="row">
+      <p class="q">الحادي عشر</p>
+
+      <label class="container">
+        <input type="radio" name="q11" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لست متوترًا اكثر من قبل </p>
+      </label>
+      <label class="container">
+        <p class="ans">اتوتر واتضايق أكثر من ذي قبل </p>
+        <input type="radio" name="q11" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أشعر بالتوتر كل الوقت</p>
+        <input type="radio" name="q11" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لا أتوتر ابدًا من الأشياء لتي كانت توترني فيما مضى</p>
+        <input type="radio" name="q11" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">الثاني عشر</p>
+
+      <label class="container">
+        <input type="radio" name="q12" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لم أفقد الاهتمام بالناس الآخرين</p>
+      </label>
+      <label class="container">
+        <p class="ans">إني اقل اهتمامًا بالآخرين مما أعتدت ان اكون</p>
+        <input type="radio" name="q12" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">لقد فقدت معظم اهتمامي بالناس الآخرين</p>
+        <input type="radio" name="q12" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لقد فقدت كل اهتمامي بالناس الآخرين </p>
+        <input type="radio" name="q12" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">الثالث عشر</p>
+
+      <label class="container">
+        <input type="radio" name="q13" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">اتخذ قرارات على نفس المستوى الذي اعتدت عليه </p>
+      </label>
+      <label class="container">
+        <p class="ans">لقد توقفت عن اتخاذ القرارات بصورة اكبر من الماضي</p>
+        <input type="radio" name="q13" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أجد صعوبة اكبر في اتخاذ القرارات عما كنت أقوم به</p>
+        <input type="radio" name="q13" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لم أعد استطيع اتخاذ القراراتعلى الاطلاق</p>
+        <input type="radio" name="q13" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">الرابع عشر</p>
+
+      <label class="container">
+        <input type="radio" name="q14" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا أشعر اني أبدو في حالة اسوأ عما اعتدت عليه</p>
+      </label>
+      <label class="container">
+        <p class="ans">يقلقني ان ابدو اكبر سنًا واقل حيوية</p>
+        <input type="radio" name="q14" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أشعر بأن هناك تغيرات مستديمة في مظهري تجعلني ابدو اقل حيوية</p>
+        <input type="radio" name="q14" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أعتقد اني ابدو قبيحًا </p>
+        <input type="radio" name="q14" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">الخامس عشر </p>
+
+      <label class="container">
+        <input type="radio" name="q15" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">استطيع ان اقوم بعملي كما تعودت</p>
+      </label>
+      <label class="container">
+        <p class="ans"> احتاج لجهد كبير لكي ابدأ في عمل شيء ما</p>
+        <input type="radio" name="q15" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">إن علي ان اضغط على نفسي بشدة لعمل اي شيء</p>
+        <input type="radio" name="q15" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لا استطيع عمل اي شيء على الاطلاق</p>
+        <input type="radio" name="q15" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+    <div class="row">
+      <p class="q">السادس عشر</p>
+
+      <label class="container">
+        <input type="radio" name="q16" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">استطيع ان انام كالمعتاد </p>
+      </label>
+      <label class="container">
+        <p class="ans">لا أنام كالمعتاد</p>
+        <input type="radio" name="q16" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">استيقظ قبل موعدي بساعة أو ساعتين وأجد صعوبه في النوم مره أخرى</p>
+        <input type="radio" name="q16" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> استيقظ قبل بضعة ساعات من موعدي المعتاد ولا استطيع العودة للنوم مرة اخرى</p>
+        <input type="radio" name="q16" value="3">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+
+    <div class="row">
+      <p class="q">السابع عشر </p>
+      <label class="container">
+        <input type="radio" name="q17" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لا اشعر بالتعب أكثر من المعتاد </p>
+      </label>
+      <label class="container">
+        <p class="ans">اتعب بسرعة عن المعتاد </p>
+        <input type="radio" name="q17" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">اتعب من القيام بأي جهد في عمل أي شيء</p>
+        <input type="radio" name="q17" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> إني أتعب لدرجة أنني لا أستطيع أن اقوم بأي عمل</p>
+        <input type="radio" name="q17" value="3">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="row">
+      <p class="q">الثامن عشر </p>
+      <label class="container">
+        <input type="radio" name="q18" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">ان شهيتي للطعام ليست أقل من المعتاد </p>
+      </label>
+      <label class="container">
+        <p class="ans">إن شهيتي للطعام ليست جيدة كالمعتاد </p>
+        <input type="radio" name="q18" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">إن شهيتي للطعام أسوأ كثيرًا الآن</p>
+        <input type="radio" name="q18" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> ليس لدي شهية على الاطلاق في الوقت الحاضر</p>
+        <input type="radio" name="q18" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+    <div class="row">
+      <p class="q">التاسع عشر </p>
+
+      <label class="container">
+        <input type="radio" name="q19" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لم ينقص وزني في الآونة الاخيرة </p>
+      </label>
+      <label class="container">
+        <p class="ans"> فقدت أكثر من كيلو جرامات من وزني</p>
+        <input type="radio" name="q19" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">فقدت اربعة من كيلو جرامات من وزني</p>
+        <input type="radio" name="q19" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> فقدت ستة من كيلو جرامات من وزني</p>
+        <input type="radio" name="q19" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+    <div class="row">
+      <p class="q">العشرون</p>
+
+      <label class="container">
+        <input type="radio" name="q20" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لست مشغولًا على صحتي أكثر من السابق</p>
+      </label>
+      <label class="container">
+        <p class="ans">أني مشغول جدًا ببعض المشكلات البدنية مثل الاوجاع واضطرابات المعدة والأمساك</p>
+        <input type="radio" name="q20" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">أني مشغول جدًا ببعض المشكلات اليومية ومن الصعب أن افكر في اي شيء آخر</p>
+        <input type="radio" name="q20" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> أني مشغول جدًا ببعض المشكلات البدنية لدرجة اني لا أستطيع أن افكر في شيء آخر </p>
+        <input type="radio" name="q20" value="3">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+    <div class="row">
+      <p class="q">الواحد والعشرون </p>
+
+      <label class="container">
+        <input type="radio" name="q21" value="0" required>
+        <span class="checkmark"></span>
+        <p class="ans">لم ألاحظ اي تغيرات حديثة في أهتمامي الجنسية </p>
+      </label>
+      <label class="container">
+        <p class="ans">انني اقل اهنماما في الجنس عن المعتاد </p>
+        <input type="radio" name="q21" value="1">
+        <span class="checkmark"></span>
+      </label>
+      <label class="container">
+        <p class="ans">لقد قل اهنمامي بالجنس كثيرًا</p>
+        <input type="radio" name="q21" value="2">
+        <span class="checkmark" name="radio"></span>
+      </label>
+      <label class="container">
+        <p class="ans"> لقد فقدت اهتمامي بالجنس تمامًا</p>
+        <input type="radio" name="q21" value="3">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <button class="button" type="submit" name="next" style="cursor: pointer;">التالي</button>
   </form>
 
 
-
-    </body>
-
-  </html>
+</body>
+</html>
