@@ -311,7 +311,7 @@ form.recpatient {
 .con{
   position: absolute;
   width: 1008px;
-  height: 589px;
+  height: 900px;
       margin-left: 15.9em;
      margin-top: 2em;
     background: rgba(255, 255, 255, 0.71);
@@ -378,19 +378,30 @@ margin-left: 5em;
 
 
 }
-.button{
+
+.button {
   font-family: 'Tajawal';
   font-size: 1em;
-  background-color:  #2180A5;
-  border: none;
-  display: inline-block;
-width: 25em  !important; 
-margin-left: 19em;
   color: white;
-  border-radius: 3em;
-  box-shadow: 0.06em 0.06em #D7D7D7;
+  background-color: #2180A5;
+  text-align: center;
+  border: none;
   padding: 0.5em 6em 0.5em 6em;
-}  
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 0.6em;
+  margin-top: 0.5em;
+  /* margin-left: 2em */
+  
+}
+#cancel{
+  background-color: #B7523B;
+}
+.massages{
+  color: red;
+}
+
+
 .button:hover {
     background-color: #D3E6ED;
     cursor: pointer;

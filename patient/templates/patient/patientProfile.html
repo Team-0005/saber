@@ -22,28 +22,14 @@
 .con{
   position: absolute;
   width: 1008px;
-  height: 789px;
+  height: 820px;
       margin-left: 15.5em;
-     margin-top: 2em;
-    background: rgba(255, 255, 255, 0.71);
-    border-radius: 50px;
-    text-decoration: none;
-    align-items: center;
-text-align:center;
 }
 .button{
-  font-family: 'Tajawal';
-  font-size: 1em;
-  background: #21A566;
-box-shadow: 0px 2.9566px 2.9566px rgba(0, 0, 0, 0.25), inset 0px 1.4783px 2.9566px rgba(255, 255, 255, 0.25), inset 0px -1.4783px 2.9566px rgba(0, 0, 0, 0.25);
-border-radius: 11.8264px;
-  border: none;
-  display: inline-block;
-width: 20em  !important; 
-margin-left: 20.5em;
-  color: white;
-  box-shadow: 0.06em 0.06em #D7D7D7;
-  padding: 0.5em 6em 0.5em 6em;
+      width: 15em !important;
+      margin-left: 10em ;
+      margin-top: 1em !important;
+      height: 2.5em !important;
 }  
 td{
   text-align:right;
@@ -77,6 +63,11 @@ padding-top: 3em;
 font-weight: bold;
 font-family: 'Tajawal';
 font-style: normal;
+}
+#edit{
+    width: 15em !important;
+    margin-left: 22.5em ;
+    margin-top: 1em;
 }
 
 </style>
@@ -191,13 +182,13 @@ font-style: normal;
     <span class="massages">{{ message }}</span>
 
   {% endfor %}
-      <div class="row align-items-start">
-        <button class="button" type="button" id='cancel' name="cancel" onclick="cancel_func();"
-        style="display: none;">إلغاء</button>
-      <button class="button" type="button" name="edit" id="edit" onclick="edit_func();">تعديل</button>
-      <input class="button" type="hidden" name="save" id="save" value="حفظ">
-
-      </div>
+   
+  <div class="row">
+    <button class="button" type="button" id='cancel' name="cancel" onclick="cancel_func();"
+      style="display: none;">إلغاء</button>
+    <button class="button" type="button" name="edit" id="edit"  onclick="edit_func();">تعديل</button>
+    <input class="button" type="hidden" name="save" id="save" value="حفظ">
+  </div>
     </form>
   </div>
 
@@ -209,6 +200,7 @@ font-style: normal;
 
   <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br>
   <br><br><br><br><br><br>
+  
 
 
   <footer id="footer" class="footer-distributed">
