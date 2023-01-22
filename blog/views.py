@@ -130,7 +130,7 @@ def sendEmail(p_email):
     password = "xzvwkvysilwyxssw"
     msg = EmailMessage()
     msg.set_content("رمز التحقق الخاص بك هو : "+ str(n))
-    msg['subject'] = "رمز التححق من سابِر "
+    msg['subject'] = "رمز التحقق من سابِر "
     msg['to'] = p_email
     msg['from'] = user        
     print("correct email")
