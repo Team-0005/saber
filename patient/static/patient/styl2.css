@@ -366,6 +366,8 @@ border-radius: 0.5em;
     margin-bottom: 3em;
   margin-left: 3.5em;
   color:rgba(0, 0, 0, 0.5);
+  font-size: none;
+  
 }
 .form-check{
 
