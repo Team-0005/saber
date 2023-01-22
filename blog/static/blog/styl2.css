@@ -92,10 +92,11 @@ footer a:hover,
   
 }
 
-#cancel{
+#cancel {
   background-color: #B7523B;
 }
-.massages{
+
+.massages {
   color: red;
 }
 
@@ -135,17 +136,18 @@ input {
   border-radius: 0.5em;
   margin-left: 2.5em;
   text-align: center;
- 
+
 }
+
 .inputType {
- border: 2px solid rgba(195, 195, 195, 0.5);
-border-radius: 0.5em;
+  border: 2px solid rgba(195, 195, 195, 0.5);
+  border-radius: 0.5em;
   direction: rtl;
   text-align: center;
   float: center;
   direction: rtl;
   height: 0.5em;
-  color:rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .profile input[type=tel],
@@ -430,15 +432,15 @@ tr td:first-child {
 }
 
 
-.labelin{
+.labelin {
   font-family: 'Tajawal';
   font-style: normal;
   font-weight: bold;
   align-items: center;
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
-  
-  
+
+
 
 }
 
@@ -616,76 +618,89 @@ section {
     margin-bottom: 40px;
   }
 }
+
 /*sign in page*/
-body.sign{
+body.sign {
   background-image: url(background.jpg);
-  background-attachment:scroll;
+  background-attachment: scroll;
   background-size: contain;
   background-repeat: no-repeat;
-   background-color: #FFFFFF;
- background-image:im();
-}
-.signin p{
-  text-align: center;
-font-family: 'Tajawal';
-font-size: 2em;
-color: #2180A5;
+  background-color: #FFFFFF;
+  background-image: im();
 }
 
-form.signin{
+.signin p {
+  text-align: center;
+  font-family: 'Tajawal';
+  font-size: 2em;
+  color: #2180A5;
+}
+
+form.signin {
   background-image: url(backlog1.png);
   background-size: cover;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2em;
   width: 47em !important;
-height: 38em;
+  height: 38em;
 }
-.signin input[type=email],.signin input[type=password]{
+
+.signin input[type=email],
+.signin input[type=password] {
   width: 25em;
   height: 0.5em;
 }
-.signin a{
+
+.signin a {
   text-decoration: none;
   margin-left: 1em;
   color: #2180A5;
 
 }
-a:hover{
+
+a:hover {
   color: #a42198;
 }
-.row1{
+
+.row1 {
   margin: 2.5em;
-  text-align: right!important ;
+  text-align: right !important;
 }
-.row11{
+
+.row11 {
   margin-top: 4em;
 }
-.row1 ::placeholder{
+
+.row1 ::placeholder {
   font-size: 1.2em;
-  text-align:right !important;
+  text-align: right !important;
 }
+
 /*sign up page*/
 
-.signup p{
+.signup p {
   text-align: center;
-font-family: 'Tajawal';
-font-size: 2em;
-color: #2180A5;
-margin: 1em 0em 0.5em 0em ;
+  font-family: 'Tajawal';
+  font-size: 2em;
+  color: #2180A5;
+  margin: 1em 0em 0.5em 0em;
 }
+
 .col-1 {
   font-family: 'Tajawal', sans-serif;
   text-align: right;
   width: 100%;
-  margin-top:0em;
+  margin-top: 0em;
 }
-.col-1 p{
-text-align: right;
-font-size: 1em;
-margin-top: 1em;
-margin-bottom: 0em!important;
+
+.col-1 p {
+  text-align: right;
+  font-size: 1em;
+  margin-top: 1em;
+  margin-bottom: 0em !important;
 
 }
+
 .col-2 {
   text-align: right;
   width: 100%;
@@ -693,176 +708,192 @@ margin-bottom: 0em!important;
 
 }
 
-form.signup{
+form.signup {
   background-image: url(backlog1.png);
   background-size: cover;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2em;
   width: 47em !important;
-height: 38em;
-margin-top: 5em;
+  height: 50em;
+  margin-top: 5em;
 }
-.signup input[type=text]{
+
+.signup input[type=text] {
   width: 10em;
   height: 0.2em;
   padding: 1.5em;
-  margin-left:.7em;
+  margin-left: .7em;
   margin-right: .5em;
   margin-top: 1em;
 }
+
 .sign #myFile {
   width: 35%;
-padding: 1em;
-padding-left: 3em;
-border:0;
-text-align: right;
-border-radius: 0.5em;
-margin-left:2em;
+  padding: 1em;
+  padding-left: 3em;
+  border: 0;
+  text-align: right;
+  border-radius: 0.5em;
+  margin-left: 2em;
 
 }
-.signup input[type=email],.signup input[type=password],.signup input[type=tel]{
+
+.signup input[type=email],
+.signup input[type=password],
+.signup input[type=tel] {
   padding: 1.2em;
   padding-left: 1.5em;
   margin-right: .5em;
   width: 25em;
 }
-.signup a{
+
+.signup a {
   text-decoration: none;
   margin-right: 1em;
   margin-left: 0em;
   color: #2180A5;
 
 }
-a:hover{
+
+a:hover {
   color: #a42198;
 }
-.rowu{
+
+.rowu {
   margin: .5em;
-  text-align: right!important ;
+  text-align: right !important;
 }
 
-.rowu ::placeholder{
+.rowu ::placeholder {
   font-size: 1.2em;
-  text-align:right !important;
+  text-align: right !important;
 }
-.singup .button{
+
+.singup .button {
   text-align: right;
   margin-left: 5em;
   padding: 5em;
 }
+
 /*forget pass*/
-.forget p{
+.forget p {
   text-align: center;
-font-family: 'Tajawal';
-font-size: 2em;
-color: #2180A5;
-margin: 1em 0em 0.5em 0em ;
+  font-family: 'Tajawal';
+  font-size: 2em;
+  color: #2180A5;
+  margin: 1em 0em 0.5em 0em;
 }
 
 
-form.forget{
+form.forget {
   background-image: url(backlog1.png);
   background-size: cover;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2em;
   width: 47em !important;
-height: 38em;
+  height: 38em;
 }
-.forget input[type=email]{
+
+.forget input[type=email] {
   padding: 1.2em;
   padding-left: 1.5em;
   margin-right: 1.5em;
   width: 25em;
 }
-.forget a{
+
+.forget a {
   text-decoration: none;
   margin-right: 1em;
   margin-left: 0em;
-     color: #2180A5;
+  color: #2180A5;
 }
-.rowf  {
-  text-align:right;
+
+.rowf {
+  text-align: right;
   margin-top: 2em;
 }
+
 .rowf1 {
-  text-align:right;
+  text-align: right;
   margin-top: 12em;
 }
 
-  .forget .button{
-    text-align: right;
-    margin: 1.5em 2em;
-    padding: .5em 7em;
+.forget .button {
+  text-align: right;
+  margin: 1.5em 2em;
+  padding: .5em 7em;
 
-  }
-  .rowf ::placeholder{
-    font-size: 1.2em;
-    text-align:right !important;
-  }
-  /*forget pass code*/
-  .forget input[type=text],  .forget input[type=password]{
-    padding: 1.2em;
-    padding-left: 1.5em;
-    margin-right: 1.5em;
-    width: 25em;
-  }
+}
 
-  appro_test page*
-  *
-  */
-  form.appro_test1{
-  
+.rowf ::placeholder {
+  font-size: 1.2em;
+  text-align: right !important;
+}
+
+/*forget pass code*/
+.forget input[type=text],
+.forget input[type=password] {
+  padding: 1.2em;
+  padding-left: 1.5em;
+  margin-right: 1.5em;
+  width: 25em;
+}
+
+appro_test page* * */ form.appro_test1 {
+
   display: block;
   margin: 2% auto 0% auto;
   width: 30%;
-  
-  background-color:rgba(33,128,165,0.0);
+
+  background-color: rgba(33, 128, 165, 0.0);
   /*text-align: center;*/
-    border-radius: 2em;
-    width: 47em !important;
-  height: auto ;
+  border-radius: 2em;
+  width: 47em !important;
+  height: auto;
   margin-top: 5em;
-  }
-  
-  .appro_test1 p{
-    font-family: 'Tajawal', sans-serif;
-    text-align: right ;
-    display: inline;
-     color: #2180A5;
-     font-weight: bolder;
-     font-size: 2em;
+}
+
+.appro_test1 p {
+  font-family: 'Tajawal', sans-serif;
+  text-align: right;
+  display: inline;
+  color: #2180A5;
+  font-weight: bolder;
+  font-size: 2em;
   margin: em;
   line-height: 2em;
-  
-  
-  
-  }
-  p.rr {
-    color: #C76A6A;
+
+
+
+}
+
+p.rr {
+  color: #C76A6A;
   text-shadow: 1px 1px 0 rgba(4, 6, 11, 0.36);
-  background-color:rgba(255, 255, 255, 0.7);
-    padding: .5em;
-    border-radius: 1em;
-  
-  }
-  p.rt {
-    text-shadow: 1px 1px 0 rgba(4, 6, 11, 0.36);
-  
-    padding: .5em;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: .5em;
+  border-radius: 1em;
+
+}
+
+p.rt {
+  text-shadow: 1px 1px 0 rgba(4, 6, 11, 0.36);
+
+  padding: .5em;
   font-weight: bolder !important;
   border-radius: 1em;
-  }
-  
-  form.appro{
-  
-    display: block;
-    margin: 2% auto 0% auto;
-    width: 30%;
-    padding-bottom: 1em;
-    background-color:rgba(185,177,177,0.0);
-    /*text-align: center;*/
-      border-radius: 2em;
-      width: 47em !important;
-    height: auto;
-    text-align: center ;
-  }
+}
+
+form.appro {
+
+  display: block;
+  margin: 2% auto 0% auto;
+  width: 30%;
+  padding-bottom: 1em;
+  background-color: rgba(185, 177, 177, 0.0);
+  /*text-align: center;*/
+  border-radius: 2em;
+  width: 47em !important;
+  height: auto;
+  text-align: center;
+}
