@@ -13,6 +13,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
 </head>
 
 <body class="sign">
@@ -20,119 +22,117 @@
   <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="{% url 'home' %}">الصفحة الرئيسية</a></div>
-        <div class="col6"><a href="#whowe">من نحن؟</a></div>
-          <div class="col6"><a href="#footer">تواصل معنا</a></div>
-              <div class="col7"> <a   id="login" href="{% url 'signin' %}"></i> تسجيل الدخول </a>
-                <img id="login-pho" src="{% static 'blog/login.png'%}" width="50" height="50"></div>
-    </nav>
-    <br>    <br>
-    <br>
-    <br> 
+    <div class="col6"><a href="#whowe">من نحن؟</a></div>
+    <div class="col6"><a href="#footer">تواصل معنا</a></div>
+    <div class="col7"> <a id="login" href="{% url 'signin' %}"></i> تسجيل الدخول </a>
+      <img id="login-pho" src="{% static 'blog/login.png'%}" width="50" height="50">
+    </div>
+  </nav>
+  <br> <br>
+  <br>
+  <br>
 
-  <form class="signin" action="{% url 'signin' %}" method="post">
+  <form class="signin" id="signin" action="{% url 'signin' %}" method="post">
     <!-- for_security -->
     {% csrf_token %}
     <br>
 
-  <p>  <i class="fas fa-user-circle"></i> تسجيل الدخول </p>
+    <p> <i class="fas fa-user-circle"></i> تسجيل الدخول </p>
 
 
-  <div class="row1">
-
-        <a href="{% url 'signin' %}">  تسجيل الدخول </a>
-        <a href="{% url 'signup' %}">انشاء حساب</a>
-
-  </div>
     <div class="row1">
-      <input type="email" id="email" name="email" placeholder=" البريدالالكتروني &#x40;" min="3" size="10" autofocus required>
+
+      <a href="{% url 'signin' %}"> تسجيل الدخول </a>
+      <a href="{% url 'signup' %}">انشاء حساب</a>
+
+    </div>
+    <div class="row1">
+      <div class="col-2">
+        <input type="email" id="email" name="email" placeholder=" البريدالالكتروني &#x40;" min="3" size="10" autofocus
+          required onblur="check_email('email','p_email');">
+      </div>
+      <label class='massages' id="p_email"></label>
     </div>
 
 
-  <div class="row1">
-      <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password" placeholder="  كلمة المرور &#xf023;" min="8" required>
+
+    <div class="row1">
+      <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password"
+        placeholder="  كلمة المرور &#xf023;" min="8" required
+        onkeypress="return  check_letter(event) || check_number(event);">
+      <label class='massages' id="p_password"></label>
     </div>
 
-  <div class="row1">
+    <div class="row1">
 
-<a href="{% url 'forget' %}" >هل نسيت كلمة المرور ؟</a>
+      <a href="{% url 'forget' %}">هل نسيت كلمة المرور ؟</a>
     </div>
 
 
     {% for message in messages %}
-         
+
     <span class="massages">{{ message }}</span>
 
-  {% endfor %}
-  <div class="row11">
+    {% endfor %}
+    <div class="row11">
       <input class="button" type="submit" value="دخول">
-    <button class="button" type="button" name="button"> إنشاء حساب</button></a>
+      <button class="button" type="button" name="button"> إنشاء حساب</button></a>
     </div>
-
 
   </form>
 
+  <footer id="footer" class="footer-distributed">
+
+    <div class="footer-right">
+      <a id="logo" href=""><img src="{% static 'blog/logod.png' %}" alt="logo" width="250" height="200"></a>
+
+      <p class="footer-links">
+        <a id="h" href="">الصفحات</a>
+
+        <a href="#">الصفحة الرئيسيه </a>
+
+        <a href="#">من نحــن؟</a>
+
+        <a href="#">تواصل معنا</a>
+      </p>
+
+    </div>
 
 
 
 
+    <div class="footer-right">
 
 
 
+      <p class="footer-links2">
+        <a id="h" href="">الخدمات </a>
 
+        <a href="#">اضافة مريض </a>
 
+        <a href="#">المقاييــس النفسية</a>
 
-    <footer id="footer"class="footer-distributed">
-
-      <div class="footer-right">
-    <a id="logo" href=""><img src="{% static 'blog/logod.png' %}"  alt="logo" width="250" height="200"></a>
-
-    <p class="footer-links">
-     <a id="h" href="">الصفحات</a>
-
-     <a href="#">الصفحة الرئيسيه </a>
-
-     <a href="#">من نحــن؟</a>
-
-     <a href="#">تواصل معنا</a>
-    </p>
-
-        </div>
-
-
-
-
-      <div class="footer-right">
-
-
-
-        <p class="footer-links2">
-          <a id="h" href="">الخدمات </a>
-
-          <a href="#">اضافة مريض </a>
-
-          <a href="#">المقاييــس النفسية</a>
-
-          <a href="#">سجل المرضـى </a>
-        </p>
+        <a href="#">سجل المرضـى </a>
+      </p>
 
     </div>
     <p class="footer-links3">
-     <a id="h" href=""> :التواصل </a>
+      <a id="h" href=""> :التواصل </a>
 
-     <a href="#">+966 547876876 </a>
+      <a href="#">+966 547876876 </a>
 
     </p>
     <div class="footer-left">
-        <div class="footer-icons">
-    <br><br>
+      <div class="footer-icons">
+        <br><br>
 
 
-           <h3>  مواقع التواصل  </h3>
-    <br>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
+        <h3> مواقع التواصل </h3>
+        <br>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
 
 
 
@@ -140,89 +140,9 @@
 
     </div>
 
-    </footer>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'blog/index.js' %}"></script>
+</body>
 
-
-    <script>
-    var x, i, j, l, ll, selElmnt, a, b, c;
-    /*look for any elements with the class "custom-select":*/
-    x = document.getElementsByClassName("custom-select");
-    l = x.length;
-    for (i = 0; i < l; i++) {
-      selElmnt = x[i].getElementsByTagName("select")[0];
-      ll = selElmnt.length;
-      /*for each element, create a new DIV that will act as the selected item:*/
-      a = document.createElement("DIV");
-      a.setAttribute("class", "select-selected");
-      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-      x[i].appendChild(a);
-      /*for each element, create a new DIV that will contain the option list:*/
-      b = document.createElement("DIV");
-      b.setAttribute("class", "select-items select-hide");
-      for (j = 1; j < ll; j++) {
-        /*for each option in the original select element,
-        create a new DIV that will act as an option item:*/
-        c = document.createElement("DIV");
-        c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function(e) {
-            /*when an item is clicked, update the original select box,
-            and the selected item:*/
-            var y, i, k, s, h, sl, yl;
-            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-            sl = s.length;
-            h = this.parentNode.previousSibling;
-            for (i = 0; i < sl; i++) {
-              if (s.options[i].innerHTML == this.innerHTML) {
-                s.selectedIndex = i;
-                h.innerHTML = this.innerHTML;
-                y = this.parentNode.getElementsByClassName("same-as-selected");
-                yl = y.length;
-                for (k = 0; k < yl; k++) {
-                  y[k].removeAttribute("class");
-                }
-                this.setAttribute("class", "same-as-selected");
-                break;
-              }
-            }
-            h.click();
-        });
-        b.appendChild(c);
-      }
-      x[i].appendChild(b);
-      a.addEventListener("click", function(e) {
-          /*when the select box is clicked, close any other select boxes,
-          and open/close the current select box:*/
-          e.stopPropagation();
-          closeAllSelect(this);
-          this.nextSibling.classList.toggle("select-hide");
-          this.classList.toggle("select-arrow-active");
-        });
-    }
-    function closeAllSelect(elmnt) {
-      /*a function that will close all select boxes in the document,
-      except the current select box:*/
-      var x, y, i, xl, yl, arrNo = [];
-      x = document.getElementsByClassName("select-items");
-      y = document.getElementsByClassName("select-selected");
-      xl = x.length;
-      yl = y.length;
-      for (i = 0; i < yl; i++) {
-        if (elmnt == y[i]) {
-          arrNo.push(i)
-        } else {
-          y[i].classList.remove("select-arrow-active");
-        }
-      }
-      for (i = 0; i < xl; i++) {
-        if (arrNo.indexOf(i)) {
-          x[i].classList.add("select-hide");
-        }
-      }
-    }
-    /*if the user clicks anywhere outside the select box,
-    then close all select boxes:*/
-    document.addEventListener("click", closeAllSelect);
-    </script>
-      </body>
-
-    </html>
+</html>

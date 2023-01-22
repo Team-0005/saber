@@ -590,6 +590,8 @@ section {
   font-size: 2em;
   color: #2180A5;
 }
-.massages{
+
+.massage {
+  margin-right: 1em;
   color: red;
 }

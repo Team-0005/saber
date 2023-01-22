@@ -1,36 +1,4 @@
 lock = false;
-// Get the modal
-var modal = [
-  document.getElementById("id00"),
-  document.getElementById("id01"),
-  document.getElementById("id02"),
-  document.getElementById("id03"),
-  document.getElementById("id04"),
-];
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  for (let index = 0; index < modal.length; index++) {
-    if (event.target == modal[index]) {
-      modal[index].style.display = "none";
-    }
-  }
-};
-
-// control modal
-function get_modal(x) {
-  modal[x].style.display = 'block';
-}
-
-function close_modal(x) {
-  modal[x].style.display = 'none';
-}
-
-function change_modal(x, y) {
-  close_modal(x);
-  get_modal(y);
-}
-
 //return style to defult
 function setDefult(input, message) {
   message.innerHTML = null;
@@ -38,7 +6,7 @@ function setDefult(input, message) {
 }
 
 //change style when error ocurs
-function setError(input) {
+function setError(input,message) {
   input.style.borderColor = "red";
 }
 
@@ -67,7 +35,9 @@ function check_email(email_id, message_id) {
   var message = document.getElementById(message_id);
   if (!email.value.match(regularExp)) {
     setError(email, message);
-    message.innerHTML = "الرجاء التأكد من صحة البريد الالكتروني";
+    if(message.innerHTML==null){
+      message.innerHTML = "الرجاء التأكد من صحة البريد الالكتروني";
+    }
     lock = true;
   }
   else {
@@ -84,19 +54,19 @@ function check_pass(pass_id, confirm_pass_id, message_id) {
   var message = document.getElementById(message_id);
   if (pass.value != confirm_pass.value) {
     setError(pass);
-    setError(passconfirm);
+    setError(confirm_pass);
     message.innerHTML =
       " كلمة المرور غير متطابقة";
     lock = true;
   } else {
-    if (pass.value == "" && passconfirm.value == "") {
+    if (pass.value == "" && confirm_pass.value == "") {
       setError(pass);
       setError(confirm_pass);
       lock = true;
     }
     else {
       setDefult(pass, message);
-      setDefult(passconfirm, message);
+      setDefult(confirm_pass, message);
       lock = false;
     }
   }
@@ -111,7 +81,7 @@ function check_number(event) {
 
 //5
 //force user to enter only letters
-function check_letter(event) {
+function check_arabic(event) {
   var regularExp = /[\u0600-\u06FF]/;
   var key = event.which;
   var str = String.fromCharCode(key);
@@ -120,6 +90,11 @@ function check_letter(event) {
   }
   return false;
 };
+
+function check_letter(event) {
+  var key = event.keyCode;
+  return ((key >= 65 && key <= 90) || (key >= 97 && key <= 122));
+}
 
 
 $('#signin,#signup,#FG_pass,#profile').submit(function (evt) {
