@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>نتيجة التشخيص</title>
+  <link rel="icon" href="{% static 'blog/logo.png' %}">
+  <link rel="stylesheet" href="{% static 'blog/styl2.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <br>    <br>
+  <br>
+  <br>
+
+    <form class="appro_test1" action="index.html" method="post">
+
+    <div class="row4">
+       <p class="rt">: نتيجة تشخيص المريض</p>
+     </div>
+
+     <div class="row4">
+        <p class="rr"> {{result.fk_diagnosis}}</p>
+     </div>
+   <div class="row4">
+        <p class="rt">  :المقياس المناسب للمريض </p>
+
+    </div>
+
+    <div class="row4">
+      <p class="rr">{{result.test}}</p>
+    </div>
+</form>
+  <form class="appro" action="index.html" method="post">
+
+
+
+    <button class="button" type="button" >إرسال المقياس للمريض</button>
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+      </body>
+
+    </html>

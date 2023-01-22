@@ -805,3 +805,63 @@ height: 38em;
     margin-right: 1.5em;
     width: 25em;
   }
+
+  appro_test page*
+  *
+  */
+  form.appro_test1{
+  
+  display: block;
+  margin: 2% auto 0% auto;
+  width: 30%;
+  
+  background-color:rgba(33,128,165,0.0);
+  /*text-align: center;*/
+    border-radius: 2em;
+    width: 47em !important;
+  height: auto ;
+  margin-top: 5em;
+  }
+  
+  .appro_test1 p{
+    font-family: 'Tajawal', sans-serif;
+    text-align: right ;
+    display: inline;
+     color: #2180A5;
+     font-weight: bolder;
+     font-size: 2em;
+  margin: em;
+  line-height: 2em;
+  
+  
+  
+  }
+  p.rr {
+    color: #C76A6A;
+  text-shadow: 1px 1px 0 rgba(4, 6, 11, 0.36);
+  background-color:rgba(255, 255, 255, 0.7);
+    padding: .5em;
+    border-radius: 1em;
+  
+  }
+  p.rt {
+    text-shadow: 1px 1px 0 rgba(4, 6, 11, 0.36);
+  
+    padding: .5em;
+  font-weight: bolder !important;
+  border-radius: 1em;
+  }
+  
+  form.appro{
+  
+    display: block;
+    margin: 2% auto 0% auto;
+    width: 30%;
+    padding-bottom: 1em;
+    background-color:rgba(185,177,177,0.0);
+    /*text-align: center;*/
+      border-radius: 2em;
+      width: 47em !important;
+    height: auto;
+    text-align: center ;
+  }

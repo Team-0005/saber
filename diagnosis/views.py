@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 import numpy as np
 import keras
 from keras.models import load_model
@@ -44,8 +45,9 @@ def iniDiag(request,pt_id):
             save_result.save()
             print("add result success")
             psych = Psychologist.objects.get(p_email=psycho_email)
-            context = {'psycho': psych}
-            return render(request, 'blog/psychologis.html', context)
+            context = {'patient': save_result}
+            print(save_result.pt.pt_id)
+            return redirect('diagnosis:apptest', id=save_result.pt.pt_id)
             
         return render(request,'diagnosis/iniDiag.html')
     except:
@@ -63,3 +65,12 @@ def Datapreprocessing(name,value):
          else:
              fields.append(0)
     fields.pop()
+
+
+def apptest(request, id):
+    result = Result.objects.get(pt__pt_id= id)
+    print(result.pt.pt_id)
+    context = {
+          'result': result,
+        }
+    return render(request, 'diagnosis/appro_test.html',context)

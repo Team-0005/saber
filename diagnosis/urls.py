@@ -5,4 +5,5 @@ app_name = 'diagnosis'
 
 urlpatterns = [
     path('<pt_id>', views.iniDiag, name='iniDiag'),
+    path('apptest/<int:id>/', views.apptest, name='apptest'),
 ]
