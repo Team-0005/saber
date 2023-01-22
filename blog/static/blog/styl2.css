@@ -89,6 +89,7 @@ footer a:hover,
   border-radius: 0.6em;
   margin-top: 0.5em;
   /* margin-left: 2em */
+  
 }
 
 #cancel {
@@ -123,7 +124,7 @@ form {
   /*text-align: center;*/
   border-radius: 2em;
   width: 47em !important;
-  height: 55em;
+  height: 40em;
   text-align: center;
 
 
