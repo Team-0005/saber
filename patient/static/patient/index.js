@@ -10,7 +10,7 @@ function check_arabic(event) {
   var regularExp = /[\u0600-\u06FF]/;
   var key = event.which;
   var str = String.fromCharCode(key);
-  if (regularExp.test(str)) {
+  if (regularExp.test(str)|| (key == 32)) {
     return true;
   }
   return false;
