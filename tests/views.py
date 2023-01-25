@@ -19,34 +19,52 @@ def spec(request, id):
     return render(request, 'tests/sptest.html', context)
 
 
-def iniDiag(request):
-    # diag = PsychoTest.objects.all()
-    # context = {'iniDiag' : diag }
-    return render(request,'tests/iniDiag.html') 
 
-def test1(request):
-    ocdResult = []
-    for x in range(1,11):
-        a = int (request.POST.get('q'+str(x),False))
-        ocdResult.append(a)
-    result = sum(ocdResult)   
-    print(result)
-    return render(request,'tests/ocdTest.html') 
 
-def test2(request):
-    depResult = []
-    for x in range(1,22):
-        a = int (request.POST.get('q'+str(x),False))
-        depResult.append(a)
-    result = sum(depResult)   
-    print(result)
-    return render(request,'tests/depressionTest.html') 
+def testResult(request, id):
+    # if request.method == "post":
+        result = Result.objects.get(result_id= id)
+        print(result.result_id)
+        if result.test.test_id == 3:
+            question = 22
+        elif result.test.test_id == 2:
+            question = 11
+        else:
+            question = 51
 
-def test3(request):
-    anxResult = []
-    for x in range(1,51):
-        a = int (request.POST.get('q'+str(x),False))
-        anxResult.append(a)
-    result = sum(anxResult)   
-    print(result)
-    return render(request,'tests/anxietyTest.html') 
+        countResult = []
+        for x in range(1,question):
+            a = int (request.POST.get('q'+str(x),False))
+            countResult.append(a)
+            print(a)
+        res = sum(countResult)   
+        print(res)
+        result.test_result = res
+        result.test_status = 1
+        result.save()
+        return render(request, 'blog/home.html')
+
+# def test1(request):
+#     anxResult = []
+#     for x in range(1,51):
+#         a = int (request.POST.get('q'+str(x),False))
+#         anxResult.append(a)
+#     result = sum(anxResult)   
+#     print(result)
+#     return render(request,'tests/anxietyTest.html') 
+
+# def iniDiag(request):
+#     # diag = PsychoTest.objects.all()
+#     # context = {'iniDiag' : diag }
+#     return render(request,'tests/iniDiag.html') 
+
+
+    
+# def test2(request):
+#     ocdResult = []
+#     for x in range(1,11):
+#         a = int (request.POST.get('q'+str(x),False))
+#         ocdResult.append(a)
+#     result = sum(ocdResult)   
+#     print(result)
+#     return render(request,'tests/ocdTest.html') 

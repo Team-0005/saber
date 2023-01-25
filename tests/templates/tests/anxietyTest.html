@@ -20,11 +20,11 @@
   <br>
   <br>
 
-  <form class="cont" action="index.html" method="post">
+  <form class="cont" action="index.html" method="">
     <p>اختر الاجابة اللتي تنطبق عليك (نعم/لا) أجب على كل الاسئلة من فضلك </p>
   </form>
 
-  <form class="test" action="{% url 'tests:anxTest'%}" method="post">
+  <form class="test" action="{% url 'tests:submetTest' result.result_id %}" method="post">
     <br>
     <!-- for_security -->
     {% csrf_token %}

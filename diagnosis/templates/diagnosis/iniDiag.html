@@ -30,7 +30,7 @@
   <br><br><br><br>
 
   <div class="con text-center">
-    <form action="{% url 'diagnosis:iniDiag' patient.pt_id %}" class="conform" method="post">
+    <form action="{% url 'diagnosis:iniDiag' patient.pt_id %}" class="conform" method="post" >
       <!-- <p class="title"> الفحص الجسدي النفسي</p> -->
       {% csrf_token %}
       <fieldset class="fieldset1">

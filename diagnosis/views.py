@@ -68,9 +68,46 @@ def Datapreprocessing(name,value):
 
 
 def apptest(request, id):
-    result = Result.objects.get(pt__pt_id= id)
-    print(result.pt.pt_id)
+    # if request.method == "POST":
+    #     result = Result.objects.get(result_id= id)
+    #     print(result.result_id)
+    #     context = {
+    #       'result': result,
+    #     }
+    #     print("it is post method")
+    #     if(result.test_id == 1):
+    #          return render(request, 'tests/anxietyTest.html',context)
+    #     elif(result.test_id == 2):
+    #         return render(request, 'tests/ocdTest.html',context)
+    #     else:
+    #         return render(request, 'tests/depressionTest.html',context)
+    # else:
+        result = Result.objects.get(pt__pt_id= id)
+        print(result.pt.pt_id)
+        context = {
+          'result': result,
+        }
+
+        return render(request, 'diagnosis/appro_test.html',context)
+
+
+
+
+
+def sendTest(request, id):
+    if request.method == "POST":
+        result = Result.objects.get(pt__pt_id= id)
+        print(result.pt_id)
+        context = {
+          'result': result,
+        }
+        if(result.test_id == 1):
+             return render(request, 'tests/anxietyTest.html',context)
+        elif(result.test_id == 2):
+            return render(request, 'tests/ocdTest.html',context)
+        else:
+            return render(request, 'tests/depressionTest.html',context)
     context = {
           'result': result,
         }
-    return render(request, 'diagnosis/appro_test.html',context)
+    

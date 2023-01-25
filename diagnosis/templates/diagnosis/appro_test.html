@@ -22,8 +22,8 @@
   <br>
   <br>
 
-  <form class="appro_test1" action="index.html" method="post">
-
+  <form class="appro_test1" action="{% url 'diagnosis:sendTest' result.pt_id %}" method="post" target="_blank">
+      {% csrf_token %}
     <div class="row4">
       <p class="rt">: نتيجة تشخيص المريض</p>
     </div>
@@ -40,7 +40,7 @@
       <p class="rr">{{result.test}}</p>
     </div>
     <div class="row4">
-      <button class="button" type="button">إرسال المقياس للمريض</button>
+     <button class="button" type="submit">  إرسال المقياس للمريض  </button>
     </div>
   </form>
 

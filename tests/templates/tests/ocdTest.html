@@ -21,11 +21,11 @@
   <br>
   <br>
 
-  <form class="cont" action="index.html" method="post">
+  <form class="cont" action="index.html" method="">
     <p> رجاءً .. قم باختيار الجملة التي توضح معدل حدوث كل بند خلال السبعة أيام الماضية بما فيها وقت هذه الجلسة </p>
   </form>
 
-  <form class="test" action="{% url 'tests:ocdTest'%}" method="post">
+  <form class="test" action="{% url 'tests:submetTest' result.result_id %}" method="post">
     <br>
     <!-- for_security -->
     {% csrf_token %}
