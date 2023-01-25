@@ -66,11 +66,11 @@
 
         <div class="col order-first" style="margin-left: 4.2em;">
           <input class="inputType" style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"
-            placeholder="  رقم الهاتف  &#xf095;" required maxlength='10' min="8" onkeypress="return check_number(event);">
-          <label class="labelin" style="padding-bottom: 2.9em;">رقم الهاتف</label>
+            placeholder="  رقم الهاتف  &#xf095;" required maxlength='10' min="8" onkeypress="return check_number(event);"onblur="check_phone('tel','phonemessage');">
+          <label class="labelin" style="padding-bottom: 2.9em;" onblur="check_phone('tel','phonemessage');">رقم الهاتف</label>
         </div>
       </div>
-
+    <label class='massages' id="phonemessage"></label>
       <div class="row align-items-start">
         <div class="col order-last">
           <div class="form-check">

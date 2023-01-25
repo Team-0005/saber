@@ -47,14 +47,14 @@
       <div class="col order-first">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
           value="{{information.p_l_name}}" placeholder=" الاسم الأخير  &#xf406;" min="3" required disabled
-          onkeypress="return  check_letter(event);">
+          onkeypress="return  check_arabic(event);">
         <label class="labelin" style="padding-bottom: 2.9em; padding-right: 1em;"> الاسم الأخير</label>
       </div>
 
       <div class="col order-last">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userfname" name="p_f_name"
           value="{{information}}" placeholder=" الاسم الأول  &#xf406; " min="3" required disabled
-          onkeypress="return  check_letter(event);">
+          onkeypress="return  check_arabic(event);">
         <label class="labelin" style="padding-bottom: 2.9em; padding-right: 1em;"> الاسم الأول</label>
       </div>
 
@@ -65,8 +65,9 @@
       <div class="col order-last">
         <input class="inputType" style="font-family: 'Font Awesome 5 Free'; margin-right: 0.9em; " type="tel" id="tel"
           name="p_phone_no" value="{{information.p_phone_no}}" placeholder="  05XXXXXXXX  &#xf095;" maxlength='10'
-          min="8" required onkeypress="return check_number(event);" disabled>
+          min="8" required onkeypress="return check_number(event);" onblur="check_phone('tel','phonemessage');" disabled>
         <label class="labelin" style="  padding-bottom: 1.9em; margin-right: 1em;">رقم الهاتف</label>
+        <label class='massages' id="phonemessage"></label>
       </div>
 
     </div>
@@ -75,9 +76,9 @@
 
       <div class="col order-last">
         <input class="inputType" type="email" id="email" name="email" value="{{information.p_email}}"
-          placeholder=" xxx@gmail.com &#x40;" required onblur="check_email('email','mailmessage');" disabled>
-        <span class='massages' id="mailmessage"></span>
+          placeholder=" xxx@gmail.com &#x40;" required disabled onblur="check_email('email','mailmessage');">
         <label class="labelin" style="  padding-bottom: 1.9em;">البريد الإلكتروني</label>
+        <label class='massages' id="mailmessage"></label>
       </div>
 
     </div>

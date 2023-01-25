@@ -45,17 +45,17 @@
 
     <div class="rowf">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password" name="password"
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="p_password" name="password"
           placeholder=" كلمة المرور  &#xf023;" min="3" size="10" autofocus required
-          onblur="check_pass('password','password_conf','p_passmessage');check_symbol('password','passmessage');">
+          onblur="check_symbol('password','confirm_password');">
       </div>
     </div>
 
     <div class="rowf">
       <div class="col-2">
-        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="password_conf" name="password"
+        <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirm_password" name="password"
           placeholder=" تأكيد كلمة المرور  &#xf023;" min="8" required
-          onblur="check_pass('password','password_conf','p_passmessage');check_symbol('password','passmessage');">
+          onblur="check_symbol('password','confirm_password');">
       </div>
 
       <div class="col-2">

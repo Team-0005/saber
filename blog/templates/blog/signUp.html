@@ -45,7 +45,7 @@
     <div class="rowu">
       <div class="col-2">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="p_l_name" name="p_l_name"
-          placeholder="&#xf007; الاسم الأخير " min="3" autofocus required onkeypress="return check_arabic(event)">
+          placeholder="&#xf007; الاسم الأخير " min="3" required onkeypress="return check_arabic(event)">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="p_f_name" name="p_f_name"
           placeholder="&#xf007; الاسم الأول " min="3" autofocus required onkeypress="return check_arabic(event)">
       </div>
@@ -54,8 +54,9 @@
     <div class="rowu">
       <div class="col-2">
         <input style="font-family: 'Font Awesome 5 Free'; " type="tel" id="p_phone_no" name="p_phone_no"
-          placeholder=" &#xf095; رقم الهاتف " required maxlength='10' min="8" onkeypress="return check_number(event);">
+          placeholder=" &#xf095; رقم الهاتف " required maxlength='10' min="8" onkeypress="return check_number(event);"onblur="check_phone('p_phone_no','phonemessage');">
       </div>
+      <label class='massages' id="phonemessage"></label>
     </div>
 
     <div class="rowu">
@@ -70,7 +71,7 @@
       <div class="col-2">
         <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="p_password" name="p_password"
           placeholder=" &#xf023; كلمة المرور " min="8" required
-          onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('p_password','passmessage');">
+          onblur="check_symbol('p_password','passmessage');">
       </div>
     </div>
 
@@ -78,7 +79,7 @@
       <div class="col-2">
         <input style="font-family: 'Font Awesome 5 Free'; " type="password" id="confirm_password"
           name="confirm_password" placeholder=" &#xf023; تأكيد كلمة المرور" min="8" require
-          onblur="check_pass('p_password','confirm_password','p_passmessage');check_symbol('p_password','passmessage');">
+          onblur="check_symbol('p_password','passmessage');">
       </div>
       <div class="col-2">
         <label class="massages" id="p_passmessage"></label>
@@ -106,16 +107,16 @@
         <p></i>تحميل ملف SCFHS <i class="fas fa-upload"></i></p>
 
         <input style="float:right" type="file" id="scfhs_file" name="scfhs_file">
-      </div>
+      </div><br><br><br><br>
+        <label class='massages' id="file_massege"></label>
     </div>
-    <br><br>
 
     {% for message in messages %}
     <span class="massages">{{ message }}</span>
     {% endfor %}
     <div class="rowu">
 
-      <button class="button" type="submit" name="button"> إنشاء حساب</button></a>
+      <button class="button" type="submit" name="button" style="margin-right: 15em;"> إنشاء حساب</button></a>
 
     </div>
   </form>

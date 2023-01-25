@@ -309,7 +309,7 @@ form.recpatient {
 .con.add {
   position: absolute;
   width: 1008px;
-  height: 820px;
+  height: 840px;
   margin-left: 15.5em;
 }
 
@@ -443,6 +443,7 @@ input {
 }
 
 .massages {
+  margin-bottom: 2em;
   margin-right: 3em;
   color: red;
 }

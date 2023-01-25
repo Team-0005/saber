@@ -2,11 +2,11 @@ lock = false;
 //return style to defult
 function setDefult(input, message) {
   message.innerHTML = null;
-  input.style.borderColor = "#5399B5";
+  input.style.borderColor = rgba(195, 195, 195, 0.5);
 }
 
 //change style when error ocurs
-function setError(input,message) {
+function setError(input) {
   input.style.borderColor = "red";
 }
 
@@ -77,6 +77,33 @@ function check_number(event) {
   return (key <= 57 && key >= 48);
 }
 
+function check_phone(phone_id,message_id) {
+  var phone = document.getElementById(phone_id);
+  var message = document.getElementById(message_id);
+    if(phone.value.length<10){
+      setError(phone);
+      message.innerHTML="رقم الهاتف اقل من 10 ارقام";
+      lock = true;
+    }
+    else{
+      message.innerHTML = null;
+      lock = false;
+    }
+}
+
+function check_file(file_id,message_id) {
+  var file = document.getElementById(file_id);
+  var message = document.getElementById(message_id);
+    if(file.value == ""){
+      message.innerHTML="الرجاء رفع الملف";
+      lock = true;
+    }
+    else{
+      message.innerHTML=null;
+      lock = false;
+    }
+}
+
 //5
 //force user to enter only letters
 function check_arabic(event) {
@@ -95,7 +122,10 @@ function check_letter(event) {
 }
 
 
+
 $('#signin,#signup,#FG_pass,#profile').submit(function (evt) {
+  check_file('scfhs_file','file_massege');
+  check_pass('p_password','confirm_password','p_passmessage');
   if (lock) {
     evt.preventDefault();
   }
@@ -103,6 +133,7 @@ $('#signin,#signup,#FG_pass,#profile').submit(function (evt) {
 
 //function for edit button in page
 function edit_func() {
+  document.getElementsByClassName('massages')[2].innerHTML=null;
   document.getElementById('save').type = 'submit';
   document.getElementById('edit').style.display = 'none';
   document.getElementById('cancel').style.display = 'inline-block';

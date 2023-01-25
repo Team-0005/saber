@@ -53,7 +53,7 @@
             style="font-family: 'Font Awesome 5 Free'; width:25em; margin-left: 17.5em;   margin-top: 1.5em;"
             type="text" id="userfname" name="pt_name" value="{{pat.pt.pt_name}}"
             placeholder=" اسم المريض بالكامل &#xf406; " min="3" required disabled
-            onkeypress="return  check_letter(event);">
+            onkeypress="return  check_arabic(event);">
           <label class="labelin" style="  padding-bottom: 1.9em;">الاسم الكامل </label>
         </div>
       </div>
@@ -71,10 +71,11 @@
         <div class="col order-first">
           <input class="inputType" style="font-family: 'Font Awesome 5 Free'; " type="tel" id="tel" name="pt_phone_no"
             value="{{pat.pt.pt_phone_no}}" placeholder="  رقم الهاتف  &#xf095;" min="8" required disabled
-            onkeypress="return check_number(event);">
+            onkeypress="return check_number(event);"onblur="check_phone('tel','phonemessage');">
           <label class="labelin" style="padding-bottom: 2.9em; padding-right: 1em;">رقم الهاتف</label>
         </div>
       </div>
+      <label class='massages' id="phonemessage"></label>
 
       <div class="row align-items-start">
         <div class="col order-last">
@@ -147,7 +148,7 @@
 
   <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br>
   <br><br><br><br><br>
-  <br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br>
 
   <footer id="footer" class="footer-distributed">
     <div class="footer-right">

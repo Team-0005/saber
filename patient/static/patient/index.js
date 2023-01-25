@@ -1,9 +1,32 @@
 lock = false;
+//return style to defult
+function setDefult(input, message) {
+  message.innerHTML = null;
+  input.style.borderColor = rgba(195, 195, 195, 0.5);
+}
 
+//change style when error ocurs
+function setError(input) {
+  input.style.borderColor = "red";
+}
 //force user to enter only number
 function check_number(event) {
   var key = event.keyCode;
   return (key <= 57 && key >= 48);
+}
+
+function check_phone(phone_id,message_id) {
+  var phone = document.getElementById(phone_id);
+  var message = document.getElementById(message_id);
+    if(phone.value.length<10){
+      setError(phone);
+      message.innerHTML="رقم الهاتف اقل من 10 ارقام";
+      lock = true;
+    }
+    else{
+      setDefult(phone,message);
+      lock = false;
+    }
 }
 
 function check_arabic(event) {
@@ -30,6 +53,7 @@ $('#patient').submit(function (evt) {
 
 //function for edit button in page
 function edit_func() {
+  document.getElementsByClassName('massages')[1].innerHTML=null;
   document.getElementById('save').type = 'submit';
   document.getElementById('edit').style.display = 'none';
   document.getElementById('cancel').style.display = 'inline-block';
