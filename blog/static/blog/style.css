@@ -74,7 +74,6 @@ footer a:hover,
   text-align: center;
   color: white;
 }
-
 .row-1 {
   font-family: 'Tajawal', sans-serif;
   font-size: 1.6em;
@@ -262,8 +261,8 @@ a.col-1 a:link {
 .top-2 {
   float: left;
   text-align: center;
-  margin-left: 5em;
-  margin-top: 0em;
+  margin-left: -14em;
+  margin-top: 10em;
   font-size: 1.7em;
   color: #000000;
   max-width: 100ch;
