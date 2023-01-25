@@ -47,7 +47,7 @@
           {% for listp in list %}
           <tr>
             {% if listp.test_status == 0 %}
-            <td> لم يتم الاختبار </td>
+            <td> <a href="{% url 'diagnosis:sendTest' listp.pt.pt_id %}" style="color: #ff3c35 ;"> لم يتم الاختبار </td> </a>
             {% elif listp.test_status == 1 %}
             <td> <a href="{% url 'patient:confResult' listp.pt.pt_id %}" style="color: #C58E3C ;"> بحاجة الى خطة
                 علاجية</a></td>
