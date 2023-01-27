@@ -2,7 +2,7 @@ lock = false;
 //return style to defult
 function setDefult(input, message) {
   message.innerHTML = null;
-  input.style.borderColor = "rgba(195, 195, 195, 0.5)";
+  input.style.borderColor = "  ";
 }
 
 //change style when error ocurs
