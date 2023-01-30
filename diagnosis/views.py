@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
-import numpy as np
 import keras
 from keras.models import load_model
 from blog.models import Psychologist
 from bs4 import BeautifulSoup
 from patient.models import Result
+
+
 model_path = 'diagnosis\saber.h5'
 model = load_model(model_path, compile=False)
 disorder = ["desperation","anxiety","OCD"]
@@ -39,8 +40,9 @@ def iniDiag(request,pt_id):
                 the_id = 2
             elif label == "desperation":
                 the_id = 3
-            
             fields.clear()
+
+            
             save_result = Result( pt_id = pt_id , fk_diagnosis_id=the_id , test_id=the_id , test_status=0)
             save_result.save()
             print("add result success")
