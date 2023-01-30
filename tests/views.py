@@ -42,7 +42,7 @@ def testResult(request, id):
         result.test_result = res
         result.test_status = 1
         result.save()
-        return render(request, 'blog/home.html')
+        return render(request, 'tests/test_done.html')
 
 # def test1(request):
 #     anxResult = []
