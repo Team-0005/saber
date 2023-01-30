@@ -217,6 +217,13 @@ tr td:first-child {
   background-color: #488FAA;
   color: white;
 }
+span{
+  text-align: center;
+  font-family: 'Tajawal';
+  font-size:1em;
+  color: #a52133;
+
+}
 
 #P_record a {
   text-decoration: none;
