@@ -33,7 +33,9 @@
         <input style="font-family: 'Font Awesome 5 Free'; " type="search" name="searchField"
           placeholder="  أدخل اسم المريض أو رقم الهاتف  &#xf002;" value={{search}}>
       </div>
-      <!-- <span >لا يوجد مريض بهذا الإسم او الرقم  </span> -->
+      {% for message in messages %}
+      <span style="color: #ff3c35 ;" >{{ message }}</span>
+      {% endfor %}
     </form>
 
     <form class="recpatient" action="index.html" method="post">

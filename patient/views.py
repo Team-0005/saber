@@ -53,6 +53,9 @@ def list_of_patient(request):
             if search:
                lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
                list = list.filter(lookups)
+               if list.count() == 0:
+                  messages.success(request,"لا يوجد مريض بهذا الإسم او الرقم")
+
                        
         context = {
           'list': list,
