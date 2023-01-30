@@ -53,7 +53,7 @@ def signup(request):
             messages.success(request,"تم إرسال الطلب بنجاح")
             print("create account success")
             psycho.save()
-            return render(request, 'blog/home.html')
+            return render(request, 'blog/req_done.html')
     else:
           return render(request, 'blog/signUp.html')  
 
