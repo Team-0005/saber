@@ -338,6 +338,7 @@ form.recpatient {
   margin-left: 5em;
   font-size: 0.9em !important;
   color: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .result {
   width: 140px;
