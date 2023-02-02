@@ -133,7 +133,10 @@ $('#signin,#signup,#FG_pass,#profile').submit(function (evt) {
 
 //function for edit button in page
 function edit_func() {
-  document.getElementsByClassName('massages')[2].innerHTML=null;
+  massege = document.getElementsByClassName('massages')[2];
+  if (massege != null){
+    massege.innerHTML = null;
+  }
   document.getElementById('save').type = 'submit';
   document.getElementById('edit').style.display = 'none';
   document.getElementById('cancel').style.display = 'inline-block';
