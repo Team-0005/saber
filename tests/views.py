@@ -1,23 +1,36 @@
 from django.shortcuts import render
 from .models import PsychoTest
 from patient.models import Result
+from blog.models import Psychologist
 
 # Create your views here.
 
 
 def test(request):
-    test = PsychoTest.objects.all()
-    context = {'listtests': test}
-    return render(request, 'tests/test.html', context)
-
+     try:
+        psycho_email= request.session['psycho_email']
+        test = PsychoTest.objects.all()
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        context = {'listtests': test,
+                'psycho': psych}
+        return render(request, 'tests/test.html', context)
+     except:
+        pass
 
 def spec(request, id):
-    spec = PsychoTest.objects.get(test_id=id)
-    con = Result.objects.filter(test=id).count()
-    context = {'detail': spec,
-               'count': con}
-    return render(request, 'tests/sptest.html', context)
-
+    try:
+        psycho_email= request.session['psycho_email']
+        spec = PsychoTest.objects.get(test_id=id)
+        con = Result.objects.filter(test=id).count()
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        context = {'detail': spec,
+               'count': con,
+               'psycho': psych
+               
+               }
+        return render(request, 'tests/sptest.html', context)
+    except:
+        pass
 
 
 
@@ -44,27 +57,3 @@ def testResult(request, id):
         result.save()
         return render(request, 'tests/test_done.html')
 
-# def test1(request):
-#     anxResult = []
-#     for x in range(1,51):
-#         a = int (request.POST.get('q'+str(x),False))
-#         anxResult.append(a)
-#     result = sum(anxResult)   
-#     print(result)
-#     return render(request,'tests/anxietyTest.html') 
-
-# def iniDiag(request):
-#     # diag = PsychoTest.objects.all()
-#     # context = {'iniDiag' : diag }
-#     return render(request,'tests/iniDiag.html') 
-
-
-    
-# def test2(request):
-#     ocdResult = []
-#     for x in range(1,11):
-#         a = int (request.POST.get('q'+str(x),False))
-#         ocdResult.append(a)
-#     result = sum(ocdResult)   
-#     print(result)
-#     return render(request,'tests/ocdTest.html') 

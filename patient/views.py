@@ -47,6 +47,7 @@ def list_of_patient(request):
     try:
         psycho_email= request.session['psycho_email']
         list = Result.objects.filter(pt__p_email__exact=psycho_email)
+        psych = Psychologist.objects.get(p_email=psycho_email)
         search = ""
         if 'searchField' in request.GET:
             search = request.GET['searchField']
@@ -59,7 +60,8 @@ def list_of_patient(request):
                        
         context = {
           'list': list,
-          'search': search
+          'search': search,
+          'psycho': psych
         }
         return render(request, 'patient/patientRec.html', context)
     except:
@@ -105,6 +107,7 @@ def severity(test, result):
 
 def patientProf(request, pt_id):
     if request.method == "POST":
+       psych = Psychologist.objects.get(p_email=psycho_email)
        temp_pat = Patient.objects.get(pt_id=pt_id)
        temp_pat.pt_name =  request.POST['pt_name']
        temp_pat.pt_phone_no =  request.POST['pt_phone_no']
@@ -130,6 +133,7 @@ def patientProf(request, pt_id):
         'age': age,
         'sever': sever,
         'dateBirth': dateBirth,
+        'psycho': psych
     }
     return render(request, 'patient/patientProfile.html',context)
 
@@ -147,6 +151,7 @@ def tretmentPlan(request, pt_id):
     temp_pat = Patient.objects.get(pt_id=pt_id)
     sever = severity(pat.test.test_id, pat.test_result)
     if request.method == "POST":
+       psych = Psychologist.objects.get(p_email=psycho_email)
        temp_pat.pt_plan = request.POST['pt_plan']
        temp_pat.save()
        pat.test_status = 2
@@ -156,6 +161,7 @@ def tretmentPlan(request, pt_id):
     context = {
         'pat': pat,
         'sever': sever,
+        'psycho': psych
     }
     return render(request, 'patient/tretment.html',context)
   
