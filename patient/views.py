@@ -28,8 +28,8 @@ def addPatient(request):
             new_patient = Patient(pt_phone_no=phone, pt_name=name, pt_gender=gender, pt_edu_level=edu_level,
                               pt_birth_date=bdate, p_email=Psychologist.objects.get(p_email=psycho_email))
             if Patient.objects.filter(pt_phone_no=phone) and Patient.objects.filter(p_email=psycho_email):
-                messages.error(request, "المريض مخزّن مسبقًا")
                 print("This is wrong")
+                messages.error(request, "رقم هاتف المريض مخزّن مسبقًا")
                 return render(request, 'patient/addPatient.html', context)
             else:
                 print("add patient success")
