@@ -106,14 +106,21 @@ function check_file(file_id,message_id) {
 
 //5
 //force user to enter only letters
-function check_arabic(event) {
+function check_arabic(event,name_id,massage_id) {
+  var name = document.getElementById(name_id);
+  var message = document.getElementById(massage_id);
   var regularExp = /[\u0600-\u06FF]/;
   var key = event.which;
   var str = String.fromCharCode(key);
-  if(regularExp.test(str)|| (key == 32)){
+  if (regularExp.test(str)|| (key == 32)) {
+    setDefult(name,message);
     return true;
   }
-  return false;
+  else{
+    setError(name);
+    message.innerHTML="الرجاء الكتابة باللغة العربية";
+    return false;
+  }
 };
 
 function check_letter(event) {

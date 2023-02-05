@@ -42,7 +42,7 @@
   <br>
 
   <div class="con text-center">
-    <form class="addp" action="{% url 'patient:addpt' %}" method="post">
+    <form id="patient" class="addp" action="{% url 'patient:addpt' %}" method="post">
       <!-- for_security -->
       {% csrf_token %}
       <br>
@@ -57,10 +57,11 @@
         <div class="col order-last">
           <input class="inputType" style="font-family: 'Font Awesome 5 Free'; width:25em; margin-left: 17.3em;   margin-top: 1.5em;
         " type="text" id="userfname" name="pt_name" placeholder=" اسم المريض بالكامل &#xf406; " min="3" required autofocus
-            onkeypress="return check_arabic(event)">
+            onkeypress="return check_arabic(event,'userfname','name_error');">
           <label class="labelin" style="  padding-bottom: 1.9em;">الاسم الكامل </label>
         </div>
       </div>
+      <span class="massages" id="name_error"></span>
 
       <div class="row  align-items-start">
         <div class="col order-last ">
@@ -115,7 +116,7 @@
     
 
       <div class="row align-items-start">
-        <button class="button" type="submit">الـتالي</button>
+        <input class="button" type="submit" value="الـتالي"id="patient">
       </div>
     </form>
   </div>

@@ -45,10 +45,11 @@
     <div class="rowu">
       <div class="col-2">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="p_l_name" name="p_l_name"
-          placeholder="&#xf007; الاسم الأخير " min="3"  required onkeypress="return check_arabic(event)">
+          placeholder="&#xf007; الاسم الأخير " min="3"  required onkeypress="return check_arabic(event,'p_l_name','name_error')">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="p_f_name" name="p_f_name"
-           autofocus placeholder="&#xf007; الاسم الأول " min="3"  required onkeypress="return check_arabic(event)">
+           autofocus placeholder="&#xf007; الاسم الأول " min="3"  required onkeypress="return check_arabic(event,'p_f_name','name_error')">
       </div>
+      <span class="massages" id="name_error"></span>
     </div>
 
     <div class="rowu">
