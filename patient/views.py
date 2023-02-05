@@ -55,7 +55,7 @@ def list_of_patient(request):
                lookups = Q(pt__pt_name__icontains=search) | Q(pt__pt_phone_no__icontains=search)
                list = list.filter(lookups)
                if list.count() == 0:
-                  messages.success(request,"لا يوجد مريض بهذا الإسم او الرقم")
+                  messages.success(request,"لا يوجد مريض بهذا الاسم أو الرقم")
 
                        
         context = {
@@ -106,45 +106,56 @@ def severity(test, result):
 
 
 def patientProf(request, pt_id):
-    if request.method == "POST":
-       psych = Psychologist.objects.get(p_email=psycho_email)
-       temp_pat = Patient.objects.get(pt_id=pt_id)
-       temp_pat.pt_name =  request.POST['pt_name']
-       temp_pat.pt_phone_no =  request.POST['pt_phone_no']
-       temp_pat.pt_birth_date =  request.POST['pt_birth_date']
-       temp_pat.pt_edu_level =  request.POST['pt_edu_level']
-       if temp_pat.pt_plan:
-           temp_pat.pt_plan = request.POST['p_tr']
+    try:
+        psycho_email= request.session['psycho_email']
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        if request.method == "POST":
+            temp_pat = Patient.objects.get(pt_id=pt_id)
+            temp_pat.pt_name =  request.POST['pt_name']
+            temp_pat.pt_phone_no =  request.POST['pt_phone_no']
+            temp_pat.pt_birth_date =  request.POST['pt_birth_date']
+            temp_pat.pt_edu_level =  request.POST['pt_edu_level']
+            if temp_pat.pt_plan:
+                temp_pat.pt_plan = request.POST['p_tr']
            
-       temp_pat.save()
-       messages.success(request,"تم حفظ التعديلات بنجاح")
+            temp_pat.save()
+            messages.success(request,"تم حفظ التعديلات بنجاح")
     
-    pat = Result.objects.get(pt__pt_id=pt_id)
-    date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
-    today = date.today()
-    dateBirth = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
-    age = today.year - date.year
-    sever=''
-    if pat.test_result:
-       sever = severity(pat.test.test_id, pat.test_result)
+        pat = Result.objects.get(pt__pt_id=pt_id)
+        date = datetime.strptime(str(pat.pt.pt_birth_date), "%Y-%m-%d")
+        today = date.today()
+        dateBirth = str(date.year) + '-' + str(date.month) + '-' + str(date.day)
+        age = today.year - date.year
+        sever=''
+        if pat.test_result:
+            sever = severity(pat.test.test_id, pat.test_result)
 
-    context = {
-        'pat': pat,
-        'age': age,
-        'sever': sever,
-        'dateBirth': dateBirth,
-        'psycho': psych
-    }
-    return render(request, 'patient/patientProfile.html',context)
+        context = {
+            'pat': pat,
+            'age': age,
+            'sever': sever,
+            'dateBirth': dateBirth,
+            'psycho': psych
+        }
+        return render(request, 'patient/patientProfile.html',context)
+    except:
+        pass
+
 
 def confResult(request, pt_id):
-    pat = Result.objects.get(pt__pt_id=pt_id)
-    sever = severity(pat.test.test_id, pat.test_result)
-    context = {
-        'pat': pat,
-        'sever': sever,
-    }
-    return render(request, 'patient/conf_result.html',context)
+    try:
+        psycho_email= request.session['psycho_email']
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        pat = Result.objects.get(pt__pt_id=pt_id)
+        sever = severity(pat.test.test_id, pat.test_result)
+        context = {
+            'pat': pat,
+            'sever': sever,
+            'psycho': psych
+        }
+        return render(request, 'patient/conf_result.html',context)
+    except:
+        pass
 
 def tretmentPlan(request, pt_id):
     pat = Result.objects.get(pt__pt_id=pt_id)
