@@ -158,21 +158,25 @@ def confResult(request, pt_id):
         pass
 
 def tretmentPlan(request, pt_id):
-    pat = Result.objects.get(pt__pt_id=pt_id)
-    temp_pat = Patient.objects.get(pt_id=pt_id)
-    sever = severity(pat.test.test_id, pat.test_result)
-    if request.method == "POST":
-       psych = Psychologist.objects.get(p_email=psycho_email)
-       temp_pat.pt_plan = request.POST['pt_plan']
-       temp_pat.save()
-       pat.test_status = 2
-       pat.save()
-       return list_of_patient(request)
+    try:
+        psycho_email= request.session['psycho_email']
+        psych = Psychologist.objects.get(p_email=psycho_email)
+        pat = Result.objects.get(pt__pt_id=pt_id)
+        temp_pat = Patient.objects.get(pt_id=pt_id)
+        sever = severity(pat.test.test_id, pat.test_result)
+        if request.method == "POST":
+           temp_pat.pt_plan = request.POST['pt_plan']
+           temp_pat.save()
+           pat.test_status = 2
+           pat.save()
+           return list_of_patient(request)
        
-    context = {
+        context = {
         'pat': pat,
         'sever': sever,
         'psycho': psych
-    }
-    return render(request, 'patient/tretment.html',context)
+        }
+        return render(request, 'patient/tretment.html',context)
+    except:
+        pass
   
