@@ -25,7 +25,6 @@
   <a id="logo" href=""><img src="{% static 'blog/logo1.png' %}" alt="logo" width="150" height="100"></a>
   <nav>
     <div class="col6"> <a href="{% url 'home' %}">الصفحة الرئيسية</a></div>
-    <div class="col6"><a href="#whowe">من نحن؟</a></div>
     <div class="col6"><a href="#footer">تواصل معنا</a></div>
     <div class="col7"><a href="{% url 'profile' %}">{{psycho}} {{psycho.p_l_name}}</a></div>
     <div class="col7">
@@ -49,9 +48,10 @@
       <div class="col order-first">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
           value="{{information.p_l_name}}" placeholder=" الاسم الأخير  &#xf406;" min="3" required disabled
-          onkeypress="return  check_arabic(event);">
+          onkeypress="return  check_arabic(event,'userlname','name_error');">
         <label class="labelin" style="padding-bottom: 2.9em; padding-right: 1em;"> الاسم الأخير</label>
       </div>
+      <span class="massages" id="name_error"></span>
 
       <div class="col order-last">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userfname" name="p_f_name"
