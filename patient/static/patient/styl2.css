@@ -291,7 +291,7 @@ form.recpatient {
 .con {
   position: absolute;
   width: 60em;
-  height: 40em;
+  height: 45em;
   margin-left: 15.9em;
   margin-top: 2em;
   background: rgba(255, 255, 255, 0.71);
@@ -309,7 +309,7 @@ form.recpatient {
 .con.add {
   position: absolute;
   width: 1008px;
-  height: 840px;
+  height: 885px;
   margin-left: 15.5em;
 }
 
@@ -514,6 +514,7 @@ tr td:first-child {
 
 .massages {
   color: red;
+ 
 }
 
 /*------------------------------*/

@@ -43,7 +43,7 @@
     <!-- for_security -->
     {% csrf_token %}
     <p> <i class="fas fa-user-circle"></i> المعلومات الشخصية </p>
-    <div class="row">
+    <div class="row" style="margin-bottom: 0.5em;">
 
       <div class="col order-first">
         <input style="font-family: 'Font Awesome 5 Free';" type="text" id="userlname" name="p_l_name"
@@ -58,8 +58,10 @@
           onkeypress="return  check_arabic(event,'userfname','name_error');">
         <label class="labelin" style="padding-bottom: 2.9em; padding-right: 1em;"> الاسم الأول</label>
       </div>
-      <span class="massages" id="name_error"></span>
+    </div>
 
+    <div class="row" >
+      <span class="massages" id="name_error"></span>
     </div>
 
     <div class="row">
